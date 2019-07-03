@@ -1,0 +1,18 @@
+@import '../../../../../styles/colors';
+
+.imageComponentContainer {
+  padding: 0 25px 0 25px;
+  display: flex;
+  background: $white;
+  justify-content: center;
+  max-width: 1260px;
+  margin: 0 auto;
+}
+
+.imageThumbnail {
+  -webkit-box-shadow: 0px 0px 73px -18px rgba(110,110,110,1);
+  -moz-box-shadow: 0px 0px 73px -18px rgba(110,110,110,1);
+  box-shadow: 0px 0px 73px -18px rgba(110,110,110,1);
+  cursor: pointer;
+  max-width: 768px;
+}

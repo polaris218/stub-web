@@ -1,0 +1,35 @@
+.question-section {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.question h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #4b595e;
+}
+
+.question p {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 15px;
+    line-height: 1.5em;
+    color: #A4ABB0;
+}
+
+.question:not(:last-child) p {
+    margin-bottom: 50px;
+}
+
+.section-header {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 400;
+}
+
+.faq-section {
+    padding: 90px 20px;
+}

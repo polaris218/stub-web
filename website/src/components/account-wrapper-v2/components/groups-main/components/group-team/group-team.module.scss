@@ -1,0 +1,67 @@
+@import '../../../../../../../styles/colors.scss';
+@import '../../../../base-styling.module';
+
+.CMEditModal {
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+    margin: 0;
+  }
+  & > div {
+    border-radius: 0;
+    background-color: $setting-light-blue;
+    width: 100% !important;
+  }
+  .CMEditModalHeader {
+    background-color: $white;
+    -webkit-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    -o-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    box-shadow: 0 3px 6px rgba($dark-black,.09);
+    padding: 20px 15px;
+    position: relative;
+    z-index: 1;
+    .messageTitle {
+      color: $dashboard-dark;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .closeIcon{
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%);
+      svg path{
+        transition: all .3s ease-in-out;
+      }
+      &:hover {
+        svg path{
+          fill: $dashboard-dark;
+        }
+      }
+    }
+  }
+  .CMEditModalBody {
+    overflow-y: auto;
+  }
+  .entityName {
+    color: $dashboard-dark;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 2px;
+  }
+  .disableGroup {
+    background-color: $theme-grey;
+  }
+  .buttonWrapper{
+    text-align: right;
+    @media only screen and (max-width: 360px) {
+      .btn-secondary{
+        min-width: 150px !important;
+      }
+    }
+  }
+}

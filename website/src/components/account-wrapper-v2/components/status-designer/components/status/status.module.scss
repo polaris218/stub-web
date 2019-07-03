@@ -1,0 +1,251 @@
+@import '../../../../../../../styles/colors.scss';
+@import '../../../../../../../styles/mixins.scss';
+
+.statusContainer{
+  margin-bottom: 4px;
+  .statusWrapper {
+    background-color: $route-bg;
+    border-style: solid;
+    border-color: $dashboard-bg;
+    border-width: 1px 1px 1px 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 100%;
+    padding: 10px 0 10px 10px;
+    position: relative;
+    .statusInfoWrapper{
+      flex-basis: 0;
+      flex-grow: 1;
+      max-width: 100%;
+      .statusTitle {
+        font-size: 12px;
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+        color: $status-title;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+      }
+      .statusDescription {
+        font-size: 12px;
+        padding: 0;
+        margin: 0;
+        max-height: 35px;
+        overflow-y: auto;
+      }
+    }
+    .switchContainer{
+      display: inline-flex;
+      align-items: center;
+      padding: 0 15px;
+      .deleteBtn {
+        width: 13px;
+        cursor: pointer;
+        margin-right: 15px;
+        svg path{
+          fill: $theme-lighter-grey;
+        }
+        &:hover {
+          text-decoration: none;
+          svg path{
+            fill: $theme-dark-grey;
+          }
+        }
+      }
+      .toggleIcon {
+        cursor: pointer;
+        background: url(/images/task-form/arrow_downs.svg) center/cover no-repeat;
+        height: 13px;
+        width: 13px;
+        &.active{
+          transform: rotate(180deg);
+        }
+      }
+    }
+    .dragIcon {
+      border-left: 1px solid $dashboard-bg;
+      min-width: 38px;
+      height: 38px;
+      color: $theme-lighter-grey;
+      .inner{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 18px;
+        height: 9px;
+        margin: 14px auto;
+        span{
+          background-color: $route-title;
+          border-radius: 10px;
+          width: 100%;
+          height: 1px;
+        }
+      }
+    }
+  }
+  .selectBox{
+    position: relative;
+    &:after{
+      content: '';
+      background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      pointer-events: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 35px;
+      &::-ms-expand{
+        display: none;
+      }
+    }
+  }
+  .statusOptionsWrapper {
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    padding: 20px 20px 10px;
+    [class="row"]{
+      margin-left: -8px;
+      margin-right: -8px;
+      [class^="col-"], [class*="col-"] {
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+    input, select{
+      background-color: $white;
+      border-color: $dashboard-bg;
+      &:disabled, &.disabled{
+        background-color: $dashboard-bg;
+      }
+    }
+    .checkBoxSquare{
+      position: relative;
+      line-height: 18px;
+      margin: 0;
+      font-size: 13px;
+      label{
+        input{
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          margin-left: 0;
+        }
+        font-weight: 600;
+        padding-left: 0;
+        span{
+          display: block;
+          padding-left: 24px;
+          &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 1px;
+            height: 15px;
+            width: 15px;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+          }
+          &:before{
+            background: $route-bg center center / auto 7px no-repeat;
+            border: 1px solid $dashboard-primary;
+          }
+        }
+        input:checked + span:before{
+          background-color: $dashboard-primary;
+          background-image: url("/images/task-form/tick.svg");
+        }
+        input:disabled + span{
+          color: $dashboard-grey;
+          &:before{
+            border-color: $dashboard-grey;
+          }
+        }
+        input:checked:disabled + span:before{
+          background-color: $dashboard-grey;
+        }
+      }
+    }
+  }
+}
+.transparentButton {
+  background-color: transparent;
+  border: none;
+  color: $primary;
+  .iconForTransparent{
+    padding: 0 3px 0 3px;
+    width: 18px;
+    height: 18px;
+    color:$primary;
+    font-size: 4em;
+    border: 1px solid $primary;
+    margin-bottom: 0 !important;
+    @include opacity(0.8);
+    @include border-radius(10px);
+  }
+}
+.systemStatus {
+  line-height: 42px;
+}
+.colorField {
+  margin-top: 10px;
+  & > div > div:first-child{
+    height: 40px;
+    width: 40px;
+  }
+  &>div:last-child {
+    &>div>div>div {
+      margin-left: 45px !important;
+    }
+  }
+}
+.statusBar {
+  background-color: $white;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px rgba($dark-black, .16);
+  color: $dashboard-dark;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 18px;
+  position: relative;
+  margin: 0 10px 10px 0;
+  padding: 11px 13px;
+  text-transform: uppercase;
+  transition: all .3s ease-in-out;
+  &:before{
+    content: '';
+    border-radius: 50%;
+    border: 5px solid;
+    border-color: inherit;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: -2px;
+    transition: border-color .3s ease-in-out;
+  }
+  &:not(:hover){
+    background-color: $white !important;
+  }
+  &:hover{
+    color: $white;
+    &:before{
+      border-color: $white;
+    }
+  }
+}

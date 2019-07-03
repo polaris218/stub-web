@@ -1,0 +1,714 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.full-height{
+  margin: 0 auto;
+
+  button{
+    font-size: 1.4em;
+    padding: 10px 60px;
+    border-radius: 25px;
+    color: $primary-green;
+    background: #fff;
+    border: 1px solid #fff;
+    &:hover{
+      background: $primary-green;
+      color: #fff;
+    }
+  }
+}
+
+.page-wrap{
+  padding: 0;
+}
+
+.container{
+  width: 980px;
+  margin: 0 auto;
+  @media (max-width: 855px) {
+    width:auto;
+    padding: 0 20px;
+  }
+}
+
+.button-center-block{
+  text-align: center;
+}
+
+.navbar__hamburger{
+  color:#000;
+}
+
+.modal{
+  > div{
+    text-align: center;
+    margin-top: 15%;
+    >div{
+      padding: 20px;
+      width: auto!important;
+    }
+    h4{
+      font-size: 2em;
+      font-weight: bold;
+      color: $primary-green;
+    }
+    .modal-body{
+      border-top:0px solid #fff;
+    }
+  }
+}
+
+
+
+.garage{
+  background: url('/images/lending/try-pages/0026bbcc-garage-1-01.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+  height: 291px;
+  width:100%;
+  border-top:2px solid #8a6d3b;
+  .container{
+    position: relative;
+    .image-container{
+      position: absolute;
+      top: 0px;
+      left: 15%;
+    }
+  }
+  @media (max-width: 755px) {
+    height: 160px;
+    .container {
+      .image-container {
+        top: 39px;
+        width: 100%;
+        left: auto;
+        margin: 0 auto;
+        img {
+          width: 235px;
+        }
+      }
+    }
+  }
+
+}
+
+.blue-part{
+  background: $primary;
+  padding: 20px 0 40px 0;
+  border-top: 2px solid #fff;
+  color: #fff;
+  .container {
+    width: 800px;
+    .text-part {
+      @include flexbox;
+      padding: 20px 0;
+      p {
+        background: url('/images/lending/try-pages/536a1dc8-testimonial-box-sm-1-02_0fo03j0fo03j000000.png') no-repeat;
+        font-style: italic;
+        font-size: 1.7em;
+        padding: 10px 80px 0 20px;
+        height: 140px;
+      }
+      img {
+        margin-top: 10px;
+        height: 40px;
+      }
+      .underline{
+        text-decoration: underline;
+      }
+      .image-centered{
+        img {
+          margin-top: 40px;
+        }
+      }
+    }
+  }
+  @media (max-width: 855px) {
+    padding: 20px 10% 40px 10%;
+    .container {
+      width: auto;
+      max-width: 560px;
+      h1{
+        font-size: 2em;
+      }
+      .text-part{
+        @include flex-flow(column);
+        >div {
+          text-align: center;
+        }
+        p{
+          font-size: 1.5em;
+          background-image: none;
+          padding: 20px 0;
+          height: auto;
+        }
+        img{
+          margin-top: 0;
+        }
+        .image-centered{
+          text-align: right;
+          img {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+  }
+
+}
+
+.grey-part{
+  h2{
+    color: #999;
+    font-size: 25px;
+    padding: 20px 0;
+  }
+  .container{
+    .box {
+      margin-bottom: 30px;
+      h3 {
+        font-size: 20px;
+        margin-bottom: 0;
+        max-width: 180px;
+      }
+      p{
+        font-style: italic;
+        color: #999;
+        margin: 0;
+      }
+    }
+  }
+  @media (max-width: 770px) {
+    .container {
+      max-width: 560px;
+      .box {
+        .img-cont{
+          float: left;
+        }
+        h3{
+          padding: 0 0 10px 110px;
+          margin-top: 0;
+        }
+        p{
+          padding: 0 0 0 110px;
+        }
+      }
+    }
+  }
+}
+
+.green-part{
+  background: #00D494;
+  color: #fff;
+  .container{
+    position: relative;
+    padding-bottom:30px;
+    padding-left: 80px;
+    h2{
+      color: #fff;
+      padding: 20px 0;
+      font-size: 32px;
+    }
+    img{
+      position: absolute;
+      right: 0;
+      top:-52px;
+    }
+  }
+  
+  button{
+    font-size: 1.4em;
+    padding: 10px 60px;
+    border-radius: 25px;
+    color: $primary-green;
+    background: #fff;
+    border-width: 1px solid #fff;
+    &:hover{
+      background: $primary-green;
+      color: #fff;
+    }
+  }
+  @media (max-width: 855px) {
+    .container{
+      max-width: 560px;
+      padding-left: 20px;
+    }
+  }
+  @media (max-width: 660px) {
+    .container{
+      img{
+        display: none;
+      }
+    }
+  }
+}
+
+.testimonial-part{
+  background: #E6F4FF;
+  padding-bottom: 50px;
+  padding-top: 20px;
+  .container{
+
+    h2{
+      color: #999;
+      margin: 0;
+      padding: 30px 0;
+      font-size: 25px;
+    }
+    .box-rounded {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+
+      @include box-shadow(1px, 1px, 5px, #999);
+    }
+    p{
+      font-size: 16px;
+    }
+  }
+  @media (max-width: 855px) {
+    .container{
+      max-width: 560px;
+    }
+  }
+}
+
+.monumental-part{
+  background: $primary;
+  .container{
+    position: relative;
+    padding: 20px 330px 10px 0px;
+    .text-part {
+      > div {
+        color: #fff;
+        img {
+          float: left;
+          padding-right: 20px;
+        }
+        p{
+          font-size: 22px;
+          line-height: 1.8;
+          font-style: italic;
+          background: url('/images/lending/try-pages/536a1dc8-testimonial-box-sm-1-02_0fo03j0fo03j000000.png') right top no-repeat;
+          padding: 0 20px 0 90px;
+          height: 127px;
+        }
+
+      }
+      .decorated-image {
+        position: absolute;
+        right: 0;
+        top: -40px;
+        border-radius: 20px;
+        border: 4px solid #fff;
+        width: 300px;
+      }
+    }
+  }
+  @media (max-width: 855px) {
+    .container{
+      max-width: 560px;
+      padding: 20px;
+    }
+  }
+  @media (max-width: 810px) {
+    .container{
+      .text-part{
+        > div{
+          .img-cont{
+            text-align: center;
+          }
+          img{
+            float: none;
+            padding-left: 0;
+          }
+          p{
+            height: auto;
+            background-image: none;
+            padding: 20px 0 0 0;
+            line-height: 1.2;
+            margin: 0 auto;
+            max-width: 600px;
+          }
+        }
+        .decorated-image{
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.features-part{
+  background: #E6F4FF;
+  padding: 30px 0;
+  h2{
+    color: #999;
+    margin-bottom: 20px;
+    font-size: 25px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  p{
+    color: #999;
+  }
+  @media (max-width: 855px) {
+    .container{
+      max-width: 560px;
+    }
+  }
+  @media (max-width: 768px) {
+    img{
+      float: right;
+      padding-left: 20px;
+    }
+    h3{
+      margin-top: 0;
+      padding-right: 90px;
+    }
+    p{
+      padding-right: 90px;
+    }
+  }
+}
+
+.game-part{
+  background: #00D494;
+  background-image: url('/images/lending/try-pages/fcd9f8cf-509611329-business-high-tech.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  .container {
+    padding: 20px 0 60px 0;
+    h2{
+      padding: 20px 0;
+      color:#fff;
+    }
+  }
+  @media (max-width: 855px) {
+    .container{
+      max-width: 560px;
+    }
+  }
+}
+
+.uberiz{
+  background-image: url('/images/lending/try-pages/3f0dc142-uber-app-e1426675495814.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: cover;
+  background-color: rgba(0,220,154,0.29);
+  height: 396px;
+  .container{
+    padding: 10px 80px 0;
+    width: 800px;
+    h1{
+      color: #fff;
+      padding: 10px 0;
+    }
+    .media-player{
+      height:360px;
+    }
+
+  }
+  @media (max-width: 930px) {
+    .container{
+      width: auto;
+      .media-player{
+        height:320px;
+      }
+    }
+  }
+  @media (max-width: 630px) {
+    .container{
+      .media-player{
+        height:280px;
+      }
+    }
+  }
+}
+
+.u-blue-part{
+  background: $primary;
+  padding: 30px 0;
+  .container {
+    padding: 60px 80px 0;
+    width: 800px;
+    ul {
+      list-style: url('/images/lending/try-pages/1pdlznk-default-checkmark-plain-32px_00p00p00p00p000000.png');
+      font-size: 16px;
+      color: #fff;
+    }
+  }
+  @media (max-width: 930px) {
+    .container{
+      width: auto;
+    }
+  }
+}
+
+.u-grey-part{
+  padding: 40px 0;
+  .container{
+    width: 880px;
+  }
+  .box{
+    padding-bottom: 60px;
+  }
+  @media (max-width: 930px) {
+    .container{
+      width: auto;
+    }
+  }
+  @media (max-width: 845px) {
+    .container{
+      max-width: 388px;
+    }
+  }
+}
+
+.u-phone-part{
+  background: $primary;
+  color: #fff;
+  .container {
+    background: url('/images/lending/try-pages/circles.png') right 80px no-repeat;
+    padding: 20px 0;
+    position: relative;
+    width: 880px;
+    h2 {
+      padding: 20px 0;
+      color: #fff;
+    }
+    .text-part {
+      padding-right: 200px;
+      .white-line{
+        padding-left: 30px;
+        border-left: 3px solid #fff;
+      }
+      .learn-more{
+        padding-left: 30px;
+        font-style: italic;
+        display: block;
+        margin-top: 20px;
+        color: #9ACBFB;
+        text-decoration: underline;
+      }
+      .button-center-block{
+        margin-top: 40px;
+        button{
+          background: $primary-green;
+          border-color: $primary-green;
+          color: #fff;
+          &:hover{
+            background-color: #fff;
+            color: $primary-green;
+          }
+        }
+        .small{
+          margin-top: 15px;
+        }
+      }
+    }
+    .h-phone{
+      position: absolute;
+      right: -100px;
+      top: -100px;
+    }
+  }
+  @media (max-width: 930px) {
+    .container{
+      width: auto;
+      padding: 20px;
+    }
+  }
+}
+
+.u-reviews{
+  .container{
+    width: 800px;
+    padding-top: 40px;
+    .review{
+      background: url('/images/lending/try-pages/cf275146-testimonial-box-mid-1-02.png') no-repeat;
+      height: 205px;
+      padding: 40px 100px 60px 0;
+      font-size: 16px;
+      img{
+        float: left;
+        border-radius: 55px;
+      }
+      p{
+        padding-left: 100px;
+      }
+    }
+    .after-review{
+      text-align: right;
+      padding-right: 80px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 930px) {
+    .container{
+      width: auto;
+    }
+  }
+  @media (max-width: 845px) {
+    .container {
+      max-width: 388px;
+      .review {
+        background-image: none;
+        height: auto;
+        padding-bottom: 10px;
+        img{
+          float: none;
+          margin-bottom: 10px;
+        }
+        p{
+          padding-left: 0;
+        }
+      }
+    }
+  }
+}
+
+.b-order-book{
+  background: url('/images/lending/try-pages/ce7d4536-top-bg-1-02.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  padding-bottom: 40px;
+  .container{
+
+    .logo{
+      margin: 0 auto;
+      width: 200px;
+      padding-top: 50px;
+    }
+    text-align: center;
+    p{
+      color: #fff;
+    }
+  }
+  .book-cover{
+    margin-top: 40px;
+    padding-right: 40px;
+    background:rgba(0,0,0,0.49);
+    text-align: left;
+    h2{
+      margin: 40px 0;
+      font-weight: bold;
+    }
+    label{
+      color:#fff;
+    }
+    input{
+      background: #004478;
+      margin-bottom: 15px;
+      color:white;
+    }
+    button{
+      margin: 20px 0;
+      background: #004478;
+      color: #fff;
+      width: 100%;
+      padding: 5px;
+      text-transform: uppercase;
+      &:hover{
+        background: #fff;
+        color:rgb(0, 220, 154);
+      }
+    }
+    .small{
+      font-size: 10px;
+    }
+    .error-block{
+      background: palevioletred;
+      color: white;
+      border: 1px solid red;
+      padding: 5px 10px;
+      display: none;
+    }
+    &.have_errors{
+      .error-block{
+        display: block;
+      }
+      .error{
+        border:1px solid red;
+      }
+    }
+  }
+  h1, h2{
+    color:rgb(0, 220, 154);
+  }
+}
+
+.b-white-part{
+  padding: 40px 0 220px 0;
+  h2{
+    color:#666666;
+    padding-bottom: 50px;
+    text-align: center;
+  }
+  img{
+    float: left;
+    border-radius: 150px;
+    border:2px solid rgb(0, 220, 154);
+  }
+  p{
+    padding-left: 280px;
+    font-size: 16px;
+  }
+  @media (max-width: 574px) {
+    padding: 40px 0;
+    h2{
+      padding-bottom: 0;
+    }
+    img{
+      float: none;
+      margin-bottom: 10px;
+    }
+    p{
+      padding-left: 0px;
+    }
+  }
+}
+
+.b-blue-part{
+  background: rgba(0,139,248,1);
+  height: 198px;
+  .container{
+    position: relative;
+    text-align: center;
+    .image-cont{
+      position: absolute;
+      top:-150px;
+      width: 100%;
+    }
+    .text-part{
+      padding-top: 80px;
+      padding-bottom: 40px;
+      color: #fff;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+  }
+  @media (max-width: 574px) {
+    height: auto;
+    .container{
+      .image-cont{
+        display: none;
+      }
+      .text-part{
+        padding: 40px 0;
+      }
+    }
+  }
+}
+

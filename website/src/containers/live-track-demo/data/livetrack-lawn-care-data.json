@@ -1,0 +1,1257 @@
+[
+  {
+    "type": "text_image",
+    "delay": 4000,
+    "estimate": " ",
+    "topbar": {
+      "message": "Welcome to Arrivy Demo",
+      "submessage": ""
+    },
+    "data": {
+      "main_text": "Arrivy makes <b>connecting</b>, <b>communicating</b> and <b>tracking</b>, easy for <b>lawn care & landscaping companies</b>",
+      "image_url": "/images/demo/customer_delight.png"
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "image",
+    "delay": 4000,
+    "estimate": " ",
+    "topbar": {
+      "message": "Arrivy helps lawn care & landscaping companies save time and get better reviews",
+      "submessage": "Arrivy helps lawn care & landscaping companies save time and get better reviews"
+    },
+    "data": {
+      "image_url": "/images/demo/moving/slide1.png"
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "image",
+    "delay": 4000,
+    "estimate": " ",
+    "topbar": {
+      "message": "SMS & Email confirmations, reminders, relays and much more",
+      "submessage": "Automated Customer Communication"
+    },
+    "data": {
+      "image_url": "/images/demo/moving/slide2.png"
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "live-track",
+    "delay": 9000,
+    "estimate": "",
+    "dark_overlay": false,
+    "topbar": {
+      "message": "Live link of job summary and crew pictures with your branding ↟",
+      "submessage": "Connect customers and crew"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 120,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "",
+        "customer_city": "Seattle",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -122.408741,
+          "lat": 47.669066
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "SCHEDULED",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+        "extra_fields": {
+          "task_color": "#00d494"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "WA",
+        "customer_name": "John Snow",
+        "customer_phone": "",
+        "start_datetime": "2017-08-15T16:00:21"
+      },
+
+      "status": {
+        "latestStatus": "SCHEDULED",
+        "statusList": [{
+          "extra_fields": {
+            "visible_to_customer": true,
+            "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+          },
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "{{company_name}}",
+          "time": "2017-08-11T22:00",
+          "time_original_iso_str": "2017-08-11T22:00",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        }]
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "Loves football - Seahawks Fan",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "city": null,
+          "country": null,
+          "time_original_iso_str": null,
+          "entity": 5.7066652151316e+15,
+          "street": null,
+          "meta": [
+            "Accuracy: 1.0",
+            "Speed: 0.0",
+            "Model: Model: unknown-Second Nexus 4. Release: 5.0"
+          ],
+          "authorized": false,
+          "time": "{{time}}",
+          "lat": 47.625133,
+          "lng": -122.324278
+        }
+      },
+        {
+          "color": "#000000",
+          "details": "Our top mover with 10 years of experience",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Adam Smith",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+          "lastreading": {
+            "time": "{{time}}",
+            "lat": 47.625133,
+            "lng": -122.324278
+          }
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  }, {
+  "type": "live-track",
+  "delay": 9000,
+  "estimate": "",
+  "topbar": {
+    "message": "UBER-ize the customer experience for Motivated Field Crews",
+    "submessage": "Connect customers and crew"
+  },
+  "data": {
+    "task": {
+      "customer_id": null,
+      "customer_address_line_2": "",
+      "end_datetime": "2017-08-25T08:00:00",
+      "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+      "customer_address_line_1": "Seven Sisters Road",
+      "id": 5825281323433984,
+      "time_window_start": 120,
+      "notifications": {
+        "sms": true,
+        "email": true
+      },
+      "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+      "customer_company_name": "",
+      "customer_city": "Seattle",
+      "customer_phone2": "",
+      "customer_exact_location": {
+        "lng": -122.408741,
+        "lat": 47.669066
+      },
+      "customer_last_name": "Snow",
+      "details": "",
+      "title": "goofy jello bar",
+      "customer_notes": "",
+      "customer_first_name": "John",
+      "customer_zipcode": "N4 3NS",
+      "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+      "customer_email": "john@example.com",
+      "status": "SCHEDULED",
+      "notifications_sent": null,
+      "resource_ids": [
+        6507459568992256
+      ],
+      "series_id": null,
+      "owner": 5629499534213120,
+      "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+      "extra_fields": {
+        "task_color": "#00d494"
+      },
+      "customer_country": "United Kingdom",
+      "use_assignee_color": false,
+      "entity_ids": [
+        5222955109842944,
+        6630329993396224
+      ],
+      "enable_time_window_display": true,
+      "customer_state": "WA",
+      "customer_name": "John Snow",
+      "customer_phone": "",
+      "start_datetime": "2017-08-15T16:00:21"
+    },
+
+    "status": {
+      "latestStatus": "SCHEDULED",
+      "statusList": [{
+        "extra_fields": {
+          "visible_to_customer": true,
+          "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+        },
+        "id": 5439352742084608,
+        "reporter_id": 5629499534213120,
+        "reporter_name": "{{company_name}}",
+        "time": "2017-08-11T22:00",
+        "time_original_iso_str": "2017-08-11T22:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+      }]
+    },
+
+    "entities": [{
+      "color": "#000000",
+      "details": "Loves football - Seahawks Fan",
+      "email": "eric@example.com",
+      "extra_fields": {},
+      "id": 5222955109842944,
+      "image_id": 6605041225957376,
+      "image_path": "/images/avatar.png",
+      "is_default": null,
+      "name": "Eric Sebastian",
+      "owner": 5629499534213120,
+      "phone": "",
+      "type": "field",
+      "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+      "lastreading": {
+        "city": null,
+        "country": null,
+        "time_original_iso_str": null,
+        "entity": 5.7066652151316e+15,
+        "street": null,
+        "meta": [
+          "Accuracy: 1.0",
+          "Speed: 0.0",
+          "Model: Model: unknown-Second Nexus 4. Release: 5.0"
+        ],
+        "authorized": false,
+        "time": "{{time}}",
+        "lat": 47.625133,
+        "lng": -122.324278
+      }
+    },
+      {
+        "color": "#000000",
+        "details": "Our top mover with 10 years of experience",
+        "email": "jammal@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar2.png",
+        "is_default": null,
+        "name": "Adam Smith",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "time": "{{time}}",
+          "lat": 47.625133,
+          "lng": -122.324278
+        }
+      }
+    ],
+    "steps": [
+      {
+        "text": "Branded Experience for your customers to track their jobs",
+        "selector": "#profileBranding",
+        "position": "bottom",
+        "style": {
+          "backgroundColor": "#008BF8",
+          "color": "#fff",
+          "mainColor": "#00d494",
+          "beacon": {
+            "inner": "#c4ff9e",
+            "outer": "#c4ff9e"
+          },
+          "button": {
+            "padding": "10px 20px",
+            "borderRadius": "50px"
+          }
+        }
+      }
+    ]
+  },
+  "company": {
+    "name": "Motivated Movers",
+    "address": "601 Belmont Ave Seattle WA 98102",
+    "phone": "+1(800) 444 444",
+    "email": "customerservice@motivatedmovers.com",
+    "image_path": "/images/demo/moving/moving.png"
+  }
+}, {
+  "type": "live-track",
+  "delay": 9000,
+  "estimate": "",
+  "topbar": {
+    "message": "UBER-ize the customer experience for Motivated Field Crews",
+    "submessage": "Connect customers and crew"
+  },
+  "data": {
+    "task": {
+      "customer_id": null,
+      "customer_address_line_2": "",
+      "end_datetime": "2017-08-25T08:00:00",
+      "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+      "customer_address_line_1": "Seven Sisters Road",
+      "id": 5825281323433984,
+      "time_window_start": 120,
+      "notifications": {
+        "sms": true,
+        "email": true
+      },
+      "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+      "customer_company_name": "",
+      "customer_city": "Seattle",
+      "customer_phone2": "",
+      "customer_exact_location": {
+        "lng": -122.408741,
+        "lat": 47.669066
+      },
+      "customer_last_name": "Snow",
+      "details": "",
+      "title": "goofy jello bar",
+      "customer_notes": "",
+      "customer_first_name": "John",
+      "customer_zipcode": "N4 3NS",
+      "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+      "customer_email": "john@example.com",
+      "status": "SCHEDULED",
+      "notifications_sent": null,
+      "resource_ids": [
+        6507459568992256
+      ],
+      "series_id": null,
+      "owner": 5629499534213120,
+      "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+      "extra_fields": {
+        "task_color": "#00d494"
+      },
+      "customer_country": "United Kingdom",
+      "use_assignee_color": false,
+      "entity_ids": [
+        5222955109842944,
+        6630329993396224
+      ],
+      "enable_time_window_display": true,
+      "customer_state": "WA",
+      "customer_name": "John Snow",
+      "customer_phone": "",
+      "start_datetime": "2017-08-15T16:00:21"
+    },
+
+    "status": {
+      "latestStatus": "SCHEDULED",
+      "statusList": [{
+        "extra_fields": {
+          "visible_to_customer": true,
+          "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+        },
+        "id": 5439352742084608,
+        "reporter_id": 5629499534213120,
+        "reporter_name": "{{company_name}}",
+        "time": "2017-08-11T22:00",
+        "time_original_iso_str": "2017-08-11T22:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+      }]
+    },
+
+    "entities": [{
+      "color": "#000000",
+      "details": "Loves football - Seahawks Fan",
+      "email": "eric@example.com",
+      "extra_fields": {},
+      "id": 5222955109842944,
+      "image_id": 6605041225957376,
+      "image_path": "/images/avatar.png",
+      "is_default": null,
+      "name": "Eric Sebastian",
+      "owner": 5629499534213120,
+      "phone": "",
+      "type": "field",
+      "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+      "lastreading": {
+        "city": null,
+        "country": null,
+        "time_original_iso_str": null,
+        "entity": 5.7066652151316e+15,
+        "street": null,
+        "meta": [
+          "Accuracy: 1.0",
+          "Speed: 0.0",
+          "Model: Model: unknown-Second Nexus 4. Release: 5.0"
+        ],
+        "authorized": false,
+        "time": "{{time}}",
+        "lat": 47.625133,
+        "lng": -122.324278
+      }
+    },
+      {
+        "color": "#000000",
+        "details": "Our top mover with 10 years of experience",
+        "email": "jammal@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar2.png",
+        "is_default": null,
+        "name": "Adam Smith",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "time": "{{time}}",
+          "lat": 47.625133,
+          "lng": -122.324278
+        }
+      }
+    ],
+    "steps": [
+      {
+        "text": "Crew photos help customer confidence",
+        "selector": "#taskCrew",
+        "position": "left",
+        "style": {
+          "backgroundColor": "#008BF8",
+          "color": "#fff",
+          "mainColor": "#00d494",
+          "beacon": {
+            "inner": "#c4ff9e",
+            "outer": "#c4ff9e"
+          },
+          "button": {
+            "padding": "10px 20px",
+            "borderRadius": "50px"
+          }
+        }
+      }
+    ]
+  },
+  "company": {
+    "name": "Motivated Movers",
+    "address": "601 Belmont Ave Seattle WA 98102",
+    "phone": "+1(800) 444 444",
+    "email": "customerservice@motivatedmovers.com",
+    "image_path": "/images/demo/moving/moving.png"
+  }
+},
+  {
+    "type": "live-track",
+    "delay": 4000,
+    "estimate": "30 mins",
+    "topbar": {
+      "message": "UBER-ize the customer experience for Motivated Field Crews",
+      "submessage": "Connect customers and crew"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 120,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "",
+        "customer_city": "Seattle",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -122.408741,
+          "lat": 47.669066
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "ENROUTE",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+        "extra_fields": {
+          "task_color": "#00d494"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "WA",
+        "customer_name": "John Snow",
+        "customer_phone": "",
+        "start_datetime": "2017-08-15T16:00:21"
+      },
+
+      "status": {
+        "latestStatus": "ENROUTE",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "Adam Smith",
+          "time": "2017-08-15T16:00",
+          "time_original_iso_str": "2017-08-15T16:00",
+          "type": "ENROUTE",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "{{company_name}}",
+            "time": "2017-08-11T22:00",
+            "time_original_iso_str": "2017-08-11T22:00",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }]
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "Loves football - Seahawks Fan",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "time": "{{time}}",
+          "lat": 47.625133,
+          "lng": -122.324278
+        }
+      },
+        {
+          "color": "#000000",
+          "details": "Our top mover with 10 years of experience",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Adam Smith",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+          "lastreading": {
+            "time": "{{time}}",
+            "lat": 47.625133,
+            "lng": -122.324278
+          }
+        }
+      ],
+      "steps": [
+        {
+          "text": "Arrivy automatically shares estimate of arrival when crew is ENROUTE via SMS, Email and on this live page",
+          "selector": "#estimateWidget",
+          "position": "bottom",
+          "style": {
+            "backgroundColor": "#008BF8",
+            "color": "#fff",
+            "mainColor": "#00d494",
+            "beacon": {
+              "inner": "#c4ff9e",
+              "outer": "#c4ff9e"
+            },
+            "button": {
+              "padding": "10px 20px",
+              "borderRadius": "50px"
+            }
+          }
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "live-track",
+    "delay": 2000,
+    "muteSound": true,
+    "estimate": "15 mins",
+    "topbar": {
+      "message": "UBER-ize the customer experience for Motivated Field Crews",
+      "submessage": "Connect customers and crew"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 120,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "",
+        "customer_city": "Seattle",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -122.408741,
+          "lat": 47.669066
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "ENROUTE",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+        "extra_fields": {
+          "task_color": "#00d494"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "WA",
+        "customer_name": "John Snow",
+        "customer_phone": "",
+        "start_datetime": "2017-08-15T16:00:21"
+      },
+
+      "status": {
+        "latestStatus": "ENROUTE",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "Adam Smith",
+          "time": "2017-08-15T16:00",
+          "time_original_iso_str": "2017-08-15T16:00",
+          "type": "ENROUTE",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "{{company_name}}",
+            "time": "2017-08-11T22:00",
+            "time_original_iso_str": "2017-08-11T22:00",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }]
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "Loves football - Seahawks Fan",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "time": "{{time}}",
+          "lat": 47.626402,
+          "lng": -122.350435
+        }
+      },
+        {
+          "color": "#000000",
+          "details": "Our top mover with 10 years of experience",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Adam Smith",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+          "lastreading": {
+            "time": "{{time}}",
+            "lat": 47.626402,
+            "lng": -122.350435
+          }
+        }
+      ],
+      "steps": [
+        {
+          "text": "Arrivy sends another SMS out when crew is approaching customer's location",
+          "selector": "#taskSection",
+          "position": "top-right",
+          "style": {
+            "backgroundColor": "#008BF8",
+            "color": "#fff",
+            "mainColor": "#00d494",
+            "beacon": {
+              "inner": "#c4ff9e",
+              "outer": "#c4ff9e"
+            },
+            "button": {
+              "padding": "10px 20px",
+              "borderRadius": "50px"
+            }
+          }
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "live-track",
+    "delay": 4000,
+    "muteSound": true,
+    "estimate": "1 min",
+    "topbar": {
+      "message": "UBER-ize the customer experience for Motivated Field Crews",
+      "submessage": "Connect customers and crew"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 120,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "",
+        "customer_city": "Seattle",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -122.408741,
+          "lat": 47.669066
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "STARTED",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+        "extra_fields": {
+          "task_color": "#00d494"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "WA",
+        "customer_name": "John Snow",
+        "customer_phone": "",
+        "start_datetime": "2017-08-15T16:00:21"
+      },
+
+      "status": {
+        "latestStatus": "STARTED",
+        "statusList": [{
+          "extra_fields": {
+            "visible_to_customer": true,
+            "files": [{
+              "file_id": 25478965874586,
+              "file_path": "/images/demo/moving/status_file.jpg"
+            }],
+            "notes": "Almost done with the move. The new place is all setup."
+          },
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "Adam Smith",
+          "time": "2017-08-15T17:30",
+          "time_original_iso_str": "2017-08-15T17:30",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "Adam Smith",
+            "time": "2017-08-15T16:00",
+            "time_original_iso_str": "2017-08-15T16:30",
+            "type": "STARTED",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "Adam Smith",
+            "time": "2017-08-15T16:00",
+            "time_original_iso_str": "2017-08-15T16:00",
+            "type": "ENROUTE",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "{{company_name}}",
+            "time": "2017-08-11T22:00",
+            "time_original_iso_str": "2017-08-11T22:00",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }]
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "Loves football - Seahawks Fan",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "time": "{{time}}",
+          "lat": 47.668080,
+          "lng": -122.408972
+        }
+      },
+        {
+          "color": "#000000",
+          "details": "Our top mover with 10 years of experience",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Adam Smith",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+          "lastreading": {
+            "time": "{{time}}",
+            "lat": 47.668080,
+            "lng": -122.408972
+          }
+        }
+      ],
+      "steps": [
+        {
+          "title": "Team member can share notes and pictures on the go with Office Managers, Customers or both",
+          "selector": "#statusJournal",
+          "position": "top",
+          "style": {
+            "backgroundColor": "#008BF8",
+            "color": "#fff",
+            "mainColor": "#00d494",
+            "beacon": {
+              "inner": "#c4ff9e",
+              "outer": "#c4ff9e"
+            },
+            "button": {
+              "padding": "10px 20px",
+              "borderRadius": "50px"
+            }
+          }
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "image",
+    "delay": 6000,
+    "estimate": "",
+    "topbar": {
+      "message": "Arrivy prompts instantly for Review at Move Completion",
+      "submessage": "Instant Review on Job Completion"
+    },
+    "data": {
+      "image_url": "/images/demo/moving/slide3.png"
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "image",
+    "delay": 6000,
+    "estimate": "",
+    "topbar": {
+      "message": "Customers with positive rating are presented with your social links",
+      "submessage": "Arrivy helps you get Better Reviews"
+    },
+    "data": {
+      "image_url": "/images/demo/moving/slide4.png"
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "image",
+    "delay": 6000,
+    "estimate": "",
+    "topbar": {
+      "message": "See all your team on a map anytime and their progress",
+      "submessage": "Live Crew Tracking"
+    },
+    "data": {
+      "image_url": "/images/demo/moving/slide5.png"
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  },
+  {
+    "type": "live-track",
+    "dark_overlay": true,
+    "topbar": {
+      "message": "Thanks {{company_name}} for taking a look",
+      "button1": "Book Live Demo",
+      "button1_link": "/book-demo",
+      "button2": "Sign Up Now",
+      "button2_link": "/signup"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 120,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "Company, Inc.",
+        "customer_city": "Seattle",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -122.408741,
+          "lat": 47.669066
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "COMPLETE",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "4000 W Sheridan St, Seattle, WA 98199",
+        "extra_fields": {
+          "task_color": "#00d494"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "WA",
+        "customer_name": "John Snow",
+        "customer_phone": "",
+        "start_datetime": "2017-08-15T16:00:21"
+      },
+
+      "status": {
+        "latestStatus": "COMPLETE",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "Adam Smith",
+          "time": "2017-08-15T18:00",
+          "time_original_iso_str": "2017-08-15T17:45",
+          "type": "COMPLETE",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "files": [{
+                "file_id": 25478965874586,
+                "file_path": "/images/demo/moving/status_file.jpg"
+              }],
+              "notes": "Almost done with the move. The new place is all setup."
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "Adam Smith",
+            "time": "2017-08-15T17:30",
+            "time_original_iso_str": "2017-08-15T17:30",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "Adam Smith",
+            "time": "2017-08-15T16:00",
+            "time_original_iso_str": "2017-08-15T16:30",
+            "type": "STARTED",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "Adam Smith",
+            "time": "2017-08-15T16:00",
+            "time_original_iso_str": "2017-08-15T16:00",
+            "type": "ENROUTE",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "notes": "Thanks for booking with us. We will keep you posted with our progress here."
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "{{company_name}}",
+            "time": "2017-08-11T22:00",
+            "time_original_iso_str": "2017-08-11T22:00",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }]
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "Loves football - Seahawks Fan",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+        "lastreading": {
+          "time": "{{time}}",
+          "lat": 47.668080,
+          "lng": -122.408972
+        }
+      },
+        {
+          "color": "#000000",
+          "details": "Our top mover with 10 years of experience",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Adam Smith",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA",
+          "lastreading": {
+            "time": "{{time}}",
+            "lat": 47.668080,
+            "lng": -122.408972
+          }
+        }
+      ],
+      "rating": [{
+        "customer_state": "WA",
+        "customer_last_name": "Snow",
+        "rating": 5,
+        "text": "Adam & crew were phenomenal - very professional, friendly and careful. Arrived at scheduled time (impressive!) and he and his team were fast but also cautious with my items. {{company_name}} made the stressful process of moving much more relaxing. I highly recommend them.",
+        "customer_city": "Seattle",
+        "time_original_iso_str": "2017-09-18T18:36:11-07:00",
+        "time": "2017-08-15T18:10",
+        "customer_first_name": "John",
+        "customer_country": "",
+        "url_safe_id": "ahRzfnRyYWNraW5nLWFwaS1tdWhpb3I5CxIEVXNlchiAgIDAuon0CwwLEgRUYXNrGICAgJCbh9UKDAsSClRhc2tSYXRpbmcYgICAkM-8jQoM",
+        "id": 5.688756963115e+15
+      }]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "601 Belmont Ave Seattle WA 98102",
+      "phone": "+1(800) 444 444",
+      "email": "customerservice@motivatedmovers.com",
+      "image_path": "/images/demo/moving/moving.png"
+    }
+  }
+]

@@ -1,0 +1,45 @@
+@import '../../../styles/colors.scss';
+
+.slimFooterContainer {
+  display: block;
+  width: 100%;
+  padding: 35px 0 15px 0;
+  background: $theme-grey;
+}
+
+.footerMenu {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  float: right;
+  li {
+    float: left;
+    padding: 0 5px 0 5px;
+    a {
+      color: $primary;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 13px;
+      &:hover {
+        color: $primary;
+      }
+    }
+    &:after {
+      content: '/';
+      margin: 0 5px 0 15px;
+      color: $primary;
+    }
+  }
+  li:last-child {
+    &:after {
+      content: '';
+      display: none;
+    }
+  }
+}
+
+.logoIconFooter {
+  display: inline-block;
+  max-width: 25px;
+  margin-top: -5px;
+}

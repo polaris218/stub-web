@@ -1,0 +1,122 @@
+@import '../../../../../../styles/colors.scss';
+.extraFieldWrapper{
+  position: relative;
+  min-height: 40px;
+  .extra-field{
+    color: $dashboard-dark;
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    width: 100%;
+    > div{
+      min-height: 40px !important;
+      padding: 0 !important;
+      background: $route-bg !important;
+      border-color: $dashboard-bg !important;
+      box-shadow: none;
+      color: $dashboard-dark;
+      font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      margin-bottom: 0;
+      outline: none;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      > div{
+        min-height: 38px !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:first-child{
+          color: $dashboard-dark !important;
+          font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+          font-size: 14px !important;
+        }
+        > div{
+          max-width: calc(100% - 2px);
+          & + input{
+            margin: 0 !important;
+          }
+        }
+      }
+      & + div{
+        max-height: 180px !important;
+      }
+    }
+    [class="react-selectize-placeholder"], [class^="react-selectize-placeholder"], [class*="react-selectize-placeholder"]{
+      line-height: 38px !important;
+    }
+    [class="react-selectize-placeholder"], [class^="react-selectize-placeholder"], [class*="react-selectize-placeholder"],
+    [class="simple-value"] span, [class^="simple-value"] span, [class*="simple-value"] span, input{
+      font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+  }
+  .remove{
+    background: $red;
+    border-radius: 50%;
+    border: 1px solid $white;
+    cursor: pointer;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    &:before, &:after{
+      content: '';
+      background-color: $white;
+      position: absolute;
+      height: 10px;
+      width: 2px;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+    }
+    &:before{
+      -webkit-transform: rotate(45deg) translate(-4px, -3px);
+      -moz-transform: rotate(45deg) translate(-4px, -3px);
+      transform: rotate(45deg) translate(-4px, -3px);
+    }
+    &:after{
+      -webkit-transform: rotate(-45deg) translate(3px, -4px);
+      -moz-transform: rotate(-45deg) translate(3px, -4px);
+      transform: rotate(-45deg) translate(3px, -4px);
+    }
+    &:hover{
+      -webkit-transform: scale(1.15);
+      -moz-transform: scale(1.15);
+      transform: scale(1.15);
+    }
+  }
+  + .btnWrapper{
+    margin-top: 10px;
+  }
+}
+.btn{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  padding: 9px 10px;
+  min-width: 140px;
+  margin: 0 0 10px;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &.btn-primary-outline{
+    background-color: white;
+    border-color: $dashboard-primary;
+    color: $dashboard-primary;
+    &:hover{
+      background-color: $dashboard-primary;
+      border-color: $dashboard-primary;
+      color: $white;
+    }
+  }
+}

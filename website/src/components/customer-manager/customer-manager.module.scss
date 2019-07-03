@@ -1,0 +1,288 @@
+@import '../../../styles/colors.scss';
+
+.customer-manager{
+  .customersTableWrapper{
+    position: relative;
+    z-index: 1;
+    &:before{
+      content: '';
+      background-color: $dashboard-dark;
+      position: absolute;
+      height: 50px;
+      top: 0;
+      left: -15px;
+      right: -15px;
+      z-index: -1;
+    }
+  }
+  [class*="table-responsive"]{
+    padding: 0 1px;
+  }
+  .customersTable{
+    color: $dashboard-dark;
+    font-size: 13px;
+    line-height: 18px;
+    thead{
+      tr{
+        background-color: $dashboard-dark;
+        border-radius: 0;
+        color: rgba($white, 0.7);
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        position: relative;
+        th{
+          border-bottom: none;
+          height: 50px;
+          padding: 5px 10px;
+          vertical-align: middle;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          text-transform: capitalize;
+          &.sortable{
+            cursor: pointer;
+            span{
+              display: inline-block;
+              vertical-align: middle;
+              margin-left: 5px;
+            }
+          }
+          &:nth-last-child(2) {
+            min-width: 170px;
+          }
+        }
+      }
+    }
+    tbody{
+      &+tbody{
+        border-top: none;
+      }
+      tr:not(.emptyRow){
+        background-color: $white;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          background-color: $route-bg;
+          border-color: $dashboard-primary;
+        }
+        td{
+          border-top: none;
+          padding: 12px 10px;
+          vertical-align: middle;
+        }
+        .action:hover{
+          text-decoration: none;
+        }
+      }
+      .emptyRow td{
+        border: none;
+        padding: 4px;
+      }
+    }
+  }
+  .messageBox {
+    background-color: $white;
+    border-radius: 5px;
+    color: $dashboard-dark;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .spinner{
+    height: 24px;
+  }
+}
+.modalPrimary {
+  width: 80%;
+  @media (max-width: 767px) {
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+  &.modalDelete{
+    @media (min-width: 768px) {
+      max-width: 600px;
+    }
+  }
+  & > div {
+    background-color: $setting-light-blue;
+    border-radius: 0;
+    border: none;
+    width: 100% !important;
+  }
+  .modalHeader {
+    background-color: $white;
+    -webkit-box-shadow: 0 3px 6px rgba($dark-black, .09);
+    -o-box-shadow: 0 3px 6px rgba($dark-black, .09);
+    box-shadow: 0 3px 6px rgba($dark-black, .09);
+    padding: 20px 15px;
+    position: relative;
+    z-index: 1;
+    .modalTitle {
+      color: $dashboard-dark;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+      text-align: left;
+    }
+    .closeIcon {
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%);
+      svg path {
+        transition: all .3s ease-in-out;
+      }
+      &:hover {
+        svg path {
+          fill: $dashboard-dark;
+        }
+      }
+    }
+  }
+  .modalBody {
+    padding: 20px 15px;
+  }
+  .box{
+    color: $dashboard-dark;
+    margin-bottom: 10px;
+    .boxTitle{
+      color: $dashboard-dark;
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 20px;
+      margin: 0 0 10px;
+      > a{
+        color: $dashboard-dark;
+      }
+      > span{
+        color: rgba($dashboard-dark, .5);
+        display: inline-block;
+        &:before{
+          content: '>';
+          margin: 0 5px;
+          display: inline-block;
+        }
+      }
+    }
+    .boxBody{
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba($task-form-box-shadow, .17);
+      font-size: 15px;
+      .boxBodyInner{
+        padding: 20px 18px 10px;
+        &:not(:last-child){
+          border-bottom: 1px solid $dashboard-bg;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        height: auto !important;
+      }
+    }
+  }
+  .btn{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    min-width: 110px;
+    min-height: 40px;
+    padding: 9px 10px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &:hover{
+      text-decoration: none;
+    }
+    &+ .btn{
+      margin-left: 20px;
+    }
+    &.btn-primary{
+      background-color: $btn-primary;
+      color: $white;
+      &:hover{
+        background-color: $btn-primary-hover;
+        color: $white;
+      }
+    }
+    &.btn-secondary{
+      background-color: $btn-sec;
+      color: $white;
+      &:hover{
+        background-color: $btn-sec-hover;
+        color: $white;
+      }
+    }
+    &.btn-light{
+      background-color: $white;
+      color: $dashboard-dark;
+      min-width: 110px;
+      &:hover{
+        background-color: $theme-middle-grey;
+        color: $dashboard-dark;
+      }
+    }
+    &.btn-lg{
+      min-width: 170px;
+    }
+  }
+}
+.new-customer {
+  background-color: $success-background !important;
+}
+.toastContainer {
+  padding: 0 !important;
+}
+.toast {
+  display: none !important;
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.toastWarningAlert {
+  background: $warning-alert-bg !important;
+  color: $warning-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $warning-alert-border !important;
+  button {
+    color: $warning-alert-color !important;
+  }
+}

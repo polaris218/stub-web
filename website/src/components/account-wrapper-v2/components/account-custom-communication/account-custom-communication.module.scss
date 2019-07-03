@@ -1,0 +1,435 @@
+@import '../../../../../styles/colors.scss';
+@import "../../base-styling.module";
+
+.clearfix{
+  &:before, &:after{
+    display:table;
+    content:" "
+  }
+  &:after{
+    clear: both;
+  }
+}
+.pb-0{padding-bottom: 0 !important;}
+.pt-0{padding-top: 0 !important;}
+.plain_part{
+  .boxBody{
+    margin-bottom: 15px;
+  }
+  .exceptionsListBody{
+    .boxBodyInner{
+      @media screen and (min-width: 1200px) {
+        height: 650px;
+        .exceptionsListContainer,
+        .labelCaptionSmall{
+          position: absolute;
+          left: 33px;
+          right: 33px;
+        }
+        .exceptionsListContainer{
+          top: 40px;
+          bottom: 60px;
+          height: auto;
+        }
+        .labelCaptionSmall{
+          bottom: 15px;
+        }
+      }
+      @media screen and (min-width: 1550px) {
+        .exceptionsListContainer{
+          bottom: 40px;
+        }
+      }
+    }
+  }
+  textarea{
+    min-height: 110px;
+    max-height: 200px;
+  }
+  .custom_webhook_url {
+    textarea{
+      min-height: 40px;
+      max-height: 40px;
+      resize: none;
+    }
+  }
+  .user-plan{
+    display: block;
+    button{
+      background-color: $route-bg;
+      border-color: $dashboard-bg;
+      display: block;
+      float: none;
+      height: 40px;
+      padding: 0 35px 0 15px;
+      line-height: 1.2;
+      width: 100%;
+      text-align: left;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &:after{
+        content: '';
+        background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        pointer-events: none;
+      }
+      &:active{
+        box-shadow: none;
+      }
+      &[aria-expanded="true"], &:active:focus{
+        background-color: $route-bg !important;
+        border-color: darken($dashboard-bg, 15%) !important;
+        box-shadow: none;
+      }
+      & > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      > span{
+        display: none;
+      }
+      small{
+        font-size: 12px;
+        margin-left: 15px;
+        opacity: .5;
+      }
+    }
+    .user-plan-menu{
+      width: 100%;
+      .user-plan-item {
+        a {
+          padding: 3px 15px;
+          white-space: normal;
+          small{
+            display: block;
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+  .rangeSliderWrapper{
+    position: relative;
+    min-height: 60px;
+    .rangeSliderCustom {
+      background-color: $dashboard-grey;
+      border-color: $dashboard-grey;
+      box-shadow: none;
+      border-radius: 20px;
+      margin: 10px 0;
+      height: 4px;
+      padding: 0;
+      &>div:first-child {
+        height: 4px;
+        background-color: $dashboard-primary !important;
+        border-radius: 20px;
+        top: -1px;
+        position: absolute;
+        left: -1px;
+        box-shadow: none !important;
+      }
+      &>div:nth-child(2) {
+        background: $dashboard-primary;
+        border-color: $dashboard-primary;
+        box-shadow: 0 2px 2px rgba($dark-black, .16);
+        width: 16px;
+        height: 16px;
+        &::after {
+          display: none;
+        }
+      }
+    }
+  }
+  .exceptionsListContainer {
+    border: 2px solid $dashboard-grey;
+    height: 406px;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    display: flex;
+    flex-wrap: wrap;
+    &::-webkit-scrollbar {
+      background-color: $dashboard-bg;
+      width: 7px;
+    }
+    &::-webkit-scrollbar-track{
+      border-radius: 10px;
+      background-color: $white;
+    }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      background-color: $dashboard-bg;
+    }
+    > div{
+      flex: 0 0 50%;
+      max-width: 50%;
+      padding-left: 20px;
+      @media screen and (min-width: 1200px) and (max-width: 1500px), screen and (max-width: 767px){
+        padding-left: 10px;
+      }
+      @media screen and (min-width: 1200px) and (max-width: 1350px),
+      screen and (max-width: 550px) {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+    .checkboxSecondary{
+      color: $dashboard-dark !important;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      padding-left: 0;
+      line-height: 19px;
+      margin-bottom: 10px;
+      input{
+        opacity: 0;
+        left: 0;
+        top: 0;
+      }
+      span{
+        position: relative;
+        display: block;
+        padding-left: 25px;
+        &:before{
+          content: '';
+          background: $route-bg center top no-repeat;
+          border: 1px solid $dashboard-primary;
+          position: absolute;
+          left: 0;
+          top: 1px;
+          height: 15px;
+          width: 15px;
+          transition: all .3s linear;
+        }
+      }
+      input:checked + span:before{
+        background-color: $dashboard-primary;
+        background-image: url(/images/icons/tick.svg);
+      }
+    }
+  }
+  .settingsCheck{
+    margin-top: 10px;
+    & > div{
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 30px 10px 0;
+    }
+  }
+  .switch {
+    width: 100%;
+    div{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      min-width:  100%;
+      max-width: 100%;
+      label {
+        color: rgba($dashboard-dark, .5);
+        font-size: 12px;
+        font-weight: 400;
+      }
+      input[type="checkbox"] + label{
+        background: none !important;
+        border-radius: 20px !important;
+        width: 33px !important;
+        height: 17px !important;
+        padding: 0 !important;
+        &:before{
+          background-color: $dashboard-grey !important;
+          border-radius: 20px !important;
+          height: 11px;
+          top: 3px !important;
+          left: 0 !important;
+        }
+        &:after{
+          border: 1px solid $dashboard-grey;
+          background-color: $white !important;
+          box-shadow: 0 2px 2px rgba($dark-black, .13);
+          height: 17px !important;
+          width: 17px !important;
+          top: 0 !important;
+          left: 0 !important;
+        }
+      }
+      input[type="checkbox"]:checked + label{
+        background-color: transparent !important;
+        &:before{
+          background-color: $switch-active-blue !important;
+        }
+        &:after{
+          background-color: $dashboard-primary !important;
+          border-color: $dashboard-primary !important;
+          margin-left: 16px !important;
+        }
+      }
+    }
+    @media screen and (min-width: 768px) {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      span{
+        min-width: 234px;
+      }
+      div{
+        min-width:  calc(100% - 234px);
+        max-width: calc(100% - 234px);
+      }
+    }
+
+    &.mileageSwitch{
+      > div{
+        min-width: initial;
+        max-width: initial;
+        > div{
+          margin: 0 10px;
+          min-width: initial;
+          max-width: initial;
+        }
+        > label{
+          margin-bottom: 3px;
+        }
+        .switch{
+          min-width: initial;
+          max-width: initial;
+        }
+      }
+    }
+  }
+  .userPlanWrapper{
+    font-size: 13px;
+    .checkBox{
+      font-size: 13px;
+    }
+    .checkBox,
+    .selectBox{
+      display: inline-block;
+    }
+    .selectBox{
+      margin: 0 10px;
+      @media screen and (max-width: 767px) {
+        margin: 10px;
+      }
+    }
+  }
+  .DropDownWrapper .selectBox{
+    display: inline-block;
+    margin-left: 10px;
+    min-width: 160px;
+  }
+}
+
+.rcTimePickerInstance {
+  padding: 0 0 10px 0;
+  min-height: 44px;
+  input[type=text] {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    font-size: 1em;
+    height: 44px;
+  }
+}
+.timezonePickerInstance {
+  padding: 0 0 10px 0;
+  min-height: 44px;
+  div {
+    input[type=text] {
+      border: 0;
+      outline: none;
+      background: none;
+      height: 44px;
+    }
+  }
+}
+:global {
+  .rc-time-picker-panel {
+    margin-top: 50px !important;
+    .rc-time-picker-panel-select {
+      overflow-x: hidden;
+    }
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.labelCaptionSmall {
+  font-size: 14px;
+  text-transform: none !important;
+  color: $theme-lighter-grey;
+  a {
+    color: $theme-lighter-grey;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.default-entity-info {
+  width: 20px;
+  margin-top:31px;
+  color: #666666;
+}
+.apps-buttons {
+  text-align: center;
+  margin: 20px;
+  a {
+    margin: 8px;
+    img {
+      width: 200px;
+    }
+  }
+}
+

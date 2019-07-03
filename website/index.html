@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="/">
+
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  <title>Arrivy Comonents</title>
+  <link href="/static/dist/component_libs/style.css" rel="stylesheet" />
+  <script src="/static/dist/component_libs/arrivy_components.js" type="text/javascript"></script>
+  <script>
+    var company_name = 'Zeshan Bajwa';
+    var task_url = 'ahRzfnRyYWNraW5nLWFwaS1tdWhpb3IiCxIEVXNlchiAgICsu8K3CwwLEgRUYXNrGICAgKCEy4cJDA'
+    function initialise(){
+      arrivy_components.liveTrackRating(document.getElementById("rating"), company_name, task_url);
+      arrivy_components.liveTrackProfile(document.getElementById("profile"), company_name, task_url);
+      arrivy_components.liveTrackEstimate(document.getElementById("estimate"), company_name, task_url);
+      arrivy_components.liveTrackReviews(document.getElementById("reviews"), company_name, task_url);
+      arrivy_components.liveTrackConfirmation(document.getElementById("confirmation"), company_name, task_url);
+      arrivy_components.liveTrackCrew(document.getElementById("crew"), company_name, task_url);
+      arrivy_components.liveTrackTaskSchedule(document.getElementById("task_schedule"), company_name, task_url);
+      arrivy_components.liveTrackStatusJournal(document.getElementById("status_journal"), company_name, task_url);
+      arrivy_components.liveTrackLocationMap(document.getElementById("location_map"), company_name, task_url);
+    }
+  </script>
+</head>
+
+<body onload="initialise()">
+  <div id="rating"></div>
+  <div id="profile"></div>
+  <div id="estimate"></div>
+  <div id="reviews"></div>
+  <div id="confirmation"></div>
+  <div id="crew"></div>
+  <div id="task_schedule"></div>
+  <div id="status_journal"></div>
+  <div id="location_map"></div>
+</body>
+</html>

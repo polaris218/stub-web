@@ -1,0 +1,50 @@
+@import "../../../styles/colors.scss";
+form{
+  margin: 20px 0 10px;
+}
+.btnWrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  width: 100%;
+  max-width: 170px;
+  min-height: 40px;
+  margin: 5px;
+  padding: 9px 10px;
+  vertical-align: middle;
+  text-decoration: none!important;
+  transition: all .3s ease-in-out;
+  &, &:focus{
+    -webkit-box-shadow: 0 3px 6px 2px $shadow;
+    -moz-box-shadow: 0 3px 6px 2px $shadow;
+    box-shadow: 0 3px 6px 2px $shadow;
+    outline: none;
+  }
+  &.btn-secondary{
+    background-color: $btn-sec;
+    color: $white;
+    &:hover, &:active {
+      background-color: $btn-sec-hover;
+      color: $white;
+      border: none;
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    color: $dashboard-dark;
+    &:hover{
+      background-color: $theme-middle-grey;
+      color: $dashboard-dark;
+    }
+  }
+}

@@ -1,0 +1,431 @@
+@import '../../../styles/colors.scss';
+.authContainer {
+  background: $bg-secondary;
+  font-family: "FuturaStdBook", sans-serif;
+  min-height: calc(100vh - 151px);
+  position: relative;
+  padding: 36px 15px;
+  .authContent {
+    .authInner {
+      background-color: $white;
+      border: 1px solid #C4DFF7;
+      border-radius: 5px;
+      box-shadow: 0 6px 35px rgba($primary, 0.1);
+      color: $theme-darker-grey;
+      margin: 0 auto 33px;
+      max-width: 410px;
+      padding: 24px;
+      width: 100%;
+    }
+  }
+  form {
+    margin: 0;
+  }
+  .title {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 36px;
+    text-align: center;
+    h1 {
+      color: $theme-darker-grey;
+      font: 900 24px/26px "FuturaStdHeavy", sans-serif;
+      margin: 0;
+    }
+    p {
+      margin: 0;
+      span {
+        color: $primary;
+      }
+    }
+  }
+  .inviteSignup .title {
+    margin-bottom: 81px;
+  }
+  .profileImage {
+    background-color: $white;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    padding: 4px;
+    margin: -70px auto 23px;
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  [class="form-group"] {
+    margin-bottom: 18px;
+  }
+  [class="control-label"] {
+    display: block;
+    font-size: 13px;
+    line-height: 16px;
+    font-weight: 400;
+  }
+  [class="form-control"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $white;
+    border: 1px solid rgba($login-grey, .18);
+    border-radius: 4px;
+    box-shadow: none !important;
+    color: $theme-darker-grey;
+    display: block;
+    font: 400 13px/20px "FuturaStdBook", -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 45px;
+    margin-bottom: 0;
+    padding: 10px 15px;
+    width: 100%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &::-moz-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &:-ms-input-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &:-moz-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &:focus {
+      box-shadow: none !important;
+      border-color: $primary-green;
+    }
+    &:disabled {
+      background-color: $theme-grey;
+    }
+  }
+  .input-phone {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $white;
+    border: 1px solid rgba($login-grey, .18);
+    border-radius: 4px;
+    box-shadow: none;
+    color: $theme-darker-grey;
+    font: 400 13px/20px "FuturaStdBook", -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 45px;
+    margin-bottom: 0;
+    padding-left: 15px;
+    width: 100%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &::-moz-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &:-ms-input-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &:-moz-placeholder {
+      color: rgba($theme-darker-grey, .5);
+      font-style: oblique;
+    }
+    &:focus {
+      box-shadow: none !important;
+      border-color: $primary-green;
+    }
+    > div {
+      margin-right: 20px !important;
+      height: 40px;
+      [class^="rrui__input"], [class*="rrui__input"] {
+        height: 100%;
+      }
+    }
+    button {
+      border-bottom: none;
+      > div > div:last-child {
+        background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+        border: none !important;
+        width: 10px;
+        height: 10px;
+        margin-top: 0;
+        margin-left: 10px;
+      }
+    }
+    .rrui__select__arrow {
+      display: none;
+    }
+    .react-phone-number-input__icon {
+      width: 25px;
+      height: 16px;
+      border: none;
+    }
+    input {
+      background: none;
+      border-bottom: none;
+      color: $theme-darker-grey;
+      font: 400 13px/20px "FuturaStdBook", -apple-system, BlinkMacSystemFont, sans-serif;
+      height: 45px !important;
+      padding-right: 10px;
+      max-width: calc(100% - 60px);
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &::-webkit-input-placeholder {
+        color: rgba($theme-darker-grey, .5);
+        font-style: oblique;
+      }
+      &::-moz-placeholder {
+        color: rgba($theme-darker-grey, .5);
+        font-style: oblique;
+      }
+      &:-ms-input-placeholder {
+        color: rgba($theme-darker-grey, .5);
+        font-style: oblique;
+      }
+      &:-moz-placeholder {
+        color: rgba($theme-darker-grey, .5);
+        font-style: oblique;
+      }
+      &:focus {
+        box-shadow: none;
+        border-color: darken($dashboard-bg, 15%);
+      }
+    }
+    ul {
+      width: 100% !important;
+      left: 0 !important;
+    }
+  }
+  .checkbox{
+    margin-bottom: 15px;
+    label{
+      position: relative;
+      padding-left: 0;
+      min-height: inherit;
+      input{
+        position: absolute;
+        left: 0;
+        opacity: 0;
+      }
+      span {
+        display: block;
+        padding-left: 22px;
+        &:before{
+          content: '';
+          background: $login-checkbox center center / 8px no-repeat;
+          border-radius: 2px;
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 2px;
+          height: 11px;
+          width: 11px;
+          transition: background .3s ease-in-out;
+        }
+      }
+      input:checked + span:before{
+        background-color: $primary;
+        background-image: url('/images/task-form/tick.svg');
+      }
+    }
+  }
+  .textarea {
+    color: $login-grey;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 17px;
+    p {
+      max-width: 330px;
+      margin-bottom: 15px;
+      .terms_link {
+        color: $theme-darker-grey;
+        font-weight: 600;
+      }
+    }
+    .checkbox + p{
+      margin-left: 22px;
+    }
+  }
+  .btn {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: block;
+    font: 900 16px/1.4 "FuturaStdHeavy", sans-serif;
+    outline: none;
+    min-height: 45px;
+    padding: 9px 10px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: none;
+    }
+    &:disabled{
+      cursor: not-allowed;
+    }
+    &.btn-secondary {
+      background-color: $btn-sec;
+      color: $white;
+      width: 100%;
+      &:hover {
+        background-color: $btn-sec-hover;
+        color: $white;
+      }
+    }
+    &.btn-light {
+      background-color: $white;
+      color: $dashboard-dark;
+      min-width: 110px;
+      &:hover {
+        background-color: $theme-middle-grey;
+        color: $dashboard-dark;
+      }
+    }
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    max-width: 410px;
+    margin: 0 auto;
+    a {
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+  }
+}
+.modalNotification{
+  font: 400 16px/18px "FuturaStdBook", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  > div {
+    width: 100% !important;
+    max-width: 600px;
+    height: calc(100% - 20px);
+    @media only screen and (min-width: 768px) {
+      height: calc(100% - 60px);
+    }
+    align-items: center;
+    > div {
+      width: 100% !important;
+    }
+  }
+  .closeIcon{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    svg path{
+      transition: all .3s ease-in-out;
+    }
+    &:hover {
+      svg path{
+        fill: $dashboard-dark;
+      }
+    }
+  }
+  .modalBody{
+    padding: 25px;
+    h3{
+      margin:  0 0 20px;
+    }
+  }
+  .btn {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: inline-block;
+    font: 900 16px/1.4 "FuturaStdHeavy", sans-serif;
+    outline: none;
+    min-height: 45px;
+    padding: 9px 10px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+    &:hover {
+      text-decoration: none;
+    }
+    &.btn-secondary {
+      background-color: $btn-sec;
+      color: $white;
+      min-width: 130px;
+      &:hover {
+        background-color: $btn-sec-hover;
+        color: $white;
+      }
+    }
+    &.btn-light {
+      background-color: $white;
+      color: $dashboard-dark;
+      min-width: 110px;
+      &:hover {
+        background-color: $theme-middle-grey;
+        color: $dashboard-dark;
+      }
+    }
+  }
+}
+.auth-footer {
+  background: $auth-footer;
+  padding: 10px 0;
+  height: 82px;
+  .first-row {
+    text-align: center;
+    p {
+      display: inline-block;
+      a {
+        width: 27px;
+        height: 27px;
+        display: inline-block;
+        margin-right: 8px;
+        &.twitter {
+          background: url("/images/lending/twitter.png") center center no-repeat;
+        }
+        &.facebook {
+          background: url("/images/lending/facebook.png") center center no-repeat;
+        }
+        &.linkedin {
+          background: url("/images/lending/linkedin.png") center center no-repeat;
+        }
+      }
+      &.mail {
+        background: url("/images/lending/mail.png") left center no-repeat;
+        padding-left: 25px;
+        display: inline-block;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-right: 25px;
+        position: relative;
+        top: -8px;
+      }
+    }
+  }
+  .copyr {
+    color: $theme-lighter-grey;
+    text-align: center;
+    margin: 0;
+  }
+}

@@ -1,0 +1,19 @@
+.notification{
+  background-color: #f6eea2;
+  border: 1px solid #ded791;
+  -webkit-box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 8px 0px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+  z-index: 999;
+  p{
+    margin-bottom: 0;
+  }
+}

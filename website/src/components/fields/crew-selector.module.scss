@@ -1,0 +1,107 @@
+@import '../../../styles/colors.scss';
+
+.option {
+  display: flex;
+	padding: 12px 10px !important;
+}
+
+.option-name {
+  font-size: 18px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: 1px #eee solid;
+}
+
+.option-info {
+  padding-left: 12px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.option-status {
+  color: $theme-red;
+  font-size: 14px;
+  &::before {
+    content: ' \25A0 ';
+  }
+  &.available {
+    &::before {
+      content: ' \2022 ';
+    }
+    color: $theme-green;
+  }
+}
+
+.option-name-row {
+  display: flex;
+}
+
+.option-dates {
+  text-align: right;
+  font-size: 12px;
+  color: rgba(0, 0, 0, .7);
+  font-style: italic;
+  > div {
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+.option-dates-task {
+  display: inline-block;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:global .react-selectize.dropdown-menu {
+	max-height: 300px;
+}
+
+.request-failed {
+  margin-top: 4px;
+  font-style: italic;
+}
+
+:global .tooltip {
+  z-index: 9999 !important;
+}
+
+.select-option {
+  display: inline;
+  padding-left: 6px;
+}
+
+.crew-color {
+  height: 14px;
+  width: 14px;
+  display: inline-block;
+  margin-right: 6px;
+  border-radius: 4px;
+}
+
+
+
+.crew-form{
+  position: relative;
+  left: -15px;
+  >div{
+    width: auto!important;
+    >div{
+      &:nth-child(1){
+        background-color: transparent !important;
+        border-color: transparent !important;
+      }
+    }
+  }
+}
+

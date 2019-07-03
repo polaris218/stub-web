@@ -1,0 +1,39 @@
+@import '../../../../../styles/colors.scss';
+
+.heightSetting {
+  table {
+    position: relative;
+    display: block;
+    font-size: 13px;
+    thead, tbody, tfoot {
+      display: block;
+      width: 100%;
+    }
+    tbody {
+      max-height: 140px;
+      overflow-y: auto;
+      will-change: transform;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform : translate3d(0, 0, 0);
+    }
+    tr {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      td, th {
+        border-top-width: 2px;
+        flex: 0 0 20%;
+        max-width: 20%;
+      }
+    }
+    thead>tr>th{
+      border-bottom: none;
+    }
+    tfoot {
+      tr *:first-child {
+        flex: 0 0 60%;
+        max-width: 60%;
+      }
+    }
+  }
+}

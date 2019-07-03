@@ -1,0 +1,315 @@
+[
+  {
+    "title" : "Building Blocks",
+    "tooltip" : "Building Blocks for Arrivy Integration",
+    "id" : "building_blocks",
+    "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis.",
+    "content" : [
+      {
+        "title" : "Getting Started",
+        "id": "getting_started_1",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/bblock-1-getting-started.md"
+      },
+      {
+        "title" : "High-Level Concepts",
+        "id": "getting_started_2",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/bblock-2-high-level-concepts.md"
+      },
+      {
+        "title" : "Authentication",
+        "id": "authentication_scheme_1",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/bblock-3-authentication.md"
+      }
+    ]
+  },
+  {
+    "title" : "Express API",
+    "tooltip" : "Arrivy express API enables rapid integration with Arrivy System",
+    "id" : "express_api",
+    "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis.",
+    "content" : [
+      {
+        "title" : "",
+        "type" : "PARAGRAPH",
+        "id" : "express_api_intro",
+        "visible_in_sidebar" : false,
+        "content" : "Let's look at the basic set of APIs that you can use to light up Arrivy features for your business and your customers."
+      },
+      {
+        "title" : "Tasks",
+        "id": "express-api-1-intro",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/express-api-1-intro.md"
+      },
+      {
+        "title" : "Open API Specs",
+        "type" : "SWAGGER",
+        "id" : "swagger_open_api_2",
+        "visible_in_sidebar" : false,
+        "content" : {
+          "json": {
+            "path":"/docs/express-api-2-tasks-with-json-input.json",
+            "id": "express-api-2-tasks-json"
+          },
+          "formData": {
+            "path":"/docs/express-api-2-tasks-with-form-data-input.json",
+            "id": "express-api-2-tasks-form-data"
+          }
+        }
+      },
+      {
+        "title" : "Task Status",
+        "id": "express-api-3-task-status",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/express-api-3-task-status.md"
+      },
+      {
+        "title" : "Open API Specs",
+        "type" : "SWAGGER",
+        "id" : "swagger_open_api_4",
+        "visible_in_sidebar" : false,
+        "content" : {
+          "json": {
+            "path":"/docs/express-api-4-task-status-with-json-input.json",
+            "id": "express-api-4-tasks-json"
+          },
+          "formData": {
+            "path":"/docs/express-api-4-task-status-with-form-data-input.json",
+            "id": "express-api-4-tasks-form-data"
+          }
+        }
+      },
+      {
+        "title" : "Entities",
+        "id": "express-api-5-entities",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/express-api-5-entities.md"
+      },
+      {
+        "title" : "Open API Specs",
+        "type" : "SWAGGER",
+        "id" : "swagger_open_api_6",
+        "visible_in_sidebar" : false,
+        "content" : {
+          "json": {
+            "path":"/docs/express-api-6-entities-with-json-input.json",
+            "id": "express-api-6-entities-json"
+          },
+          "formData": {
+            "path":"/docs/express-api-6-entities-with-form-data-input.json",
+            "id": "express-api-6-entities-form-data"
+          }
+        }
+      },
+      {
+        "title" : "Location Reports",
+        "id": "express-api-7-location-reports",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/express-api-7-location-reports.md"
+      },
+      {
+        "title" : "Open API Specs",
+        "type" : "SWAGGER",
+        "id" : "swagger_open_api_8",
+        "visible_in_sidebar" : false,
+        "content" : {
+          "json": {
+            "path":"/docs/express-api-8-location-reports-with-json-input.json",
+            "id": "express-api-8-location-reports-json"
+          },
+          "formData": {
+            "path":"/docs/express-api-8-location-reports-with-json-input.json",
+            "id": "express-api-8-location-reports-form-data"
+          }
+        }
+      },
+      {
+        "title" : "Complete Reference",
+        "type" : "MARKDOWN",
+        "id" : "express_api_end",
+        "visible_in_sidebar" : true,
+        "content" : "/docs/express-api-end.md"
+      }
+    ]
+  },
+  {
+    "title" : "Webhook",
+    "tooltip" : "Webhook for notifications",
+    "id" : "webhook_comp",
+    "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis.",
+    "content" : [
+      {
+        "title" : "Webhook Integration",
+        "id": "webhook_1",
+        "visible_in_sidebar" : true,
+        "type" : "MARKDOWN",
+        "content" : "/docs/custom-webhook.md"
+      }
+    ]
+  },
+  {
+    "title" : "Customer Experience",
+    "tooltip" : "Arrivy enables modern customer experience",
+    "id" : "cusomer_experience",
+    "text" : "",
+    "content" : [
+      {
+        "title" : "",
+        "type" : "PARAGRAPH",
+        "id" : "customer_experience_1",
+        "visible_in_sidebar" : false,
+        "content" : "There are two options for enabling the real-time service trackers and providing a more modern and transparent customer experience. The Hosted Experience is super simple to integrate and requires zero-effort for the integration system. We also provide a more elaborate widgets experience which is simple to integrate too."
+      },{
+        "title" : "Hosted Experience",
+        "type" : "MARKDOWN",
+        "id" : "customer_experience_2",
+        "visible_in_sidebar" : true,
+        "content" : "/docs/customer-experience-2.md"
+      },
+      {
+        "title": "Create New Task",
+        "type" : "LIVECODEEXEC",
+        "id" : "customer_experience_3",
+        "visible_in_sidebar" : false,
+        "languages" : ["python"],
+        "content" : {
+          "python" : "/docs/example-task.code"
+        },
+        "success" : "Task created successfully",
+        "failure" : "Task could not be create. Try again!",
+        "subcomponents" : [
+          {
+            "title" : "Step 1: Enroute",
+            "type" : "enroute",
+            "description" : "Clicking on execute button below to mark enroute status and watch live track experience",
+            "content" : "/docs/example-enroute.code"
+          },
+          {
+            "title" : "Step 2: Location Reporting",
+            "type" : "location",
+            "description" : "Clicking on execute button below will start location reporting for the assigned entity and animate location of the entity of the map",
+            "content" : "/docs/example-location-reporting.code"
+          },
+          {
+            "title" : "Step 3: Start",
+            "type" : "start",
+            "description" : "Clicking on start button below will start the task and you can watch the assignee location live on the map",
+            "content" : "/docs/example-start.code"
+          },
+          {
+            "title" : "Step 4: Complete",
+            "type" : "complete",
+            "description" : "Run the code below and start the task. This will prompt user to enter feedback for the service",
+            "content": "/docs/example-complete.code"
+          }
+        ]
+      },
+      {
+        "title" : "Widgets",
+        "type" : "PARAGRAPH",
+        "id" : "customer_experience_3",
+        "visible_in_sidebar" : true,
+        "content" : "Arrivy UI Widgets let you embed parts of Arrivy UI in your own pages & views. The example below is the live track customer experience we have seen before and you can choose how and where you would like to render the map or the status journal. This is an experimental feature that is going through rapid development."
+      },
+      {
+        "title" : "Widget Example",
+        "type" : "CODEUI",
+        "id" : "customer_experience_4",
+        "visible_in_sidebar" : false,
+        "content" : "<iframe src=\"https:\/\/codesandbox.io\/embed\/31pnn5zlo6\" style=\"width:100%; height:960px; border:0; border-radius: 4px; overflow:hidden;\" sandbox=\"allow-modals allow-forms allow-popups allow-scripts allow-same-origin\"><\/iframe>"
+      }
+    ]
+  },
+  {
+    "title" : "Field Crew Experience",
+    "tooltip" : "A simple code embed",
+    "id" : "code_embed_component",
+    "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis.",
+    "content" : [
+      {
+        "title" : "Mobile Apps",
+        "type" : "MARKDOWN",
+        "id" : "field_experience_1",
+        "visible_in_sidebar" : true,
+        "content" : "/docs/field-crew-experience-1.md"
+      },
+      
+      {
+        "title" : "iOS & Android App",
+        "type" : "IMAGE",
+        "id" : "field_experience_2",
+        "visible_in_sidebar" : false,
+        "content" : "/images/lending/landing-last/arrivy-mobile-apps-1.png"
+      },
+      {
+        "title" : "API Integration",
+        "type" : "PARAGRAPH",
+        "id" : "field_experience_3",
+        "visible_in_sidebar" : true,
+        "content" : "In case you already have an app for your field teams, Arrivy provides task, task status and location related APIs to integrate progress and location reporting. Please reach out to support@arrivy.com in case you need help with integrating these APIs."
+      }
+    ]
+  },
+  {
+    "title" : "Playground",
+    "tooltip" : "Basic E2E Integration",
+    "id" : "live_code_execute",
+    "content" : [
+      {
+        "title" : "Basic E2E Integration",
+        "type" : "PARAGRAPH",
+        "id" : "e2e_1",
+        "visible_in_sidebar" : true,
+        "content" : "The following code playground shows basic E2E integration using Arriy APIs."
+      },
+      {
+        "title": "Create New Task",
+        "type" : "LIVECODEEXEC",
+        "id" : "e2e_2",
+        "visible_in_sidebar" : false,
+        "languages" : ["python"],
+        "content" : {
+          "python" : "/docs/example-task.code"
+        },
+        "success" : "Task created successfully",
+        "failure" : "Task could not be create. Try again!",
+        "subcomponents" : [
+          {
+            "title" : "Step 1: Enroute",
+            "type" : "enroute",
+            "description" : "Clicking on execute button below to mark enroute status and watch live track experience",
+            "content" : "/docs/example-enroute.code"
+          },
+          {
+            "title" : "Step 2: Location Reporting",
+            "type" : "location",
+            "description" : "Clicking on execute button below will start location reporting for the assigned entity and animate location of the entity of the map",
+            "content" : "/docs/example-location-reporting.code"
+          },
+          {
+            "title" : "Step 3: Start",
+            "type" : "start",
+            "description" : "Clicking on start button below will start the task and you can watch the assignee location live on the map",
+            "content" : "/docs/example-start.code"
+          },
+          {
+            "title" : "Step 4: Complete",
+            "type" : "complete",
+            "description" : "Run the code below and start the task. This will prompt user to enter feedback for the service",
+            "content": "/docs/example-complete.code"
+          }
+        ]
+      }
+    ]
+  }
+]

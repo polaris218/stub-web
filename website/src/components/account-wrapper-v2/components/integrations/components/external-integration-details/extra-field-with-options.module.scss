@@ -1,0 +1,111 @@
+@import '../../../../../../../styles/colors.scss';
+
+.extraFieldWrapper{
+  position: relative;
+  min-height: 40px;
+  .taskFormRow{
+    margin-left: -8px;
+    margin-right: -8px;
+    > div > [class^="col-"],
+    > div > [class*="col-"],
+
+    > [class^="col-"],
+    > [class*="col-"]{
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+  .selectBox{
+    position: relative;
+    &:after{
+      content: '';
+      background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      pointer-events: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 35px;
+      &::-ms-expand{
+        display: none;
+      }
+    }
+  }
+  .remove{
+    background: $red;
+    border-radius: 50%;
+    border: 1px solid $white;
+    cursor: pointer;
+    top: -5px;
+    right: -5px;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    z-index: 1;
+    &:before, &:after{
+      content: '';
+      background-color: $white;
+      position: absolute;
+      height: 10px;
+      width: 2px;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+    }
+    &:before{
+      -webkit-transform: rotate(45deg) translate(-4px, -3px);
+      -moz-transform: rotate(45deg) translate(-4px, -3px);
+      transform: rotate(45deg) translate(-4px, -3px);
+    }
+    &:after{
+      -webkit-transform: rotate(-45deg) translate(3px, -4px);
+      -moz-transform: rotate(-45deg) translate(3px, -4px);
+      transform: rotate(-45deg) translate(3px, -4px);
+    }
+    &:hover{
+      -webkit-transform: scale(1.15);
+      -moz-transform: scale(1.15);
+      transform: scale(1.15);
+    }
+  }
+  + .btnWrapper{
+    margin-top: 10px;
+  }
+}
+.btn{
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    padding: 9px 10px;
+    min-width: 140px;
+    margin: 0 0 10px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &.btn-primary-outline{
+      background-color: white;
+      border-color: $dashboard-primary;
+      color: $dashboard-primary;
+      &:hover{
+        background-color: $dashboard-primary;
+        border-color: $dashboard-primary;
+        color: $white;
+      }
+    }
+  }

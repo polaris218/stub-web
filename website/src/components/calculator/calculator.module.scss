@@ -1,0 +1,74 @@
+@import '../../../styles/colors.scss';
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.dot {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    margin-bottom: -2px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.highlight {
+    background-color: $cc-hightlight !important;
+    color: $theme-main;
+}
+
+.hacker {
+    @extend .dot;
+    background-color: $cc-hacker;
+}
+
+.starter {
+    @extend .dot;
+    background-color: $cc-starter;
+}
+
+.growth {
+    @extend .dot;
+    background-color: $cc-growth;
+}
+
+.pro {
+    @extend .dot;
+    background-color: $cc-pro;
+}
+
+.pro-plus {
+    @extend .dot;
+    background-color: $cc-pro-plus;
+}
+
+.enterprise {
+    @extend .dot;
+    background-color: $theme-main;
+}
+
+.features {
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.features .list-unstyled {
+    margin-bottom: 0;
+}
+
+
+.fix-height {
+    margin-top: 20px;
+    > tbody > tr {
+        height: 60px;
+    }
+}
+
+.even-stipped > tbody > tr:nth-of-type(even) {
+    background-color: $doc-container-light-bg;
+}
+
+.headers {
+  white-space: normal !important;
+}

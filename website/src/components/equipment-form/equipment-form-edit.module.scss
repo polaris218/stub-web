@@ -1,0 +1,51 @@
+@import '../../../styles/colors.scss';
+
+.edit-modal {
+  width: 80%;
+
+  .form-container {
+  	width: 90%;
+  	margin: 20px 10px 0 10px;
+  }
+}
+
+.account-image {
+  img {
+  	margin-top: 20px;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .image-buttons {
+    position: relative;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.extra-field-button {
+	margin-left: 10px;
+}
+
+.cancel-button {
+	font-size: 16px;
+	font-weight: 300;
+	border-radius: 0;
+	margin-right: 20px;
+}
+
+.formGroup {
+  padding: 0 15px 0 15px;
+}
+
+.groupTitle {
+  padding-right: 0;
+}
+
+.disableGroup {
+  background-color: $theme-grey;
+}

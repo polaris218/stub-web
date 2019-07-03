@@ -1,0 +1,442 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/mixins.scss';
+@import 'base-styling.module';
+
+.workerRequestContainer{
+  padding: 20px 15px;
+  .boxWorkerRequest{
+    margin-bottom: 20px;
+    @media only screen and (min-width: 768px) {
+      max-width: 590px;
+    }
+    .errorTitle{
+      color: $worker-request-partiallyfilled;
+    }
+    a{
+      color: $dashboard-primary;
+    }
+  }
+  .workerRequestLoader{
+    min-height: 15px;
+    margin-bottom: 5px;
+  }
+  .workerRequestWrapper{
+    color: $dashboard-dark;
+    font-size: 13px;
+    line-height: 18px;
+    .workerRequestInner{
+      overflow-x: hidden;
+    }
+    .date{
+      border-bottom: 2px solid $worker-request-date;
+      margin-bottom: 2px;
+      font-size: 15px;
+      line-height: 20px;
+      time{
+        background-color: $worker-request-date;
+        border-radius: 5px 5px 0 0;
+        display: inline-block;
+        line-height: 26px;
+        font-weight: bold;
+        min-width: 115px;
+        padding: 0 16px;
+        text-align: center;
+      }
+    }
+    .workerRow {
+      background-color: $white;
+      border: 1px solid transparent;
+      border-radius: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0 0 8px;
+      padding: 0 12px;
+      transition: all .3s ease-in-out;
+      &:hover{
+        background-color: $route-bg;
+        border-color: $dashboard-primary;
+      }
+      .column{
+        padding: 12px 10px;
+        width: 100%;
+      }
+      .status{
+        min-width: 140px;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 140px;
+      }
+      .title{
+        flex: 0 0 20%;
+        max-width: calc(20% - 123px);
+      }
+      .tasks{
+        flex: 0 0 25%;
+        max-width: calc(25% - 123px);
+      }
+      .description{
+        flex: 0 0 15%;
+        max-width: 15%;
+      }
+      .time{
+        flex: 0 0 20%;
+        max-width: calc(20% - 123px);
+      }
+      .staff{
+        min-width: 100px;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+      }
+      .filled_by{
+        flex: 0 0 20%;
+        max-width: calc(20% - 123px);
+      }
+      .actions{
+        padding-right: 0;
+        min-width: 250px;
+        flex: 0 0 auto;
+        width: auto;
+        max-width: 100%;
+        text-align: right;
+      }
+      &.header{
+        background-color: $dashboard-dark;
+        border-radius: 0;
+        border: none;
+        color: rgba($white, .7);
+        font-size: 15px;
+        line-height: 20px;
+        font-weight: bold;
+        margin: -20px -15px 20px;
+        padding: 0 27px;
+        position: relative;
+        z-index: 3;
+        .column{
+          padding: 15px 10px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .icon{
+          margin-right: 15px;
+          opacity: .7;
+        }
+      }
+      &.request{
+        .status{
+          text-transform: capitalize;
+          .statusColor{
+            border-radius: 50%;
+            display: inline-block;
+            height: 11px;
+            width: 11px;
+            margin-right: 15px;
+          }
+        }
+        .title{
+          color: $dashboard-primary;
+          strong{
+            cursor: pointer;
+            &.disabled{
+              cursor: not-allowed;
+              opacity: 0.5;
+            }
+          }
+        }
+        .status, .title{
+          font-size: 15px;
+          line-height: 20px;
+        }
+        .tasks{
+          ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            li{
+              margin-bottom: 5px;
+              &.moreLink span{
+                color: $dashboard-primary;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        .entityList{
+          padding-left: 0;
+          margin-bottom: 0;
+          .entity {
+            display: flex;
+            align-items: center;
+            &:not(:last-child) {
+              margin-bottom: -8px;
+            }
+            .entityImage {
+              font-size: 12px;
+              background-color: $dashboard-primary;
+              line-height: 30px;
+              text-align: center;
+              color: $white;
+              min-width: 30px;
+              max-width: 30px;
+              min-height: 30px;
+              max-height: 30px;
+              border-radius: 50%;
+              margin-right: 10px;
+              img {
+                border-radius: 50%;
+                min-width: 30px;
+                max-width: 30px;
+                min-height: 30px;
+                max-height: 30px;
+                display: block;
+                border-width: 2px;
+                border-style: solid;
+                object-fit: cover;
+              }
+            }
+            .entityName{
+              display: block;
+              white-space: nowrap;
+              text-overflow: ellipsis;
+              overflow: hidden;
+            }
+            .more{
+              color: $dashboard-primary;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+      @media only screen and (max-width: 1200px) {
+        .description{
+          flex: 0 0 30%;
+          max-width: 30%;
+        }
+        .title, .time, .tasks, .filled_by{
+          flex: 0 0 30%;
+          max-width: calc(30% - 123px);
+        }
+        &.header{
+          .column{
+            flex-basis: 0;
+            flex-grow: 1;
+          }
+          .icon{
+            margin-right: 10px;
+          }
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .column{
+          padding-top: 5px;
+          padding-bottom: 5px;
+          min-width: inherit;
+        }
+        .status, .time{
+          flex: 0 0 25%;
+          max-width: 25%;
+        }
+        .staff{
+          flex: 0 0 16%;
+          max-width: 16%;
+        }
+        .actions{
+          flex: 0 0 34%;
+          max-width: 34%;
+        }
+        .description, .title, .tasks, .filled_by{
+          flex: 0 0 33.3333%;
+          max-width: 33.3333%;
+        }
+        .status{order: 1;}
+        .time{order: 2;}
+        .staff{order: 3;}
+        .actions{order: 4;}
+        .title{order: 5;}
+        .description{order: 6;}
+        .filled_by{order: 7;}
+        .tasks{order: 8;}
+        .btn-outline{
+          padding-top: 6px;
+          padding-bottom: 6px;
+          min-height: 36px;
+          min-width: 90px;
+          & + .btn-outline{
+            margin-left: 10px;
+          }
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        &.header{
+          padding: 10px 5px 5px;
+          .column{
+            flex: 0 0 33.3333%;
+            max-width: 33.3333%;
+            line-height: 1;
+            padding: 0 10px;
+            margin-bottom: 5px;
+            &.actions{
+              text-align: left;
+            }
+          }
+        }
+        &.request{
+          align-items: center;
+          .column{
+            padding: 5px;
+          }
+          .status{
+            flex: 0 0 auto;
+            min-width: 127px;
+            max-width: 127px;
+            .statusColor{
+              margin-right: 10px;
+            }
+          }
+          .time{
+            flex: 0 0 100%;
+            max-width: calc(100% - 127px);
+            text-align: right;
+          }
+          .staff{
+            flex: 0 0 100%;
+            max-width: calc(100% - 170px);
+          }
+          .actions{
+            flex: 0 0 auto;
+            max-width: inherit;
+          }
+          .actions{
+            margin-left: auto;
+          }
+          .title, .filled_by,
+          .tasks, .description{
+            flex: 0 0 100%;
+            max-width: 100%;
+          }
+          .btn-outline{
+            min-width: 75px;
+          }
+        }
+      }
+      @media only screen and (max-width: 420px) {
+        &.header{
+          .column{
+            flex: 0 0 50%;
+            max-width: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+.popover{
+  background-color: $light-blue;
+  border-color: darken($light-blue, 10%);
+  box-shadow: 0 0 30px rgba($task-form-box-shadow, .5);
+  color: $dashboard-dark;
+  font: 400 13px/18px 'Nunito', sans-serif;
+  &[class*="bottom"] [class*="arrow"]{
+    border-bottom-color: darken($light-blue, 10%);
+    &:after{
+      border-bottom-color: $light-blue;
+    }
+  }
+  &[class*="top"] [class*="arrow"]{
+    border-top-color: darken($light-blue, 10%);
+    &:after{
+      border-top-color: $light-blue;
+    }
+  }
+  &[class*="left"] [class*="arrow"]{
+    border-left-color: darken($light-blue, 10%);
+    &:after{
+      border-left-color: $light-blue;
+    }
+  }
+  &[class*="right"] [class*="arrow"]{
+    border-right-color: darken($light-blue, 10%);
+    &:after{
+      border-right-color: $light-blue;
+    }
+  }
+  [class*="popover-content"]{
+    background-color: $white;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    min-height: 70px;
+    div{
+      margin-bottom: 5px;
+    }
+  }
+  @media only screen and (min-width: 420px) {
+    max-width: 375px;
+  }
+}
+.editing {
+  background-color: $worker-request-editing;
+}
+.filled {
+  background-color: $worker-request-filled;
+}
+.partially_filled {
+  background-color: $worker-request-partiallyfilled;
+}
+.cancel {
+  background-color: $worker-request-cancel;
+}
+.sent {
+  background-color: $worker-request-sent;
+}
+.not_sent {
+  background-color: $worker-request-notsent;
+}
+.unscheduled {
+  background-color: $worker-request-unscheduled;
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.fullContainer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.groupErrorText {
+  color: $bg-orange;
+}
+.taskAddress {
+  font-size: 14px;
+  color: $dashboard-dark;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  span {
+    text-decoration: underline;
+    cursor: pointer;
+    max-width: 90px;
+  }
+}

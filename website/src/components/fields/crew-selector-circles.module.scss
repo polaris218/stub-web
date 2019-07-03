@@ -1,0 +1,159 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.option {
+  display: flex;
+	padding: 12px 10px !important;
+}
+
+.option-name {
+  font-size: 18px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  span {
+    font-size: 12px;
+  }
+}
+
+.avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: 1px #eee solid;
+}
+
+.option-info {
+  padding-left: 12px;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.option-status {
+  color: $theme-red;
+  font-size: 14px;
+  &::before {
+    content: ' \25A0 ';
+  }
+  &.available {
+    &::before {
+      content: ' \2022 ';
+    }
+    color: $theme-green;
+  }
+}
+
+.option-name-row {
+  display: flex;
+}
+
+.option-dates {
+  text-align: right;
+  font-size: 12px;
+  color: rgba(0, 0, 0, .7);
+  font-style: italic;
+  > div {
+    overflow: hidden;
+    display: flex;
+  }
+}
+
+.option-dates-task {
+  display: inline-block;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+:global .react-selectize.dropdown-menu {
+	max-height: 300px;
+}
+
+.request-failed {
+  margin-top: 4px;
+  font-style: italic;
+}
+
+:global .tooltip {
+  z-index: 9999 !important;
+}
+
+.crew-form{
+  position: relative;
+  left: -15px;
+  >div{
+    width: auto!important;
+    >div{
+      &:nth-child(1){
+        background-color: transparent !important;
+        border-color: transparent !important;
+      }
+    }
+  }
+  .simple-value {
+    position: relative;
+    > span {
+      position: absolute;
+      right: 6px;
+      top: -3px;
+      background: $red;
+      color: $white;
+      font-size: 0.6em;
+      border: 2px solid $white;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      line-height: 12px;
+      text-align: center;
+      border-radius: 50%;
+      @include opacity(0);
+      @include border-radius(15px);
+      &:hover{
+        border-color: $theme-lighter-grey;
+      }
+    }
+    &:hover{
+      > span {
+        @include transition(opacity 0.5s);
+        @include opacity(1);
+      }
+      .select-option {
+        .item-title{
+          text-decoration: underline;
+        }
+      }
+    }
+    .select-option {
+      display: inline-block;
+      font-size: 0.8em;
+      width: 80px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: center;
+      margin-bottom: 5px;
+      .item-title{
+        color: $theme-dark-grey;
+      }
+      .image-icon {
+        display: block;
+        width: 60px;
+        height: 60px;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        border: 3px solid $theme-middle-grey;
+        border-color: inherit;
+        @include border-radius(35px);
+      }
+    }
+
+  }
+}
+
+.item-type {
+  font-size: 12px;
+  color: $theme-lighter-grey
+}

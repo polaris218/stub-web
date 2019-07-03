@@ -1,0 +1,97 @@
+@import '../../../../../styles/colors.scss';
+.colorPickerWrapper{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  .colorPicker{
+    width: 43px;
+  }
+}
+.fieldGroup{
+  label{
+    color: rgba($dashboard-dark, .8);
+    font-size: 13px;
+    font-weight: 400;
+  }
+  .datePicker{
+    input{
+      padding-right: 25px !important;
+    }
+    svg{
+      pointer-events: none;
+    }
+  }
+  .timeFiled{
+    min-width: 100px;
+    max-width: 100px;
+    margin-left: 10px;
+  }
+  @media only screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    .datePicker, .timeFiled{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .timeFiled{
+      margin-left: 0;
+      margin-top: 10px;
+    }
+  }
+}
+.timezoneString{
+  font-size: 12px;
+}
+.timeZoneDropdown{
+  padding-top: 0;
+  button{
+    border-color: $theme-lighter-grey;
+  }
+}
+.unscheduledText{
+  font-size: 14px;
+  .clearFieldsButton{
+    background: none !important;
+    border: none;
+    box-shadow: none !important;
+    color: $theme-blue !important;
+    margin-left: 5px;
+    padding: 0;
+    outline: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+}
+.time-window-group{
+  color: rgba($dashboard-dark, .8);
+  font-size: 13px;
+  margin-bottom: 5px;
+  .checkBox, .selectBox{
+    display: inline-flex;
+  }
+  .selectBox{
+    min-width: 146px;
+    max-width: 146px;
+    margin: 0 10px;
+  }
+}
+.arriveText{
+  font-size: 12px;
+  padding-left: 33px;
+  span{
+    color: $dashboard-primary;
+  }
+}
+
+.timezoneMargin{
+  margin-top: 18px;
+}
+
+.durationFormateDisplay{
+  font-size: 12px;
+  color: #4c4c4c;
+}
+
+.container {
+  padding: 0;
+}

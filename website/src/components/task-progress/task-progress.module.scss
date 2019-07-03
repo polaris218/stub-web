@@ -1,0 +1,51 @@
+.task-progress {
+  margin: 0;
+  padding: 0;
+}
+
+.task-progress li {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: 3px solid #307940;
+  /*background: dodgerblue;*/
+  margin: 0 10px;
+  display: inline-block;
+  color: #000;
+  position: relative;
+}
+
+.task-labels li {
+  width: 100px;
+  text-align: center;
+  margin: 5px 12px
+}
+
+
+.status::before{
+  content: '';
+  position: absolute;
+  top: 3em;
+  left: -1.7em;
+  width: 1.5em;
+  height: .2em;
+  background: #abaaa8;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .task-progress li,
+  .task-labels li {
+    width: 70px;
+  }
+  .task-progress li {
+    height: 70px;
+  }
+  .status::before {
+    top: 2em;
+  }
+}
+
+.status:first-child::before {
+  display: none;
+}

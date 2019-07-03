@@ -1,0 +1,410 @@
+@import '../../../styles/colors.scss';
+
+.reviewsContainer {
+  padding: 80px 0 80px 30px;
+  @media screen and (max-width: 1024px) {
+    padding: 20px 0 20px 20px;
+  }
+  @media screen and (max-width: 441px) {
+    padding: 80px 0 80px 0;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 3em;
+    color: $primary;
+    padding-bottom: 15px;
+    @media screen and (max-width: 1024px) {
+      font-size: 3em;
+    }
+    @media screen and (max-width: 441px) {
+      font-size: 2.3em;
+    }
+  }
+  .reviewLink {
+    text-decoration: none;
+  }
+  .videoClick {
+    display: inline-block;
+    position: relative;
+    &::before {
+      content: '\25b8';
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background: rgba(256,256,256,0.8);
+      position: absolute;
+      font-size: 8em;
+      text-align: center;
+      line-height: 0.8em;
+      color: $theme-light-green;
+      border: 8px solid rgba(256,256,256,0);
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      border-radius: 50%;
+      -webkit-transition: all 0.2s ease-in-out;
+      -moz-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      top: calc(50% - 50px);
+      cursor: pointer;
+    }
+    &:hover {
+      &::before {
+        border-color: rgba(256,256,256,1);
+        font-size: 8em;
+        line-height: 0.8em;
+      }
+    }
+  }
+  .reviewContainer {
+    background: $theme-light-green;
+    border: 1px transparent;
+    border-top-left-radius: 250px;
+    border-bottom-left-radius: 250px;
+    height: 400px;
+    margin-top: 75px;
+    background-image: url("/images/lending/moving/review-bg.png");
+    background-size: cover;
+    background-position: left center;
+    padding-left: 120px;
+    padding-top: 50px;
+    margin-right: -15px;
+    @media screen and (max-width: 1400px) {
+      height: 370px;
+    }
+    @media screen and (max-width: 1024px) {
+      margin-top: 20px;
+    }
+    @media screen and (max-width: 490px) {
+      padding-left: 85px;
+      padding-top: 30px;
+    }
+    img {
+      @media screen and (max-width: 991px) {
+        max-height: 100px;
+      }
+      @media screen and (max-width: 768px) {
+        width: 80px;
+      }
+      @media screen and (max-width: 441px) {
+        width: 80px;
+      }
+    }
+    h2 {
+      color: $dark-black;
+      font-size: 2.3em;
+      padding-bottom: 0;
+      @media screen and (max-width: 1400px) {
+        font-size: 2em;
+      }
+      @media screen and (max-width: 1024px) {
+        font-size: 1.8em;
+        font-weight: 700;
+      }
+      @media screen and (max-width: 441px) {
+        font-size: 1.2em;
+        font-weight: 700;
+      }
+    }
+    p {
+      color: $white;
+      font-size: 1.8em;
+      @media screen and (max-width: 1400px) {
+        font-size: 1.4em;
+      }
+      @media screen and (max-width: 1024px) {
+        font-size: 1.3em;
+        font-weight: 700;
+      }
+      @media screen and (max-width: 491px) {
+        font-size: 1.2em;
+        font-weight: normal;
+      }
+    }
+  }
+
+  img {
+    cursor: pointer;
+  }
+
+  span {
+    display: block;
+    text-align: center;
+    a {
+      color: $white;
+      padding: 8px 15px 8px 15px;
+      background: $btn-sec;
+      border: 1px transparent;
+      border-radius: 50px;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 15px;
+      &:hover {
+        background: $btn-sec-hover
+      }
+    }
+  }
+}
+
+.sharedCalendarContainer {
+  background: $light-bg;
+  p {
+    font-size: 1.5em;
+    color: $dark-black;
+    font-weight: 600;
+    @media screen and (max-width: 491px) {
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    img {
+      width: 100px;
+      float: left;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+  .sharedCalendarDescription {
+    padding: 120px 0 120px 30px;
+    @media screen and (max-width: 1024px) {
+      padding: 20px 0 20px 20px;
+    }
+    @media screen and (max-width: 441px) {
+      padding: 80px 0 80px 0;
+    }
+  }
+  .sharedCalenderPresentation {
+    margin-right: -15px;
+  }
+  h2 {
+    font-size: 3em;
+    color: $primary;
+    font-weight: 900;
+    padding-bottom: 15px;
+    @media screen and (max-width: 1024px) {
+      font-size: 3em;
+      width: 100%;
+    }
+    @media screen and (max-width: 441px) {
+      font-size: 2.3em;
+      width: 100%;
+    }
+  }
+}
+
+.uberizeBusinessContainer {
+  background: url('/images/lending/moving/uberize-bg.png') no-repeat;
+  background-position: right center;
+  background-size: cover;
+  .uberizeDescription {
+    padding: 120px 0 120px 40px;
+    @media screen and (max-width: 1024px) {
+      padding: 20px 0 20px 20px;
+    }
+  }
+  p {
+    font-size: 1.5em;
+    color: $white;
+    font-weight: 600;
+    @media screen and (max-width: 491px) {
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    img {
+      width: 100px;
+      float: left;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+  h2 {
+    font-size: 3em;
+    color: $white;
+    font-weight: 900;
+    padding-bottom: 15px;
+    @media screen and (max-width: 441px) {
+      font-size: 2.3em;
+    }
+  }
+  img {
+    width: 550px;
+    margin-top: 20px;
+    @media screen and (max-width: 1024px) {
+      width: 100%;
+      margin-top: 0;
+    }
+    @media screen and (max-width: 441px) {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+}
+
+.trackStatusContainer {
+  background: $moving-light-bg;
+  p {
+    font-size: 1.5em;
+    color: $dark-black;
+    font-weight: 600;
+    @media screen and (max-width: 491px) {
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    img {
+      width: 100px;
+      float: left;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+  .sharedCalendarDescription {
+    padding: 120px 0 120px 30px;
+    @media screen and (max-width: 1024px) {
+      padding: 20px 0 20px 20px;
+    }
+    @media screen and (max-width: 441px) {
+      padding: 80px 0 80px 0;
+    }
+  }
+  .sharedCalenderPresentation {
+    margin-right: -15px;
+  }
+  h2 {
+    font-size: 3em;
+    color: $primary;
+    font-weight: 900;
+    padding-bottom: 15px;
+    @media screen and (max-width: 1024px) {
+      font-size: 3em;
+      width: 100%;
+    }
+    @media screen and (max-width: 441px) {
+      font-size: 2.3em;
+      width: 100%;
+    }
+  }
+}
+
+.reviewsPresentationContainer {
+  background: $white;
+  p {
+    font-size: 1.5em;
+    color: $dark-black;
+    font-weight: 600;
+    @media screen and (max-width: 491px) {
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    img {
+      width: 100px;
+      float: left;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+  .sharedCalendarDescription {
+    padding: 120px 0 120px 30px;
+    @media screen and (max-width: 1024px) {
+      padding: 20px 0 20px 20px;
+    }
+    @media screen and (max-width: 441px) {
+      padding: 80px 0 80px 0;
+    }
+  }
+  .sharedCalenderPresentation {
+    margin-right: -15px;
+  }
+  h2 {
+    font-size: 3em;
+    color: $primary;
+    font-weight: 900;
+    padding-bottom: 15px;
+    @media screen and (max-width: 1024px) {
+      font-size: 3em;
+      width: 100%;
+    }
+    @media screen and (max-width: 441px) {
+      font-size: 2.3em;
+      width: 100%;
+    }
+  }
+  img {
+    @media screen and (max-width: 441px) {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.whitePaperPresentationContainer {
+  background: $primary;
+  p {
+    font-size: 1.5em;
+    color: $white;
+    font-weight: 600;
+    @media screen and (max-width: 491px) {
+      font-size: 1.2em;
+      font-weight: normal;
+    }
+    img {
+      width: 100px;
+      float: left;
+      display: inline-block;
+      margin-right: 30px;
+    }
+  }
+  .sharedCalendarDescription {
+    padding: 120px 0 120px 30px;
+    @media screen and (max-width: 1024px) {
+      padding: 20px 0 20px 20px;
+    }
+    @media screen and (max-width: 491px) {
+      padding: 80px 0 40px 0;
+    }
+  }
+  .sharedCalenderPresentation {
+    padding: 30px 0 0 0;
+    img {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    @media screen and (max-width: 1024px) {
+      padding: 0px 0 30px 0;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 0px 0 80px 0;
+    }
+    @media screen and (max-width: 491px) {
+      padding: 10px 0 50px 0;
+    }
+    span {
+      display: block;
+      text-align: center;
+      a {
+        color: $white;
+        padding: 10px 25px 10px 25px;
+        background: $btn-sec;
+        border: 1px transparent;
+        border-radius: 50px;
+        font-size: 18px;
+        display: inline-block;
+        margin-top: -25px;
+        z-index: 99;
+        text-transform: uppercase;
+        &:hover {
+          background: $btn-sec-hover;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  h2 {
+    font-size: 3em;
+    color: $white;
+    font-weight: 900;
+    padding-bottom: 15px;
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      font-size: 2.3em;
+    }
+  }
+}

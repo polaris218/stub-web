@@ -1,0 +1,126 @@
+@import '../../../../../styles/colors.scss';
+@import "../../base-styling.module";
+
+.modalContainer {
+  padding: 0 !important;
+}
+
+.addDocumentModal {
+  @media (max-width: 767px) {
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+  & > div {
+    border-radius: 0;
+    background-color: $setting-light-blue;
+    width: 100% !important;
+  }
+  .documentModalHeader {
+    background-color: $white;
+    -webkit-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    -o-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    box-shadow: 0 3px 6px rgba($dark-black,.09);
+    padding: 20px 15px;
+    position: relative;
+    z-index: 1;
+    .modalTitle {
+      color: $dashboard-dark;
+      font-weight: bold;
+      line-height: 1.1;
+    }
+    .closeIcon{
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%);
+      svg path{
+        transition: all .3s ease-in-out;
+      }
+      &:hover {
+        svg path{
+          fill: $dashboard-dark;
+        }
+      }
+    }
+  }
+  .modalBody{
+    padding: 20px 15px;
+  }
+  .boxBodyTitle{
+    color: rgba($dashboard-dark, .5);
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    &:before, &:after{
+      content: '';
+      display: table;
+      clear: both;
+    }
+  }
+}
+
+.btn{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  min-height: 40px;
+  padding: 9px 10px;
+  vertical-align: middle;
+  text-decoration: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &:hover{
+    text-decoration: none;
+  }
+  &.btn-secondary{
+    background-color: $btn-sec;
+    color: $white;
+    min-width: 170px;
+    margin-left: 20px;
+    &:hover{
+      background-color: $btn-sec-hover;
+      color: $white;
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    color: $dashboard-dark;
+    min-width: 110px;
+    &:hover{
+      background-color: $theme-middle-grey;
+      color: $dashboard-dark;
+    }
+  }
+}
+
+.documentWraper {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 120px;
+  cursor: pointer;
+  svg {
+    font-size: 100px;
+  }
+  .documentName {
+    display: block;
+  }
+}
+
+.activeDocument {
+  border: 2px solid $primary;
+  padding: 10px;
+  svg {
+    font-size: 80px !important;
+  }
+}

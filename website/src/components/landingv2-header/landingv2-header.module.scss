@@ -1,0 +1,281 @@
+@import '../../../styles/colors.scss';
+
+.landing-header{
+    background: $bg-primary;
+    padding: 0;
+    .header-top-wrapper{
+        background-image: url('/images/lending/Path 56.svg');
+        background-position: -20% bottom;
+        background-repeat: no-repeat;
+        @media(max-width: 1842px) {
+            background-position: -50% bottom;
+        }
+        @media(max-width: 1600px) {
+            background-color: $bg-secondary;
+            background-image: url('/images/lending/white-right.png');
+            background-position: right bottom;
+        }
+        .header-top {
+            background-position: left bottom;
+            background-repeat: no-repeat;
+            height: 760px;
+            position:relative;
+
+            &:after{
+                content: " ";
+                display: block;
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 315px;
+                height: 450px;
+                background: url('/images/lending/phone_grab.png') left center no-repeat;
+                background-size: contain;
+                @media (min-width: 1800px) {
+                    left: 52%;
+                }
+                @media (max-width: 1200px) {
+                    bottom: 0;
+                    right: 0;
+                    left: auto;
+                    width: 300px;
+                    height: 400px;
+                    z-index: 1;
+                }
+            }
+            .large-size {
+                h1 {
+                    font-size: 3.4em !important;
+                    @media(max-width: 600px) {
+                        font-size: 2.6em !important;
+                    }
+                }
+                h2 {
+                    font-size: 1.6em !important;
+                }
+                button {
+                    font-size: 1.4em !important;
+                }
+            }
+            .center-text{
+                padding-top: 180px;
+                padding-left: 20px;
+                h1{
+                    color: $primary;
+                    font-weight: bold;
+                    font-size: 2.4em;
+                }
+                h2{
+                    color: $primary;
+                    font-size: 1.5em;
+                    margin: 20px 0;
+                }
+                a{
+                    background: $btn-sec;
+                    -webkit-box-shadow: 0px 3px 6px 2px rgba(230,230,230,1);
+                    -moz-box-shadow: 0px 3px 6px 2px rgba(230,230,230,1);
+                    box-shadow: 0px 3px 6px 2px rgba(230,230,230,1);
+                    color: $white;
+                    border-radius: 30px;
+                    text-transform: uppercase;
+                    padding: 20px 40px;
+                    display: inline-block;
+                    margin-top: 20px;
+                    font-size: 1.2em;
+                    font-weight: bold;
+                    border-width: 0px;
+                    font-family: sans-serif;
+                    &:hover{
+                        background-color: $btn-sec-hover;
+                        text-decoration: none;
+                    }
+                    &.blue-btn{
+                        background-color: $btn-primary;
+                        margin-right:20px;
+                        &:hover{
+                            background-color: $btn-primary-hover;
+                        }
+                    }
+                }
+            }
+            .right-text{
+                margin-top: 180px;
+                text-align: right;
+                position: relative;
+                &:after {
+                    content: " ";
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 500px;
+                    height: 500px;
+                    background: url('/images/lending/Truck_Image.png') left center no-repeat;
+                    background-size: contain;
+                    @media (max-width: 1200px) {
+                        background: none;
+                        display: none;
+                    }
+                }
+                .button-holder {
+                    position: absolute;
+                    top: 350px;
+                    left: 140px;
+                    z-index: 2;
+                    button {
+                        background: url('/images/lending/Play_2_2.png') 20px center no-repeat transparent;
+                        color: $white;
+                        font-size: 0.8em;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        border-radius: 20px;
+                        padding: 12px 35px 12px 45px;
+                        border: 1px solid $white;
+                        font-family: sans-serif;
+                    }
+                    @media (max-width: 1200px) {
+                        top: 0;
+                        right: 0;
+                        button {
+                            font-size: 1em;
+                            color: $rh-light-text;
+                            border-radius: 40px;
+                            padding: 20px 35px 20px 45px;
+                            background: url('/images/lending/Play_2_.png') 20px center no-repeat transparent;
+                            border: 1px solid $theme-middle-grey;
+                            &:hover{
+                                background-color: $btn-transp-hover;
+                            }
+                        }
+                    }
+                    @media (max-width: 450px) {
+                        top: 0;
+                        right: 0;
+                        button {
+                            font-size: .7em;
+                            color: $rh-light-text;
+                            border-radius: 40px;
+                            padding: 10px 35px 10px 45px;
+                            background: url('/images/lending/Play_2_.png') 20px center no-repeat white;
+                            border: 1px solid $theme-middle-grey;
+                            &:hover{
+                                background-color: $btn-transp-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 1200px) {
+            background-position: 130% bottom;
+            .header-top {
+                background-position: -50% bottom;
+                .center-text{
+                    padding-top: 120px;
+                }
+                .right-text{
+                    padding-top: 160px;
+                }
+            }
+        }
+        @media (max-width: 991px) {
+            background-image: url('/images/lending/blue-right-big.png');
+            background-color: white;
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            .header-top {
+                background-position: 220% bottom;
+                &:after {
+                    width: 220px;
+                    height: 330px;
+                    right: auto;
+                }
+                .center-text{
+                    padding-top: 100px;
+                }
+                .right-text{
+                    text-align: left;
+                    margin-left: 20px;
+                    margin-top: 20px;
+                    padding-top: 0px;
+                    .button-holder{
+                        padding-left: 170px;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+        @media (max-width: 900px) {
+            .header-top {
+                background-size: contain;
+                .center-text{
+                    text-align: center;
+                }
+                .right-text{
+                    text-align: center;
+                    margin-left: 0px;
+                    .button-holder{
+                        padding-left: 0;
+                    }
+                }
+
+            }
+        }
+        @media (max-width: 668px) {
+            .header-top {
+                &:after {
+                    width: 200px;
+                    height: 240px;
+                }
+            }
+        }
+        @media (max-width: 560px) {
+            background-image: url('/images/lending/blue-right.png');
+            .header-top {
+                .center-text{
+                    padding-top: 100px;
+                    padding-right: 20px;
+                    .buttons-block{
+                        text-align: center;
+                        .blue-btn{
+                            margin-right: 0;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: 410px) {
+            .header-top {
+                &:after {
+                    display: none;
+                }
+            }
+        }
+        @media (max-width: 400px) {
+            .header-top {
+                background: none !important;
+                &:after {
+                    display: none;
+                }
+                .center-text{
+                    button{
+                        font-size: 1em;
+                    }
+                }
+                .right-text{
+                    text-align: center;
+                    h3{
+                        border-width: 0;
+                        font-size: 1.4em;
+                        margin-bottom: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header-top-area {
+  z-index: 99;
+}

@@ -1,0 +1,363 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+@import url('https://fonts.googleapis.com/css?family=Martel+Sans|Poppins');
+.elromco-page-wrap{
+  font: 18px/28px "FuturaStdBook", sans-serif;
+  color: #707070;
+  overflow: hidden;
+  .header{
+    color: #4C4C4C;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 70vh;
+    padding: 75px 0;
+    text-align: center;
+    position: relative;
+    :after{
+      content: '';
+      position: absolute;
+      left:0;
+      right: 0;
+      bottom:-55px;
+      margin: 0 auto;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 55px 58px 0 58px;
+      border-color: #ffffff transparent transparent transparent;
+    }
+    h1{
+      color: #333333;
+      font: 900 50px/69px "FuturaStdHeavy", 'Poppins', sans-serif;
+      margin-bottom: 25px;
+    }
+    .container{
+      -ms-flex-preferred-size: 0;
+      flex-basis: 0;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+      max-width: 100%;
+    }
+    @media only screen and (max-width: 1230px)  {
+      h1{
+        font-size: 40px;
+        line-height: 59px;
+      }
+    }
+    @media only screen and (max-width: 991px)  {
+      h1{
+        font-size: 36px;
+        line-height: 48px;
+      }
+    }
+    @media only screen and (max-width: 767px)  {
+      &{
+        height: auto;
+      }
+      h1{
+        font-size: 26px;
+        line-height: 38px;
+      }
+    }
+  }
+  h2{
+    color: #333333;
+    font: 500 36px/48px "FuturaStdMedium", sans-serif;
+    margin-bottom: 20px;
+  }
+  .container{
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  .button-group{
+    margin-top: 50px;
+  }
+  .button-group .btn{
+    margin: 0 10px 15px;
+  }
+  .btn{
+    border: none;
+    border-radius: 5px;
+    display: inline-block;
+    font: bold 16px/1.25 "FuturaStdBook", sans-serif;
+    letter-spacing: 1;
+    min-width: 200px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    &:hover{
+      text-decoration: none;
+    }
+    &:focus{
+      outline: none;
+      text-decoration: none;
+    }
+  }
+  .green-btn {
+    background-color: #00d494;
+    color: #fff;
+    &:hover, &:active, &:focus{
+      color: #fff;
+      background-color: #50F8C6;
+    }
+  }
+  .blue-btn {
+    background-color: #008BF8;
+    color: #fff;
+    &:hover, &:active, &:focus{
+      color: #fff;
+      background-color: #60B9FF;
+    }
+  }
+  @media only screen and (max-width: 991px)  {
+    h2{
+      font-size: 26px;
+      line-height: 38px;
+    }
+  }
+  @media only screen and (max-width: 767px)  {
+    .button-group{
+      margin-top: 30px;
+    }
+  }
+}
+.elromco-section{
+  background-color: #DFF0FF;
+  padding: 150px 0 120px;
+  color: #4C4C4C;
+  text-align: center;
+    .brand{
+      display: inline-block;
+      margin-bottom: 35px;
+    }
+  @media only screen and (min-width: 768px)  {
+    .inner{
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    p{
+      max-width: 743px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @media only screen and (max-width: 991px)  {
+    &{
+      padding: 100px 0 80px;
+    }
+  }
+}
+.contentSection{
+  padding: 100px 0 120px;
+  h2 {
+    text-align: center;
+  }
+  @media only screen and (min-width: 768px)  {
+    .row{
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -ms-flex-align: center;
+      align-items: center;
+      [class^="col-"], [class*="col-"]{
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        float: none;
+      }
+    }
+  }
+  .intro {
+    margin-bottom: 110px;
+    blockquote{
+      border-left: none;
+      color: #333333;
+      position: relative;
+      padding: 20px 0 0;
+      q{
+        display: block;
+        margin-bottom: 15px;
+        &:before{
+          content: '“';
+          color: #348AF7;
+          font-size: 105px;
+          position: absolute;
+          left: 0;
+          top: 0px;
+        }
+        &:after{
+          content: '';
+        }
+      }
+      cite{
+        display: block;
+        font-size: 15px;
+        font-style: normal;
+        text-align: right;
+      }
+    }
+    .vectorWrapper{
+      width: 100%;
+      position: relative;
+    }
+    .videoWrapper{
+      background-color: #ACD2FD;
+      width: 100%;
+      height: 370px;
+      position: relative;
+      text-align: center;
+      .playButton{
+        color: #fff;
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        text-decoration: none;
+        -webkit-transform: translate(-50%,-50%);
+        -moz-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        span{
+         display: block;
+          margin-top: 20px;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 992px)  {
+    h2{
+      max-width: 850px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 140px;
+    }
+    .intro blockquote{
+      padding-right: 137px;
+    }
+  }
+  @media only screen and (max-width: 991px)  {
+    &{
+      padding: 70px 0 50px;
+      h2{
+        margin-bottom: 30px;
+      }
+      .intro{
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
+.featuresWrapper{
+  background-color: #DFF0FF;
+  padding: 100px 15px 55px;
+  text-align: center;
+  h3{
+    color: #333333;
+    font: 700 24px/28px "FuturaStdBook", sans-serif;
+  }
+  .row + .row{
+    margin-top: 30px;
+  }
+  @media only screen and (min-width: 768px)  {
+    &{
+      padding-right: 30px;
+      padding-left: 30px;
+      text-align: initial;
+    }
+    .row {
+      margin-left: -30px;
+      margin-right: -30px;
+      [class^="col-"], [class*="col-"]{
+        padding-right: 30px;
+        padding-left: 30px;
+      }
+    }
+    .row:nth-child(odd) [class^="col-"]:first-child, .row:nth-child(odd) [class*="col-"]:first-child{
+      text-align: right;
+    }
+    .row:nth-child(even) {
+      -ms-flex-direction: row-reverse;
+      flex-direction: row-reverse;
+      [class^="col-"]:last-child, [class*="col-"]:last-child{
+        text-align: right;
+      }
+    }
+  }
+  @media only screen and (min-width: 991px)  {
+    &{
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+    .row {
+      margin-left: -50px;
+      margin-right: -50px;
+      [class^="col-"], [class*="col-"]{
+        padding-right: 50px;
+        padding-left: 50px;
+      }
+    }
+  }
+  @media only screen and (min-width: 1230px)  {
+    &{
+      padding-right: 75px;
+      padding-left: 75px;
+    }
+    .row {
+      margin-left: -75px;
+      margin-right: -75px;
+      [class^="col-"], [class*="col-"]{
+        padding-right: 75px;
+        padding-left: 75px;
+      }
+    }
+    .screenLeft{
+      display: block;
+      max-width: 647px;
+      left: -200px;
+      position: relative;
+    }
+    .screenRight{
+      display: block;
+      max-width: 647px;
+      position: relative;
+    }
+  }
+  @media only screen and (max-width: 1080px)  {
+    h3 br{
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 991px)  {
+    &{
+      padding: 70px 15px 55px;
+    }
+  }
+}
+.waiting-for-section{
+  background: url("/images/lending/elromco/bg-waiting-for-section.jpg") left center / cover no-repeat;
+  padding: 190px 0 194px;
+  text-align: center;
+  p span{
+    color: #008BF8;
+    display: block;
+  }
+  @media only screen and (min-width: 768px)  {
+    &{
+      text-align: right;
+    }
+  }
+  @media only screen and (max-width: 991px)  {
+    &{
+      padding: 90px 0;
+    }
+  }
+}

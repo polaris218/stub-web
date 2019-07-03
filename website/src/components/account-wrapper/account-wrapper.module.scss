@@ -1,0 +1,258 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.settings-wrapper {
+  position: relative;
+  .account-image-c {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008bf8', endColorstr='#00d494',GradientType=1 ); /* IE6-9 */
+    max-height: 222px;
+    .account-image {
+      .image{
+        position: relative;
+        bottom: -50px;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        @media screen and (max-width: 360px){
+          margin: 0px 90px;
+        }
+        img {
+          width: 100%;
+          height:100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .icon{
+          position: absolute;
+          cursor: pointer;
+          color: $theme-lighter-grey;
+          right:10px;
+          bottom: 10px;
+        }
+      }
+      @media (max-width: 768px) {
+        .image{
+          height: 150px;
+          width: 150px;
+          bottom: -25px;
+        }
+      }
+
+      .image-buttons {
+        position: relative;
+        color: #FFF;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 16px;
+        width: 86px;
+        left: 152px;
+        top: -30px;
+        text-align: left;
+        margin: 0 auto;
+        span{
+          padding-left: 5px;
+        }
+        @media screen and (max-width: 768px) {
+          left: 130px;
+          top: -15px;
+        }
+        @media (max-width: 465px) {
+          width: 30px;
+          left: 110px;
+          svg{
+            margin-bottom: 10px;
+          }
+          span{
+            display: none;
+          }
+        }
+        @media screen and (max-width: 360px){
+          left: 120px;
+        }
+      }
+    }
+  }
+
+
+  .settings-sidebar{
+    width: 150px;
+    position: absolute;
+    left: 0;
+    top:0;
+    background-color: #3489F7;
+    height: 100%;
+    ul{
+      list-style: none;
+      padding: 0;
+      li{
+        a {
+          width: 150px;
+          height: 150px;
+          color: #fff;
+          padding: 40px 20px;
+          text-align: center;
+          display: inline-block;
+          cursor: pointer;
+          &:hover {
+            background-color: #36AEFF;
+          }
+          .icon {
+            margin: 0 auto;
+            font-size: 1.6em;
+            display: block;
+            margin-bottom: 10px;
+          }
+        }
+        &[data-active="true"] {
+          background-color: #36AEFF;
+        }
+      }
+    }
+    @media (max-width: 465px) {
+      width: 100px;
+      ul{
+        li{
+          a {
+            width: 100px;
+            height: 100px;
+            span {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  .settings-content {
+    margin-left: 150px;
+    min-height: 1500px;
+    @media (max-width: 465px) {
+      margin-left: 100px;
+    }
+    .header{
+      color: $theme-lighter-grey;
+      font-size: 22px;
+      padding: 15px;
+      padding-left: 0;
+      font-weight: bold;
+    }
+    .invert-colors{
+      background-color: #F1F1F1;
+      padding: 40px 0 10px 0;
+      margin-top: 10px;
+      margin-bottom: 30px;
+      input{
+        background-color: #F9F9F9;
+      }
+      textarea{
+        background-color: #F9F9F9;
+      }
+    }
+    .form-group-field{
+      @media (max-width: 1372px) {
+        label {
+          font-size: 14px;
+        }
+      }
+    }
+    .account-details {
+      background-color: white;
+      color: $no-info-color;
+      padding-bottom: 40px;
+    }
+
+    .full-width {
+      width: 100% !important;
+    }
+
+    .user-plan,
+    .user-plan-menu,
+    .user-plan-item {
+      @extend .full-width;
+    }
+
+    .user-plan {
+      @extend .full-width;
+      text-align: right;
+
+      .caret {
+        vertical-align: text-top !important;
+        margin-left: 10px !important;
+        position: absolute !important;
+        top: 15px !important;
+        right: 10px !important;
+      }
+    }
+
+    .user-plan-info {
+      display: inline-block;
+
+      .user-plan-name,
+      .user-plan-calls {
+        display: block;
+        @media (max-width: 665px) {
+          white-space: normal;
+        }
+      }
+      .user-plan-name {
+        display: block;
+      }
+
+    }
+
+    .user-plan-item {
+      padding: 5px 25px;
+    }
+
+    .user-plan-toggle {
+      @extend .full-width;
+      text-align: right;
+      padding-right: 25px;
+
+      .caret {
+        vertical-align: text-top !important;
+        margin-left: 10px !important;
+        position: absolute !important;
+        top: 15px !important;
+        right: 10px !important;
+      }
+    }
+
+    .profile-link {
+      font-size: 16px;
+      color: #212121;
+      margin-right: 20px;
+    }
+  }
+}
+
+.iconImg {
+  max-width: 35px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.toast {
+  display: none !important;
+}
+
+.toastContainer {
+  padding: 0 !important;
+}
+
+.fullWidth {
+  margin-left: 0 !important;
+}

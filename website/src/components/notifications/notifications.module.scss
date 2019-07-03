@@ -1,0 +1,29 @@
+@import "../../../styles/colors.scss";
+
+.switcher {
+    margin-right: 10px;
+    display: inline-block;
+    label{
+        margin-right:20px;
+    }
+    &.email-s{
+        >div{
+            input[type="checkbox"]:checked + label{
+                background-color: $theme-light-green;
+                &:after{
+                    background-color: $theme-light-green;
+                }
+            }
+        }
+    }
+    &.sms-s{
+        >div{
+            input[type="checkbox"]:checked + label{
+                background-color: $theme-light-green;
+                &:after{
+                    background-color: $theme-light-green;
+                }
+            }
+        }
+    }
+}

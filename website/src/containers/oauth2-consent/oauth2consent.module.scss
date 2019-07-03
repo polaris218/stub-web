@@ -1,0 +1,135 @@
+@import "../../../styles/colors.scss";
+
+.page-wrap {
+  background-color: $page-bg;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 15px;
+  position: relative;
+  min-height: 100vh;
+}
+.auth-container {
+  color: $dashboard-dark;
+  font-size: 15px;
+  width: 100%;
+  max-width: 450px;
+  margin: auto 0;
+  .logo{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 30px;
+    img{
+      max-width: 200px;
+    }
+  }
+  h3{
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 15px;
+  }
+  .auth-content {
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow,.17);
+    margin-bottom: 10px;
+    min-height: 220px;
+    padding: 20px;
+    ul{
+      list-style-position: inside;
+      padding-left: 0;
+    }
+    .radioList{
+      list-style: none;
+      display: inline-flex;
+      flex-wrap: wrap;
+      margin: 0;
+      li{
+        margin: 0 15px 10px 0;
+      }
+    }
+    .radioBtn{
+      position: relative;
+      line-height: 23px;
+      margin: 0;
+      label{
+        display: inline-flex;
+        align-items: center;
+        padding-left: 0;
+        input{
+          position: absolute;
+          left: 0;
+          top: 0;
+          opacity: 0;
+          margin-left: 0;
+        }
+        img{
+          display: block;
+          margin-right: 15px;
+          min-width: 50px;
+          max-width: 50px;
+          min-height: 50px;
+          max-height: 50px;
+          object-fit: cover;
+          overflow: hidden;
+          border-radius: 50%;
+        }
+        span{
+          display: block;
+          padding-left: 33px;
+          position: relative;
+          &:before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            border-radius: 50%;
+            height: 23px;
+            width: 23px;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+          }
+          &:before{
+            background: $route-bg center center / auto 7px no-repeat;
+            border: 1px solid $dashboard-primary;
+          }
+        }
+        input:checked + span:before,
+        input:checked + img + span:before{
+          background-color: $dashboard-primary;
+          background-image: url("/images/task-form/tick.svg");
+          box-shadow: 0 4px 6px rgba($dashboard-primary, .5);
+        }
+      }
+    }
+  }
+  .copyright{
+    font-size: 14px;
+    margin-top: auto;
+    p{
+      margin-bottom: 0;
+    }
+  }
+}
+.toast {
+  display: none !important;
+}
+.toastContainer {
+  padding: 0 !important;
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

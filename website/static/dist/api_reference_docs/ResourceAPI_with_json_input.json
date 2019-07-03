@@ -1,0 +1,593 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Resource API",
+    "description" : "An resource can be a car, truck, radio set or any other equipment. Once you have created resources, you will be able to assign these resources to tasks."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/resources/new" : {
+      "post" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Adds a new resource.",
+        "description" : "Adds a new resource to the company.",
+        "operationId" : "create_resource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "description" : "A resource has the following attributes. <br /> **`name:*required`** (_string_) Name of the resource <br /> **`type:*required`** (_string_) Type of the resource. <br /> `details:` (_string_) Details of the resource. <br /> `image_id:` (_integer_) Image ID of the resource. <br /> `image_path:` (_string_) Resource's image address. <br /> `extra_fields:` (_object_) Custom fields provided as key value pair as JSON object. This is very useful as it can help store essentially any data with the resource. <br /> `group_id:` (_integer_) Group ID to which this resource is associated. <br /> `external_id:` (_string_) Typically, an id from the client system. <br /> `company_id:` (_integer_) Optional param to create entity in a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "name" : "payload",
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string",
+                "example" : "Truck 01"
+              },
+              "type" : {
+                "type" : "string",
+                "example" : "Transport Vehicle"
+              },
+              "details" : {
+                "type" : "string",
+                "example" : "New transport vehicle."
+              },
+              "image_id" : {
+                "type" : "integer",
+                "example" : 5194384987389952
+              },
+              "image_path" : {
+                "type" : "string",
+                "example" : "https://example.com/resource.png"
+              },
+              "extra_fields" : {
+                "type" : "object",
+                "properties" : {
+                  "color" : {
+                    "type" : "string",
+                    "example" : "#ff0000"
+                  }
+                }
+              },
+              "group_id" : {
+                "type" : "integer",
+                "example" : 51943824732539552
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "MISSING_VALUE"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Name is required"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/resources/{resource_id}" : {
+      "get" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Get a specific resource.",
+        "description" : "Get all fields of a specific resource.",
+        "operationId" : "get_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "resource_id",
+          "in" : "path",
+          "description" : "ID of the resource.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to get a resource of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Moving Truck"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "Truck 14"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Diesel truck used for Moving Jobs."
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 5434545464565464
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid resource_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Updates a specific resource.",
+        "description" : "Updates a specific resource.",
+        "operationId" : "update_resource",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "resource_id",
+          "in" : "path",
+          "description" : "ID of the resource.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "in" : "body",
+          "description" : "A resource has the following attributes. <br /> **`name:*required`** (_string_) Name of the resource <br /> **`type:*required`** (_string_) Type of the resource. <br /> `details:` (_string_) Details of the resource. <br /> `image_id:` (_integer_) Image ID of the resource. <br /> `image_path:` (_string_) Resource's image address. <br /> `extra_fields:` (_object_) Custom fields provided as key value pair as JSON object. This is very useful as it can help store essentially any data with the resource. <br /> `group_id:` (_integer_) Group ID to which this resource is associated. <br /> `external_id:` (_string_) Typically, an id from the client system. <br /> `company_id:` (_integer_) Optional param to create entity in a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "name" : "payload",
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "name" : {
+                "type" : "string",
+                "example" : "Truck 01"
+              },
+              "type" : {
+                "type" : "string",
+                "example" : "Transport Vehicle"
+              },
+              "details" : {
+                "type" : "string",
+                "example" : "New transport vehicle."
+              },
+              "image_id" : {
+                "type" : "integer",
+                "example" : 5194384987389952
+              },
+              "image_path" : {
+                "type" : "string",
+                "example" : "https://example.com/resource.png"
+              },
+              "extra_fields" : {
+                "type" : "object",
+                "properties" : {
+                  "color" : {
+                    "type" : "string",
+                    "example" : "#ff0000"
+                  }
+                }
+              },
+              "group_id" : {
+                "type" : "integer",
+                "example" : 51943824732539552
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Updated."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid resource_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Delete a specific resource.",
+        "description" : "Delete a specific resource.",
+        "operationId" : "delete_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "resource_id",
+          "in" : "path",
+          "description" : "ID of the resource.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete resource of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid resource_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/resources" : {
+      "get" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "List all Resource.",
+        "description" : "List all resources in the company. You can provide some filter criterias to this API as query parameters. Response is an array of resources.",
+        "operationId" : "get_all_resources",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional page number to fetch.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional resources per page.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Optional param to get resources using external_id. The resource matching this external_id will be returned.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "query",
+          "description" : "Optional param to get resources part of a specific group within the company. This is an internal arrivy group ID that should be known before-hand. Look at the complete reference on how to fetch all group_ids.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to view resources list of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Moving Truck"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "Truck 14"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Diesel truck used for Moving Jobs."
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 32453243243242333
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

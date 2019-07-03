@@ -1,0 +1,169 @@
+@import '../../../../../styles/colors.scss';
+.statusWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+  div{
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    padding: 0 5px;
+    margin-bottom: 10px;
+  }
+  .btn-status{
+    box-shadow: 0 3px 5px rgba($dark-black, .16);
+    border: none;
+    color: $dashboard-dark;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 18px;
+    min-width: 108px;
+    padding: 11px 8px;
+    position: relative;
+    outline: none !important;
+    text-transform: uppercase;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    max-width: 250px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    &:before{
+      content: '';
+      border-radius: 50%;
+      border: 5px solid;
+      border-color: inherit;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 6px;
+      margin-top: -2px;
+      -webkit-transition: border-color .3s ease-in-out;
+      -moz-transition: border-color .3s ease-in-out;
+      transition: border-color .3s ease-in-out;
+    }
+    &:not(:hover){
+      background-color: $white !important;
+    }
+    &:hover{
+      color: $white;
+      &:before{
+        border-color: $white;
+      }
+    }
+  }
+}
+.emptyText{
+  color: $dashboard-dark;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 20px 15px;
+  text-align: center;
+}
+.popover-share{
+  @media only screen and (min-width: 1200px) {
+    margin-top: 42px !important;
+  }
+  &.fullWidth{
+    @media only screen and (min-width: 768px) {
+      min-width: 538px;
+    }
+  }
+  label{
+    font-weight: 400;
+    display: block;
+  }
+  .noteBox{
+    min-height: 60px;
+    max-height: 130px;
+  }
+  .signatureCanvas {
+    background-color: $white;
+    border: 1px solid $theme-middle-grey;
+    height: 202px;
+    width: 240px;
+  }
+  .time-container{
+    .time-button, input{
+      margin-bottom: 10px;
+    }
+    .time-button{
+      border: none;
+      box-shadow: none;
+      background-color: $btn-primary;
+      color: $white;
+      margin-right: 10px;
+      padding-top: 9px;
+      padding-bottom: 9px;
+      width: 100%;
+      outline: none;
+      transition: all .3s ease-in-out;
+      &:hover{
+        background-color: $btn-primary-hover;
+        color: $white;
+      }
+    }
+  }
+  .buttons{
+    text-align: right;
+    .green-btn{
+      transition: all .3s ease-in-out;
+      &:hover, &:focus{
+        box-shadow: none;
+        outline: none;
+      }
+      &:focus{
+        background-color: $btn-sec;
+        border-color: $btn-sec;
+        color: $white;
+      }
+      &:hover{
+        background-color: $btn-sec-hover;
+        border-color: $btn-sec-hover;
+        color: $white;
+      }
+    }
+  }
+  [class="container"]{
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.linkServerActionPending {
+  cursor: no-drop;
+  pointer-events: none;
+}
+
+.statusSpinner {
+  float: right;
+  margin-top: 5px;
+  > div {
+    font-size: 15px !important;
+    font-weight: 400;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}

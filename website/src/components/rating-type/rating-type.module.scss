@@ -1,0 +1,87 @@
+@import '../../../styles/colors.scss';
+
+.singleBlock {
+  border: 1px solid $dark-black;
+  display: inline-block;
+  margin: 0 5px 10px 0;
+  min-width: 45px;
+  font-size: 23px;
+  text-align: center;
+  line-height: 45px;
+  max-height: 45px;
+  cursor: pointer;
+  color: $dark-black;
+  border-radius: 50%;
+}
+
+.selectedRating {
+  background-color: $theme-light-green;
+}
+
+.thumbsBlock {
+  display: inline-block;
+  margin: 0px 5px;
+  font-size: 45px;
+  text-align: center;
+  cursor: pointer;
+  color: $dark-black;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  @media screen and (max-width: 1200px) {
+    font-size: 30px;
+  }
+  @media screen and (max-width: 991px) {
+    font-size: 45px;
+  }
+}
+
+.thumbsSelected {
+  color: $theme-light-green;
+}
+
+.thumbsDownSelected {
+  color: $theme-red;
+}
+
+.npsBlock {
+  border: 1px solid $dark-black;
+  width: 120px;
+  height: 120px;
+  padding: 5px 0;
+  display: inline-block;
+  line-height: 12px;
+  text-align: center;
+  color: $dark-black;
+}
+
+.npsRating {
+  border: 1px solid $dark-black;
+  display: inline-block;
+  min-width: 45px;
+  font-size: 23px;
+  text-align: center;
+  line-height: 45px;
+  max-height: 45px;
+  color: $dark-black;
+  border-radius: 50%;
+  @media screen and (max-width: 441px){
+    width: 45px;
+  }
+  @media screen and (max-width: 320px){
+    width: 45px;
+  }
+}
+
+.ratingText {
+  font-size: 18px;
+  text-align: center;
+  line-height: 25px;
+}
+
+.thumbsContainer {
+  border: 1px solid $dark-black;
+  margin: 0 15px;
+  padding: 0 10px;
+}

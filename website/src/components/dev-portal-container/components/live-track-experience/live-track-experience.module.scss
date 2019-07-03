@@ -1,0 +1,134 @@
+@import '../../../../../styles/colors.scss';
+
+.liveTrackExpComponent {
+  background: $white;
+  margin: 20px 0 0 0;
+}
+
+.savingSpinnerContainer {
+  padding: 30px 0 30px 0;
+}
+
+.stepsContainer {
+  &>div {
+    &>div:first-child {
+      padding-right: 0;
+      &>div {
+        height: auto !important;
+      }
+    }
+    &>div:last-child {
+      padding-left: 0;
+    }
+  }
+}
+
+.codeContainer {
+  background: $code-panel-bg;
+}
+
+.accordialTitle {
+  padding: 18px 0 18px 18px;
+}
+
+.accordianTitleContainer {
+  padding-right: 10px !important;
+  h3 {
+    margin-top: 0;
+    padding-top: 0;
+    display: inline-block;
+    color: $theme-darker-grey;
+    font-size: 20px;
+    line-height: 38px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-weight: normal;
+  }
+  p {
+    color: $theme-darker-grey;
+  }
+  .executeBtnSM {
+    background: none;
+    border: 2px solid $theme-middle-grey;
+    outline: none;
+    color: $theme-darker-grey;
+    font-size: 14px;
+    float: right;
+    padding: 5px;
+    border-radius: 3px;
+    margin-top: 0;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    &:hover {
+      border-color: $theme-green;
+    }
+  }
+}
+
+.accordianBody {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+  background: $white;
+}
+
+.accordianBodyContainer {
+  h3 {
+    color: $theme-darker-grey;
+  }
+  p {
+    color: $theme-darker-grey;
+  }
+}
+
+.liveTrackSidebarContainer {
+  height: 100%;
+  background: $theme-grey;
+}
+
+button.executeBtn {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 10px 10px 10px 10px;
+  background: none;
+  border: 2px solid $theme-green;
+  border-radius: 4px;
+  color: $theme-green;
+  outline: none;
+  box-shadow: none;
+  max-width: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    background: $theme-green;
+    color: $white;
+    span {
+      div {
+        span {
+          div {
+            background-color: $white !important;
+          }
+        }
+      }
+    }
+  }
+  span {
+    display: inline-block;
+    div {
+      display: inline-block;
+      color: $theme-green;
+      margin: 0 4px 0 0;
+      span {
+        div {
+          background-color: $theme-green !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+@import '../../../styles/colors.scss';
+.expirationContainer{
+  background-color: #f4f4f4;
+  height: calc(100vh - 56px);
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  display: flex;
+  padding: 15px;
+  position: relative;
+  .expirationBox{
+    background-color: $white;
+    border-radius: 5px;
+    color: #4c4c4c;
+    font-weight: 300;
+    line-height: 21px;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    .boxTitle{
+      background-color: #1470f7;
+      border-radius: 5px 5px 0px 0px;
+      color: $white;
+      h4{
+        font-weight: bold;
+        line-height: 54px;
+        margin: 0;
+      }
+    }
+    .boxBody{
+      box-shadow: 0 11px 35px rgba(0,0,0,.06);
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
+      display: flex;
+      min-height: 360px;
+      padding: 15px;
+      .inner{
+        width: 100%;
+        max-width: 425px;
+        .profileImage{
+          display: inline-block;
+          position: relative;
+          &:after{
+            content: '';
+            background-color: #1470f7;
+            display: block;
+            height: 3px;
+            margin: 20px auto 17px;
+            width: 30px;
+          }
+          img{
+            max-height: 90px;
+          }
+        }
+        h3{
+          color: $theme-darker-grey;
+          font-size: 28px;
+          font-weight: bold;
+          margin: 0 0 20px;
+        }
+        .button{
+          background-color: $btn-sec;
+          border-radius: 5px;
+          color: $white;
+          display: inline-block;
+          font-size: 16px;
+          font-weight: 900;
+          line-height: 20px;
+          width: 100%;
+          max-width: 226px;
+          margin-top: 25px;
+          padding: 10px 15px;
+          text-decoration: none;
+          &:hover, &:active{
+            background-color: $btn-sec-hover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.customRow {
+  .column3 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  @media screen and (max-width: 1000px) {
+    display: flex;
+    flex-direction: column;
+    .column1 {
+      order: 2;
+    }
+    .column2 {
+      order: 1;
+    }
+    .column3 {
+      order: 4;
+    }
+    .column4 {
+      order: 4;
+    }
+  }
+}

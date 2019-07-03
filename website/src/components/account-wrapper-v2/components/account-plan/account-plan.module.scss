@@ -1,0 +1,103 @@
+@import '../../../../../styles/colors.scss';
+@import "../../base-styling.module";
+
+.planDetails{
+  .full-width {
+    width: 100% !important;
+  }
+
+  .user-plan,
+  .user-plan-menu,
+  .user-plan-item {
+    @extend .full-width;
+  }
+  .user-plan {
+    @extend .full-width;
+    text-align: right;
+    padding-right: 25px;
+    .caret {
+      vertical-align: text-top !important;
+      margin-left: 10px !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 10px !important;
+    }
+  }
+  .user-plan-info {
+    display: inline-block;
+    .user-plan-name,
+    .user-plan-calls {
+      display: block;
+      @media (max-width: 665px) {
+        white-space: normal;
+      }
+    }
+    .user-plan-name {
+      display: block;
+    }
+  }
+  .user-plan-item {
+    padding: 5px 25px;
+  }
+  .user-plan-toggle {
+    @extend .full-width;
+    text-align: right;
+    padding-right: 25px;
+    .caret {
+      vertical-align: text-top !important;
+      margin-left: 10px !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 10px !important;
+    }
+  }
+  [class="control-label"]{
+    @media screen and (min-width: 768px) {
+      text-align: right;
+    }
+  }
+  .billingPlanHeading {
+    span{
+      margin-right: 25px;
+      display: inline-block;
+    }
+    .smbMessage {
+      background-color: $theme-light-grey;
+      border: 2px solid $dark-black;
+      color: $theme-green;
+      font-style: italic;
+      font-weight: bold;
+      max-width: 540px;
+      margin: 10px 0;
+      padding: 5px;
+    }
+  }
+  .billingDetails {
+    margin-top: 5px;
+  }
+  .btn{
+    margin-left: 0;
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

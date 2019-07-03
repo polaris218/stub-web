@@ -1,0 +1,103 @@
+@import '../../../styles/colors.scss';
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.text {
+    color: $landing-pricing-features;
+    display: inline-block;
+    margin-left: 15px;
+    width: 80%;
+}
+
+.text h2 {
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.help-text {
+    padding-left: 8px;
+    font-size: 12px;
+    color: $landing-help-text;
+}
+
+.price-text {
+    display: block;
+}
+
+.feature-header {
+    margin-bottom: 30px;
+}
+
+.features {
+    background-color: $theme-grey;
+    padding: 90px 20px;
+}
+
+.features h2 {
+    color: $landing-pricing-features;
+}
+
+.features-main-text {
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
+
+.features-flex-container {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.features-flex-item {
+    max-width: 250px;
+    padding: 10px;
+    text-align: center;
+}
+
+.features-flex-item-image {
+    width: 100%;
+    max-width: 350px;
+    padding: 5px;
+}
+
+.features-flex-item-heading {
+    font-size: 20px;
+    letter-spacing: .1em;
+}
+
+.features-flex-item-text {
+    padding-top: 15px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.features-flex-item-badges {
+    display: block;
+    width: 100%;
+}
+
+.features-flex-item-badges-image {
+    max-width: 100px;
+}
+
+.featuresIntro {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 20px;
+}

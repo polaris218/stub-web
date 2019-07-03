@@ -1,0 +1,305 @@
+@import '../../../styles/colors.scss';
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+.reviews{
+    background: $bg-secondary;
+    padding: 35px 0 35px 0;
+    
+    h2{
+        color: $primary;
+        font-weight: bold;
+        text-align: center;
+        font-size: 32px;
+    }
+    .slides-container{
+        position: relative;
+        .slide{
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            padding: 30px 40px;
+            @media (max-width: 560px) {
+                padding: 20px 0 0 0;
+            }
+            &[data-active="true"]{
+                display: block;
+                opacity: 1;
+                visibility: visible;
+                animation: fadein 1s;
+            }
+            .left-block{
+                background:  url("/images/lending/Group 161.png") 93% 30px no-repeat #fff;
+                border-radius: 15px;
+                padding: 40px;
+                height: 350px;
+                position: relative;
+                .top-part{
+                    img{
+                        float: left;
+                        width: 74px;
+                        margin-top: -10px;
+                        border-radius: 8px;
+
+                        @media (min-width: 1440px) {
+                            width: 260px;
+                            margin-right: 20px;
+                        }
+                    }
+                    h4{
+                        padding-top: 15px;
+                        padding-left: 90px;
+                        margin-bottom: 8px;
+                        font-weight: bold;
+                    }
+                    p{
+                        padding-left: 90px;
+                        font-size: 0.8em;
+                    }
+                }
+
+                .content{
+                    padding-top: 40px;
+                    font-size: 1.8em;
+                    color: $theme-lighter-grey;
+                }
+                .bottom-link{
+                    position: absolute;
+                    bottom: 15px;
+                    right: 20px;
+                    a{
+                        color: $primary;
+                        cursor: pointer;
+                        font-size: 1.2em;
+                        border-bottom: 1px solid $primary;
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                @media (max-width: 560px) {
+                    background-image: none;
+                    height: auto;
+                    padding: 20px;
+                }
+            }
+            .right-block{
+                background:  url("/images/lending/Path 347.png") 95% 30px no-repeat $bg-primary-pair;
+                border-radius: 15px;
+                padding: 20px 40px 40px 40px;
+                height: 350px;
+                color: $white;
+                position: relative;
+                .top-part{
+                    img{
+                        float: left;
+                        width: 61px;
+                    }
+                    h4{
+                        font-size: 1.8em;
+                        margin-right: 50px;
+                    }
+                    p{
+                        padding-left: 90px;
+                        font-size: 0.8em;
+                    }
+                }
+                .content{
+                    margin-top: 20px;
+                    font-size: 1.5em;
+                    color: $white;
+                    p{
+                        padding-top: 20px;
+                    }
+
+                    @media (max-width: 1440px) {
+                      font-size: 1.2em;
+                    }
+                }
+                .bottom-link{
+                    position: absolute;
+                    bottom: 15px;
+                    right: 20px;
+                    a{
+                        color: $white;
+                        cursor: pointer;
+                        font-size: 1.2em;
+                        border-bottom: 1px solid $white;
+                        &:hover{
+                            text-decoration: none;
+                        }
+                    }
+                }
+                @media (max-width: 991px) {
+                    margin-top: 30px;
+                }
+                @media (max-width: 560px) {
+                    background-image: none;
+                    height: auto;
+                    padding: 20px 20px 40px 20px;
+                }
+            }
+        }
+        .switches{
+            width: 200px;
+            margin: 30px auto;
+            ul{
+                list-style: none;
+                li{
+                    display: inline-block;
+                    a{
+                        width: 20px;
+                        height: 20px;
+                        background: $landing-reviews-switcher;
+                        display: block;
+                        border-radius: 25px;
+                        margin-right: 30px;
+                        &:hover{
+                            background: $landing-reviews-switcher-hover;
+                            position: relative;
+                            &:after{
+                                position: absolute;
+                                border: 2px solid $landing-reviews-switcher-hover;
+                                border-radius: 40px;
+                                left:-8px;
+                                top:-8px;
+                                width: 35px;
+                                height: 35px;
+                                content: "";
+                            }
+                        }
+                    }
+                }
+                li[data-active="true"] a{
+                        background: $landing-reviews-switcher-hover;
+                        position: relative;
+                        &:after{
+                            position: absolute;
+                            border: 2px solid $landing-reviews-switcher-hover;
+                            border-radius: 40px;
+                            left:-8px;
+                            top:-8px;
+                            width: 35px;
+                            height: 35px;
+                            content: "";
+                        }
+                    }
+            }
+        }
+    }
+}
+
+.promo-bottom {
+    background:url("/images/lending/Group 326.png") right center no-repeat;
+    background-color:  $primary;
+    position: relative;
+    ul{
+        list-style: none;
+        padding: 50px 0;
+        margin-bottom: 0;
+        li.promo-bottom-item{
+            padding: 20px 0;
+            font-size: 1.8em;
+            color: $white;
+        }
+    }
+    &:before {
+        width: 100%;
+        height: 100%;
+        background: url("/images/lending/Group 273.png") 75% center no-repeat;
+        background-size: contain;
+        content: "";
+        display: block;
+        right: 0;
+        position: absolute;
+        @media (max-width: 1440px) {
+            background-image: none;
+        }
+    }
+    @media (max-width: 560px) {
+        background-image: none;
+        ul{
+            padding: 20px;
+            li.promo-bottom-item{
+                padding: 20px 0;
+            }
+        }
+    }
+}
+
+
+.whitepaper-section {
+    background-color:  $primary-green;
+    position: relative;
+    ul{
+        list-style: none;
+        padding: 50px 0;
+        margin-bottom: 0;
+        li.promo-bottom-item{
+            padding: 20px 0;
+            font-size: 1.8em;
+            color:#fff;
+        }
+    }
+    &:before {
+        width: 100%;
+        height: 100%;
+        background: url("/images/lending/whitepaper.png") 25% center no-repeat;
+        background-size: contain;
+        content: "";
+        display: block;
+        right: 0;
+        position: absolute;
+        @media (max-width: 1440px) {
+            background-image: none;
+        }
+    }
+    @media (max-width: 560px) {
+        background-image: none;
+        ul{
+            padding: 20px;
+            li.promo-bottom-item{
+                padding: 20px 0;
+            }
+        }
+    }
+}
+
+.whitepaper-section-2 {
+        background:url("/images/lending/Group 326.png") right center no-repeat;
+        background-color: $whitepaper-bg;
+        padding: 20px 0 20px 0;
+        text-align: left;
+        img {
+          max-height: 200px
+        }
+        h2{
+    
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        p{
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+        button{
+            background: $btn-sec;
+            color: $white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            margin: 20px 0 10px 0;
+            text-transform: uppercase;
+            font-size: 1em;
+            box-shadow: 2px 2px 10px $theme-dark-grey;
+            border-width: 0;
+            font-family: sans-serif;
+            font-weight: bold;
+            &:hover{
+                background: $btn-sec-hover;
+                color: $white;
+            }
+        }
+    }

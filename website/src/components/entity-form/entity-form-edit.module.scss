@@ -1,0 +1,134 @@
+@import "../../../styles/colors.scss";
+
+.edit-modal {
+
+  .form-container {
+  	width: 90%;
+  	margin: 20px 10px 0 10px;
+  }
+}
+
+.account-image {
+  img {
+  	margin-top: 20px;
+    position: relative;
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .image-buttons {
+    position: relative;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.extra-field-button {
+	margin-left: 10px;
+}
+
+.cancel-button {
+  color: $dark-black;
+  background-color: $white;
+  -webkit-box-shadow: 0px 3px 6px 2px $shadow;
+  -moz-box-shadow: 0px 3px 6px 2px $shadow;
+  box-shadow: 0px 3px 6px 2px $shadow;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid $cancel-btn-border;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  word-spacing: 1px;
+  transition: all 0.3s ease;
+  margin-right: 10px;
+  &:hover, &:active, &:focus {
+    background-color: $white;
+    color: $dark-black;
+  }
+}
+
+.entity-name-field {
+  width: 80% !important;
+  @media(min-width: 1024px) {
+    width: 85% !important;
+  }
+}
+
+.entity-color-wrapper {
+  padding-left: 9px;
+  margin-top: 2px;
+  margin-right: -5px;
+  margin-bottom: -4px;
+  @media screen and (max-width: 991px){
+    float: left;
+    margin-top: 20px;
+  }
+}
+
+.modalTempFooter {
+  background: $light-bg;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 20px;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
+
+.noPaddingModal {
+  padding: 0 !important;
+}
+
+.editEntityHeading {
+  color: $new-modal-heading;
+  text-align: center;
+}
+
+.entityEditModalHeader {
+  -webkit-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -moz-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -o-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+.editMemberModal {
+  >div {
+    width: 100vw !important;
+    >div {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+  &>div:first-child {
+    @media screen and (max-width: 441px) {
+      margin: 10px 0 10px 0 !important;
+    }
+    @media screen and (max-width: 1366px) and (min-width: 1024px) and (orientation: portrait) {
+      display: table;
+    }
+    @media screen and (max-width: 1366px) and (min-width: 1024px) and (orientation: landscape) {
+      display: table;
+    }
+  }
+}
+
+.switch {
+  div{
+    input[type="checkbox"]:checked + label{
+      background-color: $theme-light-green !important;
+      &:after{
+        background-color: $theme-light-green !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+{
+  "navigation": [
+    { "text": "Why Arrivy?", "href": "/whyarrivy" },
+    { "text": "Pricing", "href": "/pricing" },
+    { "text": "Login", "href": "/login" },
+    { "text": "Signup", "href": "/signup" }
+  ],
+
+  "headerTexts":{
+    "largeSize": true,
+    "title": "Run your Moving Business Better",
+    "subtitle": "Arrivy makes connecting, communicating and tracking, easy.",
+    "title_background": "/images/lending/faded_buildings.png",
+    "button": "Try for free",
+    "button_info": "no credit card needed",
+    "button_url": "",
+    "right_part_promo_2": {
+      "text": "book demo",
+      "href": "/book-demo",
+      "type": "internal",
+      "id"  : "book-demo"
+    },
+    "right_part_button": "See how Arrivy works",
+    "cusomter_intro_text": "Join the smart businesses using Arrivy today, including:",
+    "header_bottom_title": "Arrivy is powering thousands of service calls with the best in class features."
+  },
+
+  "header-bottom-part-1": [
+    "Providing UBER-like experience to customers.",
+    "Ability to rate the service call instantly.",
+    "Shared schedules for office managers and team."
+  ],
+
+
+  "howitworks":{
+    "reviews":[
+      {
+        "company_name": "Vector Moving & Storage",
+        "review_text1": "Arrivy Aims Vector Movers in the Right Direction",
+        "review_text2": "We get positive feedback from customers – they feel more confident in our service!",
+        "reviewer_name": "Frank Numan, dispatcher",
+        "company_logo": "/images/lending/moving/vector-movers-logo.png",
+        "url": "https://blog.arrivy.com/2017/09/08/arrivy-aims-vector-movers-right-direction/"
+      }
+    ],
+    "article_button": "Read More",
+    "button_link": "https://blog.arrivy.com"
+  },
+
+  "shared_calendar":{
+    "title": "Shared Calendars",
+    "subtitle": "Connect Your Team",
+    "description": "Shared calendars make it easy to keep everyone connected. With our cloud powered web and mobile apps, access job details wherever you are.",
+    "icon": "/images/lending/moving/shared-calendar-icon.png",
+    "image": "/images/lending/moving/shared-calendar.png"
+  },
+
+  "uberize":{
+    "title": "UBERize Your Business",
+    "subtitle": "and Delight Your Customers",
+    "description": "Arrivy automates customer communications with SMS/email appointment confirmations and reminders. Clients can track your crew’s arrival times with real-time estimates, location tracking and notifications.",
+    "icon": "/images/lending/moving/uberize-icon.png",
+    "image": "/images/lending/moving/uberize-presentation.png"
+  },
+
+  "track_status":{
+    "title": "Track the Status",
+    "subtitle": "of your Field Teams, Instantly",
+    "description": "Ever want a “heads-up” display for your Moving business? Arrivy’s Activity Feed shows the status of all your jobs as they are happening.",
+    "icon": "/images/lending/moving/track-status-icon.png",
+    "image": "/images/lending/moving/track-status.png"
+  },
+
+  "reviews_presentation":{
+    "title": "Get More and Better Reviews",
+    "description": "Best strategy to get more customer reviews—ask for them right away. Arrivy automatically prompts customers to rate you when a job is complete.",
+    "icon": "/images/lending/moving/reviews-icon.png",
+    "image": "/images/lending/moving/reviews-presentation.png"
+  },
+
+  "white_paper":{
+    "title": "White Paper",
+    "description": "For home service businesses success or failure is often measured by number of YELP reviews. Learn about strategies to position your service to get more and better reviews in our free white paper.",
+    "icon": "/images/lending/moving/white-paper-icon.png",
+    "image": "/images/lending/moving/white-paper-presentation.png",
+    "button": "Download for free",
+    "button_url": "http://try.arrivy.com/thesecretsauce/"
+  },
+
+  "footer_data":{
+    "columns":[
+      {
+        "title":"Developer",
+        "links":[
+          {"title":"Getting Started","link":"/docs"},
+          {"title":"Documentation","link":"/docs"}
+        ]
+      },{
+        "title":"Company",
+        "links":[
+          {"title":"Pricing","link":"/pricing"},
+          {"title":"Developer","link":"/docs"},
+          {"title":"Contact","link":"mailto:support@arrivy.com", "externalLink": true},
+          {"title":"Terms of Service","link":"/terms"},
+          {"title":"Service Level Agreement","link":"/terms"},
+          {"title":"Enterprise","link":"/enterprise"},
+          {"title":"Slack","link":"/slack"}
+        ]
+      },{
+        "title":"Industries",
+        "links":[
+          {"title":"Moving","link":"/moving"},
+          {"title":"Garage Door Repair","link":"https://blog.arrivy.com/2017/06/15/arrivy-drives-customer-engagement-for-sears-garage-door/", "externalLink": true},
+          {"title":"Cleaning","link":"https://blog.arrivy.com/2017/07/28/cleaning-plus-keeps-things-spotless-arrivy/", "externalLink": true}
+        ]
+      },{
+        "title":"Stay in touch",
+        "text":"Interested in finding out how Arrivy can help your business?",
+        "mail":"info@arrivy.com",
+        "phone":"1 (855) 927-7489",
+        "phone_link":"+18559277489",
+        "links":[{
+          "type": "twitter",
+          "href": "https://twitter.com/arrivy_platform",
+          "title": "twitter"
+        },{
+          "type": "facebook",
+          "href": "https://www.facebook.com/arrivy",
+          "title": "facebook"
+        },{
+          "type": "linkedin",
+          "href": "https://www.linkedin.com/company/arrivy",
+          "title": "linkedin"
+        }]
+      }],
+    "copyright":"© Arrivy, Inc - All Rights Reserved"
+  }
+}

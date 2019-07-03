@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 46 46" style="enable-background:new 0 0 46 46;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#30E6F9;}
+	.st1{fill:none;stroke:#30E6F9;stroke-width:2;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;}
+	.st3{clip-path:url(#SVGID_2_);}
+	.st4{fill:none;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:2;}
+	.st6{fill:#FFFFFF;}
+</style>
+<g id="Layer_1">
+	<g id="Group_1345" transform="translate(-16985 -1343)">
+		<g id="Ellipse_55" transform="translate(16985 1343)">
+			<circle class="st0" cx="23" cy="23" r="23"/>
+			<circle class="st1" cx="23" cy="23" r="22"/>
+		</g>
+		<path id="Union_42" class="st2" d="M17018.5,1359.5L17018.5,1359.5L17018.5,1359.5L17018.5,1359.5L17018.5,1359.5z"/>
+		<g>
+			<defs>
+				<circle id="SVGID_1_" cx="17008" cy="1366" r="23"/>
+			</defs>
+			<clipPath id="SVGID_2_">
+				<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+			</clipPath>
+			<g id="Mask_Group_7" class="st3">
+				<g id="Group_1344" transform="translate(-3.47 -6.696)">
+					<g id="Ellipse_59" transform="translate(16997.098 1362)">
+						<circle class="st4" cx="7.9" cy="7.9" r="7.9"/>
+						<circle class="st5" cx="7.9" cy="7.9" r="6.9"/>
+					</g>
+					<g id="Ellipse_60" transform="translate(16991 1376.634)">
+						<circle class="st4" cx="14.6" cy="14.6" r="14.6"/>
+						<circle class="st5" cx="14.6" cy="14.6" r="13.6"/>
+					</g>
+				</g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="Layer_2">
+	<g>
+		<path class="st6" d="M33.5,20.5L33.5,20.5c-0.4,0-0.8-0.3-0.8-0.8v-6.5c0-0.4,0.3-0.7,0.8-0.7l0,0c0.4,0,0.8,0.3,0.8,0.7v6.5
+			C34.2,20.2,33.9,20.5,33.5,20.5z"/>
+		<path class="st6" d="M29.5,16.5L29.5,16.5c0-0.4,0.3-0.8,0.8-0.8h6.5c0.4,0,0.8,0.3,0.8,0.8l0,0c0,0.4-0.3,0.8-0.8,0.8h-6.5
+			C29.8,17.2,29.5,16.9,29.5,16.5z"/>
+	</g>
+</g>
+</svg>

@@ -1,0 +1,1148 @@
+@import '../../../styles/colors.scss';
+
+.control-tasks {
+  color: $dashboard-dark-grey;
+  font-size: 15px;
+  font-weight: bold;
+  margin: 0px -15px;
+  padding: 0 15px;
+  height: 70px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  .mobileBreaker{
+    display: none;
+  }
+  &.noPrint{
+    display: flex;
+  }
+  .taskButtonContainer{
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  .monthDayWeekFilters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    button{
+      border: none;
+      box-shadow: none;
+      background: none;
+      border-radius: 25px !important;
+      color: $dashboard-dark-grey;
+      cursor: pointer;
+      padding: 0 15px;
+      font-weight: bold;
+      line-height: 27px;
+      margin: 0 5px;
+      outline: none;
+      opacity: 1;
+      float: none;
+      transition: all .3s ease-in-out;
+      &:disabled, &:hover{
+        background-color: $dashboard-primary;
+        color: $white;
+      }
+    }
+  }
+  .datePickerWrapper {
+    min-width: 142px;
+    max-width: 142px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 50px;
+    .arrow{
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      text-align: center;
+      transition: color .3s ease-in-out;
+      &:hover{
+        color: $dashboard-primary;
+      }
+      &.prev{
+        transform: rotate(-180deg);
+      }
+      svg{
+        width: 100%;
+      }
+    }
+    input {
+      padding: 0;
+      height: 20px;
+      max-width: 100px;
+    }
+    & > span:nth-child(2) {
+      > div > div {
+        @media screen and (max-width: 768px) {
+          left: -130px !important;
+        }
+        @media screen and (max-width: 520px) {
+          left: 0 !important;
+        }
+        & > div:first-child {
+          @media screen and (max-width: 768px) {
+            left: 75% !important;
+          }
+          @media screen and (max-width: 520px) {
+            left: 16.8% !important;
+          }
+        }
+        & > div:last-child > table > tfoot > tr > td > button {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .pagination {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 94px;
+      display: flex;
+      align-items: center;
+      li {
+        &.count{
+          margin-right: 15px;
+        }
+        &:nth-child{
+          margin-left: auto;
+        }
+        &:last-child{
+          margin-left: 10px;
+        }
+        button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          height: 15px;
+          padding: 0;
+          margin: 0;
+          width: 15px;
+          outline: 0;
+          text-align: center;
+          transition: color .3s ease-in-out;
+          &:hover:not(.disabled){
+            color: $dashboard-primary;
+          }
+          &.prev{
+            transform: rotate(-180deg);
+          }
+          svg{
+            width: 100%;
+          }
+          &.disabled, &:disabled {
+            color: $dashboard-dark-grey !important;
+            opacity: 0.5;
+            cursor: not-allowed !important;
+          }
+        }
+      }
+    }
+  }
+  .dropdownOptions {
+    button {
+      border: 0;
+      border-color: transparent !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      background: none !important;
+      color: $dashboard-primary;;
+      height: 40px;
+      span{
+        display: none;
+      }
+    }
+    ul{
+      left: auto;
+      right: 0;
+    }
+  }
+  .createTaskBtnContainer {
+    > div:last-child{
+      margin-left: 10px;
+    }
+    display: inherit;
+    button {
+      border: none;
+      border-radius: 5px;
+      background-color: $btn-sec !important;
+      cursor: pointer;
+      color: $white !important;
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.4;
+      outline: none;
+      min-width: 170px;
+      min-height: 40px;
+      padding: 9px 10px;
+      vertical-align: middle;
+      text-decoration: none !important;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &:hover, &:focus{
+        background-color: $btn-sec-hover !important;
+        color: $white !important;
+        box-shadow: none !important;
+        text-decoration: none;
+      }
+    }
+    ul{
+      top: 96%;
+      left: 0 !important;
+      border-radius: 0 0 4px 4px;
+    }
+    @media screen and (max-width: 420px) {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    .monthDayWeekFilters,
+    .datePickerWrapper{
+      margin-right: 20px;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .monthDayWeekFilters, .datePickerWrapper{
+      margin-bottom: 10px;
+    }
+    .datePickerWrapper{
+      margin-right: 0;
+      margin-left: auto;
+    }
+    .mobileBreaker{
+      width: 100%;
+      display: block;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .taskButtonContainer{
+      margin: 10px auto 0;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    flex-direction: column;
+    .monthDayWeekFilters, .taskButtonContainer, .datePickerWrapper, .pagination{
+      margin: 10px auto 0;
+    }
+    .mobileBreaker{
+      display: none;
+    }
+  }
+}
+
+.control-tasks .btn-submit {
+  margin-right: 10px !important;
+}
+
+.btnSubmit {
+  @media screen and (max-width: 520px) {
+    padding: 8px 6px;
+    font-size: 15px;
+  }
+  @media screen and (max-width: 441px) {
+    width: 100%;
+    display: block;
+    font-size: 16px;
+    margin-left: 0 !important;
+    margin-top: 10px;
+  }
+}
+
+.teamEquipmentButton {
+  float: left;
+}
+.taskActivityButtons {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: flex-end;
+  .createTaskBtnContainer{
+    [class*="synchronizationDropdown"]{
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.activityStreamBtnContainer {
+  display: inline-flex;
+  align-content: center;
+  justify-content: flex-end;
+}
+
+@media all and (max-width: 767px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+
+    [class^="col-"], [class*="col-"] {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .dateContainer, .switchContainer, .filtersSwitcherContainer {
+    height: 40px;
+  }
+}
+
+
+.newWorkerRequest {
+  button {
+    border: none;
+    border-radius: 5px;
+    background-color: $btn-sec;
+    cursor: pointer;
+    color: $white;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    font-weight: 400;
+    min-height: 40px;
+    min-width: 170px;
+    padding: 9px 10px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    span{
+      margin-left: 15px;
+      display: inline-block;
+    }
+    &:hover{
+      background-color: $btn-sec-hover;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+}
+
+.modal-window {
+  width: 95%;
+}
+
+.view-sidebar {
+  margin: 0 0 0 0;
+}
+
+.view-sidebar li a {
+  margin: 0;
+  font-size: 1em;
+  line-height: 1.6em;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-decoration: none;
+  word-spacing: 1px;
+  padding: 16px 15px;
+  display: inline-block;
+  color: $white;
+  transition: border .3s ease;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.view-sidebar li {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.active a,
+.view-sidebar li a:hover {
+  background: $active-bg;
+  -webkit-box-shadow: 0 9px 0px 0px rgba(255, 255, 255, 0), 0 -9px 0px 0px rgba(255, 255, 255, 0), 12px 0 12px -4px rgb(3, 119, 210), -12px 0 12px -4px rgba(0, 119, 210, 1);
+  -moz-box-shadow: 0 9px 0px 0px rgba(255, 255, 255, 0), 0 -9px 0px 0px rgba(255, 255, 255, 0), 12px 0 12px -4px rgb(3, 119, 210), -12px 0 12px -4px rgba(0, 119, 210, 1);
+  -o-box-shadow: 0 9px 0px 0px rgba(255, 255, 255, 0), 0 -9px 0px 0px rgba(255, 255, 255, 0), 12px 0 12px -4px rgb(3, 119, 210), -12px 0 12px -4px rgba(0, 119, 210, 1);
+  box-shadow: 0 9px 0px 0px rgba(255, 255, 255, 0), 0 -9px 0px 0px rgba(255, 255, 255, 0), 12px 0 12px -4px rgb(3, 119, 210), -12px 0 12px -4px rgba(0, 119, 210, 1);
+}
+
+.clear-all {
+  max-width: 60px;
+
+  @media (min-width: 768px) {
+    text-align: right;
+  }
+}
+
+.calendar {
+  padding-top: 10px;
+  .bigCalendar{
+    > div{
+      &:first-child{
+        color: $dashboard-dark-grey;
+        font-weight: bold;
+        [class*="rbc-btn-group"]{
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 230px;
+          button{
+            border: none;
+            box-shadow: none;
+            background: none;
+            border-radius: 25px !important;
+            color: $dashboard-dark-grey;
+            cursor: pointer;
+            padding: 0 15px;
+            font-weight: bold;
+            line-height: 27px;
+            margin: 0 5px;
+            outline: none;
+            opacity: 1;
+            float: none;
+            transition: all .3s ease-in-out;
+            text-transform: capitalize;
+            &[class*="rbc-active"], &:hover{
+              background-color: $dashboard-primary;
+              color: $white;
+            }
+          }
+        }
+      }
+      &:last-child{
+        background-color: $white;
+      }
+    }
+
+  }
+}
+.calendar-placeholder {
+  width: 100%;
+  height: auto;
+}
+
+.blockingPlaceHolder {
+  min-height: 400px;
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+/* start Arslan's Styles */
+
+.topBar {
+  background: $bg-purple;
+  height: auto;
+  margin-left: -15px;
+  margin-right: -12px;
+  padding: 0px 10px 0px 0px;
+  font-size: 14px;
+  min-height: 55px;
+}
+
+.clearAllBtn {
+  color: $white;
+  text-decoration: none;
+  margin: 0 5px;
+  line-height: 22px;
+
+  &:hover, &:active, &:focus {
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 1px dotted #d5d5d5;
+  }
+}
+.worker_request_title{
+  color: $dashboard-dark;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 36px;
+  margin-right: 40px;
+}
+.datePickers {
+  @media screen and (max-width: 980px) {
+    width: 100% !important;
+  }
+
+  & > div {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+
+    & > div {
+      display: inline-block;
+      width: 50%;
+      position: relative;
+      @media screen and (max-width: 768px) {
+        width: 35%;
+      }
+      @media screen and (max-width: 344px) {
+        width: 95%;
+        margin-top: 5px;
+      }
+    }
+  }
+
+  & > div:first-child {
+    margin-right: 10px;
+  }
+}
+
+.loadingSpinner {
+  display: inline-block;
+  margin-top: 10px;
+  padding-right: 10px;
+  @media screen and (max-width: 1024px) {
+    padding-right: 0px;
+  }
+}
+
+.counter {
+  width: auto;
+  border: 2px solid red;
+  border-radius: 4px;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 8px 15px 8px 15px;
+  display: inline-block;
+  margin-right: 15px;
+  @media screen and (max-width: 360px) {
+    padding: 8px 8px 8px 8px;
+  }
+}
+
+.counterTotalTasks {
+  border-color: $primary-green
+}
+
+.counterUnscheduledTasks {
+  border-color: $theme-red;
+  cursor: pointer;
+}
+
+.calendar {
+  & > div:first-child {
+    & > div {
+      @media screen and (max-width: 767px) {
+        display: grid;
+        overflow-x: auto;
+        overflow-y: auto;
+      }
+
+      & > span {
+        text-align: center;
+        @media screen and (max-width: 767px) {
+          margin: 5px auto;
+        }
+      }
+    }
+  }
+}
+
+
+.listViewDateFilter {
+  max-width: 440px;
+  float: left;
+  width: 90% !important;
+
+  & > div:nth-child(2) {
+    margin-left: 10px !important;
+  }
+
+  > span {
+    position: absolute;
+    margin-left: 10px;
+    top: 3px;
+    cursor: pointer;
+    color: #008bf8 !important;
+  }
+
+  .calendarButton {
+    font-size: 1.8em !important;
+  }
+
+}
+
+/* start Arslan's Styles */
+
+@keyframes slideDown {
+  from {
+    overflow: hidden
+  }
+  to {
+    overflow: initial
+  }
+}
+
+@-webkit-keyframes slideDown {
+  from {
+    overflow: hidden
+  }
+  to {
+    overflow: initial
+  }
+}
+
+.filters-container {
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  @media screen and (min-width: 769px) {
+    & > div:first-child {
+      pointer-events: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    display: block;
+    line-height: 22px;
+    max-height: 55px;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out;
+    & > div:first-child:after {
+      content: "\f078";
+      font-family: FontAwesome;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      color: #ffffff;
+      display: inline-block;
+      margin-left: 5px;
+      margin-top: 5px;
+      transition: all .3s ease-in-out;
+    }
+    &.slideDown {
+      max-height: 100%;
+      animation-name: slideDown;
+      animation-duration: 1s;
+      -webkit-animation-name: slideDown;
+      -webkit-animation-duration: 1s;
+      overflow: visible;
+
+      div:first-child:after {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    justify-content: flex-start;
+  }
+  @media screen and (max-width: 992px) {
+    margin-left: 5px;
+  }
+
+  & div label {
+    color: #fff;
+    font-weight: normal;
+    max-height: 50px;
+    line-height: 20px;
+
+    .icon {
+      font-size: 1.2em;
+    }
+  }
+
+  > div:last-child {
+    padding: 5px;
+    text-align: center;
+    max-width: 130px;
+
+    @media screen and (max-width: 1440px) {
+      max-width: 110px;
+    }
+    @media screen and (max-width: 1280px) {
+      padding: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      display: block;
+      width: 100%;
+      max-width: 55px !important;
+    }
+  }
+
+  > div {
+    padding: 5px;
+    text-align: center;
+    max-width: 130px;
+
+    @media screen and (max-width: 1440px) {
+      max-width: 110px;
+    }
+    @media screen and (max-width: 1280px) {
+      padding: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      display: block;
+      width: 100%;
+      max-width: 100% !important;
+    }
+  }
+
+  & > div:first-child {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    justify-content: center;
+  }
+
+  & > div:last-child {
+    display: flex;
+    align-items: center;
+    height: 74px;
+    justify-content: center;
+  }
+
+  button {
+    background: white;
+    border-color: rgba(255, 255, 255, 0.4);
+    color: $primary;
+
+    &:hover {
+
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+}
+
+
+
+.confirmationStatusIndicator {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  display: inline-block;
+  border: 1px solid $theme-grey;
+  border-radius: 50%;
+  background: $theme-dark-grey;
+}
+
+.taskFormModal {
+  -webkit-overflow-scrolling: auto;
+}
+
+
+.customTooltipForConfirmationStatus {
+  div:nth-child(2) {
+    padding: 15px !important;
+    text-align: left !important;
+  }
+
+  p {
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+
+  p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.taskConfirmationFiltersDropdown {
+  min-width: 100px;
+  margin-right: 10px;
+
+  select {
+    background: $white !important;
+    border-color: rgba(255, 255, 255, 0.4);
+    color: $primary;
+
+    option {
+      color: $dark-black;
+    }
+  }
+}
+
+button.pendingAction {
+  pointer-events: none;
+  cursor: wait;
+}
+
+.startDatePicker, .endDatePicker {
+  outline: none;
+  border: 0;
+  user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+  box-shadow: none;
+  text-align: center;
+  color: transparent;
+  background: #EAF3FE;
+  text-shadow: 0 0 0 gray;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.endDatePicker {
+  margin-left: 10px;
+
+  & + div {
+    & > div:first-child {
+      @media screen and (max-width: 768px) {
+        left: -83px !important;
+      }
+
+      & > div:first-child {
+        @media screen and (max-width: 768px) {
+          left: 50% !important;
+        }
+      }
+    }
+  }
+}
+.topBarTasksCount {
+  @media screen and (max-width: 1240px) {
+    display: flex !important;
+  }
+}
+
+.nextBtnOnDayView {
+  margin: 5px 0 5px 10px !important;
+}
+
+.toast {
+  display: none !important;
+}
+
+.toastContainer {
+  padding: 0 !important;
+}
+
+.activityStreamBtnContainer {
+  padding: 0 !important;
+  height: 55px !important;
+  position: absolute;
+  right: -10px;
+  top: 0;
+}
+
+.activityStreamBtnContainerUnscheduled {
+  display: inline-flex;
+  align-content: center;
+  justify-content: flex-end;
+  margin-right: -10px;
+  padding: 0 !important;
+  height: 55px !important;
+}
+
+.unscheduledActivityBtn {
+  padding: 0;
+  position: absolute;
+  right: 1px;
+  width: 80px;
+}
+
+.filtersSwitcherContainer {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: left;
+  height: 55px;
+  position: relative;
+
+  .filtersTagSm {
+    font-size: 12px;
+    padding: 3px 8px 3px 8px;
+    color: $primary;
+    background: $dashboard-bg;
+    letter-spacing: 0;
+    border: 1px transparent;
+    border-radius: 50px;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 2px 2px 0;
+    max-width: 90px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  & > button {
+    outline: none;
+    background: none;
+    border: 0;
+    min-width: 85px;
+  }
+
+  span {
+    color: $white;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+
+  span.filtersSwitcherIcon {
+    margin-right: 8px;
+  }
+
+  span.clearAllFiltersBtn {
+    padding: 0 10px 0 10px;
+
+    button {
+      outline: none;
+      background: none;
+      border: 0;
+      color: $white;
+      text-transform: capitalize;
+      padding: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  span.filterButton {
+    padding: 0 10px 0 10px;
+    min-width: 100px;
+    display: inline-block;
+
+    button {
+      outline: none;
+      background: none;
+      border: 0;
+      color: $white;
+      text-transform: capitalize;
+      padding: 0;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .filtersContainer {
+    background: $primary;
+    color: $white;
+    min-width: 450px;
+    min-height: 115px;
+    position: absolute;
+    top: 85px;
+    z-index: 999;
+    border: 1px transparent;
+    border-radius: 8px;
+    display: none;
+    flex-direction: column;
+    padding: 40px;
+
+    &::before {
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 15px 15px 15px;
+      border-color: transparent transparent $primary transparent;
+      display: inline-block;
+      content: '';
+      left: calc(50% - 7.5px);
+      position: absolute;
+      top: -15px;
+      @media all and (min-width: 768px) and (max-width: 991px) {
+        left: auto;
+        right: 15%;
+      }
+    }
+
+    .filtersDropDownsContainer {
+      display: flex;
+      flex-direction: row;
+
+      .filterDropdown {
+        margin-right: 10px;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        display: block;
+      }
+    }
+
+    .selectedFiltersContainer {
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      margin-top: 30px;
+      max-height: 300px;
+      overflow-y: auto;
+
+      .selectedFilters {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      .filtersTag {
+        padding: 3px 10px;
+        color: $primary;
+        background: $dashboard-bg;
+        border: 1px transparent;
+        border-radius: 50px;
+        margin: 0 5px 5px 5px;
+        font-size: 13px;
+        letter-spacing: 0;
+        text-transform: capitalize;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+
+      .clearBtnContainer {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    .closeFiltersBtnContainer {
+      align-items: center;
+      padding: 40px 0 0 0;
+      display: inline-flex;
+      justify-content: flex-end;
+
+      .closeFiltersBtn {
+        background: none;
+        outline: none;
+        color: $white;
+        box-shadow: none;
+        font-size: 16px;
+        border: 0;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        padding-top: 20px;
+      }
+    }
+
+    @media screen and (max-width: 1200px) {
+      padding: 40px 20px;
+    }
+  }
+
+  .filtersContainerVisible {
+    display: flex;
+    -webkit-transform: scale(0.2, 0.2);
+    transform: scale(0.2, 0.2);
+    top: 115px;
+    margin-top: -15px;
+    -webkit-animation: slideDown;
+    animation: slideDown;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    width: 150%;
+    left: -70%;
+    @media screen and (max-width: 991px) {
+      width: 430%;
+      left: auto;
+      right: 0;
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      left: 15px;
+      right: auto;
+    }
+    @media all and (max-width: 767px) {
+      margin-top: -25px;
+    }
+  }
+
+  @media all and (max-width: 767px) {
+    justify-content: center;
+    .filtersContainer {
+      min-width: 100%;
+      padding: 10px;
+
+      .filtersDropDownsContainer {
+        flex-wrap: wrap;
+
+        .filterDropdown {
+          width: calc(50% - 10px);
+          margin-bottom: 10px;
+          float: left;
+          @media all and (max-width: 480px) {
+            width: 100%;
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    -webkit-transform: scale(0.2, 0.2);
+    transform: scale(0.2, 0.2);
+    top: 85px;
+  }
+  50% {
+    -webkit-transform: scale(0.7, 0.7);
+    transform: scale(0.7, 0.7);
+    top: 100px;
+  }
+  100% {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1);
+    top: 85px;
+  }
+}
+.noPrint {
+  display: inherit;
+  @media print {
+    display:none !important;
+  }
+}
+
+@media print {
+  .wrapper{
+    padding: 0;
+  }
+  .noPrint{
+    display: none !important;
+  }
+  .topBar {
+    display: none !important;
+  }
+  .control-tasks{
+    display: none !important;
+  }
+}

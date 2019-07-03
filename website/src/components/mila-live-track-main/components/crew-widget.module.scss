@@ -1,0 +1,230 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/mila-fonts.scss';
+
+.crew-widget {
+  padding: 20px 75px;
+  //border-top: 1px solid $mila-dark-blue;
+  background: $white;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    padding: 20px 0;
+  }
+  @media screen and (max-width: 980px) {
+    padding-bottom: 0;
+  }
+}
+
+.crewAvatar {
+  max-width: 100px;
+  border: 1px transparent;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
+  float: left;
+  margin-right: 20px;
+  @media screen and (max-width: 1366px) {
+    width: 80px;
+    height: 80px;
+  }
+  @media screen and (max-width: 441px) {
+    width: 65px;
+    height: 65px;
+  }
+  @media screen and (max-width: 320px) {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.crewName {
+  font-weight: bold;
+  font-family: AvenirNext;
+  color: $mila-dark-blue;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  line-height: 1.3em;
+  @media screen and (max-width: 1366px) {
+    font-size: 22px;
+    margin-top: 10px;
+  }
+  @media screen and (max-width: 441px) {
+    font-size: 18px;
+    margin-top: 6px;
+  }
+  @media screen and (max-width: 320px) {
+    font-size: 16px;
+    margin-top: 5px;
+  }
+}
+
+.crewRating {
+  font-size: 28px;
+  line-height: 32px;
+  @media screen and (max-width: 441px) {
+    font-size: 22px;
+  }
+}
+
+span.crewRating {
+  & > div > div {
+    padding: 0 !important;
+  }
+  svg {
+    width: 24px !important;
+    height: 24px !important;
+    @media screen and (max-width: 441px) {
+      width: 18px !important;
+      height: 18px !important;
+    }
+  }
+}
+
+.totalRatings {
+  position: absolute;
+  line-height: 32px;
+  font-size: 18px;
+  margin-left: 10px;
+  font-family: AvenirNext;
+  color: $mila-orange;
+  @media screen and (max-width: 441px) {
+    font-size: 16px;
+    line-height: 34px;
+  }
+}
+
+.crewMember {
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 378px;
+  max-width: 378px;
+  width: auto;
+  margin-bottom: 10px;
+  @media screen and (max-width: 1480px) {
+    max-width: 350px;
+    width: 350px;
+    min-width: auto;
+  }
+  @media screen and (max-width: 1380px) {
+    max-width: 300px;
+    width: 300px;
+    min-width: auto;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+  }
+  @media screen and (max-width: 440px) {
+    width: 100%;
+    max-width: 350px;
+    min-width: auto;
+  }
+  @media screen and (max-width: 360px) {
+    width: 100%;
+    max-width: 300px;
+    min-width: auto;
+  }
+}
+
+.crewMemberPlaceholder {
+  display: inline-block;
+  margin-right: 10px;
+  min-width: 378px;
+  max-width: 378px;
+  width: auto;
+  margin-bottom: 10px;
+  @media screen and (max-width: 1480px) {
+    max-width: 350px;
+    width: 350px;
+    min-width: auto;
+  }
+  @media screen and (max-width: 1380px) {
+    max-width: 300px;
+    width: 300px;
+    min-width: auto;
+  }
+  @media screen and (max-width: 768px) {
+    max-width: 100%;
+    width: 100%;
+    min-width: 100%;
+  }
+  @media screen and (max-width: 440px) {
+    width: 100%;
+    max-width: 350px;
+    min-width: auto;
+  }
+  @media screen and (max-width: 360px) {
+    width: 100%;
+    max-width: 300px;
+    min-width: auto;
+  }
+  .crewAvatar {
+    max-width: 100px;
+    border: 1px transparent;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 20px;
+    background: $mila-crew-placeholder;
+    @media screen and (max-width: 1366px) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: 441px) {
+      width: 80px;
+      height: 80px;
+    }
+    @media screen and (max-width: 320px) {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  .crewName {
+    font-weight: bold;
+    color: $mila-dark-blue;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-family: AvenirNext;
+    @media screen and (max-width: 1366px) {
+      font-size: 22px;
+      margin-top: 10px;
+    }
+    @media screen and (max-width: 441px) {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 16px;
+      margin-top: 5px;
+    }
+  }
+  .crewRating {
+    font-size: 28px;
+    @media screen and (max-width: 441px) {
+      font-size: 22px;
+    }
+  }
+
+  span.crewRating {
+    & > div > div {
+      padding: 0 !important;
+    }
+    svg {
+      width: 24px !important;
+      height: 24px !important;
+      @media screen and (max-width: 441px) {
+        width: 18px !important;
+        height: 18px !important;
+      }
+    }
+  }
+}

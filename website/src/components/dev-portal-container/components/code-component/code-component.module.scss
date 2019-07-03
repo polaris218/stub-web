@@ -1,0 +1,7 @@
+@import '../../../../../styles/colors';
+
+.codeComponentContainer {
+  background: $code-panel-bg;
+  padding: 0 25px 0 25px;
+  display: flex;
+}

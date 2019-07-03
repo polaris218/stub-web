@@ -1,0 +1,19 @@
+@import '../../../styles/colors.scss';
+
+.payment_form {
+  max-width: 600px;
+  padding: 30px;
+  border: 1px solid $payment-form-border;
+  border-radius: 4px;
+}
+
+.confirm {
+  background-color: $glyphicon-hover;
+  color: white;
+  font-size: 16px;
+  padding: 16px 16px;
+}
+
+.payment_text {
+  color: $payment-text;
+}

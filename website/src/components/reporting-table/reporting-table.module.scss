@@ -1,0 +1,22 @@
+@import '../../../styles/colors.scss';
+
+.reportingBlock {
+  padding: 0 0 10px 0;
+  border: 1px solid $theme-middle-grey;
+  margin-bottom: 50px;
+  .reportingBlockHeader {
+    padding: 10px;
+    border-bottom: 1px solid $theme-middle-grey;
+    h3 {
+      margin-top: 10px;
+    }
+  }
+  .reportingBlockBody {
+    padding: 20px 5px 20px 20px;
+  }
+}
+
+.controlLabelCustom {
+  line-height: 30px;
+  margin-bottom: 0;
+}

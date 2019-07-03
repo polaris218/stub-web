@@ -1,0 +1,238 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.statusWrapper {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  background: $theme-grey;
+  width: 100%;
+  padding: 20px 10px 20px 45px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  position: relative;
+  .dragIcon {
+    font-size: 28px;
+    color: $theme-lighter-grey;
+  }
+  .iconContainer {
+    position: absolute;
+    left: 20px;
+    text-align: center;
+  }
+  .colorBar {
+    height: 60px;
+    width: 7px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 15px;
+    vertical-align: middle;
+  }
+  .statusInfoWrapper{
+    display: inline-block;
+    vertical-align: middle;
+    max-width: calc(100% - 22px);
+  }
+  .statusTitle {
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+    color: $status-title;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .statusDescription {
+    font-size: 12px;
+    padding: 0;
+    margin: 0;
+    max-height: 35px;
+    overflow-y: auto;
+  }
+  @media screen and (max-width: 1024px) {
+    padding-left: 35px;
+    .dragIcon{
+      font-size: 14px;
+    }
+    .colorBar{
+      margin-right: 10px;
+    }
+    .statusInfoWrapper{
+      max-width: calc(100% - 17px);
+    }
+    .statusTitle{
+      font-size: 20px;
+    }
+  }
+}
+
+.statusOptionsWrapper {
+  width: 100%;
+  height: auto;
+  border: 2px solid $theme-grey;
+  margin-top: -5px;
+  margin-bottom: 5px;
+}
+
+.transparentButton {
+  background-color: transparent;
+  border: none;
+  color: $primary;
+  .iconForTransparent{
+    padding: 0 3px 0 3px;
+    width: 18px;
+    height: 18px;
+    color:$primary;
+    font-size: 4em;
+    border: 1px solid $primary;
+    margin-bottom: 0 !important;
+    @include opacity(0.8);
+    @include border-radius(10px);
+  }
+}
+
+.optionsGroup{
+  padding: 15px;
+  label {
+    line-height: 36px;
+    @media screen and (max-width: 1360px) {
+      font-size: 14px;
+      line-height: 18px;
+    }
+    @media screen and (max-width: 990px) {
+      line-height: 36px;
+    }
+  }
+}
+
+.checkboxOptionGroup {
+  padding: 0 15px 0 15px;
+  label {
+    font-weight: 700;
+  }
+  .disabledClass {
+    label {
+      opacity: 0.5;
+    }
+  }
+}
+
+.systemStatus {
+  line-height: 42px;
+}
+
+.colorField {
+  .colorFieldCol {
+    @media screen and (max-width: 441px) {
+      margin-top: 10px;
+    }
+  }
+  div {
+    div{
+      div {
+        display: inline-block;
+        float: left;
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.promptTextField {
+  @media screen and (max-width: 441px) {
+    margin-bottom: 10px;
+  }
+}
+
+.switchContainer {
+  display: flex;
+  justify-content: flex-end;
+  @media screen and (max-width: 441px) {
+    padding-left: 0;
+  }
+  div {
+    width: auto;
+    @media screen and (max-width: 441px) {
+      width: 60%;
+    }
+    label {
+      @media screen and (max-width: 441px) {
+        font-size: 12px;
+        font-weight: 300;
+      }
+    }
+  }
+}
+
+.toggleIcon {
+  font-size: 16px;
+  color: $theme-purple;
+  padding-right: 5px;
+}
+
+.statusBar {
+  max-height: 46px;
+  height: auto;
+  width:auto;
+  padding:0;
+  margin: 0 20px 15px 0;
+  color: $theme-dark-grey;
+  font-size: 1.2em;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  text-transform: uppercase;
+  border-width: 0;
+  border-radius: 5px;
+
+  @media screen and (max-width: 360px){
+    margin: 0 5px 15px 0;
+  }
+  p{
+    padding: 10px 20px 7px 40px;
+    background-color: $status-bar-para-bg;
+    border-radius: 5px;
+    color: $theme-lighter-grey;
+    border:2px dashed $theme-middle-grey;
+    line-height: 1.5;
+    display: block;
+  }
+  &:before{
+    content: " ";
+    position: absolute;
+    left: 17px;
+    top: 15px;
+    height: 15px;
+    width: 15px;
+    display: block;
+    border: 4px solid;
+    border-color:inherit;
+    border-radius: 15px;
+  }
+  &:hover{
+    p {
+      background-color: inherit;
+      color: $white;
+      border:2px solid;
+      border-color: inherit;
+    }
+    &:before{
+      border-color: $white;
+    }
+  }
+}
+
+.deleteBtn {
+  color: $theme-dark-grey;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 17px;
+  margin-right: 10px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.checkboxOptions {
+  margin: 0;
+}

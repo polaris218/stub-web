@@ -1,0 +1,50 @@
+@import '../../../styles/colors.scss';
+.account-summary{
+  [class="control-label"]{
+    @media screen and (min-width: 768px) {
+      text-align: right;
+    }
+  }
+  ul{
+    margin-bottom: 0;
+  }
+  a {
+    font-size: 10px;
+  }
+  a, .view-icon:hover {
+    color: $primary;
+  }
+  .password-field {
+    overflow: hidden;
+    border: 0;
+    background: inherit;
+    width: 100%;
+    line-height: 15px;
+    padding-left: 25px;
+    color: $theme-darker-grey;
+  }
+  .view-icon {
+    background-color: inherit !important;
+    cursor: pointer;
+    color: inherit;
+    height: auto;
+    padding: 0 10px 0 0;
+    position: absolute;
+    width: auto;
+    top: 5px;
+  }
+  .сhange-plan {
+    margin-left: 25px;
+  }
+  .change-keys {
+    margin-top: 8px;
+    display: block;
+  }
+  p {
+    margin: 0;
+    font-size: 14px;
+  }
+  span {
+    font-size: 10px;
+  }
+}

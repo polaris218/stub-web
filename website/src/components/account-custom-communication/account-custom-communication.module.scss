@@ -1,0 +1,297 @@
+@import '../../../styles/colors.scss';
+
+.plain_part{
+  .header{
+    color: $theme-lighter-grey;
+    font-size: 22px;
+    padding: 15px;
+    padding-left: 0;
+    font-weight: bold;
+  }
+
+  .full-width {
+    width: 100.2% !important;
+  }
+
+  .user-plan,
+  .user-plan-menu,
+  .user-plan-item {
+    @extend .full-width;
+  }
+
+  .user-plan {
+    @extend .full-width;
+    text-align: right;
+    padding-right: 25px;
+
+    .caret {
+      vertical-align: text-top !important;
+      margin-left: 10px !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 10px !important;
+    }
+  }
+
+  .user-plan-info {
+    display: inline-block;
+
+    .user-plan-name,
+    .user-plan-calls {
+      display: block;
+      @media (max-width: 665px) {
+        white-space: normal;
+      }
+    }
+    .user-plan-name {
+      display: block;
+    }
+
+  }
+
+  .user-plan-item {
+    padding: 5px 25px;
+  }
+
+  .user-plan-toggle {
+    @extend .full-width;
+    text-align: right;
+    padding-right: 25px;
+
+    .caret {
+      vertical-align: text-top !important;
+      margin-left: 10px !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 10px !important;
+    }
+  }
+
+  .col-right{
+    margin-right:20px;
+  }
+
+  .confirmation_message_text{
+    label {
+      @media (max-width: 700px) {
+        text-align: left;
+      }
+    }
+  }
+
+}
+
+.authKeysExtraFields {
+  padding: 6px 12px;
+}
+
+.rangeSliderCustom {
+  box-shadow: none !important;
+  margin: 15px 0 10px 0 !important;
+  height: 6px !important;
+  padding: 0 !important;
+  ul {
+    margin-top: 10px;
+  }
+  &>div:first-child {
+    height: 6px;
+    background-color: $primary !important;
+    border-radius: 10px;
+    top: -1px;
+    position: absolute;
+    left: -1px;
+    box-shadow: none !important;
+  }
+  &>div:nth-child(2) {
+    background: $btn-primary-hover !important;
+    border-color: $primary;
+    width: 20px !important;
+    height: 20px !important;
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.custom_webhook_url {
+  margin-top: 10px;
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
+}
+
+.rcTimePickerInstance {
+  padding: 0 0 10px 0;
+  min-height: 44px;
+  input[type=text] {
+    border: 0;
+    outline: none;
+    border-radius: 0;
+    background: transparent;
+    font-size: 1em;
+    height: 44px;
+  }
+}
+
+.timezonePickerInstance {
+  padding: 0 0 10px 0;
+  min-height: 44px;
+  div {
+    input[type=text] {
+      border: 0;
+      outline: none;
+      background: none;
+      height: 44px;
+    }
+  }
+}
+
+:global {
+  .rc-time-picker-panel {
+    margin-top: 50px !important;
+    .rc-time-picker-panel-select {
+      overflow-x: hidden;
+    }
+    //.rc-time-picker-panel-select:last-child {
+    //  width: 100%;
+    //  height: 35px;
+    //  ul {
+    //    li {
+    //      float: left;
+    //      display: inline-block;
+    //      width: 50%;
+    //      box-sizing: border-box;
+    //      height: 35px;
+    //      line-height: 35px;
+    //      text-align: center;
+    //    }
+    //  }
+    //}
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.labelCaptionSmall {
+  font-size: 14px;
+  text-transform: none !important;
+  color: $theme-lighter-grey;
+  a {
+    color: $theme-lighter-grey;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.exceptionsListContainer {
+  height: 155px;
+  padding: 10px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.rowmargin{
+  margin-top: 15px;
+}
+.boxborder{
+  border: solid 1px black;
+  margin-top: 10px;
+  margin-bottom:10px;
+  min-height: 70px;
+}
+.vline{
+ height:1px;
+  width: 100%;
+  background-color: black;
+  clear: both;
+}
+.textcenters{
+  text-align: center;
+}
+.clsinnerbox{
+  margin: 15px;
+}
+
+.formGroup {
+  padding: 0 20px 0 20px;
+  @media screen and (max-width: 767px){
+    padding: 0 10px 0 20px;
+  }
+}
+
+.switch {
+  div{
+    input[type="checkbox"]:checked + label{
+      background-color: $theme-light-green !important;
+      &:after{
+        background-color: $theme-light-green !important;
+      }
+    }
+  }
+}
+
+.default-entity-info {
+  width: 20px;
+  margin-top:31px;
+  color: #666666;
+}
+
+.apps-buttons {
+  text-align: center;
+  margin: 20px;
+  a {
+    margin: 8px;
+    img {
+      width: 200px;
+    }
+  }
+}
+

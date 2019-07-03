@@ -1,0 +1,36 @@
+@import '../../../styles/colors.scss';
+
+.timepickerContainer {
+  &>div {
+    &>div:first-child {
+      height: 34px;
+      min-height: auto !important;
+      background: none !important;
+      padding: 0 !important;
+    }
+  }
+}
+
+.selectField {
+  width: 100% !important;
+  font-size: 11px;
+  font-weight: 300 !important;
+  color: #555 !important;
+}
+
+.selectFieldWithError {
+  width: 100% !important;
+  font-size: 11px;
+  font-weight: 300 !important;
+  color: #555 !important;
+  &>div {
+    border-color: $theme-red !important;
+  }
+}
+
+.errorText {
+  font-size: 12px;
+  color: $theme-red;
+  padding: 0;
+  margin: 0;
+}

@@ -1,0 +1,159 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.addTemplateModal {
+  width: 80%;
+  min-width: 1024px;
+  @media screen and (max-width: 1034px) {
+    margin-left: 0;
+    margin-top: 0;
+    margin-right: 0;
+  }
+  & > div {
+    width: 100% !important;
+  }
+}
+
+.modalContainer {
+  padding: 0 !important;
+}
+.templateModalHeader {
+  -webkit-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -moz-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -o-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  h2 {
+    text-align: center;
+    color: $dark-black;
+  }
+}
+
+.templateModalFooter {
+  background: $light-bg;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 20px;
+}
+
+.statusesListContainer {
+  border: 2px solid $theme-grey;
+  border-radius: 0;
+  padding: 5px;
+  height: 460px;
+  min-height: 460px;
+  overflow-y: scroll;
+}
+
+.info {
+  padding: 10px 0 0 0;
+  color: $theme-dark-grey;
+}
+
+.header {
+  color: $theme-lighter-grey;
+  font-size: 22px;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+.transparentButton {
+  background-color: transparent;
+  border: none;
+  color: $primary;
+  .iconForTransparent{
+    padding: 0 2px 0 2px;
+    color:$primary;
+    font-size:1.4em;
+    border: 1px solid $primary;
+    margin-bottom: 2px;
+    @include opacity(0.8);
+    @include border-radius(10px);
+  }
+}
+
+.deleteBtn {
+  color: $white;
+  background-color: $theme-red;
+  -webkit-box-shadow: 0px 3px 6px 2px $shadow;
+  -moz-box-shadow: 0px 3px 6px 2px $shadow;
+  box-shadow: 0px 3px 6px 2px $shadow;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  word-spacing: 1px;
+  transition: all 0.3s ease;
+  height: 40px;
+  min-width: 82.02px;
+  &:hover, &:active, &:focus {
+    background-color: $theme-red;
+    opacity: 0.8;
+    color: $white;
+    border: none;
+  }
+}
+
+.saveBtn {
+  min-width: 172px;
+  min-height: 41px;
+}
+
+.sectionOutlined {
+  border: 2px solid $theme-grey;
+  border-radius: 0;
+  padding: 10px;
+}
+
+.formFieldsLabel {
+  color: $no-info-color !important;
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.formFields {
+  color: $theme-darker-grey;
+  font-size: 15px;
+  height: 38px;
+}
+
+.infoNoPadding {
+  color: $theme-dark-grey;
+}
+
+.rightPanel {
+  background: $default-fields-bg;
+  padding-left: 15px;
+  @media screen and (max-width: 360px){
+    padding-left: 5px;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

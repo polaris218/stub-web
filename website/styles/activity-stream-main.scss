@@ -1,0 +1,17 @@
+$activity-stream-width: 500;
+$activity-stream-main-min-width: 1450px;
+
+:export {
+  activity-stream-width: $activity-stream-width;
+  activity-stream-main-min-width: $activity-stream-main-min-width;
+}
+
+@media (min-width: $activity-stream-main-min-width) {
+  .activity-stream-right-space {
+    margin-right: #{$activity-stream-width}px;
+    transition: all 0.5s ease-out;
+  }
+  .activity-stream-button-hidden {
+    display: none;
+  }
+}

@@ -1,0 +1,129 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+    height: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+
+.page-wrap {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", sans-serif;
+  }
+  h2,h3,h5{
+    font-family: "FuturaStdMedium", sans-serif;
+  }
+  div, p, a, li, button,.primary-action-btn, .btn{
+    font-family: "FuturaStdBook", sans-serif;
+  }
+  p{
+    font-size: 1.2em;
+  }
+  h4{
+    font-size: 1.4em;
+  }
+  h2{
+    font-size: 2.6em;
+  }
+}
+
+.page-wrap + section {
+  h1,h4, button {
+    font-family: "FuturaStdHeavy", sans-serif;
+  }
+  h2,h3,h4,h5 {
+    font-family: "FuturaStdMedium", sans-serif;
+  }
+  p, a, li,.primary-action-btn, .btn {
+    font-family: "FuturaStdBook", sans-serif;
+  }
+}
+
+
+
+.footer {
+    margin-top: -255px;
+    height: 255px;
+}
+
+.topSectionImage {
+  text-align: center;
+}
+
+.topImage {
+  margin: 0 auto;
+}
+
+.features {
+  padding:30px;
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.ulstyling {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.ulstylingnobullets {
+  > li {
+    margin-bottom: 12px;
+  }
+}
+
+.helpImage {
+  margin: 0 auto;
+  width: 1400px;
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.75);
+}
+
+.ImageStyle {
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(189,189,189,1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(189,189,189,1);
+  box-shadow: 0px 0px 5px 2px rgba(189,189,189,1);
+}
+
+.flexContainer {
+  display: flex;
+  just-content: center; 
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.flexText {
+  max-width: 800px;
+  flex: 1 0 500px; 
+}
+
+.flexImage {
+  img {
+    max-width: 360px;
+    margin-right: 20px;
+  }
+
+  margin: 10px;
+}
+
+.TOSCotentContainer {
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 1024px;
+  p, a, h1, h2, h3 {
+    word-wrap: break-word;
+  }
+  @media screen and (max-width: 480px) {
+    margin: 80px 0 0 0;
+  }
+}

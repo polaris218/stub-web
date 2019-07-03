@@ -1,0 +1,15 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+    height: 100%;
+}
+.full-height {
+    height: 100%;
+}
+.page-wrap {
+  background: $page-bg;
+  min-height: calc(100vh);
+  min-height: -webkit-calc(100vh);
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}

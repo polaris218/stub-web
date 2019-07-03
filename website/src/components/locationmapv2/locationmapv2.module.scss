@@ -1,0 +1,177 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mila-fonts.scss';
+
+.map-marker{
+  .member-info-wrapper{
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    .close{
+      position: absolute;
+      top: 5px;
+      right: 5px;
+    }
+  }
+  .member-icon{
+    border-radius: 50%;
+    min-width: 60px;
+    height: 60px;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 60px;
+    overflow: hidden;
+    border: 3px solid #ccc;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .member-info{
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    padding-left: 10px;
+    flex: 0 0 100%;
+    max-width: calc(100% - 60px);
+    p{
+      margin-bottom: 5px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  .member-name{
+    color: $primary;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px;
+    word-break: break-all;
+  }
+  .name{
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  .date{
+    cursor: pointer;
+    color: $primary;
+  }
+}
+.mapMarker{
+  z-index: 33;
+  &Inner{
+    background: url("/images/map-pin.png") 0 0 /cover no-repeat;
+    height: 50px;
+    width: 40px;
+    padding: 2px;
+    img{
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+.milaLocationOverlay {
+  height: auto;
+  display: flex;
+  background: rgba(255,255,255,0.7);
+  -webkit-box-shadow: 0px 5px 50px -6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 5px 50px -6px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 50px -6px rgba(0,0,0,0.75);
+  div {
+    float: left;
+  }
+  .estimatedDuration {
+    width: 70px;
+    padding: 5px;
+    font-family: AvenirNext;
+    background: $mila-dark-blue;
+    color: $white;
+    font-size: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    @media screen and (max-width: 376px) {
+      font-size: 14px;
+      width: 40px;
+    }
+  }
+  .exactLocation {
+    width: 380px;
+    display: inline-flex;
+    align-items: center;
+    font-size: 22px;
+    padding: 10px;
+    font-family: AvenirNext;
+    color: $mila-dark-blue;
+    @media screen and (max-width: 480px) {
+      font-size: 18px;
+      width: 300px
+    }
+    @media screen and (max-width: 320px) {
+      font-size: 16px;
+      width: 260px
+    }
+  }
+}
+
+.arrivyLocationOverlay {
+  .estimatedDuration {
+    display: inline-flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background: $white;
+    width: 130px;
+    height: 60px;
+    -webkit-box-shadow: 0px 9px 49px -7px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 9px 49px -7px rgba(0,0,0,0.75);
+    box-shadow: 0px 9px 49px -7px rgba(0,0,0,0.75);
+    border: 1px transparent;
+    border-radius: 4px;
+    span:first-child {
+      font-size: 32px;
+      padding: 15px;
+    }
+    span:last-child {
+      text-transform: uppercase;
+      font-size: 20px;
+      color: $theme-lighter-grey
+    }
+  }
+}
+
+
+.close {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    z-index: 2;
+    .circle, .cross {
+      transition: all .3s ease-in-out;
+    }
+    &:hover {
+      .circle{
+        stroke: $dashboard-dark;
+      }
+      .cross {
+        fill: $dashboard-dark;
+      }
+    }
+  }
+.googleMapsWrapper{
+  [class*="gm-style"] [class*="gm-style-iw-t"] {
+    bottom: 75px !important;
+  }
+}

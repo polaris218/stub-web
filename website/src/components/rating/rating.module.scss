@@ -1,0 +1,325 @@
+@import '../../../styles/colors.scss';
+
+$break-small: 414px;
+$break-large: 991px;
+
+.rating-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding-bottom: 50px;
+  padding-top: 30px; 
+}
+
+.title {
+  color: $primary;
+  font-size: 40px;
+  @media screen and (max-width: $break-small) {
+    font-size: 24px;
+  }
+}
+
+.rate {
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.stars {
+  margin-top: 10px;
+  font-size: 60px;
+  line-height: 65px;
+}
+
+.noty-button {
+  margin-top: 15px;
+  border: 1px solid $primary;
+}
+
+.noty-button:focus {
+  color: $primary;
+    
+}
+
+.feedback textarea {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 90%;
+  font-size: 14px;
+  padding: 5px;
+  border: none;
+}
+
+.feedback {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid $feedback-quote;
+  border-radius: 20px;
+  width: 350px;
+  padding-bottom: 10px;
+  background-color: rgba(255,255,255,0.35);
+}
+
+.feedback span {
+  margin-top: 15px;
+  width: 90%;
+  font-size: 17px;
+  text-align: center;
+}
+
+.urls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-link {
+    transition: all 0.2s ease-in-out 0s;
+    color: white !important;
+    cursor: pointer;
+    font-size: 15px;
+    height: 50px;
+    width: 50px;
+    line-height: 13px;
+    padding: 6px;
+    margin: 0 5px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.social-link:hover {
+    color: $white !important;
+    opacity: 0.7;
+}
+
+.transparent-color {
+  background-color: rgba(255,255,255,0.35);
+
+  :global(.modal-content) {
+    background-color: rgba(255,255,255,0.35);
+  }
+}
+
+.facebook {
+  background-color: $facebook;
+}
+
+.google {
+  background-color: $google;
+}
+
+.yelp {
+  background-color: $yelp;
+}
+
+.angieslist {
+  background-color: $angieslist;
+}
+
+.thumbtack {
+  background: $thumbtack-color;
+  i {
+    transform: rotate(40deg);
+  }
+}
+
+.form, .message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.message {
+  font-size: 18px;
+  text-align: center;
+  background: $table-strip-highlight;
+  width: 345px;
+  border: 1px solid $theme-blue;
+  border-radius: 4px;
+}
+
+.message-text {
+  margin-top: 40px;
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
+}
+
+.message-check {
+  margin-top: 28px;
+  margin-bottom: 16px;
+  i {
+    font-size: 128px;
+    color: $primary;
+  }
+}
+
+.feedback-text {
+  display: flex;
+  align-items: center;
+  min-height: 92px;
+}
+
+.message-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.message-links-buttons {
+  text-align: center;
+  width: 100% !important;
+  margin: 16px 0;
+  padding: 10px;
+  .social-link {
+    display: inline-block;
+    height: 55px;
+    width: 55px;
+    margin-top: 4px;
+  }
+}
+
+.message-links-text {
+  padding: 0 40px;
+}
+
+.clearfixCustom {
+  margin-top: 20px;
+}
+
+.social-links-container {
+  background: $primary;
+  display: block;
+  width: 100%;
+  padding: 15px;
+  text-align: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  margin-bottom: -10px;
+}
+
+.social-links-container span { color: $white; }
+
+@keyframes fadeInDown {
+  from {
+    transform:scale(1,0);
+    opacify: 0;
+  }
+
+  to {
+    transform: scale(1,1);
+    opacity: 1;
+  }
+}
+
+.recommendationForm {
+  background: $light-primary-back;
+  padding: 15px;
+  display: block;
+  width: 100%;
+  height: auto;
+  animation-name: fadeInDown;
+  animation-duration: 0.4s;
+  animation-direction: alternate;
+  position: relative;
+}
+
+.recommendationFormRated {
+  margin: 10px 10px 3px 10px;
+  background: $light-primary-back;
+  border: 1px solid $theme-blue;
+  border-radius: 4px;
+  font-size: 13px;
+  min-height: 300px;
+  padding: 10px;
+  .arrowHead {
+    display: none;
+  }
+}
+
+
+.formGroupCustom {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.formGroupCustom input[type=text] {
+  border: 0;
+  outline: 0;
+  background: $white;
+  border-radius: 0;
+  width: 295px;
+  padding: 5px;
+}
+
+.formGroupCustom textarea {
+  width: 315px;
+  padding: 5px;
+}
+
+.recommendBtn {
+  line-height: 32px
+}
+
+.recommendBtn i {
+  color: $primary-green;
+}
+
+.arrowHead {
+  background: $light-primary-back;
+  width: 15px !important;
+  height: 15px;
+  display: inline-block;
+  position: absolute;
+  top: -22px;
+  right: 35%;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.errorMsg {
+  color: $error-message-border;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: rgba(255, 78, 76, 0.29);
+  border: 1px solid;
+  border-color: $error-message-border !important;
+  margin: 10px;
+}
+
+@keyframes fadeInShow {
+  0% { display: none; opacity: 0; }
+  50% { display: block; opacity: 0.5; }
+  100% { display: block; opacity: 1; }
+}
+
+.successMsg {
+  color: $success-text;
+  padding: 15px;
+  border-radius: 4px;
+  background: $success-background;
+  border: 1px solid $success-border;
+  margin: 10px;
+}
+
+.rate-Button {
+  padding: 8px 12px;
+}
+
+.recommendationLink {
+  padding: 0 0 25px 0;
+}
+
+.ratingText {
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 0 40px;
+}

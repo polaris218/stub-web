@@ -1,0 +1,129 @@
+@import '../../../styles/colors.scss';
+
+.navbar-custom {
+	background: $theme-main;
+    border-color: $theme-main;
+    min-height: 65px;
+    z-index: 1000;
+    width: 100%;
+    position: inherit;
+    margin-bottom: 0px;
+}
+
+.navbar-brand-logo {
+    height: 38px;
+    margin: 15px 15px;
+    cursor: pointer;
+}
+
+.navbar-link {
+    padding: 7px 0;
+    margin-left: 12px;
+    
+    a {
+        color: $btn-transp-text !important;
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        word-spacing: 1px;
+
+        &:after {
+            transition: all 0.15s ease-out 0s;
+            transform: scale(0, 1);
+            border-bottom: 2px solid;
+            content: "";
+            display: block;
+            height: 1px;
+            left: -1px;
+            margin-top: -3px;
+            position: relative;
+            top: 3px;
+            width: 100%;
+        }
+    }
+}
+
+
+.navbar-subscribe-expired-link {
+    padding: 2px 0;
+    margin-left: 12px;
+    
+    a {
+        color: $navbar-expired-btn !important;
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        word-spacing: 1px;
+        font-weight: 700;
+
+        &:after {
+            transition: all 0.15s ease-out 0s;
+            transform: scale(0, 1);
+            border-bottom: 2px solid;
+            content: "";
+            display: block;
+            height: 1px;
+            left: -1px;
+            margin-top: -3px;
+            position: relative;
+            top: 3px;
+            width: 100%;
+        }
+    }
+
+    button {
+      color: $white;
+      background-color: $navbar-expired-btn;
+      border-color: none;
+    }
+}
+
+.navbar-subscribe-link {
+    padding: 2px 0;
+    margin-left: 12px;
+    
+    a {
+        color: $yellow !important;
+        margin: 0;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        text-decoration: none;
+        word-spacing: 1px;
+        font-weight: 700;
+
+        &:after {
+            transition: all 0.15s ease-out 0s;
+            transform: scale(0, 1);
+            border-bottom: 2px solid;
+            content: "";
+            display: block;
+            height: 1px;
+            left: -1px;
+            margin-top: -3px;
+            position: relative;
+            top: 3px;
+            width: 100%;
+        }
+    }
+
+    button {
+      color: $white;
+      background-color: $yellow;
+      border-color: none;
+    }
+}
+
+/*.navbar-link a {
+    color: #FFF;
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    word-spacing: 1px;
+}
+
+.navbar-link > a:hover {
+    color: #000 !important;
+}*/

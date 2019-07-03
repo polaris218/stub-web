@@ -1,0 +1,26 @@
+@import '../../../../../styles/colors.scss';
+.mapHeader{
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  .estimate,
+  .arrivalTime{
+    flex: 0 0 auto;
+    width: auto;
+    max-width: none;
+    margin-bottom: 5px;
+    span{
+      color: $dashboard-primary;
+    }
+  }
+  .arrivalTime{
+    font-size: 11px;
+    span{
+      display: block;
+    }
+  }
+}
+.map{
+  margin-bottom: 10px;
+}

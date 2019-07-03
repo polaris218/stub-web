@@ -1,0 +1,101 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.add-fields-form{
+    input {
+        margin-top: 0px !important;
+    }
+    .full-width {
+        width: 100%;
+        margin-bottom: 20px;
+        @media (max-width: 400px) {
+            width: 140% !important;
+            margin-left: -40px;
+        }
+    }
+    .field-form {
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+    .remove-button {
+        border: none;
+        background: transparent;
+        color: red;
+        margin-top: 9px;
+        font-size: 18px;
+        padding: 0;
+    }
+    @media (max-width: 768px) {
+        .full-width {
+            width: 100%;
+        }
+    }
+
+    .empty-width {
+        width: 20px;
+    }
+
+    .form-legend {
+        padding-left: 15px;
+        border: 0;
+    }
+
+    .ef-title {
+        margin-bottom: 10px;
+    }
+    .add-field-btn {
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 10px;
+        margin-left: 4px;
+        text-decoration: none;
+        cursor: pointer;
+        display: inline-block;
+        background: $btn-transp;
+        color: $primary-green;
+        border: 2px solid $primary-green;
+        @include border-radius(5px);
+        &:hover{
+            background-color: $btn-sec-hover;
+            text-decoration: none;
+        }
+    }
+    input,select{
+        background: white;
+    }
+    select{
+        cursor: pointer;
+    }
+}
+.extra-fields-select{
+    position: relative;
+    max-width: 300px !important;
+    >div{
+        font-size: 14px !important;
+        min-height: 0px !important;
+        height: 34px !important;
+        border: 1px rgb(204, 204, 204);
+        background-color: white;
+        color: rgb(85, 85, 85);
+        border-radius: 2px !important;
+        width: auto !important;
+        >div{
+            font-family: Nunito, -apple-system, BlinkMacSystemFont, sans-serif !important;
+            min-height: 0px !important;
+            word-wrap: break-word !important;
+            &:nth-child(1){
+                background: none white !important;
+                border-color: transparent !important;
+                height: 34px !important;
+            }
+            >div{
+                font-size: 14px !important;
+                &:first-child{
+                    overflow: hidden !important;
+                    text-overflow: ellipsis !important;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

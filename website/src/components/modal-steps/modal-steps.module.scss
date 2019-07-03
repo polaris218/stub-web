@@ -1,0 +1,172 @@
+@import '../../../styles/colors.scss';
+
+.form-grid {
+  width: 100% !important;
+  max-width: 100vw;
+}
+
+.step-title {
+  color: $primary;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+  margin-top: -12px;
+  margin-bottom: 24px;
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 300;
+}
+
+.header {
+  border-bottom: 0 !important;
+}
+
+.background {
+  opacity: .1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+}
+
+.footer {
+  position: relative;
+  @media screen and (max-width: 440px) {
+    text-align: center;
+  }
+}
+
+
+
+.full-width {
+  width: 100% !important;
+}
+
+.user-plan,
+.user-plan-menu,
+.user-plan-item {
+  @extend .full-width;
+}
+
+.user-plan-info {
+  display: inline-block;
+
+  .user-plan-name,
+  .user-plan-calls {
+    display: block;
+  }
+  .user-plan-name {
+    display: block;
+  }
+
+}
+
+.user-plan-item {
+  padding: 5px 25px;
+}
+
+.user-plan-toggle {
+  @extend .full-width;
+  text-align: right;
+  padding-right: 25px;
+
+  .caret {
+    vertical-align: text-top !important;
+    margin-left: 10px !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 10px !important;
+  }
+}
+
+.apps-header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.apps-description {
+  color: #696969;
+  font-size: 18px;
+  list-style: none;
+  margin-top: 24px;
+  display: inline-block;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.apps-buttons {
+  text-align: center;
+  margin: 20px;
+  a {
+    margin: 8px;
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.player {
+  text-align: center;
+
+  img {
+    width: 100%;
+  }
+
+  iframe {
+    border: 0;
+    height: 480px;
+    width: 100%;
+  }
+}
+
+.team-step{
+  font-size: 18px;
+  padding: 0px 18px 12px 18px;
+}
+
+.modal {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  z-index: 1600;
+  >div {
+    width: 100vw !important;
+    >div {
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+  }
+}
+
+:global .modal-backdrop {
+  opacity: .8 !important;
+  z-index: 1600;
+}
+
+:global .modal-content {
+  max-width: 100vw;
+  margin-left: 0 !important;
+
+  @media screen and (max-width: 768px){
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

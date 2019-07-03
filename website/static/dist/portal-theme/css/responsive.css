@@ -1,0 +1,182 @@
+/*================================================================================
+	Item Name: Pixxett
+	Description: Premium Bootstrap API Template
+	Author URL: http://www.pixxett.com/
+================================================================================*/
+
+/* =================================================================================
+smaller than 1280 
+================================================================================= */
+@media screen and (max-width: 1280px) {
+	.topmenu{display: none;}
+}
+
+/* =================================================================================
+smaller than 1024 
+================================================================================= */
+@media screen and (max-width: 1024px) {
+	.profilebox b{display: none;}
+	.searchform{display: none;}
+	.sidebar{display: none;}
+	.content{margin-left: 0 !important;}
+	.sidebar-open-button{display: none;}
+	.sidebar-open-button-mobile{display: block;}
+	.social-stats{bottom: 100px;}
+	.topstats li{width: 33%;}
+	.demo-sidebarmenu .sidebar{display: block;}
+	#documenter-4-4 .padding-l-0, #documenter-4-4 .padding-r-0, #documenter-4-5 .padding-l-0, #documenter-4-5 .padding-r-0 {
+		padding: 0px;
+	}
+	#documenter_content #documenter-4-6.method.row {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	#documenter_content #documenter-4-6 .col-lg-3 {
+		padding: 0px;
+	}
+	.textwidget {
+		width: 47%;
+	}
+}
+
+/* =================================================================================
+smaller than 760 
+================================================================================= */
+@media screen and (max-width: 760px) {
+	.page-header .right{display: none;}
+	.sidebar{display: none; width: 100%;}
+	.presentation .list{float: left; margin-top: 20px;}
+	.applogo {
+		padding-left: 0;
+		background: none;
+		display: block;
+		position: absolute;
+		width: 100%;
+		z-index: -4;
+	}
+	.container-default, .container-widget{margin-left:-20px; margin-right: -20px;}
+	.container-padding, .container-no-padding{margin-left:-40px; margin-right: -40px;}
+	.social-content{padding-left: 10px; padding-right: 10px;}
+	.chart-with-stats .top-label{right: 20px;}
+	.mailbox-menu .menu li{display: block; width: 100%; border-right:none; border-bottom: 1px solid rgba(0, 0, 0, 0.08);}
+	.chat .title{height: auto;}
+	.profile-left .btn{display: none;}
+	.topstats li{width: 50%;}
+	.method .method-example .table {
+		margin-bottom: 0px;
+	}
+	.method-area-wrapper .method-area {
+		padding-bottom: 20px;
+	}
+}
+
+/* =================================================================================
+smaller than 480
+================================================================================= */
+@media screen and (max-width: 480px) {
+	.method .method-copy .method-list .method-list-group .method-list-item .method-list-item-description {
+		width: 100%;
+		margin: 0px;
+	}
+	.method .method-copy .method-list .method-list-group .method-list-item .method-list-item-label {
+		float: none;
+		text-align: left;
+		margin: 0px;
+		margin-bottom: 7px;
+	}
+	#documenter-4-4 .padding-l-0, #documenter-4-4 .padding-r-0, #documenter-4-5 .padding-l-0, #documenter-4-5 .padding-r-0 {
+		padding: 0px;
+	}
+	#documenter_content #documenter-4-6.method.row {
+		margin-right: 0px;
+		margin-left: 0px;
+	}
+	#documenter_content #documenter-4-6 .col-lg-3 {
+		padding: 0px;
+	}
+	.textwidget {
+		width: 100%;
+		margin-right: 0px;
+	}
+	blockquote.solid-pink p,
+	blockquote.darker-blue p,
+	blockquote.pull-quotes p,
+	blockquote.card-quotes p {
+		width: 100%;
+	}
+	blockquote.darker-blue .quote {
+		left: 5%;
+		width: 40px;
+		height: 40px;
+		top: 7%;
+	}
+	blockquote.darker-blue .quote:before, blockquote.darker-blue .quote-right:before {
+		font-size: 30px;
+		line-height: 40px;
+	}
+	blockquote.darker-blue .quote-right {
+		right: 8%;
+		width: 40px;
+		height: 40px;
+		bottom: 10%;
+	}
+	blockquote.pull-quotes .quote {
+		left: 33%;
+		top: 6%;
+	}
+	blockquote.card-quotes {
+		padding: 60px 50px;
+	}
+	blockquote.card-quotes .quote {
+		width: 40px;
+		height: 40px;
+		top: 0%;
+	}
+	blockquote.card-quotes .image-wrapper {
+		width: 60%;
+	}
+	.error-pages .icon {
+		width: 100%;
+		height: inherit;
+	}
+	.error-pages form {
+		width: 100%;
+	}
+	.btn {
+		font-size: 12px;
+		padding: 7px 15px 7px 15px;
+	}
+	.error-pages h1 {
+		font-size: 24px;
+	}
+
+}
+/* =================================================================================
+smaller than 428 
+================================================================================= */
+@media screen and (max-width: 428px) {
+	.top-right{display: none;}
+	.applogo{
+		padding-left: 0;
+		background: none;
+		display: block;
+		position: absolute;
+		width: 100%;
+		z-index: -4;
+	}
+	.topstats li{width: 100%;}
+	#pixxett-api .method .method-area:first-child .method-copy {
+		padding-top: 0px;
+	}
+	.method .method-example .table {
+		margin-bottom: 0px;
+	}
+	.method-area-wrapper .method-area {
+		padding-bottom: 20px;
+	}
+
+}
+
+
+
+

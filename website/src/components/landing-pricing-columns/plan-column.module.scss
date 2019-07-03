@@ -1,0 +1,184 @@
+@import '../../../styles/colors.scss';
+
+.column {
+  padding: 0 !important;
+}
+
+.plan {
+  position: relative;
+  background-color: $white;
+  z-index: 1;
+  font-size: 18px;
+  overflow: hidden;
+  padding: 36px;
+  @media (min-width: 768px) {
+    text-align: center;
+    border: 1px solid rgba(189, 195, 199, 0.6);
+    padding: 36px;
+    border-radius: 8px;
+    &[data-primary] {
+      box-shadow: 0 1rem 3rem 0 rgba(189,195,199,0.6);
+      border: 0;
+      z-index: 4;
+      margin: -28px -6px 28px;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+
+}
+
+.toggle-features {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px;
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+
+.plan-description {
+  color: $plan-description;
+  font-weight: normal;
+  line-height: 1.63;
+  margin-top: 8px;
+  @media (min-width: 768px) {
+    min-height: 87px;
+  }
+}
+
+.plan-price {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $primary;
+  flex-direction: row;
+  @media screen and (max-width: 1500px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 1200px) {
+    flex-direction: row;
+  }
+  @media screen and (max-width: 640px) {
+    flex-direction: column;
+  }
+  div {
+
+  }
+  span {
+    margin-right: 10px;
+  }
+  span.totalPrice {
+    text-decoration: line-through;
+    font-size: 20px;
+  }
+  span.discountedPrice {
+    font-size: 20px;
+    @media screen and (max-width: 441px) {
+      font-size: 16px;
+    }
+  }
+  span.discountPitch {
+    font-size: 16px;
+    color: $theme-light-green;
+    margin-right: 0 !important;
+    @media screen and (max-width: 441px) {
+      align-self: stretch;
+      text-align: center;
+    }
+  }
+}
+
+.idealPlan {
+  font-size: 12px;
+  color: $plan-description;
+}
+
+.plan-primary {
+  margin: 12px 0;
+  @media (min-width: 768px) {
+    margin: 0;
+    text-transform: uppercase;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+  color: $white;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.plan-name {
+  font-size: 32px;
+}
+
+.features {
+  font-size: 18px;
+  padding: 4px;
+  margin-bottom: 16px;
+  display: none;
+  @media (min-width: 768px) {
+    display: block;
+  }
+
+  > li {
+    margin-bottom: 10px;
+  }
+
+  i {
+    color: $primary;
+  }
+}
+
+
+.features-panel {
+  display: block;
+  border: 0;
+  .features {
+    display: block;
+  }
+  @media (min-width: 768px) {
+    display: none;
+  }
+}
+
+.features-heading {
+  font-family: "FuturaStdBook", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 16px;
+  margin-bottom: 20px;
+  @media (min-width: 768px) {
+    margin-top: 24px;
+  }
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 2px;
+    background-color: $theme-grey;
+    left: 15%;
+    right: 15%;
+    bottom: 0;
+  }
+}
+
+.plan-button {
+  button {
+    color: $white;
+  }
+}
+
+.plan-wrapper {
+  @media (min-width: 768px) {
+    min-height: 425px;
+  }
+}

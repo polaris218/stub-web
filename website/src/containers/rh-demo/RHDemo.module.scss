@@ -1,0 +1,41 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+    height: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.formArea {
+  max-width: 400px;
+  padding-bottom: 20px;
+}
+
+.spinnerStyle {
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.successText {
+  color: $hr-success-color;
+}
+
+.savingSpinnerContainer {
+  min-height: calc(100vh - 126px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageContentContainer {
+  min-height: calc(100vh - 126px);
+}

@@ -1,0 +1,26 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.page-wrap {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", 'Poppins', sans-serif;
+  }
+  h2,h3,h5{
+    font-family: "FuturaStdMedium", 'Poppins', sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn, .span{
+    font-family: "FuturaStdBook", sans-serif;
+  }
+}
+
+.page-wrap + section {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", sans-serif;
+  }
+  h2,h3,h4,h5 {
+    font-family: "FuturaStdMedium", sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn, .span {
+    font-family: "FuturaStdBook", sans-serif;
+  }
+}

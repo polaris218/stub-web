@@ -1,0 +1,1833 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Express API",
+    "description" : "Express APIs provides rapid integration with Arrivy."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/express/tasks/upsert/{external_id}" : {
+      "put" : {
+        "summary" : "Add/Update Task.",
+        "description" : "Adds/Updates a task to your account, along with all the related entities and resources.",
+        "operationId" : "task_upsert",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Name of Task",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_datetime",
+          "in" : "formData",
+          "description" : "Start Datetime of Task. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_datetime",
+          "in" : "formData",
+          "description" : "End datetime of Task. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "details",
+          "in" : "formData",
+          "description" : "Details of Task.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "entity_ids",
+          "in" : "formData",
+          "description" : "Comma separated string of entity ids.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "resource_ids",
+          "in" : "formData",
+          "description" : "Comma separated string of resource ids.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_first_name",
+          "in" : "formData",
+          "description" : "First Name of Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_last_name",
+          "in" : "formData",
+          "description" : "Last Name of Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_email",
+          "in" : "formData",
+          "description" : "Email of Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_company_name",
+          "in" : "formData",
+          "description" : "Customer Company Name.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_address_line_1",
+          "in" : "formData",
+          "description" : "Customer Address Line 1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_address_line_2",
+          "in" : "formData",
+          "description" : "Customer Address Line 2",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_city",
+          "in" : "formData",
+          "description" : "Customer's City.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_state",
+          "in" : "formData",
+          "description" : "Customer's State.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_country",
+          "in" : "formData",
+          "description" : "Customer's Country.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_zipcode",
+          "in" : "formData",
+          "description" : "Zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of customer location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_mobile_number",
+          "in" : "formData",
+          "description" : "Mobile number of customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_phone",
+          "in" : "formData",
+          "description" : "Phone number of customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_id",
+          "in" : "formData",
+          "description" : "Identifier for customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_notes",
+          "in" : "formData",
+          "description" : "Any special notes from customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enable_time_window_display",
+          "in" : "formData",
+          "description" : "True indicates that additional time window on task is required.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "time_window_start",
+          "in" : "formData",
+          "description" : "Value of additional time window (in mins) required on task. This will only have effect if `enable_time_window_display` is also present as `True` in the payload.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "unscheduled",
+          "in" : "formData",
+          "description" : "True/False which indicates if task is unscheduled or not.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the task.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "notifications",
+          "in" : "formData",
+          "description" : "A key value pair as JSON. Possible key options are sms, email, facebook (in works). Indicate true or false to turn on or off each of these channels.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source",
+          "in" : "formData",
+          "description" : "String source of the task e.g. it can be google or any other calendar or your own system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source_id",
+          "in" : "formData",
+          "description" : "Identifier to correlate this task with the id of task in any other system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "formData",
+          "description" : "ID of that group to which this task should belong.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "additional_addresses",
+          "in" : "formData",
+          "description" : "A JSON String which is used to store multiple addresses on a task. It can contain several JSON objects, having key value pairs of address attributes. Every address Object will have attributes like `title`, `address_line_1`, `address_line_2`, `city`, `state`, `country`, `zipcode` and `exact_location`. exact_location is a JSONon string having two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "entities",
+          "in" : "formData",
+          "description" : "A JSON String to add entities to system and assign them to Task. It can contain an array of entity data objects. Required fields for entity are `name`, `type` and `external_id`. Optional fields for entity are `email`, `phone`, `details`, `permission`, `extra_fields` (JSON String of key value pairs), `image_id` , `image_path`, `group_id` (ID of that group to which this entity should belong). permission can have one the following values, i.e. `ADMIN`, `SCHEDULER`, `FIELDCREW`, `LIMITEDACCESS`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "resources",
+          "in" : "formData",
+          "description" : "A JSON String to add resources to system and assign them to Task. It can contain an array of entity data objects. Required fields for resource are `name`, `type` and `external_id`. Optional fields for resource are `details`, `extra_fields` (JSON String of key value pairs), `image_id` , `image_path`, `group_id` (ID of that group to which this resource should belong).",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to add/update task of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "Entity Result" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "response" : {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "object",
+                          "properties" : {
+                            "id" : {
+                              "type" : "string",
+                              "example" : 5084123566836224
+                            }
+                          }
+                        }
+                      },
+                      "external_id" : {
+                        "type" : "string",
+                        "example" : "entity0001"
+                      }
+                    }
+                  }
+                },
+                "Resource Result" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "response" : {
+                        "type" : "array",
+                        "items" : {
+                          "type" : "object",
+                          "properties" : {
+                            "id" : {
+                              "type" : "string",
+                              "example" : 50841234246836224
+                            }
+                          }
+                        }
+                      },
+                      "external_id" : {
+                        "type" : "string",
+                        "example" : "resource0001"
+                      }
+                    }
+                  }
+                },
+                "Task Result" : {
+                  "type" : "object",
+                  "properties" : {
+                    "response" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "description" : {
+                            "type" : "string",
+                            "example" : "Updated."
+                          },
+                          "id" : {
+                            "type" : "integer",
+                            "example" : 58432438834944
+                          },
+                          "tasksFetchRecommended" : {
+                            "type" : "boolean",
+                            "example" : false
+                          }
+                        }
+                      }
+                    },
+                    "external_id" : {
+                      "type" : "string",
+                      "example" : "task0001"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_DATETIME"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "End datetime should be later than Start datetime"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/tasks/{external_id}" : {
+      "get" : {
+        "summary" : "Get Task.",
+        "description" : "Returns the entire payload of task by external id and it can also get some additional details (task statuses and ratings) by sending `show_details` as true in query param.",
+        "operationId" : "get_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "show_details",
+          "in" : "query",
+          "description" : "If true returns Task statuses and ratings.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get task of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "title" : {
+                  "type" : "string",
+                  "example" : "Task001"
+                },
+                "start_datetime" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T08:00:00"
+                },
+                "end_datetime" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T09:00:00"
+                },
+                "start_datetime_original_iso_str" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T08:00:00+01:00"
+                },
+                "end_datetime_original_iso_str" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T09:00:00+01:00"
+                },
+                "details" : {
+                  "type" : "string",
+                  "example" : "Task Details"
+                },
+                "entity_ids" : {
+                  "type" : "string",
+                  "example" : "5348024557502464, 033534889455750984"
+                },
+                "resource_ids" : {
+                  "type" : "string",
+                  "example" : "2049627896321366, 069596596897565964"
+                },
+                "customer_first_name" : {
+                  "type" : "string",
+                  "example" : "John"
+                },
+                "customer_last_name" : {
+                  "type" : "string",
+                  "example" : "Doe"
+                },
+                "customer_email" : {
+                  "type" : "string",
+                  "example" : "john@doe.com"
+                },
+                "customer_company_name" : {
+                  "type" : "string",
+                  "example" : "Movers"
+                },
+                "customer_address_line_1" : {
+                  "type" : "string",
+                  "example" : "16357 118th Lane Northeast"
+                },
+                "customer_address_line_2" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "customer_city" : {
+                  "type" : "string",
+                  "example" : "Bothell"
+                },
+                "customer_state" : {
+                  "type" : "string",
+                  "example" : "Washington"
+                },
+                "customer_country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                },
+                "customer_zipcode" : {
+                  "type" : "string",
+                  "example" : 98011
+                },
+                "customer_exact_location" : {
+                  "type" : "string",
+                  "example" : {
+                    "lat" : 47.74659,
+                    "lng" : -122.1829
+                  }
+                },
+                "customer_mobile_number" : {
+                  "type" : "string",
+                  "example" : 42552443435
+                },
+                "customer_phone" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "unscheduled" : {
+                  "type" : "string",
+                  "example" : false
+                },
+                "group_id" : {
+                  "type" : "integer",
+                  "example" : 9803654557479602
+                },
+                "notifications" : {
+                  "type" : "string",
+                  "example" : {
+                    "email" : false,
+                    "sms" : true
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "summary" : "Delete Task.",
+        "description" : "Delete task using its external_id.",
+        "operationId" : "delete_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete task of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/tasks" : {
+      "get" : {
+        "summary" : "List All Tasks.",
+        "description" : "List all tasks. You can specify a few fields to limit your search (highly recommended). Possible URL params are explained.",
+        "operationId" : "get_all_tasks",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "entity_id",
+          "in" : "query",
+          "description" : "This field helps return tasks of a specific entity.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "from",
+          "in" : "query",
+          "description" : "Date & Time of the query. This needs to be ISO8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. '2016-10-14T08:00:00+01:00'. Plus sign needs to be url encoded as these are query params.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "to",
+          "in" : "query",
+          "description" : "Date & Time of the query. This needs to be ISO8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. '2016-10-14T08:00:00+01:00'. Plus sign needs to be url encoded as these are query params.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Default value is 1 if not supplied.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Default value is 500 if not supplied.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "unscheduled",
+          "in" : "query",
+          "description" : "Default value is false. True indicates that only unscheduled tasks should be returned.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "task_with_no_datetime",
+          "in" : "query",
+          "description" : "Returns all tasks that don't have a date & time at all.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_id",
+          "in" : "query",
+          "description" : "Returns tasks for a given customer_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Returns task for given external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "show_details",
+          "in" : "query",
+          "description" : "If true returns Task statuses and ratings.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get task list of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "title" : {
+                    "type" : "string",
+                    "example" : "Task001"
+                  },
+                  "start_datetime" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T08:00:00"
+                  },
+                  "end_datetime" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T09:00:00"
+                  },
+                  "start_datetime_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T08:00:00+01:00"
+                  },
+                  "end_datetime_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T09:00:00+01:00"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Task Details"
+                  },
+                  "entity_ids" : {
+                    "type" : "string",
+                    "example" : "5348024557502464, 033534889455750984"
+                  },
+                  "resource_ids" : {
+                    "type" : "string",
+                    "example" : "2049627896321366, 069596596897565964"
+                  },
+                  "customer_first_name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "customer_last_name" : {
+                    "type" : "string",
+                    "example" : "Doe"
+                  },
+                  "customer_email" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                  },
+                  "customer_company_name" : {
+                    "type" : "string",
+                    "example" : "Movers"
+                  },
+                  "customer_address_line_1" : {
+                    "type" : "string",
+                    "example" : "16357 118th Lane Northeast"
+                  },
+                  "customer_address_line_2" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "customer_city" : {
+                    "type" : "string",
+                    "example" : "Bothell"
+                  },
+                  "customer_state" : {
+                    "type" : "string",
+                    "example" : "Washington"
+                  },
+                  "customer_country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "customer_zipcode" : {
+                    "type" : "string",
+                    "example" : 98011
+                  },
+                  "customer_exact_location" : {
+                    "type" : "string",
+                    "example" : {
+                      "lat" : 47.74659,
+                      "lng" : -122.1829
+                    }
+                  },
+                  "customer_mobile_number" : {
+                    "type" : "string",
+                    "example" : 42552443435
+                  },
+                  "customer_phone" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "unscheduled" : {
+                    "type" : "string",
+                    "example" : false
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 9803654557479602
+                  },
+                  "notifications" : {
+                    "type" : "string",
+                    "example" : {
+                      "email" : false,
+                      "sms" : true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/tasks/{external_id}/status/new" : {
+      "post" : {
+        "summary" : "Report Task Status.",
+        "description" : "Reports a new task status for your task. It takes task's external id in URL.",
+        "operationId" : "create_task_status",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "Type of status. Possible options are `NOTSTARTED`, `ENROUTE`, `STARTED`, `COMPLETE`, `EXCEPTION`, `CANCELLED`, `PREPARING`, `CONFIRMED`, `CUSTOM`, `RECOMMENDED`, `RESCHEDULED`, `CUSTOMER_EXCEPTION` and `READYFORPICKUP`.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "time",
+          "in" : "formData",
+          "description" : "Time of status report. This needs to be ISO8601.Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "reporter_name",
+          "in" : "formData",
+          "description" : "Name of task status reporter.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "reporter_id",
+          "in" : "formData",
+          "description" : "Entity ID of the reporter.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the task status. It could be notes, file paths etc.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source",
+          "in" : "formData",
+          "description" : "String source of the task status e.g. it can be `web`, `email`, `sms` or `app`. APP indicates mobile app.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "current_destination",
+          "in" : "formData",
+          "description" : "Used only for ENROUTE type status. It is a JSON object which contains address attributes which have same value as ONE of the addresses from task. This attribute with task status is used to indicate to which destination crew is moving towards right now.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to report task status for task of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/resources" : {
+      "get" : {
+        "summary" : "List All Resources.",
+        "description" : "View all resources of your team/company.",
+        "operationId" : "get_all_resources",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional param to get resources back in pages.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional param to get resources back in batches.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get resources of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Truck"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "Truck22"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Joe loves his truck"
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  },
+                  "external_id" : {
+                    "type" : "string",
+                    "example" : "resource0001"
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : null
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/resources/{external_id}" : {
+      "get" : {
+        "summary" : "Get Resource.",
+        "description" : "Get all fields of a specific resource.",
+        "operationId" : "get_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of resource.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get resource of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "type" : {
+                  "type" : "string",
+                  "example" : "Truck"
+                },
+                "owner" : {
+                  "type" : "integer",
+                  "example" : 5629499534213120
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : "Truck22"
+                },
+                "details" : {
+                  "type" : "string",
+                  "example" : "Joe loves his truck"
+                },
+                "extra_fields" : {
+                  "type" : "object",
+                  "example" : null
+                },
+                "image_id" : {
+                  "type" : "integer",
+                  "example" : 12345
+                },
+                "image_path" : {
+                  "type" : "string",
+                  "example" : "https://...../...."
+                },
+                "external_id" : {
+                  "type" : "string",
+                  "example" : "resource0001"
+                },
+                "group_id" : {
+                  "type" : "integer",
+                  "example" : null
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/entities" : {
+      "get" : {
+        "summary" : "List All Entities.",
+        "description" : "View all entities of your team/company.",
+        "operationId" : "get_all_entities",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional param to get entities back in pages.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional param to get entities back in batches.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Optional param to get entities using external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Optional param to get entities using email.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get entities of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Night-Shift Driver"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "email" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Joe loves his work"
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  },
+                  "external_id" : {
+                    "type" : "string",
+                    "example" : "entity0001"
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : null
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/entities/{external_id}" : {
+      "get" : {
+        "summary" : "Get Entity.",
+        "description" : "Get all fields of a specific entity.",
+        "operationId" : "get_entity",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of an entity.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get entity of a sub-company.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "type" : {
+                  "type" : "string",
+                  "example" : "Night-Shift Driver"
+                },
+                "owner" : {
+                  "type" : "integer",
+                  "example" : 5629499534213120
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : "John"
+                },
+                "email" : {
+                  "type" : "string",
+                  "example" : "john@doe.com"
+                },
+                "details" : {
+                  "type" : "string",
+                  "example" : "Joe loves his work"
+                },
+                "extra_fields" : {
+                  "type" : "object",
+                  "example" : null
+                },
+                "image_id" : {
+                  "type" : "integer",
+                  "example" : 12345
+                },
+                "image_path" : {
+                  "type" : "string",
+                  "example" : "https://...../...."
+                },
+                "external_id" : {
+                  "type" : "string",
+                  "example" : "entity0001"
+                },
+                "group_id" : {
+                  "type" : "integer",
+                  "example" : null
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/entities/report" : {
+      "post" : {
+        "summary" : "Send location reports for one or more entities.",
+        "description" : "This endpoint takes location report of one or multiple entities in a JSON format. Give the `external id` of entity in each of the reports.",
+        "operationId" : "report_entities_location",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "description" : "A JSON object which contain keys like `external_id` (external_id of entity), `lat`, `lng`, `time` (ISO8601 timestamp), `city`, `street`, `country`, `meta` (meta payload of key value pairs of anything you would like to store with this location. This needs to be a JSON String.)",
+          "name" : "location_reports",
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "external_id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "lat" : {
+                  "type" : "number",
+                  "example" : 22.001
+                },
+                "lng" : {
+                  "type" : "number",
+                  "example" : 42.001
+                },
+                "time" : {
+                  "type" : "string",
+                  "example" : "2016-11-20T01:34:04.848640"
+                },
+                "city" : {
+                  "type" : "string",
+                  "example" : "Detroit"
+                },
+                "street" : {
+                  "type" : "string",
+                  "example" : "Street Name,1"
+                },
+                "country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                },
+                "meta" : {
+                  "type" : "object",
+                  "example" : null
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Reports are saved"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Latitude or Longitude is not a valid geo point"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/entities/{external_id}/readings" : {
+      "get" : {
+        "summary" : "Get reports for an Entity.",
+        "description" : "Get location reports of a specific entity back by entity's `external_id`.",
+        "operationId" : "get_entity_location",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of entity.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "time",
+          "in" : "query",
+          "description" : "ISO 8601 timestamp.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional param to get reports back in pages.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional param to get reports back in batches.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "entity" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "lat" : {
+                    "type" : "number",
+                    "example" : 22.001
+                  },
+                  "lng" : {
+                    "type" : "number",
+                    "example" : 42.001
+                  },
+                  "time" : {
+                    "type" : "string",
+                    "example" : "2016-11-20T01:34:04.848640"
+                  },
+                  "city" : {
+                    "type" : "string",
+                    "example" : "Detroit"
+                  },
+                  "street" : {
+                    "type" : "string",
+                    "example" : "Street Name,1"
+                  },
+                  "country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "meta" : {
+                    "type" : "object",
+                    "example" : null
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object"
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

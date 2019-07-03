@@ -1,0 +1,80 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.page-wrap {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", 'Poppins', sans-serif;
+  }
+  h2,h3,h5{
+    font-family: "FuturaStdMedium", 'Poppins', sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn{
+    font-family: "FuturaStdBook", sans-serif;
+  }
+}
+.page-wrap + section {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", sans-serif;
+  }
+  h2,h3,h4,h5 {
+    font-family: "FuturaStdMedium", sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn {
+    font-family: "FuturaStdBook", sans-serif;
+  }
+}
+.manage-top{
+  background: url('/images/lending/landing-last/v5/BG_Team_Img.jpg') left top / 100% 60% no-repeat;
+  padding-bottom: 210px;
+  .text-main{
+    margin-top: 143px;
+    h1{
+      font-size: 3.2em;
+    }
+    p{
+      font-size: 1.2em;
+      margin-top: 40px;
+      margin-bottom: 55px;
+      max-width: 350px;
+    }
+    .btn{
+      padding: 10px 25px;
+    }
+    @media (max-width: 991px) {
+      text-align: center;
+      p{
+        margin: 30px auto;
+      }
+    }
+  }
+  @media (min-width:992px) {
+    height: 100vh;
+    h1{
+      font-size: 3.4em;
+    }
+    p{
+      font-size: 1.4em;
+    }
+  }
+  @media (max-width: 991px) {
+    min-height: 600px;
+    background-size: cover;
+    padding-bottom: 0;
+  }
+}
+.calendly-inline-widget-container{
+  > div > div{
+    margin: 0;
+  }
+  @media (min-width:992px) {
+    margin-top: 130px;
+  }
+  @media (max-width: 767px){
+    > div{
+      height: auto !important;
+    }
+    > div > iframe{
+      height: 1122px !important;
+    }
+  }
+}

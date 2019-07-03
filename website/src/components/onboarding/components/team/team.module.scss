@@ -1,0 +1,85 @@
+@import '../../../../../styles/colors.scss';
+.step{
+  background-color: $light-blue;
+  color: $dashboard-dark;
+  font-size: 16px;
+  line-height: 25px;
+  border-radius: 4px 4px 0 0;
+  .title-bar{
+    background-color: $white;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 3px 6px rgba($dark-black, .09);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 60px;
+    padding: 0 15px;
+    h2{
+      color: $dashboard-dark;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  .inner{
+    padding: 15px;
+  }
+  .box{
+    .box-body{
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba($task-form-box-shadow, .3);
+      padding: 20px 18px 10px;
+      img{
+        width: 100%;
+      }
+      p{
+        margin-bottom: 0;
+      }
+      ul{
+        list-style: none;
+        padding-left: 30px;
+        li{
+          &:before{
+            content: '-';
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  .btn {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 9px 32px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    position: absolute;
+    bottom: 16px;
+    right: 130px;
+    &.btn-light {
+      background-color: $white;
+      color: $dashboard-dark;
+      &:hover {
+        background-color: $theme-middle-grey;
+        color: $dashboard-dark;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      min-width: 80px;
+      padding: 9px 15px;
+      right: 105px;
+    }
+  }
+}

@@ -1,0 +1,356 @@
+{
+  "navigation": [
+    { "text": "Customers", "href": "/our-customers" },
+    { "text": "Blog", "href": "http://blog.arrivy.com", "target": "_blank" },
+    { "text": "Enterprise", "href": "/enterprise" },
+    { "text": "Pricing", "href": "/pricing" },
+    { "text": "Login", "href": "/login" },
+    { "text": "Signup", "href": "/signup" }
+  ],
+
+  "headerTexts":{
+    "largeSize": true,
+    "title": "Connect. Communicate. Delight. CUSTOMERS.",
+    "subtitle": "Exceptional local service management software to connect your office, service technicians and customers",
+    "title_background": "/images/lending/faded_buildings.png",
+    "button": "Try for free",
+    "button_url": "",
+    "right_part_promo_2": {
+      "text": "book demo",
+      "href": "/book-demo",
+      "type": "internal",
+      "id"  : "book-demo"
+    },
+    "right_part_button": "See how Arrivy works",
+    "cusomter_intro_text": "Join the smart businesses using Arrivy today, including:",
+    "header_bottom_title": "Arrivy is powering thousands of service calls with the best in class features."
+  },
+
+  "header-bottom-part-1": [
+    "Providing UBER-like experience to customers.",
+    "Ability to rate the service call instantly.",
+    "Shared schedules for office managers and team."
+  ],
+
+  "promo-page": {
+    "promo-items" : [
+      {
+        "image" : "images/lending/Group 320.png",
+        "heading": "Delight your Customers",
+        "text": "Your clients can track your crew’s arrival times with real-time estimates and Email / SMS notifications. Customers love this!"
+      },
+      {
+        "image" : "images/lending/Group 313.png",
+        "heading": "Get more Reviews",
+        "text": "Arrivy customers have seen significant increases in positive reviews. Arrivy automatically prompts customers to rate you on Facebook, Yelp, Google, on task completion."
+      },
+      {
+        "image" : "images/lending/Group 321.png",
+        "heading": "Hang up the Phone",
+        "text": "Save time by eliminating low-value communications using Arrivy’s automated email & SMS features."
+      },
+      {
+        "image" : "images/lending/Group 291.png",
+        "heading": "Connect your Team",
+        "text": "Shared calendars make it easy to schedule work for your crew. Crew members can see their tasks and job details on easy-to-use mobile apps."
+      },
+      {
+        "image" : "images/lending/Group 238.png",
+        "heading": "Get real-time Status",
+        "text": "Mobile apps let your crews report status, upload photos and communicate from the field. Job journals keeps a permanent record of all interactions.",
+        "type" : "mobile"
+      },
+      {
+        "image" : "images/lending/growth.png",
+        "heading": "Grow your Business",
+        "text": "Home service companies spend at least 30% of their time in coordination. That's tedious and costs time and money. Save both and focus only on growing your business."
+      }
+    ],
+    "whitepaper":{
+      "text-heading":"Want to get better reviews? Download our white paper:",
+      "text":"Customer Reviews and Recommendations: The Secret Sauce",
+      "buttonText": "Download",
+      "buttonUrl" : "http://try.arrivy.com/thesecretsauce/"
+    }
+  },
+
+  "slack":{
+    "img":"images/lending/Group 166.png",
+    "title":"Integration",
+    "text":"And custom webhooks enable you to run your business the way you like.",
+    "enterprise_img":"images/lending/Group 166-2.png",
+    "enterprise_title":"API",
+    "enterprise_text":"Arrivy in an API first platform. Power your own systems, apps and front-ends with real-time tracking and status features using our eco-system."
+  },
+
+
+
+
+  "reviews":{
+    "slides":[
+        {
+          "item1" : {
+              "title": "Sears Garage Doors",
+              "linkText": "Read complete review",
+              "linkUrl":"https://blog.arrivy.com/2017/06/15/arrivy-drives-customer-engagement-for-sears-garage-door/",
+              "externalLink": true,
+              "avatar": "images/lending/av1.png",
+              "text": "Arrivy has improved our ability to communicate effectively with our dispatchers, technicians, and customers by leaps and bounds.",
+              "longText": false
+          },
+          "item2" : {
+              "title": "Learn what our customers are saying:",
+              "linkText": "Why arrivy helps?",
+              "linkUrl":"/more_reviews_more_business",
+              "text": "I really liked your appointment tracking. Very professional service and I will definitely refer family and friends when they need a garage door service.",
+              "text2": "Service tech arrived ahead of schedule, wow, how often does that happen?"
+          }
+        }, {
+          "item1" : {
+              "title": "Vector Movers",
+              "linkText": "Read complete review",
+              "linkUrl":"https://blog.arrivy.com/2017/09/08/arrivy-aims-vector-movers-right-direction/",
+              "externalLink": true,
+              "avatar": "images/lending/av3.png",
+              "text": "We get positive feedback from customers because of the experience Arrivy enables us to provide–they feel more confident in our service!.",
+              "longText": false
+          },
+          "item2" : {
+              "title": "Learn what our customers are saying:",
+              "linkText": "Why arrivy helps?",
+              "linkUrl":"/more_reviews_more_business",
+              "text": "The crew was fast and efficient, and the process was clear and easy to track. Would use your service again!",
+              "text2": "They also have online tracking of your inventory and status updates of where the crew is, along with other details. This makes things very efficient and their use of the online platform puts them at a competitive advantage."
+          }
+        }, {
+          "item1" : {
+              "title": "GDS Global Document Shredding",
+              "linkText": "Read more",
+              "linkUrl":"/whyarrivy",
+              "avatar": "images/lending/av0.png",
+              "text": "Our team loves Arrivy, because it makes everyone's job easier. Our time communicating with customers and each other is cut to a fraction of what it used to be since Arrivy completely automates communication. Most importantly, we are providing a better experience for our customers, and this turns into repeat customers for our business.",
+              "longText": true              
+          },
+          "item2" : {
+              "title": "Learn what our customers are saying:",
+              "linkText": "Why arrivy helps?",
+              "linkUrl":"/more_reviews_more_business",
+              "text": "I appreciate you sending me an email with your employees photo. Thank you!",
+              "text2": "The service was great. They scheduled me very quickly and they showed up within the timeframe they had told me, providing periodic updates regarding their time of arrival."
+          }
+        }
+    ]
+  },
+
+  "footer_data":{
+    "columns":[
+      {
+        "title":"COMPANY",
+        "links":[
+          {"title":"About Us","link":"/about_us"},
+          {"title":"Customers","link":"/our-customers"}
+        ]
+      },{
+        "title":"THE ARRIVY SERVICE",
+        "links":[
+          {"title":"Blog","link":"https://blog.arrivy.com", "externalLink": true},
+          {"title":"Documentation","link":"https://help.arrivy.com", "externalLink": true},
+          {"title":"Pricing","link":"/pricing"},
+          {"title":"Privacy","link":"/privacy"},
+          {"title":"Terms of Service","link":"/terms"}
+        ]
+      },{
+        "title":"DEVELOPER",
+        "links":[
+          {"title":"Developer Portal","link":"/developer_portal"},
+          {"title":"Integrations","link":"/enterprise#integrations"},
+          {"title":"Slack","link":"/slack"}
+        ]
+      },{
+        "title":"CONTACT US",
+        "text":"",
+        "mail":"info@arrivy.com",
+        "phone":"1 (855) 927-7489",
+        "phone_link":"+18559277489",
+        "links":[{
+                    "type": "twitter",
+                    "href": "https://twitter.com/arrivy_platform",
+                    "title": "twitter"
+                },{
+                    "type": "facebook",
+                    "href": "https://www.facebook.com/arrivy",
+                    "title": "facebook"
+                },{
+                    "type": "linkedin",
+                    "href": "https://www.linkedin.com/company/arrivy",
+                    "title": "linkedin"
+                }]
+    }],
+    "copyright":"© Arrivy, Inc - All Rights Reserved"
+  },
+
+  "features_drilldown": {
+    "features-items" : [
+      {
+        "image1" : "images/feat/connect-team-1.jpg",
+        "image2" : "images/feat/connect-team-2.jpg",
+        "heading": "Connect your Team",
+        "text1": "Our shared calendars make it easy for all team members to stay in touch. Schedule an appointment on your computer; assign crew members and equipment. Arrivy’s intuitive interface makes it easy to see who is available.",
+        "text2": "Your team stays in touch with mobile devices (iOS and Android). Crew members can see all the job details directly in Arrivy’s mobile apps. In addition to viewing these details, crew members can record status changes (job started, job ended, etc) and notes directly. These become a permanent record of what has happened on a job—accessible forever."
+      },
+      {
+        "image1" : "images/feat/hang-up-the-phone-1.jpg",
+        "image2" : "images/feat/hang-up-the-phone-2.jpg",
+        "heading": "Hang up the Phone",
+        "text1": "Your time is valuable. Building confidence by helping the customer understand your business, team and approach provides a lot of value. But, calling clients to remind them of an upcoming appointment or to tell them your crew will be 15 min late, does not.",
+        "text2": "Arrivy helps you save time by eliminating low-value communications using Arrivy’s automated email & SMS features. Customer’s get appointment reminders, enroute messages and other notifications thru email or SMS."
+      },
+      {
+        "image1" : "images/feat/track-your-crew.jpg",
+        "image2" : "",
+        "heading": "Grow your Business",
+        "text1": "Arrivy eliminates the need for - customer reminder calls - handling customer inquiries on the day of the job - customer follow-ups for reviews - calling crew for job status - collecting notes and images for work done and damages - calculating travel and job times - managing excel sheets - backing up business data",
+        "text2": "and much more. Also, arrivy enables your business to give your customers a modern experience. Happy customers always bring new and repeat business."
+      },
+      {
+        "image1" : "images/feat/get-more-reviews-1.jpg",
+        "image2" : "images/feat/get-more-reviews-2.jpg",
+        "heading": "Get more Reviews",
+        "text1": "For home service businesses success or failure is often measured by number of YELP reviews. For better or for worse, YELP, and to a lesser extent—Facebook, Angies List and Google—have become a proxy for walking over to your neighbor’s house and asking, 'Can you recommend a good gardener?' \n If you want to increase the number of reviews you get—ask for them. It’s easy for Arrivy—since we’ve been sending the customer messages via email and SMS. Arrivy automatically prompts customers to rate you on when a job is marked as complete.",
+        "text2": "If the customer rates you 4 or 5 stars, they are also prompted to post their rating on YELP, Facebook or other social sites that you configure. And, you’re immediately emailed the review—so, you know if it’s good news. And, if it’s a poor rating you can contact the customer immediately to make it right."
+      },
+      {
+        "image1" : "images/feat/delight-your-customer-1.jpg",
+        "image2" : "images/feat/delight-your-customer-2.jpg",
+        "heading": "Delight your Customers",
+        "text1": "Your clients can track your crew’s arrival times with real-time estimates and email / SMS notifications. As soon as your crew member marks their status as “On our way,” the customer is sent an email or SMS. Clicking on the link in that message, the customer can see the crew location on a map and their estimated arrival time. \nAs the crew proceeds to their destination, Arrivy tracks their progress and sends another email / SMS when they are about a mile away.",
+        "text2": "Customers love knowing when their appointment will start and being able to see photos of crew members."
+      },
+      {
+        "image1" : "images/feat/get-real-time-status-1.jpg",
+        "image2" : "images/feat/get-real-time-status-2.jpg",
+        "heading": "Get real-time Status",
+        "text1": "Mobile apps let your crews report status, upload photos and communicate from the field. Task Journals keeps a permanent record of all interactions. The office can monitor crew location and activities from a desktop and add comments to the Journal.",
+        "text2": "At the job site, crew members have access to the same information through mobile apps. Task Journals keep everyone on the same page during the job and serve as a permanent record of activities after the job is complete."
+      }
+    ]
+  },
+
+  "new_landing_data": {
+    "slider": [
+      {
+        "image": "/images/lending/new/258s.png",
+        "title": "Vector Moving & Storage",
+        "body": "We got positive feedback from customers - they feel more confident in our service!",
+        "right_text": "Frank Numan, dispatcher"
+      },
+      {
+        "image": "/images/equipment.png",
+        "title": "Storage",
+        "body": "they feel more confident in our service!",
+        "right_text": "Frank Numan, dispatcher"
+      },
+      {
+        "image": "/images/avatar.png",
+        "title": "Moving",
+        "body": " feedback from customers -r service!",
+        "right_text": "Frank , dispatcher"
+      }
+    ]
+  },
+
+  "LandingNew3_data": {
+    "popups": [
+      {
+        "image": "dist/images/lending/landing-last/Layer-19.png",
+        "title": "Better reviews,",
+        "title2": "instant feedback",
+        "body": "Arrivy customers have seen a significant increase in positive customer reviews. Arrivy automatically prompts customers to rate you on when a job is marked as complete. And, you’re immediately emailed the review—so, you know if it’s good news. And, if it’s a poor rating you can contact the customer immediately to make it right."
+      },
+      {
+        "image": "dist/images/lending/landing-last/Layer-17.png",
+        "title": "Shared Calendars",
+        "title2": "Connect Your Team",
+        "body": "Our shared calendars make it easy for all team members to stay in touch. Schedule an appointment on your computer; assign crew members and equipment. Team Notifications via email / SMS prompt crew members to confirm their appointments the day before. Your team stays in touch with mobile devices (iOS and Android) where crew members can see all details in Arrivy’s mobile apps."
+      },
+      {
+        "image": "dist/images/lending/landing-last/Layer-18.png",
+        "title": "Track the Status",
+        "title2": "of your Field Teams, Instantly",
+        "body": "Mobile apps let your crews report status (job started, job ended, etc), upload photos, add notes and communicate from the field. Task Journals keeps a permanent record of all interactions. The office can monitor crew location and activities from a desktop and add comments to the Journal."
+      },
+      {
+        "image": "dist/images/lending/landing-last/Layer-16.png",
+        "title": "Uberize Your Business",
+        "title2": "and Delight Your Customers",
+        "body": "Reduce no-shows! Arrivy drives positive customer engagement using modern communications tools--not voicemail. Arrivy sends appointment reminders, enroute messages and other notifications thru email or SMS. Clients can track crew arrival times on a map with real-time estimates and email / SMS notifications. "
+      }
+    ]
+  },
+  "pricing": {
+    "header": {
+      "image": "images/pricing_hero_1.png",
+      "header": "Choose a Plan That's Right for Your Business",
+      "description": "Try 2 weeks of free trial. Cancel at any time"
+    },
+    "plans": [
+      {
+        "name": "Business Plan",
+        "description": "Includes Arrivy web portal and mobile apps. Functionality includes scheduling, arrival notifications, team notifications, team location tracking, social integration, reporting & activity stream.",
+        "price": 20,
+        "discount": "",
+        "discount_date": "",
+        "button": "Try now for FREE",
+        "color": "#00D494",
+        "features": [
+          "Customer, Crew and Dispatch Experience",
+          "Task Scheduling and Tracking",
+          "Team Mobile Access",
+          "Real-time Customer Experience",
+          "Contextual Chat",
+          "Notes, Pictures and Progress",
+          "Team Location Tracking",
+          "Automated Email & SMS Notifications",
+          "Customer reviews",
+          "Enable reviews on Social Channels (Yelp, Facebook & Google)",
+          "Activity Stream",
+          "GPS Directions",
+          "Team Notifications",
+          "Customized Automated Communications",
+          "Job Templates",
+          "Reporting",
+          "Basic Integrations",
+          "and much more"
+        ],
+        "primary": true,
+        "link": "/signup"
+      },
+      {
+        "name": "Enterprise Plan",
+        "description": "Integrate Arrivy with your Enterprise Systems (CRM, Calendaring, Dispatch, Logistics, etc.) through robust APIs. Use Arrivy's last-mile location services and communications features in virtually any system within both web and mobile clients.",
+        "button": "Contact Us",
+        "color": "#008BF8",
+        "features": [
+          "Includes all features of Business Plan",
+          "API access",
+          "Groups Support",
+          "Webhook Integration",
+          "Third-party Integrations & Support",
+          "Whitelabel Customer Experience",
+          "24/7 Customer Support"
+        ],
+        "link": "mailto:info@arrivy.com",
+        "new_window": true
+      }
+    ]
+  },
+  "textSection2" : {
+    "text": "Let's get started",
+    "subtext": "No credit card required",
+    "image": "images/van.png",
+    "button" : {
+      "text" : "First 2 weeks are on us",
+      "href" : "/signup"
+    }
+  }
+}

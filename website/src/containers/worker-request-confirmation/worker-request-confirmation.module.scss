@@ -1,0 +1,18 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+  height: 100%;
+}
+.pageWrap {
+  background-color: $page-bg;
+  .header{
+    padding: 15px;
+    .logo{
+      display: inline-block;
+    }
+  }
+  main{
+    min-height: calc(100vh - 65px);
+  }
+}
+

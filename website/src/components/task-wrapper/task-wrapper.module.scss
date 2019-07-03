@@ -1,0 +1,165 @@
+@import '../../../styles/colors.scss';
+
+.tabs-container {
+  margin: 0 0 0 0;
+  background: $primary;
+}
+
+.task-tab {
+  cursor: pointer;
+  cursor: hand;
+}
+
+.navbarBtn {
+  a {
+    cursor: pointer;
+    &:hover {
+      background: none;
+      &:after {
+        display: none !important;
+      }
+    }
+  }
+}
+
+.navbarBtnLinkSave {
+  color: #fff;
+  background-color: $btn-sec;
+  padding: 10px 25px !important;
+  margin: 10px !important;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  word-spacing: 1px;
+  transition: all 0.3s ease;
+  width: 190px;
+  min-height: 43px;
+  display: inline-flex !important;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+
+  &:hover, &:active, &:focus {
+    background-color: $btn-sec-hover !important;
+    color: #fff;
+    border: none;
+  }
+}
+
+.navbarBtnLinkServerActionPending {
+  cursor: no-drop;
+  pointer-events: none;
+}
+
+.tabs-container li a {
+  color: #FFF !important;
+  margin: 0;
+  font-size: 1.1em;
+  letter-spacing: 2px;
+  text-decoration: none;
+  word-spacing: 1px;
+  padding: 20px 35px;
+  display: inline-block;
+  transition: border .3s ease;
+  @media screen and (max-width: 320px) {
+    font-size: 1em;
+    padding: 20px;
+  }
+}
+
+.tabs-container li {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.active a,
+.tabs-container li a:hover {
+  position: relative;
+  background: #36AEFF;
+  &:after {
+    content: " ";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-width: 0 10px 8px 10px;
+    border-color: transparent transparent #fff;
+    border-style: solid;
+    z-index: 10;
+    margin: 0 auto;
+  }
+}
+
+.responsiveNavbarBtn {
+  display: none !important;
+  @media screen and (max-width: 1024px) {
+    display: inline-block !important;
+  }
+  button, button[aria-expanded=true] {
+    background: none !important;
+    border: 0 !important;
+    color: $white !important;
+    box-shadow: none !important;
+    font-size: 2em;
+    padding: 18px 30px 17px 30px;
+    &:hover, &:active, &:visited, &:focus {
+      background: none;
+      color: $theme-grey;
+    }
+    @media screen and (max-width: 320px) {
+      padding: 14px;
+    }
+    span {
+      display: none;
+    }
+  }
+  ul {
+    div {
+      width: 225px;
+    }
+    li {
+      a {
+        width: 100%;
+        color: $theme-dark-grey !important;
+        &:hover {
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.navbarHiddenOnSmallRes {
+  @media screen and (max-width: 1024px) {
+    display: none !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+	border: 2px solid $toast-error-color !important;
+	button {
+    color: $toast-error-color !important;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}

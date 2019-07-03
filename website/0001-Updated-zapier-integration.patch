@@ -1,0 +1,121 @@
+From 8b5ea1aa17f92c7cc3eb82322534bd263b213970 Mon Sep 17 00:00:00 2001
+From: Soban Hameed <soban@arrivy.com>
+Date: Wed, 27 Feb 2019 23:13:04 -0800
+Subject: [PATCH] Updated zapier integration
+
+---
+ integrations/zapier/creates/task.js             |  7 +++++++
+ integrations/zapier/creates/tasks_util.js       | 16 ++++++++++++++++
+ integrations/zapier/creates/unscheduled_task.js |  7 +++++++
+ integrations/zapier/package.json                |  4 ++--
+ integrations/zapier/test/unscheduled_task.js    |  3 ++-
+ 5 files changed, 34 insertions(+), 3 deletions(-)
+
+diff --git a/integrations/zapier/creates/task.js b/integrations/zapier/creates/task.js
+index 1ba0b0d00..75d0afc5c 100644
+--- a/integrations/zapier/creates/task.js
++++ b/integrations/zapier/creates/task.js
+@@ -26,6 +26,13 @@ module.exports = {
+       {key: 'customer_state', label:'Customer State', required: false},
+       {key: 'customer_country', label:'Customer Country', required: false},
+       {key: 'customer_zipcode', label:'Customer Zip Code', required: false},
++      {key: 'destination_address', label:'Destination Address', required: false},
++      {key: 'destination_address_line_1', label:'Destination Address Line 1 (Street)', required: false},
++      {key: 'destination_address_line_2', label:'Destination Address Line 2', required: false},
++      {key: 'destination_city', label:'Destination City', required: false},
++      {key: 'destination_state', label:'Destination State', required: false},
++      {key: 'destination_country', label:'Destination Country', required: false},
++      {key: 'destination_zipcode', label:'Destination Zip Code', required: false},
+       {key: 'customer_phone', label:'Customer Phone', required: false},
+       {key: 'customer_email', label:'Customer Email', required: false},      
+       {key: 'details', label:'Details', required: false},
+diff --git a/integrations/zapier/creates/tasks_util.js b/integrations/zapier/creates/tasks_util.js
+index 98793594e..f81866fd4 100644
+--- a/integrations/zapier/creates/tasks_util.js
++++ b/integrations/zapier/creates/tasks_util.js
+@@ -19,6 +19,21 @@ module.exports.create_task = function(z, bundle, unscheduled) {
+     notifications.email = false;
+   }
+ 
++  const additional_addresses = [];
++  if (bundle.inputData.destination_address || bundle.inputData.destination_address_line_1 || bundle.inputData.destination_address_line_2 ||
++    bundle.inputData.destination_city || bundle.inputData.destination_state || bundle.inputData.destination_country || bundle.inputData.destination_zipcode) {
++      additional_addresses.push({
++        title: 'Destination Address', 
++        complete_address: bundle.inputData.destination_address,
++        address_line_1: bundle.inputData.destination_address_line_1,
++        address_line_2: bundle.inputData.destination_address_line_2,
++        city: bundle.inputData.destination_city,
++        state: bundle.inputData.destination_state,
++        country: bundle.inputData.destination_country,
++        zipcode: bundle.inputData.destination_zipcode
++      });
++  }
++
+   //TODO:
+   //Get Extra Fields somehow into the system
+   //Validate timestamp formats
+@@ -42,6 +57,7 @@ module.exports.create_task = function(z, bundle, unscheduled) {
+     end_datetime: bundle.inputData.end_datetime,      //validate timestamp here
+     extra_fields: extra_fields,
+     notifications: JSON.stringify(notifications),
++    additional_addresses: JSON.stringify(additional_addresses),
+     source: 'zapier'
+   }
+ 
+diff --git a/integrations/zapier/creates/unscheduled_task.js b/integrations/zapier/creates/unscheduled_task.js
+index 58b5e0d75..4acec181d 100644
+--- a/integrations/zapier/creates/unscheduled_task.js
++++ b/integrations/zapier/creates/unscheduled_task.js
+@@ -28,6 +28,13 @@ module.exports = {
+       {key: 'customer_state', label:'Customer State', required: false},
+       {key: 'customer_country', label:'Customer Country', required: false},
+       {key: 'customer_zipcode', label:'Customer Zip Code', required: false},
++      {key: 'destination_address', label:'Destination Address', required: false},
++      {key: 'destination_address_line_1', label:'Destination Address Line 1 (Street)', required: false},
++      {key: 'destination_address_line_2', label:'Destination Address Line 2', required: false},
++      {key: 'destination_city', label:'Destination City', required: false},
++      {key: 'destination_state', label:'Destination State', required: false},
++      {key: 'destination_country', label:'Destination Country', required: false},
++      {key: 'destination_zipcode', label:'Destination Zip Code', required: false},
+       {key: 'customer_phone', label:'Customer Phone', required: false},
+       {key: 'customer_email', label:'Customer Email', required: false},      
+       {key: 'details', label:'Details', required: false},
+diff --git a/integrations/zapier/package.json b/integrations/zapier/package.json
+index b11fb0de1..7e4192d06 100644
+--- a/integrations/zapier/package.json
++++ b/integrations/zapier/package.json
+@@ -1,6 +1,6 @@
+ {
+   "name": "Arrivy",
+-  "version": "1.0.0",
++  "version": "2.0.0",
+   "description": "Arrivy app for Zapier Platform.",
+   "repository": "zapier/zapier-platform-app-github-example",
+   "homepage": "https://zapier.com/developer",
+@@ -15,7 +15,7 @@
+     "npm": ">=5.6.0"
+   },
+   "dependencies": {
+-    "zapier-platform-core": "7.2.0"
++    "zapier-platform-core": "7.6.1"
+   },
+   "devDependencies": {
+     "mocha": "^5.2.0",
+diff --git a/integrations/zapier/test/unscheduled_task.js b/integrations/zapier/test/unscheduled_task.js
+index 868a43d4a..9030d1efa 100644
+--- a/integrations/zapier/test/unscheduled_task.js
++++ b/integrations/zapier/test/unscheduled_task.js
+@@ -22,7 +22,8 @@ describe('issue trigger', () => {
+       inputData: {
+         title: 'New Task from Zapier 222',
+         customer_first_name: 'Arya Stark',
+-        details: 'Details of the Task'
++        details: 'Details of the Task',
++        destination_address_line_1: '16357 118th ln ne Bothell WA 98011'
+       }
+     };
+     appTester(App.creates.unscheduled_task.operation.perform, bundle)
+-- 
+2.18.0
+

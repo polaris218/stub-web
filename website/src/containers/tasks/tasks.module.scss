@@ -1,0 +1,78 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: calc(100vh);
+  min-height: -webkit-calc(100vh);
+  box-sizing: border-box;
+  background: $page-bg;
+}
+
+.loading {
+  margin-top: 50px;
+}
+
+.no-task {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.toastContainer {
+  padding: 0 !important;
+}
+
+.toast {
+  display: none !important;
+}
+.logoPrint{
+  display: none;
+  @media print {
+    display: block;
+    margin-bottom: 20px;
+  }
+  img{
+    max-width: 80px;
+    height:auto;
+    max-height: 27px;
+  }
+}
+.noPrint {
+  display: inherit;
+  @media print {
+    display:none;
+  }
+}
+@media print {
+  .noPrint {
+    display:none;
+  }
+  @page  {
+    margin: 10mm;
+    size: A4 landscape;
+  }
+  *, body{
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  html, body {
+    height: 99%;
+    page-break-after: avoid;
+    page-break-before: avoid;
+  }
+  .page-wrap{
+    padding: 0;
+    min-height: inherit;
+  }
+  header, footer {display:none;}
+}
+
+.footer {
+  display: initial;
+}

@@ -1,0 +1,249 @@
+@import '../../../../../styles/colors.scss';
+@import '../../../../../styles/mixins.scss';
+@import "../../base-styling.module";
+
+.statusDesignerWrapper {
+  .boxBody{
+    margin-bottom: 15px;
+  }
+  .contentBox{
+    font-size: 12px;
+    padding-bottom: 0 !important;
+    p{
+      max-width: 362px;
+    }
+    .btn{
+      margin: 8px 0 0;
+    }
+  }
+  .boxBodyTitle {
+    display: block;
+    font-size: 13px;
+    color: rgba($dashboard-dark, .5);
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .templateListItem{
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    position: relative;
+    .templateListItemInner{
+      cursor: pointer;
+      padding: 9px 30px 9px 15px;
+    }
+    .singleTemplateTitle {
+      color: $dashboard-dark;
+      display: inline-block;
+      font-size: 15px;
+      line-height: 20px;
+      margin: 0;
+      -webkit-transition: all 0.3s ease-out;
+      -moz-transition: all 0.3s ease-out;
+      -o-transition: all 0.3s ease-out;
+      transition: all 0.3s ease-out;
+    }
+    .defaultTemplateTitle,
+    .savingSpinnerContainer {
+      display: inline-block;
+      margin-left: 5px;
+    }
+    .defaultTemplateTitle{
+      font-size: 12px;
+      color: rgba($dashboard-dark, .5);
+    }
+    .templateDescriptionContainer{
+      color: rgba($dashboard-dark, .5);
+      font-size: 12px;
+      line-height: 16px;
+      margin-top: 5px;
+      &:empty{
+        display: none;
+      }
+    }
+    .actionsBtnContainer {
+      position: absolute;
+      top: 0;
+      right: 0;
+      button{
+        border: none;
+        border-radius: 0;
+        background: none !important;
+        box-shadow: none !important;
+        color: $dashboard-primary !important;
+        padding: 10px 5px;
+        outline: none !important;
+      }
+      ul{
+        font-size: 13px;
+        min-width: 180px;
+        padding: 0;
+        li{
+          &:not(:first-child){
+            border-top: 1px solid $dashboard-bg;
+          }
+          a{
+            color: $dashboard-dark;
+            padding: 10px 20px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            -webkit-transition: all 0.2s ease-in-out;
+            -moz-transition: all 0.2s ease-in-out;
+            transition: all 0.2s ease-in-out;
+            &:hover, &:focus{
+              background-color: $route-bg;
+              color: $dashboard-dark;
+            }
+          }
+          &:first-child a{
+            border-radius: 4px 4px 0 0;
+          }
+          &:last-child a{
+            border-radius: 0 0 4px 4px;
+          }
+        }
+      }
+    }
+  }
+  .statusPriorityTable {
+    border: 1px solid $doc-container-light-border;
+    max-height: 100vh;
+    overflow: auto;
+    margin-bottom: 15px;
+    table {
+      font-size: inherit;
+      table-layout: fixed;
+      @media screen and (max-width: 767px) {
+        min-width: 550px;
+      }
+      th {
+        padding: 8px;
+      }
+      td {
+        vertical-align: middle !important;
+      }
+    }
+  }
+  .selectBox {
+    margin-bottom: 0 !important;
+    svg {
+      font-size: 18px;
+      left: 10px;
+      transform: translateY(-50%);
+      top: 50%;
+      margin: 0;
+      position: absolute;
+    }
+    select {
+      padding-left: 30px !important;
+    }
+  }
+  .priorityInfo{
+    font-size: 12px;
+    .priorityNotations {
+      border: 2px solid $dark-black;
+      list-style: none;
+      padding: 10px;
+    }
+  }
+
+  .low-Priority {
+    color: $theme-blue;
+    svg {
+      color: $theme-blue;
+    }
+  }
+  .medium-Priority {
+    color: $theme-green;
+    svg {
+      color: $theme-green;
+    }
+  }
+  .high-Priority {
+    color: $yellow;
+    svg {
+      color: $yellow;
+    }
+  }
+  .urgent-Priority {
+    color: $theme-red;
+    svg {
+      color: $theme-red;
+    }
+  }
+}
+
+
+
+.info {
+  padding: 10px 0 0 10px;
+  color: $theme-dark-grey;
+}
+.createMessageInline {
+  color: $theme-blue;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+.actionsBtn {
+  background: none;
+  border-color: transparent;
+  &:hover {
+    background: none;
+    border-color: transparent;
+  }
+  &:active {
+    background: none;
+    border-color: transparent;
+  }
+  &:focus {
+    background: none;
+    border-color: transparent;
+  }
+}
+.disabledLink {
+  pointer-events: none;
+  color: $theme-middle-grey;
+  &:hover {
+    color: $theme-middle-grey;
+    text-decoration: underline;
+  }
+}
+.disableAction {
+  pointer-events: none;
+  cursor: wait !important;
+}
+.disabledRow {
+  cursor: wait !important;
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

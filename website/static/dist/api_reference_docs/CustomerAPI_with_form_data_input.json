@@ -1,0 +1,720 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Customer's API",
+    "description" : "Each task typically has a customer. It's optional though. There is no limit on number of Customers one can create in Arrivy. All customer notifications are driven off of Task and TaskStatus APIs. Customer API is just to retrieve and add/update/delete the customer records so you can associate them appropriately with Tasks later on."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/customers/new" : {
+      "post" : {
+        "tags" : [ "Customer APIs" ],
+        "summary" : "Add New Customer.",
+        "description" : "Adds new customer.",
+        "operationId" : "create_customer",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "first_name",
+          "in" : "formData",
+          "description" : "First name of the Customer.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "last_name",
+          "in" : "formData",
+          "description" : "Last name of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_name",
+          "in" : "formData",
+          "description" : "Company name of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "notes",
+          "in" : "formData",
+          "description" : "Notes related to the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "Email of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phone",
+          "in" : "formData",
+          "description" : "Phone Number of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "mobile_number",
+          "in" : "formData",
+          "description" : "Mobile Number of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_1",
+          "in" : "formData",
+          "description" : "Customer Address Line 1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_2",
+          "in" : "formData",
+          "description" : "Customer Address Line 2",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "city",
+          "in" : "formData",
+          "description" : "Customer's City.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "state",
+          "in" : "formData",
+          "description" : "Customer's State.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "country",
+          "in" : "formData",
+          "description" : "Customer's Country.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "zipcode",
+          "in" : "formData",
+          "description" : "Zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of customer location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "notifications",
+          "in" : "formData",
+          "description" : "A key value pair as JSON. Possible key options are sms, email, facebook (in works). Indicate true or false to turn on or off each of these channels.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from the client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to create customers of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 1111024557509800
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "EMAIL_INVALID"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Email validation failed"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/customers/{customer_id}" : {
+      "get" : {
+        "tags" : [ "Customer APIs" ],
+        "summary" : "Get a specific Customer.",
+        "description" : "Get all entire payload of a specific customer as a JSON structure.",
+        "operationId" : "get_customer",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customer_id",
+          "in" : "path",
+          "description" : "ID of the Customer.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get customer of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "owner" : {
+                  "type" : "integer",
+                  "example" : 5629499534213120
+                },
+                "first_name" : {
+                  "type" : "string",
+                  "example" : "John"
+                },
+                "last_name" : {
+                  "type" : "string",
+                  "example" : "Doe"
+                },
+                "email" : {
+                  "type" : "string",
+                  "example" : "john@doe.com"
+                },
+                "mobile_number" : {
+                  "type" : "string",
+                  "example" : "+14255333945"
+                },
+                "extra_fields" : {
+                  "type" : "object",
+                  "example" : null
+                },
+                "city" : {
+                  "type" : "integer",
+                  "example" : "Seattle"
+                },
+                "state" : {
+                  "type" : "string",
+                  "example" : "Washington"
+                },
+                "country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid customer_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Customer APIs" ],
+        "summary" : "Update a specific Customer.",
+        "description" : "Update fields of a specific customer. Just send the fields that you would like to change.",
+        "operationId" : "update_customer",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customer_id",
+          "in" : "path",
+          "description" : "ID of the Customer.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "first_name",
+          "in" : "formData",
+          "description" : "First name of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "last_name",
+          "in" : "formData",
+          "description" : "Last name of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_name",
+          "in" : "formData",
+          "description" : "Company name of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "notes",
+          "in" : "formData",
+          "description" : "Notes related to the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "Email of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phone",
+          "in" : "formData",
+          "description" : "Phone Number of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "mobile_number",
+          "in" : "formData",
+          "description" : "Mobile Number of the Customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_1",
+          "in" : "formData",
+          "description" : "Customer Address Line 1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_2",
+          "in" : "formData",
+          "description" : "Customer Address Line 2",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "city",
+          "in" : "formData",
+          "description" : "Customer's City.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "state",
+          "in" : "formData",
+          "description" : "Customer's State.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "country",
+          "in" : "formData",
+          "description" : "Customer's Country.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "zipcode",
+          "in" : "formData",
+          "description" : "Zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of customer location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "notifications",
+          "in" : "formData",
+          "description" : "A key value pair as JSON. Possible key options are sms, email, facebook (in works). Indicate true or false to turn on or off each of these channels.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from the client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to update customer of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Updated."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid customer_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Customer APIs" ],
+        "summary" : "Delete a specific Customer.",
+        "description" : "Delete a specific customer.",
+        "operationId" : "delete_customer",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "customer_id",
+          "in" : "path",
+          "description" : "ID of the Customer.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete customer of a sub-company.  Please reach out to us at dev.support@arrivy.com before you start using this field",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid customer_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/customers" : {
+      "get" : {
+        "tags" : [ "Customer APIs" ],
+        "summary" : "List All Customers.",
+        "description" : "List all the customers. Possible URL params are explained below.",
+        "operationId" : "get_all_customers",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional param to get customers back in pages. Default value is 1 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional param to get customers back in batches. Default value is 500 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Returns customer for a given external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get customers of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "first_name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "last_name" : {
+                    "type" : "string",
+                    "example" : "Doe"
+                  },
+                  "email" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                  },
+                  "mobile_number" : {
+                    "type" : "string",
+                    "example" : "+14255333945"
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "city" : {
+                    "type" : "string",
+                    "example" : "Seattle"
+                  },
+                  "state" : {
+                    "type" : "string",
+                    "example" : "Washington"
+                  },
+                  "country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

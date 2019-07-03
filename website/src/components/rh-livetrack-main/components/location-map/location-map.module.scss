@@ -1,0 +1,24 @@
+@import '../../../../../styles/colors.scss';
+
+.liveStatusContainer {
+  width: 100vw;
+  width: 100%;
+  @media screen and (max-width: 995px) {
+    position: fixed;
+  }
+  &>div {
+    margin-right: 0;
+    margin-left: 0;
+    > div {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
+
+.no-info {
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed $no-info-color;
+  color: $no-info-color;
+}

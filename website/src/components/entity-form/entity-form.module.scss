@@ -1,0 +1,96 @@
+@import '../../../styles/colors.scss';
+
+.formGroup {
+  padding: 0 20px 0 20px;
+}
+
+.form-input-control {
+  height: 36px;
+  line-height: 36px;
+}
+
+.form-input-control::-moz-placeholder {
+  color: #BDBDBD;
+  font-weight: 400;
+}
+.form-input-control:-ms-input-placeholder {
+  color: #BDBDBD;
+  font-weight: 400;
+}
+.form-input-control::-webkit-input-placeholder {
+  color: #BDBDBD;
+  font-weight: 400;
+}
+
+.fullNameField {
+  display: inline-block;
+  width: 85% !important;
+}
+
+.modalTempFooter {
+  background: #f1f1f1;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 20px;
+}
+
+.noMargin {
+  margin: 0 !important;
+}
+
+.account-image {
+  padding: 0px 0px 0 20px;
+  img {
+    margin-top: 20px;
+    position: relative;
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .image-buttons {
+    position: relative;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+  }
+}
+
+.entity-name-field {
+  width: 80% !important;
+  @media(min-width: 1024px) {
+    width: 85% !important;
+  }
+}
+
+.entity-color-wrapper {
+  padding-left: 9px;
+  float: right;
+  margin-top: 2px;
+  margin-right: -5px;
+  margin-bottom: -4px;
+}
+
+.formMarginFix {
+  margin-top: 0px;
+  padding: 20px 65px 0 10px;
+  @media screen and (max-width: 441px) {
+    padding: 20px 20px 0 10px !important;
+  }
+}
+
+.switch {
+  div{
+    input[type="checkbox"]:checked + label{
+      background-color: $theme-light-green !important;
+      &:after{
+        background-color: $theme-light-green !important;
+      }
+    }
+  }
+}

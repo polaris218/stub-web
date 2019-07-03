@@ -1,0 +1,808 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Express API",
+    "description" : "Express APIs provides rapid integration with Arrivy."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/express/tasks/upsert/{external_id}" : {
+      "put" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Add/Update a Task.",
+        "description" : "Adds/Updates a task to your account, along with all the assigned entities and resources if available.",
+        "operationId" : "task_upsert",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of the task. This is typically a unique identifier for a task or order from the calling system. Note this parameter is part of the request URL.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "in" : "body",
+          "description" : "A task has following attributes <br /> `title:` (_string_) Title of the task. This is optional but we strongly recommend setting it as it shows up on the Arrivy Dashboard for Operations and Support Teams. <br /> `start_datetime:` (_string_) Start date and time of the task. This is a required field for all tasks except for the ones that are marked as UNSCHEDULED. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00 <br /> `end_datetime:` (_string_) End date and time of the task. This is an expected end time as in many cases the end time isn’t known before-hand. Please provide this value as it helps our estimation and monitoring engine. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00 <br /> `enable_time_window_display:` (_boolean_) True indicates that customer should not see the exact end datetime provided above. Instead, a time-window based on the start time will be provided. <br /> `time_window_start:` (_integer_) Value of customer time window (in mins). Customer will see Start Time to Start Time + (this time) as the window of the task. This will only have effect if `enable_time_window_display` is set as `True` in the payload. Arrivy monitors this time window and if the crew expected arrival time goes beyond the window we fire late alerts to the dispatcher and operations. <br /> `unscheduled:` (_boolean_) True/False which indicates if task is unscheduled or not. If set to 'True' the task shows up **only** in unscheduled list in Arrivy Web Portal. It can later be made scheduled via API or Web Portal. <br /> `extra_fields:` (_object_) Custom fields provided as key value pair. This is useful as it can help store essentially any data with the task. These key-values pairs will be available on Arrivy Mobile apps for the crew and also sent via webhook notifications (can later be used for correlation). <br /> `details:` (_string_) Details of the task. Typically, these are instructions related to the actual work that needs to be done in the task. This is shared with assigned crew members aka entities on Arrivy Mobile Apps. <br /> `customer_first_name:` (_string_) First name of the customer. <br /> `customer_last_name:` (_string_) Last name of the customer. <br /> `customer_email:` (_string_) Email of the customer. <br /> `customer_company_name:` (_string_) Customer's company name. <br /> `customer_address_line_1:` (_string_) Customer address line 1. <br /> `customer_address_line_2:` (_string_) Customer address line 2.  <br /> `customer_city:` (_string_) Customer's city.  <br /> `customer_state:` (_string_) Customer's state and province. <br /> `customer_country:` (_string_) Customer's country. <br /> `customer_zipcode:` (_string_) Customer's zipcode. <br /> `customer_exact_location:` (_object_) Exact latitude and longitude of customer location with these two keys `lat` and `lng`. <br /> `customer_mobile_number:` (_string_) Mobile number of the customer. <br /> `customer_phone:` (_string_) Secondary Phone number of the customer. We don't use it for our sms notifications unless the above mentioned mobile number isn't provided. <br /> `customer_id` (_integer_) If you already know the customer's id from a previous Arrivy task provide that. Otherwise, keep it blank. This is optional like most of the fields here. <br /> `notifications:` (_object_) Possible key options in this object are sms and email. Indicate true or false to turn on or off each of these channels for customer notifications. <br /> `source:` (_string_) String source of the task e.g. it can be google or any other calendar or your own system <br /> `source_id:` (_string_) Identifier to correlate the task with the any other id in some other system. This field is `deprecated` since we have introduced external_id. <br /> `external_url:` (_string_) External url for the task. This could be a complete URL to access this task in your own enterprise system. This link will be available on Crew Mobile Apps too. <br /> `group_id:` (_integer_) Indicates ID of the group within the company that this task belongs to. This is an internal arrivy group ID that should be known before-hand in order to create task for that group. <br /> `template:` (_integer_) Indicates ID of the template which should be associated with the task. This is an internal arrivy template ID that should be known before-hand in order to associate template with the task. <br /> `additional_addresses:` (_array_) An array of JSON address objects. This is used to store multiple addresses on a task e.g. a move typically has two address. Every address Object will have attributes like `title`, `address_line_1`, `address_line_2`, `city`, `state`, `country`, `zipcode` and `exact_location`. exact_location is a JSON object having two keys `lat` and `lng`. <br /> `entity_ids:` (_array_) Comma separated array of entity ids to indicate assigned entites aka crew members or drivers. These entity ids are the ids returned by Arrivy in response of /api/entities/new or /api/entities. <br /> `resource_ids:` (_array_) Comma separated array of resource ids to indicate assigned resources. These resource ids are the ids returned by Arrivy in response of /api/resources/new or /api/resources. <br /> `items:` (_array_) An array of item objects. This is used to store details of items which are to be delivered/picked up from customer's location or warehouse etc. Each item object will have attributes like `id`, `name`, `description`, `sku`, `lpn`, `model`, `weight`, `weight_unit`(it should be ISO unit), `image_id`, `image_name`, `image_path`, `color` and `type`. **NOTE:** `id` and `type` are required attributes in each item object and also please specify `type` as `DELIVERY` for the items which are to be delivered and `PICKUP` for the items which are to be picked up. The `id` and `lpn` of each item needs to be unique. <br /> `company_id:` (_integer_) Optional param to add task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "name" : "payload",
+          "schema" : {
+            "type" : "object",
+            "properties" : {
+              "title" : {
+                "type" : "string",
+                "example" : "New Task"
+              },
+              "start_datetime" : {
+                "type" : "string",
+                "example" : "2018-08-08T11:00:00+05:00"
+              },
+              "end_datetime" : {
+                "type" : "string",
+                "example" : "2018-08-08T12:00:00+05:00"
+              },
+              "enable_time_window_display" : {
+                "type" : "boolean",
+                "example" : true
+              },
+              "time_window_start" : {
+                "type" : "integer",
+                "example" : 120
+              },
+              "unscheduled" : {
+                "type" : "boolean",
+                "example" : false
+              },
+              "details" : {
+                "type" : "string",
+                "example" : "Move to 3080 148th Ave SE"
+              },
+              "customer_first_name" : {
+                "type" : "string",
+                "example" : "Thomas"
+              },
+              "customer_last_name" : {
+                "type" : "string",
+                "example" : "Chung"
+              },
+              "customer_email" : {
+                "type" : "string",
+                "example" : "Thomas@aasia.com"
+              },
+              "customer_company_name" : {
+                "type" : "string",
+                "example" : "Access Asia"
+              },
+              "customer_address_line_1" : {
+                "type" : "string",
+                "example" : "3080 148th Ave SE"
+              },
+              "customer_city" : {
+                "type" : "string",
+                "example" : "Bellevue"
+              },
+              "customer_state" : {
+                "type" : "string",
+                "example" : "WA"
+              },
+              "customer_country" : {
+                "type" : "string",
+                "example" : "USA"
+              },
+              "customer_zipcode" : {
+                "type" : "string",
+                "example" : 980074
+              },
+              "customer_mobile_number" : {
+                "type" : "string",
+                "example" : 13401943046
+              },
+              "customer_phone" : {
+                "type" : "string",
+                "example" : "+1(425) 606-4556"
+              },
+              "customer_id" : {
+                "type" : "integer",
+                "example" : 5665491259490304
+              },
+              "customer_exact_location" : {
+                "type" : "object",
+                "properties" : {
+                  "lat" : {
+                    "type" : "string",
+                    "example" : 38.9072
+                  },
+                  "lng" : {
+                    "type" : "string",
+                    "example" : 77.0369
+                  }
+                }
+              },
+              "notifications" : {
+                "type" : "object",
+                "properties" : {
+                  "sms" : {
+                    "type" : "boolean",
+                    "example" : false
+                  },
+                  "email" : {
+                    "type" : "boolean",
+                    "example" : true
+                  }
+                }
+              },
+              "source" : {
+                "type" : "string",
+                "example" : "Moveboard"
+              },
+              "external_url" : {
+                "type" : "string",
+                "example" : "www.google.com"
+              },
+              "group_id" : {
+                "type" : "integer",
+                "example" : 4721144720523264
+              },
+              "template" : {
+                "type" : "integer",
+                "example" : 5629499534213120
+              },
+              "entity_ids" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "integer",
+                  "example" : 6332963302146048
+                }
+              },
+              "resource_ids" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "integer",
+                  "example" : 4852573706125312
+                }
+              },
+              "items" : {
+                "type" : "array",
+                "items" : {
+                  "type" : "object",
+                  "properties" : {
+                    "id" : {
+                      "type" : "string",
+                      "example" : "Sofaset123"
+                    },
+                    "name" : {
+                      "type" : "string",
+                      "example" : "Sofa Set"
+                    },
+                    "description" : {
+                      "type" : "string",
+                      "example" : "Sofa set for drawing room"
+                    },
+                    "sku" : {
+                      "type" : "string",
+                      "example" : "sofa123456"
+                    },
+                    "model" : {
+                      "type" : "string",
+                      "example" : "Latest"
+                    },
+                    "weight" : {
+                      "type" : "string",
+                      "example" : 150
+                    },
+                    "weight_unit" : {
+                      "type" : "string",
+                      "example" : "Kg"
+                    },
+                    "image_id" : {
+                      "type" : "string",
+                      "example" : "sofa123"
+                    },
+                    "image_path" : {
+                      "type" : "string",
+                      "example" : "https://images.pexels.com/photos/276700/pexels-photo-276700.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
+                    },
+                    "color" : {
+                      "type" : "string",
+                      "example" : "#ffffff"
+                    },
+                    "type" : {
+                      "type" : "string",
+                      "example" : "DELIVERY"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 58432438834944
+                },
+                "url_safe_id" : {
+                  "type" : "string",
+                  "example" : "ahRzfnRyYWNraW5nLWFwaS1tdWhpb3IiCxIEVXNlchiAgICgnpmFCAwLEgRUYXNrGICAgICAgIKADA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_DATETIME"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "End datetime should be later than Start datetime"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/tasks/{external_id}" : {
+      "get" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Get a specific Task.",
+        "description" : "Returns the entire task stucture as JSON given the external_id of the task.",
+        "operationId" : "get_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of the task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "show_details",
+          "in" : "query",
+          "description" : "If true then 10 latest reported statuses and customer ratings of the task are returned.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "external_id" : {
+                  "type" : "string",
+                  "example" : "task0001"
+                },
+                "title" : {
+                  "type" : "string",
+                  "example" : "Move John Doe"
+                },
+                "start_datetime" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T08:00:00"
+                },
+                "end_datetime" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T09:00:00"
+                },
+                "start_datetime_original_iso_str" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T08:00:00+01:00"
+                },
+                "end_datetime_original_iso_str" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T09:00:00+01:00"
+                },
+                "details" : {
+                  "type" : "string",
+                  "example" : "Task Details"
+                },
+                "entity_ids" : {
+                  "type" : "string",
+                  "example" : "5348024557502464, 033534889455750984"
+                },
+                "resource_ids" : {
+                  "type" : "string",
+                  "example" : "2049627896321366, 069596596897565964"
+                },
+                "customer_first_name" : {
+                  "type" : "string",
+                  "example" : "John"
+                },
+                "customer_last_name" : {
+                  "type" : "string",
+                  "example" : "Doe"
+                },
+                "customer_email" : {
+                  "type" : "string",
+                  "example" : "john@doe.com"
+                },
+                "customer_company_name" : {
+                  "type" : "string",
+                  "example" : "Movers"
+                },
+                "customer_address_line_1" : {
+                  "type" : "string",
+                  "example" : "16357 118th Lane Northeast"
+                },
+                "customer_address_line_2" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "customer_city" : {
+                  "type" : "string",
+                  "example" : "Bothell"
+                },
+                "customer_state" : {
+                  "type" : "string",
+                  "example" : "Washington"
+                },
+                "customer_country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                },
+                "customer_zipcode" : {
+                  "type" : "string",
+                  "example" : 98011
+                },
+                "customer_exact_location" : {
+                  "type" : "string",
+                  "example" : {
+                    "lat" : 47.74659,
+                    "lng" : -122.1829
+                  }
+                },
+                "customer_mobile_number" : {
+                  "type" : "string",
+                  "example" : 42552443435
+                },
+                "customer_phone" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "unscheduled" : {
+                  "type" : "string",
+                  "example" : false
+                },
+                "group_id" : {
+                  "type" : "integer",
+                  "example" : 9803654557479602
+                },
+                "template" : {
+                  "type" : "integer",
+                  "example" : 4785074604081152
+                },
+                "notifications" : {
+                  "type" : "string",
+                  "example" : {
+                    "email" : false,
+                    "sms" : true
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Delete Task.",
+        "description" : "Delete a task given its external_id.",
+        "operationId" : "delete_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of the task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/express/tasks" : {
+      "get" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "List all Tasks given a time window.",
+        "description" : "List all the tasks. You can specify a few fields to limit your search (highly recommended). Possible URL params are explained below.",
+        "operationId" : "get_all_tasks",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "entity_id",
+          "in" : "query",
+          "description" : "This field helps return tasks of a specific entity.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "from",
+          "in" : "query",
+          "description" : "Date & Time of the query. This needs to be ISO8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. '2016-10-14T08:00:00+01:00'. Plus sign needs to be url encoded as these are query params.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "to",
+          "in" : "query",
+          "description" : "Date & Time of the query. This needs to be ISO8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. '2016-10-14T08:00:00+01:00'. Plus sign needs to be url encoded as these are query params.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Default value is 1 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Default value is 500 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "unscheduled",
+          "in" : "query",
+          "description" : "Default value is false. True indicates that only unscheduled tasks should be returned. To learn more about unscheduled tasks please checkout https://help.arrivy.com/tasks-and-calendar/unscheduled-tasks/",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "customer_id",
+          "in" : "query",
+          "description" : "Returns tasks for a given customer_id.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Returns task for a given external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "show_details",
+          "in" : "query",
+          "description" : "If true then 10 latest Task statuses and ratings will be included in the response as well.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get task list of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "external_id" : {
+                    "type" : "string",
+                    "example" : "task0001"
+                  },
+                  "title" : {
+                    "type" : "string",
+                    "example" : "Move John Doe"
+                  },
+                  "start_datetime" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T08:00:00"
+                  },
+                  "end_datetime" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T09:00:00"
+                  },
+                  "start_datetime_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T08:00:00+01:00"
+                  },
+                  "end_datetime_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T09:00:00+01:00"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Task Details"
+                  },
+                  "entity_ids" : {
+                    "type" : "string",
+                    "example" : "5348024557502464, 033534889455750984"
+                  },
+                  "resource_ids" : {
+                    "type" : "string",
+                    "example" : "2049627896321366, 069596596897565964"
+                  },
+                  "customer_first_name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "customer_last_name" : {
+                    "type" : "string",
+                    "example" : "Doe"
+                  },
+                  "customer_email" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                  },
+                  "customer_company_name" : {
+                    "type" : "string",
+                    "example" : "Movers"
+                  },
+                  "customer_address_line_1" : {
+                    "type" : "string",
+                    "example" : "16357 118th Lane Northeast"
+                  },
+                  "customer_address_line_2" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "customer_city" : {
+                    "type" : "string",
+                    "example" : "Bothell"
+                  },
+                  "customer_state" : {
+                    "type" : "string",
+                    "example" : "Washington"
+                  },
+                  "customer_country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "customer_zipcode" : {
+                    "type" : "string",
+                    "example" : 98011
+                  },
+                  "customer_exact_location" : {
+                    "type" : "string",
+                    "example" : {
+                      "lat" : 47.74659,
+                      "lng" : -122.1829
+                    }
+                  },
+                  "customer_mobile_number" : {
+                    "type" : "string",
+                    "example" : 42552443435
+                  },
+                  "customer_phone" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "unscheduled" : {
+                    "type" : "string",
+                    "example" : false
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 9803654557479602
+                  },
+                  "template" : {
+                    "type" : "integer",
+                    "example" : 4785074604081152
+                  },
+                  "notifications" : {
+                    "type" : "string",
+                    "example" : {
+                      "email" : false,
+                      "sms" : true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

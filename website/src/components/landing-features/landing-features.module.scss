@@ -1,0 +1,73 @@
+@import '../../../styles/colors.scss';
+
+.features {
+    background-color: $theme-grey;
+    padding: 40px 0px;
+}
+
+.features-main-text {
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
+
+.features-flex-container {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.features-flex-item {
+    max-width: 350px;
+    padding: 10px;
+    text-align: center;
+}
+
+.features-flex-item-image {
+    width: 100%;
+    max-width: 250px;
+    border: 0.5px solid $landing-feature-flex-border;
+    display: table-caption;
+}
+
+.features-flex-text-container {
+    text-align: left;
+}
+
+.features-flex-item-heading {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: .1em;
+}
+
+.features-flex-item-text {
+    padding-top: 5px;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.features-flex-item-badges {
+    display: block;
+    width: 100%;
+}
+
+.features-flex-item-badges-image {
+    max-width: 100px;
+}
+
+.features-flex-item-intro {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px;
+    color: $features-flex-intro;
+}

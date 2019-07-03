@@ -1,0 +1,194 @@
+@import '../../../../../styles/colors';
+
+.liveTrackExecuteContainer {
+  background: $code-panel-bg;
+  padding: 30px 25px 30px 25px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid $code-panel-result-bg;
+  margin: 15px 0 15px 0;
+  .contentContainer {
+    padding: 30px 40px 30px 40px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .subcontentContainer {
+    max-width: 1260px;
+    margin: 0 auto;
+    padding: 0px 25px;
+  }
+
+  .liveTrackPageContainer {
+    padding: 0 0 30px 0;
+  }
+
+  .placeholderCustom {
+    height: 15px;
+  }
+  h1 {
+    color: $white;
+    margin: 0;
+    padding: 0;
+  }
+  label {
+    font-size: 18px;
+    line-height: 34px;
+    color: $white;
+    font-weight: normal;
+    padding: 0;
+    margin: 0 15px 0 0;
+  }
+  button.executeBtn {
+    margin-top: 15px;
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    background: none;
+    border: 2px solid $theme-green;
+    border-radius: 4px;
+    color: $theme-green;
+    outline: none;
+    box-shadow: none;
+    max-width: 200px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      background: $theme-green;
+      color: $white;
+      span {
+        div {
+          span {
+            div {
+              background-color: $white !important;
+            }
+          }
+        }
+      }
+    }
+    span {
+      display: inline-block;
+      div {
+        display: inline-block;
+        color: $theme-green;
+        margin: 0 4px 0 0;
+        span {
+          div {
+            background-color: $theme-green !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+.resultBox {
+  color: $white;
+  margin: 40px 0 0 0;
+  border: 2px solid $code-panel-result-bg;
+  padding: 10px;
+  border-radius: 4px;
+  .resultContainer {
+    background: $code-panel-result-bg;
+    color: $white;
+    padding: 20px 10px;
+    span {
+      font-family: monospace;
+    }
+  }
+  .resultContainer.show {
+    -webkit-animation-name: fade;
+    -moz-animation-name: fade;
+    -o-animation-name: fade;
+    animation-name: fade;
+    animation-duration: 0.3s;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes fade {
+  0% { opacity: 0.1; }
+  100% { opacity: 1; }
+}
+
+.executionErrorBox {
+  background: $execution-error;
+  color: $white;
+  padding: 20px 10px;
+}
+
+.customSelectEl {
+  color: $white;
+  background: none;
+  max-width: 200px;
+  float: right;
+  option {
+    color: $dark-black;
+  }
+}
+
+.customInput {
+  color: $white;
+  background: none;
+  max-width: 200px;
+  float: right;
+  @media screen and (max-width: 992px) {
+    margin-top: 30px;
+  }
+}
+
+.transparentBtn {
+  border: none;
+  outline: none;
+  background: none;
+  color: $primary;
+  padding: 0;
+  font-size: 16px;
+  line-height: 46px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+  &:hover {
+    color: $primary;
+    background: none;
+    padding: 0;
+  }
+}
+
+.externalIdInputError {
+  border-color: $theme-red;
+  box-shadow: inset 0 1px 1px rgba(255, 78, 76,.075), 0 0 8px rgba(255, 78, 76,.6);
+  &:hover {
+    border-color: $theme-red;
+    box-shadow: inset 0 1px 1px rgba(255, 78, 76,.075), 0 0 8px rgba(255, 78, 76,.6);
+  }
+  &:focus {
+    border-color: $theme-red;
+    box-shadow: inset 0 1px 1px rgba(255, 78, 76,.075), 0 0 8px rgba(255, 78, 76,.6);
+  }
+  &:visited {
+    border-color: $theme-red;
+    box-shadow: inset 0 1px 1px rgba(255, 78, 76,.075), 0 0 8px rgba(255, 78, 76,.6);
+  }
+  &:active {
+    border-color: $theme-red;
+    box-shadow: inset 0 1px 1px rgba(255, 78, 76,.075), 0 0 8px rgba(255, 78, 76,.6);
+  }
+}
+
+.externalIdErrorText {
+  color: $theme-red;
+  max-width: 200px;
+  margin-right: 120px;
+  float: right;
+  @media screen and (max-width: 992px) {
+    margin-top: 30px;
+  }
+}

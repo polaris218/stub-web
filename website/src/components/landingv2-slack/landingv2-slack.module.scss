@@ -1,0 +1,94 @@
+@import '../../../styles/colors.scss';
+
+.slack{
+    :global .container {
+      @media (min-width: 1440px) {
+            max-width: 1440px;
+      }
+    }
+
+    padding: 0;
+    .slack_integration{
+        background-color:  #fff;
+        padding: 140px 0 100px 0;
+        h2{
+            padding: 20px 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            color:$secondary;
+        }
+        p{
+            font-size: 1.4em;
+        }
+
+        .slack_logo {
+          text-align: right;
+
+          img {
+            max-width: 220px;
+            width: 100%;
+          }
+        }
+        @media (max-width: 991px) {
+            padding: 120px 0 60px 0;
+        }
+        @media (max-width: 767px) {
+            background-size: contain;
+            text-align: center;
+            padding: 60px 0 40px 0;
+            .slack_logo {
+                text-align: center;
+            }
+        }
+    }
+
+    .slack_image {
+        background:url("/images/lending/Group 167.png") no-repeat;
+        background-size: contain;
+        padding: 20px 0px;
+        background-color:  #fff;
+        min-height: 240px;
+    }
+
+    .enterprise_image {
+        background:url("/images/lending/Group 168.png") no-repeat;
+        background-size: contain;
+        padding: 20px 0px;
+        background-color:  #fff;
+        min-height: 240px;
+    }
+
+    .first_month{
+        background:url("/images/lending/Group 171.png") center center no-repeat;
+        background-color: $primary;
+        padding: 100px 0 70px 0;
+        text-align: center;
+        h2{
+            color: $white;
+            font-size: 3.5em;
+            font-weight: bold;
+        }
+        p{
+            color: $white;
+            font-size: 1.8em;
+        }
+        button{
+            background: $btn-sec;
+            color: $white;
+            border-radius: 30px;
+            padding: 20px 30px;
+            margin: 30px 0 30px 0;
+            text-transform: uppercase;
+            font-size: 1em;
+            box-shadow: 2px 2px 10px #666;
+            border-width: 0;
+            font-family: sans-serif;
+            font-weight: bold;
+            &:hover{
+                background: $btn-sec-hover;
+                color: $white;
+            }
+        }
+    }
+}
+

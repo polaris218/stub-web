@@ -1,0 +1,324 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Entity API",
+    "description" : "An Entity can be a service tech, driver, crew member or food delivery person or any trackable asset. There is no limit on number of Entities one can create in Arrivy. Once you create an entity you will be able to `report & fetch` its location and assign tasks. Task repesents an order or a delivery assigned to an entity."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/entities/new" : {
+      "post" : {
+        "tags" : [ "Entity APIs" ],
+        "summary" : "Adds a new entity.",
+        "description" : "Adds a new entity to the company. Required fields for a new entity are `name`, `type` and `permission`. The response will return unique entity id which can be used for future API calls. We highly recommend that you store it somewhere. Optional fields are `email`, `phone`, `details`, `permission`, `extra_fields` (JSON String of key value pairs), `image_id` , `image_path` and `external_id` (typically, an id from a client system). Permission can be `ADMIN`, `SCHEDULER`, `FIELDCREW` or `LIMITEDACCESS`. **Please note that we support `invite_to_join` and `create_account` flags in both query params and form data.**",
+        "operationId" : "create_entity",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "formData",
+          "description" : "Name of the Entity.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "Type of the Entity. Typically this is the role in the company e.g. Crew Lead,  etc.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "permission",
+          "in" : "formData",
+          "description" : "Permission level of the Entity. It has to be one of the values, i.e. `ADMIN`, `SCHEDULER`, `FIELDCREW` and `LIMITEDACCESS`.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "Email of the Entity. It is optional. If provided and the invite_to_join is not set to False then Arrivy will send an invite to this address to join arrivy platform. Generally, it's done when the team members need to use Arrivy mobile apps or web experience.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "invite_to_join",
+          "in" : "query",
+          "description" : "True/False which indicates that whether Arrivy needs to send invitation email to this entity to register an account on Arrivy. By default it is considered as True.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "invite_to_join",
+          "in" : "formData",
+          "description" : "True/False which indicates that whether Arrivy needs to send invitation email to this entity to register an account on Arrivy. By default it is considered as True.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "create_account",
+          "in" : "query",
+          "description" : "True means that Arrivy should automatically create a login account for this entity with the provided email and the password (sent as a separate field to this call). By default it is assumed False.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "create_account",
+          "in" : "formData",
+          "description" : "True means that Arrivy should automatically create a login account for this entity with the provided email and the password (sent as a separate field to this call). By default it is assumed False.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "password",
+          "in" : "formData",
+          "description" : "Password for the account to be created. Again, this is only used when invite_to_join is False and create_account is True.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phone",
+          "in" : "formData",
+          "description" : "Phone Number of the Entity.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "details",
+          "in" : "formData",
+          "description" : "Details of the Entity. This is used to write a short introduction of the Entity that will be visible on the customer's view of the task.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "Custom fields provided as key value pair stringified as JSON. This is very useful as it can help store essentially any data with the entity.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "image_id",
+          "in" : "formData",
+          "description" : "ID of Image",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "image_path",
+          "in" : "formData",
+          "description" : "Profile image path for the Entity. This is used in customer's view of the job.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from a client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "formData",
+          "description" : "ID of the group of this entity.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "ref",
+          "in" : "formData",
+          "description" : "Source/Reference of the user account being created along with the entity.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to create entity in a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "MISSING_VALUE"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Name is required"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/entities/{entity_id}" : {
+      "get" : {
+        "tags" : [ "Entity APIs" ],
+        "summary" : "Get a specific entity.",
+        "description" : "Get all fields of a specific entity.",
+        "operationId" : "get_entity",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "entity_id",
+          "in" : "path",
+          "description" : "ID of the entity.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get entity of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "type" : {
+                  "type" : "string",
+                  "example" : "Night-Shift Driver"
+                },
+                "owner" : {
+                  "type" : "integer",
+                  "example" : 5629499534213120
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : "John"
+                },
+                "email" : {
+                  "type" : "string",
+                  "example" : "john@doe.com"
+                },
+                "phone" : {
+                  "type" : "string",
+                  "example" : "+4356744 789"
+                },
+                "details" : {
+                  "type" : "string",
+                  "example" : "Joe loves his work"
+                },
+                "extra_fields" : {
+                  "type" : "object",
+                  "example" : null
+                },
+                "image_id" : {
+                  "type" : "integer",
+                  "example" : 12345
+                },
+                "group_id" : {
+                  "type" : "integer",
+                  "example" : null
+                },
+                "image_path" : {
+                  "type" : "string",
+                  "example" : "https://...../...."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid entity_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+	}
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

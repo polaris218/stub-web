@@ -1,0 +1,22 @@
+html, body {
+    height: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+[name="braintree-hosted-field-number"],
+[name="braintree-hosted-field-cvv"],
+[name="braintree-hosted-field-expirationDate"] {
+    height: 24pt !important;
+}
+
+.payment-manager {
+  margin-top: 20px;
+}

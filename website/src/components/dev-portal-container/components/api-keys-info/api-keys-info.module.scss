@@ -1,0 +1,65 @@
+@import '../../../../../styles/colors.scss';
+
+.apiInfoContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: $theme-light-grey;
+  width: 100%;
+  .apiKeysHeader {
+    display: inline-flex;
+    flex-direction: row;
+    border-bottom: 1px solid $theme-grey;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    &>div {
+      width: 50%;
+    }
+    &>div:first-child {
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+    }
+    &>div:last-child {
+      text-align: right;
+      button {
+        background: none;
+        border: 0;
+        outline: none;
+        color: $primary;
+        padding: 0;
+        margin: 0;
+      }
+    }
+  }
+  .apiKeysBody {
+    input {
+      background: none;
+      color: $theme-darker-grey;
+    }
+    .toggleIconBtn {
+      background: none;
+      outline: none;
+      border: 0;
+      color: $primary;
+      text-decoration: none;
+      padding: 0;
+      margin: -25px 10px 0 0;
+      float: right;
+    }
+  }
+  .savingSpinnerContainer {
+    height: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .loginMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 77px;
+  }
+}

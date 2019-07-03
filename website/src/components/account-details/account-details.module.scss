@@ -1,0 +1,80 @@
+@import '../../../styles/colors.scss';
+
+.account-details {
+  background-color: $theme-light-grey;
+  color: $no-info-color;
+}
+
+.account-image-c {
+  background: $primary; /* Old browsers */
+  background: -moz-linear-gradient(left, #008bf8 0%, #00d494 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #008bf8 0%,#00d494 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #008bf8 0%,#00d494 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008bf8', endColorstr='#00d494',GradientType=1 ); /* IE6-9 */
+}
+
+.account-image {
+  img {
+    position: relative;
+    bottom: -60px;
+    height: 200px;
+    width: 200px;
+  }
+
+  .image-buttons {
+    position: relative;
+    color: $white;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 16px;
+    left: 160px;
+    top: 0;
+  }
+}
+
+.full-width {
+  width: 100% !important;
+}
+
+.user-plan,
+.user-plan-menu,
+.user-plan-item {
+  @extend .full-width;
+}
+
+.user-plan-info {
+  display: inline-block;
+  
+  .user-plan-name,
+  .user-plan-calls {
+    display: block;
+  }
+  .user-plan-name {
+    display: block;
+  }
+
+}
+
+.user-plan-item {
+  padding: 5px 25px;
+}
+
+.user-plan-toggle {
+  @extend .full-width;
+  text-align: right;
+  padding-right: 25px;
+
+  .caret {
+    vertical-align: text-top !important;
+    margin-left: 10px !important;
+    position: absolute !important;
+    top: 15px !important;
+    right: 10px !important;
+  }
+}
+
+.profile-link {
+  margin-top: -75px;
+  font-size: 16px;
+  color: #212121;
+}

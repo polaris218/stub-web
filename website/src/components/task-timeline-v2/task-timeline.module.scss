@@ -1,0 +1,930 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+
+@mixin cf() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+  & {
+    *zoom: 1;
+  }
+}
+
+$col: 12;
+$r-mt: 0;
+$ultra-desktop: 1250px;
+$desktop: 838px;
+$tablet: 500px;
+$mobile: 0px;
+
+@mixin ew($w-u, $w, $w-t, $w-m) {
+  @media screen and (min-width: $mobile) {
+    width: percentage($w-m/$col);
+  }
+  @media screen and (min-width: $tablet) {
+    width: percentage($w-t/$col);
+  }
+  @media screen and (min-width: $desktop) {
+    width: percentage($w/$col);
+  }
+  @media screen and (min-width: $ultra-desktop) {
+    width: percentage($w-u/$col);
+  }
+  box-sizing: border-box;
+  float: left;
+}
+
+@mixin of($w-u, $w, $w-t, $w-m) {
+  @media screen and (min-width: $mobile) {
+    margin-left: percentage($w-m/$col);
+  }
+  @media screen and (min-width: $tablet) {
+    margin-left: percentage($w-t/$col);
+  }
+  @media screen and (min-width: $desktop) {
+    margin-left: percentage($w/$col);
+  }
+  @media screen and (min-width: $ultra-desktop) {
+    margin-left: percentage($w-u/$col);
+  }
+}
+
+$height: 100px;
+$width: 100px;
+$width-label: $width + 140px;
+$width-thumb: $width/2;
+$border-color: #e5e5e5;
+.clear-all {
+  @media (min-width: 768px) {
+    text-align: right;
+  }
+}
+
+.activity-icon {
+  color: #BEBEBE;
+  font-size: 35px;
+  position: absolute;
+  transition: .3s;
+  padding: 10px 8px;
+  line-height: 22px;
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  height: 100%;
+  max-width: 100%;
+}
+.activity-icon:hover {
+  color: #969696;
+}
+.team-view-page {
+  .datePickerWrapper {
+    font-size: 15px;
+    font-weight: bold;
+    color: $dashboard-dark-grey;
+    min-width: 142px;
+    max-width: 142px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0 15px;
+    > div{
+      margin-bottom: 0;
+    }
+    .arrow{
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      text-align: center;
+      transition: color .3s ease-in-out;
+      &:hover{
+        color: $dashboard-primary;
+      }
+      &.prev{
+        transform: rotate(-180deg);
+      }
+      svg{
+        width: 100%;
+      }
+    }
+    input {
+      background: none;
+      padding: 0;
+      height: 20px;
+      max-width: 100px;
+    }
+    & > span:nth-child(2) {
+      > div > div {
+        @media screen and (max-width: 768px) {
+          left: -130px !important;
+        }
+        @media screen and (max-width: 520px) {
+          left: 0 !important;
+        }
+        & > div:first-child {
+          @media screen and (max-width: 768px) {
+            left: 75% !important;
+          }
+          @media screen and (max-width: 520px) {
+            left: 16.8% !important;
+          }
+        }
+        & > div:last-child > table > tfoot > tr > td > button {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .filters-container {
+    @include flexbox();
+    @include justify-content(flex-end);
+    @include align-items(center);
+
+    > div {
+      margin: 5px;
+      min-width: 100px;
+      max-width: 140px;
+    }
+
+    @media (max-width: $tablet) {
+      display: block;
+      > div {
+        width: 100%;
+        max-width: none;
+      }
+    }
+
+  }
+
+  .tl-all-day {
+    display: inline-block;
+    vertical-align: top;
+    height: $height;
+    padding-top: 40px;
+    text-align: center;
+    @include box-shadow(1px, 2px, 0px, $border-color, true);
+    width: 100px;
+    background-color: $dashboard-dark;
+    color: $white;
+    font-size: 15px;
+    font-weight: bold;
+    position: relative;
+
+    span {
+      font-size: 15px;
+      font-weight: bold;
+      display: block;
+    }
+
+    &:first-child {
+      width: $width-label;
+      @media (max-width: $tablet) {
+        width: $width;
+      }
+    }
+  }
+
+  .tl-wrapper {
+    width: 100%;
+    background: $white;
+    @include cf();
+    height: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
+
+    .tl-labels {
+      top: 0;
+      white-space: nowrap;
+      z-index: 10;
+      position: relative;
+      margin-top: -1px;
+      width: auto;
+      height: $height;
+
+      .labels-container {
+        background: $dashboard-dark;
+        color: $white;
+        position: absolute;
+        @include box-shadow(1px, 1px, 8px, #ccc);
+
+        .tl-label {
+          display: inline-block;
+          vertical-align: top;
+          height: $height;
+          padding-top: 25px;
+          text-align: center;
+          @include box-shadow(1px, 2px, 0px, $border-color, true);
+          width: $width;
+          background-color: $dashboard-dark;
+          font-size: 18px;
+          font-weight: bold;
+          position: relative;
+          color: $white;
+
+          span {
+            font-size: 16px;
+            font-weight: normal;
+            text-transform: uppercase;
+            display: block;
+          }
+
+          &:first-child {
+            width: $width-label;
+            @media (max-width: $tablet) {
+              width: $width;
+            }
+          }
+        }
+      }
+    }
+
+    .tl-single {
+      margin-top: -1px;
+      width: auto;
+      white-space: nowrap;
+      height: 100px;
+      transition: height 0.2s ease-out;
+
+      .tl-group {
+        position: relative;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        height: 100%;
+
+        .task {
+          font-size: 13px;
+          position: absolute;
+          top: 1px;
+          background: $tl-task-bg;
+          color: $white;
+          left: $width-label + $width-thumb;
+          transition: .3s;
+          padding: 8px;
+          line-height: 22px;
+          text-align: left;
+          overflow: hidden;
+
+          .content {
+            font-size: 13px;
+            padding-right: 10px;
+            visibility: hidden;
+            height: 0;
+          }
+
+          p {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+
+          &:hover {
+            cursor: pointer;
+          }
+        }
+
+        .overlapping-container {
+          font-size: 13px;
+          position: absolute;
+          top: 1px;
+          background: $tl-task-bg;
+          color: $white;
+          left: $width-label + $width-thumb;
+          transition: .3s;
+          cursor: pointer;
+
+          .task-num {
+            text-align: center;
+            font-size: 18px;
+            padding: 15px;
+            height: 100%;
+
+            span {
+              display: inline-block;
+              padding: 0 7px;
+              border-radius: 25px;
+              border: 1px solid $white;
+              margin-right: 5px;
+            }
+
+            .arrow-counter {
+              padding-left: 10px;
+              font-size: 1.8em;
+            }
+          }
+
+          .items-wrapper {
+            display: none;
+            cursor: pointer;
+            z-index: 1000;
+
+            .task-inside {
+              text-align: left;
+              padding: 4px;
+              overflow: hidden;
+              position: relative;
+              line-height: 22px;
+              height: $height/2;
+
+              p {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                margin-bottom: 0;
+              }
+            }
+
+            .activity-icon-inside {
+              color: #BEBEBE;
+              font-size: 35px;
+              position: relative;
+              line-height: 22px;
+              text-align: left;
+              overflow: hidden;
+              cursor: pointer;
+              height: $height/2;
+              max-width: 100%;
+              padding: 5px 7px;
+            }
+
+            .activity-icon-inside:hover {
+              color: #969696;
+            }
+
+          }
+
+          &:not(.showChildren) {
+            &:hover {
+              .items-wrapper {
+                animation: fadein 0.5s ease-in-out 0s 1;
+                display: flex;
+                position: absolute;
+                cursor: pointer;
+                background: $white;
+                z-index: 1000;
+                bottom: 95px;
+                left: 30%;
+                border-radius: 15px;
+                box-shadow: 2px 2px 5px $theme-dark-grey;
+
+                .task-inside {
+                  color: $dark-black;
+                  height: $height;
+                  white-space: normal;
+                  padding: 0;
+                  cursor: pointer;
+                  position: static;
+                  width: 250px !important;
+                  min-width: 250px !important;
+
+                  .task-cover {
+                    background: $white;
+                    width: 100%;
+                    height: 100%;
+                    padding: 10px;
+
+                    p {
+                      margin: 0;
+                    }
+
+                    .name {
+                      font-size: 1.2em;
+                      font-weight: bold;
+                      white-space: nowrap;
+                      text-overflow: ellipsis;
+                      padding-left: 0;
+                      position: relative;
+
+                      span {
+                        display: inline;
+                      }
+
+                      //&:before{
+                      //  content: '\2022';
+                      //  position: absolute;
+                      //  left: 3px;
+                      //  top:-1px;
+                      //  color: red;
+                      //}
+                    }
+
+                    .customer-name {
+                      font-size: 1.1em;
+                    }
+
+                    .date-inside {
+                      color: $theme-dark-grey;
+                    }
+                  }
+
+                  &:first-child {
+                    border-radius: 15px 0 0 15px;
+
+                    &:after {
+                      content: "";
+                      position: absolute;
+                      bottom: -20px;
+                      left: 50px;
+                      border-width: 20px 20px 0 0;
+                      border-style: solid;
+                      border-color: $white transparent;
+                      display: block;
+                      width: 0;
+                    }
+                  }
+
+                  &:last-child {
+                    border-radius: 0 15px 15px 0;
+                  }
+
+                  &:not(:last-child) {
+                    border-right: 1px solid $theme-middle-grey;
+                  }
+
+                  &:hover {
+                    .task-cover {
+                      background: $tl-task-hover;
+                    }
+
+                    &:after {
+                      border-color: $tl-task-hover transparent;
+                    }
+                  }
+
+                }
+
+                .activity-icon-inside {
+                  border-right: 1px solid;
+                  height: $height;
+                  padding: 33px 7px;
+                  left: 0 !important;
+                }
+              }
+            }
+          }
+
+          &.showChildren {
+            .items-wrapper {
+              display: block;
+            }
+
+            .task-num {
+              .arrow-counter {
+                @include transform(rotate(180deg));
+              }
+            }
+          }
+
+        }
+      }
+
+      .tl-slots {
+        width: $width-label;
+        height: 100%;
+        text-align: center;
+        background-color: white;
+        z-index: 5;
+        display: inline-block;
+        @include box-shadow(1px, 1px, 0px, $tl-box-shadow, true);
+
+        .tl-name {
+          position: absolute;
+          left: 15px;
+          width: $width-label;
+          height: $height;
+          background: $white;
+          padding: 25px 0;
+          text-align: left;
+          border-right: 1px solid $tl-box-shadow;
+          @include box-shadow(1px, 1px, 0px, $tl-box-shadow, true);
+          z-index: 5;
+
+          .text-name {
+            display: inline-block;
+            margin-top: 10px;
+            color: $primary;
+          }
+
+          .avatar {
+            height: 48px;
+            width: 48px;
+            border-radius: 50%;
+            border: 1px $theme-grey solid;
+            margin: 0 10px;
+            float: left;
+          }
+
+          span {
+            display: block;
+            color: $theme-dark-grey;
+            font-size: 0.8em;
+          }
+
+          &.have-type {
+            .text-name {
+              margin-top: 3px;
+              @media (max-width: $tablet) {
+                line-height: 1;
+                margin-top: 0;
+              }
+            }
+          }
+
+        }
+
+        .add {
+          font-weight: bold;
+          font-size: 16px;
+          transition: .3s;
+          padding-top: 35px;
+          color: $white;
+        }
+
+        &:hover {
+          cursor: pointer;
+          background: white !important;
+
+          .add {
+            color: $tl-add-hover;
+          }
+        }
+
+        @media (max-width: $tablet) {
+          width: $width;
+
+          .tl-name {
+            width: $width;
+            text-align: center;
+            padding-top: 10px;
+
+            .avatar {
+              float: none;
+            }
+
+            .text-name {
+              display: block;
+            }
+          }
+        }
+
+        &.tl-timeline-slots {
+          width: $width-thumb;
+        }
+      }
+
+      &.openContainer {
+        .tl-slots {
+          background: $table-row-strip;
+
+          .tl-name {
+            background: $table-row-strip;
+          }
+        }
+      }
+    }
+  }
+
+  .mode-switch {
+    height: 60px;
+    width: 100%;
+    line-height: 60px;
+    text-transform: uppercase;
+    padding: 0 1em;
+    color: $extra-time-status;
+    font-weight: bold;
+    cursor: pointer;
+    background: $testimonials-color;
+  }
+}
+
+.dropdownOptions {
+  button {
+    border-color: $primary;
+    color: $primary;
+  }
+}
+
+.confirmationStatusIndicator {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+  display: inline-block !important;
+  border: 1px solid $theme-middle-grey;
+  border-radius: 50%;
+  background: $theme-dark-grey;
+}
+
+.confirmationStatusIndicatorEntity {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  float: right;
+  display: inline-block;
+  border: 1px solid $theme-middle-grey;
+  color: $white;
+  background: $theme-dark-grey;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%;
+
+  span {
+    font-size: 1em !important;
+    color: $white !important;
+  }
+}
+
+.customTooltipForConfirmationStatus {
+  div:nth-child(2) {
+    padding: 15px !important;
+    text-align: left !important;
+  }
+
+  p {
+    line-height: 20px;
+    margin-bottom: 0;
+  }
+
+  p:first-child {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+}
+
+.activityToolTip{
+  background-color: #ffffff;
+  font-size: 14px;
+  max-width: 150px;
+  min-width: 50px;
+  div:nth-child(2) {
+    padding: 10px !important;
+    text-align: left !important;
+
+  }
+  p {
+    margin-bottom: 0;
+  }
+
+  p:first-child {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+}
+
+
+.sendConfirmationNotificationBtn {
+  background: none;
+  outline: none;
+  border: 0;
+  font-size: 1em;
+  padding: 0;
+  color: $primary;
+  margin-right: 10px;
+  @media screen and (max-width: 500px) {
+    float: none;
+    margin-right: 0px;
+  }
+}
+
+.taskConfirmationStatusContainer {
+  position: absolute;
+  width: 100%;
+  bottom: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: row-reverse;
+  @media screen and (max-width: 500px) {
+    .entityConfirmationStatusWrapper{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    bottom: -25px;
+    align-items: center;
+    padding-right: 0;
+    justify-content: center;
+  }
+  padding-right: 10px;
+}
+
+.sendNotificationConfirmation {
+  color: $primary-green !important;
+  font-size: 1em !important;
+  margin-top: 2px;
+  float: right;
+  margin-right: 10px;
+  @media screen and (max-width: 500px) {
+    float: none;
+    margin-right: 0px;
+  }
+}
+
+.sendNotificationConfirmationFailed {
+  color: $theme-red !important;
+  font-size: 1em !important;
+  margin-top: 2px;
+  float: right;
+  margin-right: 10px;
+  @media screen and (max-width: 500px) {
+    float: none;
+    margin-right: 0px;
+  }
+}
+
+.mapIcon {
+  transition: all 0.3s ease;
+  margin-left: 10px;
+  > svg {
+    color: $theme-blue;
+    @media screen and (max-width: 767px) {
+        width: 1em !important;
+    }
+  }
+  > a {
+    transition: all 0.3s ease;
+  }
+}
+.noLocationLootltip {
+  width: 124px;
+  top: 70px !important;
+  z-index: 8 !important;
+
+  & > div:last-child {
+    color: $theme-red;
+    background-color: $white;
+    border: 1px solid $theme-middle-grey;
+  }
+
+  > div:first-child {
+    border-right-color: $theme-middle-grey !important;
+  }
+
+  @media screen and (max-width: 500px) {
+    top: 3px !important;
+  }
+}
+
+.t1-single-notification {
+  @media screen and (max-width: 500px) {
+    height: 130px !important;
+  }
+}
+
+.t1-slots-notification {
+  button{
+    background-color: $white !important;
+    border-color: $white !important;
+    color: $dashboard-dark !important;
+  }
+  @media screen and (max-width: 500px) {
+    width: 155px !important;
+  }
+}
+
+.timelineDatePicker {
+  outline: none;
+  border: 0;
+  user-select: none;
+  -moz-user-select: none;
+  cursor: pointer;
+  box-shadow: none;
+  text-align: center;
+  color: transparent;
+  text-shadow: 0 0 0 gray;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.timelineEntityInfo {
+  color: $theme-dark-grey;
+  font-size: 0.8em;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  @media screen and (min-width: 501px) {
+    margin-left: 65px;
+    width: 165px;
+  }
+}
+
+.all-day {
+  width: 100px;
+  height: 100%;
+  text-align: center;
+  background-color: white;
+  z-index: 5;
+  display: inline-block;
+  @include box-shadow(1px, 1px, 0px, $tl-box-shadow, true);
+
+  .tl-name {
+    position: absolute;
+    left: 15px;
+    width: $width-label;
+    height: $height;
+    background: $white;
+    padding: 25px 0;
+    text-align: left;
+    border-right: 1px solid $tl-box-shadow;
+    @include box-shadow(1px, 3px, 0px, $tl-box-shadow, true);
+    z-index: 5;
+
+    .text-name {
+      display: inline-block;
+      margin-top: 10px;
+      color: $primary;
+    }
+
+    .avatar {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      border: 1px $theme-grey solid;
+      margin: 0 10px;
+      float: left;
+    }
+
+    span {
+      display: block;
+      color: $theme-dark-grey;
+      font-size: 0.8em;
+    }
+
+    &.have-type {
+      .text-name {
+        margin-top: 3px;
+      }
+    }
+
+  }
+
+  .add {
+    font-weight: bold;
+    font-size: 16px;
+    transition: .3s;
+    padding-top: 35px;
+    color: $white;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: white !important;
+
+    .add {
+      color: $tl-add-hover;
+    }
+  }
+
+  @media (max-width: $tablet) {
+    width: 50px;
+
+    .tl-name {
+      width: $width;
+      text-align: center;
+      padding-top: 10px;
+
+      .avatar {
+        float: none;
+      }
+
+      .text-name {
+        display: block;
+      }
+    }
+  }
+
+  &.all-day-slots {
+    width: $width-thumb;
+  }
+}
+
+.tl-group-candrop {
+}
+
+.tl-group-dropped {
+  box-shadow: inset 1px 1px 0px $theme-light-grey;
+}
+
+.tl-slot-candrop {
+}
+
+.tl-slot-dropped {
+  background: $theme-light-grey !important;
+  color: $theme-light-grey !important;
+  box-shadow: inset 2px 2px 0px $theme-light-grey;
+
+  .add {
+    color: $theme-light-grey !important;
+  }
+}

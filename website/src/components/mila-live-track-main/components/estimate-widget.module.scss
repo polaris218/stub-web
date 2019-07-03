@@ -1,0 +1,70 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/mila-fonts.scss';
+
+.estimateWidgetContainer {
+  padding: 20px 75px;
+  background: $mila-dark-blue;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    padding: 20px 0;
+  }
+  h3 {
+    color: $white;
+    font-size: 20px;
+    margin-top: 0;
+    margin-left: 2px;
+    font-family: AvenirNext;
+    @media screen and (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+  h2 {
+    color: $white;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-family: AvenirNext;
+    @media screen and (max-width: 768px) {
+      font-size: 22px;
+    }
+  }
+}
+
+.chatButton {
+  z-index: 99;
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  text-align: center;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -60px;
+  right: 20px;
+  cursor: pointer;
+  background: $mila-orange;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  -webkit-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+  -o-box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+  box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.2);
+  &:hover {
+    opacity: .8;
+    -webkit-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    -o-box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 10px 1px rgba(0,0,0,0.14), 0 3px 14px 2px rgba(0,0,0,0.12), 0 5px 5px -3px rgba(0,0,0,0.2);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
+}

@@ -1,0 +1,292 @@
+body{
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+    font-weight: bold;
+    color: #000000;
+}
+p{
+    margin: 0;
+    font-size: 10px;
+}
+h1{
+    font-weight: bold;
+    font-size: 16px;
+}
+h2{
+
+}
+h3{
+
+}
+h6{
+    font-size: 12px;
+}
+.btn{
+    min-width: 110px;
+    min-height: 38px;
+}
+.btn .loader{
+display:none;
+}
+.btn.disabled{
+   pointer-event: none;
+}
+.btn.disabled .loader{
+    display:block;
+}
+.btn.disabled .text{
+    display:none;
+}
+.underline{
+    text-decoration: underline;
+}
+.border-none{
+    border: none !important;
+}
+.bolder{
+    font-size: 14px;
+}
+.bolder2{
+    font-size: 12px;
+}
+.header p {
+    margin: 0;
+}
+.right-header{
+    font-weight: bold;
+}
+.right-header-input{
+    /*margin: 0 0 15px 0;*/
+}
+.right-header-input p{
+    margin: 0 0 0 10px;
+}
+.right-header input{
+    border: none;
+    padding: 0;
+    margin: 0 0 0 0;
+    height: 30px;
+    width: 100% !important;
+}
+.header-center img{
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    overflow: hidden;
+}
+.section1 input{
+    border: none;
+    height: 40px !important;
+    width: 100%;
+}
+.section2 input{
+    width: 100%;
+    max-width: 100%;
+    padding: 0 !important;
+    margin: 0 !important;
+    height: 80px;
+}
+.section2 p{
+    font-size: 10px;
+}
+.section3 input[type=text]{
+
+    width: 100%;
+    height: 25px;
+}
+.consumer {
+    padding: 0 5px 5px 5px;
+}
+.consumer p{
+    margin-bottom: 5px;
+}
+.section3 input[type=checkbox]{
+    position: absolute;
+    margin-top: -3px;
+    width: 15px;
+    height: 25px !important;
+    border: none;
+}
+.bolder3 p {
+    /*font-size: 18px;*/
+    text-align: center;
+}
+.simple-table tr td{
+    border: 1px solid #000000 ;
+    font-size: 10px;
+
+}
+.simple-table{
+    height: 610px;
+}
+.auth-section{
+    margin-top: 50px;
+}
+.signature-box-cardholder{
+    margin-top: 0 !important;
+}
+.auth-section input{
+    display: inline-flex;
+    font-size: 10px;
+    margin: 20px 18px 0 9px;
+    border: 1px solid #000 !important;
+    max-width: 80px;
+}
+.auth-section2 input{
+    display: inline-flex;
+    font-size: 10px;
+    margin: 52px 52px;
+    border: 1px solid #000 !important;
+    max-width: 100px;
+}
+.auth-section2 input:first-child{
+    max-width: 130px;
+}
+.signature-last-section input{
+    display: inline-flex;
+    font-size: 10px;
+    margin:25px 85px;
+    border: 1px solid #000 !important;
+    max-width: 130px;
+    width: 100%;
+    height: 25px;
+}
+.signature-last-section p{
+    display: inline-flex;
+    font-size: 10px;
+    margin:25px 85px;
+    border-top: 1px solid #000;
+}
+/*** Style for signature box ****/
+.signature-last-section{
+    top: -65px;
+}
+.signature-box{
+    border: 1px solid #000;
+    max-width: 175px;
+    padding: 40px 0 40px 0px;
+    margin: 0px 0px -10px 55px;
+    max-height: 80px;
+    margin-top: 75px;
+
+}
+.signature-last-section2 p{
+    display: inline-flex;
+    font-size: 10px;
+    margin:28px 52px;
+    border-top: 1px solid;
+}
+.signature-box-cardholder{
+    position: relative;
+    float: right;
+    margin: -40px 35px 21px 0 !important;
+}
+.signature-card{
+    margin-top: 20px !important;
+}
+input, p, td, input[type="checkbox"] {
+    padding: 0 10px !important;
+}
+
+.signatureImg {
+    height: 80px;
+    object-fit: contain;
+    object-position: center;
+    width: 100%;
+}
+
+.signatureImgSmall {
+    height: 80px;
+    margin-left: -1px;
+    margin-bottom: -1px;
+    object-fit: contain;
+    object-position: center;
+    margin-top: -40px;
+    width: 100%;
+}
+.iTouchDevice.modal-open{
+    position: fixed;
+}
+.modal-signature .signature-pad-wrapper{
+    height: 400px;
+    width: 100%;
+    position: relative;
+}
+.modal-signature .signature-pad-wrapper > canvas{
+    border: 1px solid #696969;
+    width: 100%;
+    height: 100%;
+}
+.modal-signature .btnWrapper {
+    padding-top: 10px;
+    text-align: center;
+}
+.modal-signature .btnWrapper button + button{
+    margin-left: 10px;
+}
+@media only screen and (max-width: 767px) {
+    .modal-signature, .modal-signature .modal-content{
+        height: 100%;
+    }
+    .modal-signature .modal-dialog{
+        height: calc(100% - 1rem);
+    }
+    .modal-signature .modal-body{
+        height: calc(100% - 100px);
+    }
+    .modal-signature .signature-pad-wrapper {
+        height: calc(100% - 3rem);
+    }
+}
+
+input:disabled {
+    background-color: white;
+}
+
+input {
+    background-color: #EBEBE4;
+}
+
+.chargesContainer input[disabled] {
+    width: 60px !important;
+    padding: 0 !important;
+    height: 15px !important;
+    border: none;
+}
+
+.chargesContainer input {
+    width: 80px !important;
+    padding: 0 !important;
+    height: 15px !important;
+}
+
+.fvp_charge {
+    width: 150px !important;
+}
+
+.chargesContainer select {
+    width: 80px;
+    padding: 0 !important;
+    height: 15px !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.chargesContainer .summary_other_value {
+     width: 60px !important;
+}
+
+.chargesContainer .summary_other_text {
+    width: 80% !important;
+}
+body.modal-open{
+    position: fixed;
+}
+
+.limited_liability_text {
+    border: none;
+    width: 100%;
+}

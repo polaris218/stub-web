@@ -1,0 +1,58 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.analyticsBlocksContainer {
+  padding: 15px;
+  background: $white;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 9px 45px -20px #b0a7b0;
+  -moz-box-shadow: 0px 9px 45px -20px #b0a7b0;
+  box-shadow: 0px 9px 45px -20px #b0a7b0;
+  .analyticsBlocksHead {
+    padding: 10px;
+    border-bottom: 1px solid $theme-middle-grey;
+    h3 {
+      margin-top: 10px;
+    }
+  }
+  .analyticsBlocksBody {
+    padding: 20px 0 20px 0;
+    min-height: 440px;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+  }
+}
+
+.loadingSpinner {
+  font-size: 32px;
+  color: $primary;
+}
+
+.customSelectElement {
+  select {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px dashed $theme-middle-grey;
+    border-radius: 0;
+    outline: none;
+    box-shadow: none;
+    padding: 0;
+    font-weight: bold;
+    color: $theme-lighter-grey;
+  }
+}
+
+.textCenter{
+  text-align: center;
+  padding-right: 150px;
+}
+
+
+.textCenterForTaskCompletion{
+  text-align: center;
+  padding-right: 120px;
+}

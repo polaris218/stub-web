@@ -1,0 +1,31 @@
+@import '../../../styles/colors.scss';
+
+.landing-header {
+	background-size: cover;
+    background-position: 50% 90%;
+    height: 400px;
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+        font-size: 3.2em;
+        line-height: 1.4;
+        font-weight: bold;
+    }
+}
+
+.landing-description {
+    font-size: 1.2em;
+    margin-top: 40px;
+    margin-bottom: 55px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    max-width: 350px;
+    @media (max-width: 859px) {
+      margin: 30px auto;
+    }
+}

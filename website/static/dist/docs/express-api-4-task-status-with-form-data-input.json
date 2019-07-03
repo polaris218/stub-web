@@ -1,0 +1,163 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Express API",
+    "description" : "Express APIs provides rapid integration with Arrivy."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/express/tasks/{external_id}/status/new" : {
+      "post" : {
+        "tags" : [ "Task Status API" ],
+        "summary" : "Report status on an existing task.",
+        "description" : "Report a new task status for a given task. Note the task is identified using the external_id in the request url. The parameters like other APIs will be sent as formData.",
+        "operationId" : "create_task_status",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "external_id",
+          "in" : "path",
+          "description" : "External ID of the task.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "Type of status. Possible options are `NOTSTARTED`, `ENROUTE`, `STARTED`, `COMPLETE`, `EXCEPTION`, `CANCELLED`, `PREPARING`, `CONFIRMED`, `CUSTOM`, `RECOMMENDED`, `RESCHEDULED`, `CUSTOMER_SIGNATURE`, `ORDER` and `READYFORPICKUP`. Reach out to us at dev.support@arrivy.com if you don't see a status type that will be useful for your business.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "time",
+          "in" : "formData",
+          "description" : "Time of status report. This needs to be ISO8601.Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "reporter_name",
+          "in" : "formData",
+          "description" : "Name of the reporter of the task status. Typically, it's the name of entity reporting the status.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "reporter_id",
+          "in" : "formData",
+          "description" : "Entity ID of the reporter.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the task status. It could be `notes` (to add a note with task status), `visible_to_customer` (to make task status visible on customer's view of task), file paths etc. These keys-values pairs will also be sent via webhook notifications (can later be used for correlation).",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source",
+          "in" : "formData",
+          "description" : "String source of the task status e.g. it can be `web`, `email`, `sms` or `app`. App indicates arrivy mobile app.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "current_destination",
+          "in" : "formData",
+          "description" : "Used only for ENROUTE type status. It is a JSON object which contains address attributes which have same value as ONE of the addresses from task. As obvious by it’s name, the attribute is used to indicate the current destination of the crew.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items",
+          "in" : "formData",
+          "description" : "Used only for ORDER type status and indicates the status of items stored on the task. It is an array of items objects as JSON stringified. The items provided here should exist in associtaed task for this status. We will try to match `id` field of each item. **NOTE:** Please add one more attribute in each item object and name it as `status`, and specify it's value as `DELIVERED` for the item which is delivered, `PICKED_UP` for the item which is picked up and `EXCEPTION` for the item which is rejected due to some reason. If an item has an `EXCEPTION` status then some exception reason is expected with it. Exception reason should be passed with attribute `exception` and it needs to be an object with attributes `code`, `message_tier_1`, `message_tier_2`, `notes` and `files`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to report task status for task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Required id not found"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+	}
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

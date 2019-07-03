@@ -1,0 +1,430 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Templates API",
+    "description" : "GET Templates"
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/templates" : {
+      "get" : {
+        "tags" : [ "Template APIs" ],
+        "summary" : "List All Templates.",
+        "description" : "View all templates of your company.",
+        "operationId" : "get_all_templates",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 4785074604081152
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "MOVING"
+                  },
+                  "description" : {
+                    "type" : "string",
+                    "example" : "Template for moving companies."
+                  },
+                  "is_default" : {
+                    "type" : "boolean",
+                    "example" : true
+                  },
+                  "enabled" : {
+                    "type" : "boolean",
+                    "example" : true
+                  },
+                  "default_company_type" : {
+                    "type" : "integer",
+                    "example" : 1002
+                  },
+                  "disable_auto_start_complete" : {
+                    "type" : "boolean",
+                    "example" : false
+                  },
+                  "auto_start_delay_time" : {
+                    "type" : "integer",
+                    "example" : 15
+                  },
+                  "auto_complete_delay_time" : {
+                    "type" : "integer",
+                    "example" : 90
+                  },
+                  "custom_messages" : {
+                    "type" : "object",
+                    "properties" : {
+                      "task_create" : {
+                        "type" : "string",
+                        "example" : "Task Create"
+                      }
+                    }
+                  },
+                  "statuses" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "integer",
+                      "example" : 5910974510923776
+                    }
+                  },
+                  "status_texts" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "integer",
+                      "example" : 1002
+                    }
+                  },
+                  "status_data" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "object",
+                      "properties" : {
+                        "id" : {
+                          "type" : "integer",
+                          "example" : 5910974510923776
+                        },
+                        "owner" : {
+                          "type" : "integer",
+                          "example" : 5629499534213120
+                        },
+                        "type_id" : {
+                          "type" : "integer",
+                          "example" : 1002
+                        },
+                        "title" : {
+                          "type" : "string",
+                          "example" : "On Our Way"
+                        },
+                        "visible_to_customer" : {
+                          "type" : "boolean",
+                          "example" : true
+                        },
+                        "color" : {
+                          "type" : "string",
+                          "example" : "#6aa3d7"
+                        },
+                        "description" : {
+                          "type" : "string",
+                          "example" : "On the way to the job/customer location"
+                        },
+                        "sms_to_customer" : {
+                          "type" : "boolean",
+                          "example" : true
+                        },
+                        "sms_to_company_admin" : {
+                          "type" : "boolean",
+                          "example" : false
+                        },
+                        "require_signature" : {
+                          "type" : "boolean",
+                          "example" : true
+                        },
+                        "require_notes" : {
+                          "type" : "boolean",
+                          "example" : false
+                        },
+                        "require_estimate" : {
+                          "type" : "boolean",
+                          "example" : false
+                        },
+                        "require_attachment" : {
+                          "type" : "boolean",
+                          "example" : false
+                        },
+                        "include_in_task_summary" : {
+                          "type" : "boolean",
+                          "example" : true
+                        },
+                        "email_to_customer" : {
+                          "type" : "boolean",
+                          "example" : true
+                        },
+                        "email_to_company_admin" : {
+                          "type" : "boolean",
+                          "example" : false
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT AUTHORIZED"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/templates/{template_id}" : {
+      "get" : {
+        "tags" : [ "Template APIs" ],
+        "summary" : "Get Template.",
+        "description" : "Get all fields of a specific template.",
+        "operationId" : "get_template",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "template_id",
+          "in" : "path",
+          "description" : "ID of the template.",
+          "required" : true,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 4785074604081152
+                },
+                "owner" : {
+                  "type" : "integer",
+                  "example" : 5629499534213120
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : "Moving"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Template for moving companies."
+                },
+                "is_default" : {
+                  "type" : "boolean",
+                  "example" : true
+                },
+                "enabled" : {
+                  "type" : "boolean",
+                  "example" : true
+                },
+                "default_company_type" : {
+                  "type" : "integer",
+                  "example" : 1002
+                },
+                "disable_auto_start_complete" : {
+                  "type" : "boolean",
+                  "example" : false
+                },
+                "auto_start_delay_time" : {
+                  "type" : "integer",
+                  "example" : 15
+                },
+                "auto_complete_delay_time" : {
+                  "type" : "integer",
+                  "example" : 90
+                },
+                "custom_messages" : {
+                  "type" : "object",
+                  "properties" : {
+                    "task_create" : {
+                      "type" : "string",
+                      "example" : "Task Create"
+                    }
+                  }
+                },
+                "statuses" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "integer",
+                    "example" : 5910974510923776
+                  }
+                },
+                "status_texts" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "integer",
+                    "example" : 1002
+                  }
+                },
+                "status_data" : {
+                  "type" : "array",
+                  "items" : {
+                    "type" : "object",
+                    "properties" : {
+                      "id" : {
+                        "type" : "integer",
+                        "example" : 5910974510923776
+                      },
+                      "owner" : {
+                        "type" : "integer",
+                        "example" : 5629499534213120
+                      },
+                      "type_id" : {
+                        "type" : "integer",
+                        "example" : 1002
+                      },
+                      "title" : {
+                        "type" : "string",
+                        "example" : "On Our Way"
+                      },
+                      "visible_to_customer" : {
+                        "type" : "boolean",
+                        "example" : true
+                      },
+                      "color" : {
+                        "type" : "string",
+                        "example" : "#6aa3d7"
+                      },
+                      "description" : {
+                        "type" : "string",
+                        "example" : "On the way to the job/customer location"
+                      },
+                      "sms_to_customer" : {
+                        "type" : "boolean",
+                        "example" : true
+                      },
+                      "sms_to_company_admin" : {
+                        "type" : "boolean",
+                        "example" : false
+                      },
+                      "require_signature" : {
+                        "type" : "boolean",
+                        "example" : true
+                      },
+                      "require_notes" : {
+                        "type" : "boolean",
+                        "example" : false
+                      },
+                      "require_estimate" : {
+                        "type" : "boolean",
+                        "example" : false
+                      },
+                      "require_attachment" : {
+                        "type" : "boolean",
+                        "example" : false
+                      },
+                      "include_in_task_summary" : {
+                        "type" : "boolean",
+                        "example" : true
+                      },
+                      "email_to_customer" : {
+                        "type" : "boolean",
+                        "example" : true
+                      },
+                      "email_to_company_admin" : {
+                        "type" : "boolean",
+                        "example" : false
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid template_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

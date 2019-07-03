@@ -1,0 +1,119 @@
+@import '../../../styles/colors.scss';
+
+.contact {
+    /*background-color: rgb(60, 60, 60);*/
+    overflow: hidden;
+    position: relative;
+    padding: 0 20px;
+    font-family: "Lato", Helvetica, Arial, sans-serif;
+}
+
+.contact-container {
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.copyright {
+    color: $theme-lighter-grey
+}
+
+.contact-contacts {
+    color: $contact-contacts;
+    font-size: 14px;
+    line-height: 1.7em;
+    padding: 45px 0 46px;
+    @media screen and (min-width: 768px) and (max-width: 992px) {
+        padding: 45px 0 175px;
+    }
+}
+
+.contact-figure {
+    display: block;
+    width: 100%;
+    background: none;
+    display: inline-block;
+    line-height: 1px;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.contact-text {
+    color: $theme-lighter-grey;
+    font-size: 14px;
+    line-height: 1.7em;
+    border-bottom: 1px solid $theme-lighter-grey;
+    margin-bottom: 10px;
+}
+
+.link a {
+    color: $theme-lighter-grey;
+    font-size: 14px;
+    line-height: 1.7em;
+}
+
+.link a:hover {
+    color: $footer-link-hover;
+}
+
+.contact-text-gray {
+    color: $contact-contacts;
+}
+
+.social-links-block {
+    margin: 25px auto;
+    display: inline-block;
+}
+
+.social-link {
+    transition: all 0.2s ease-in-out 0s;
+    color: $theme-lighter-grey;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    height: 30px;
+    width: 30px;
+    line-height: 13px;
+    padding: 6px;
+    margin: 0 5px;
+    text-align: center;
+    border: 2px solid $theme-lighter-grey;
+    border-radius: 15px;
+}
+
+.social-link:hover {
+    color: $footer-link-hover;
+    border-color: $footer-link-hover;
+}
+
+.subscribe-button {
+    color: $white;
+    background-color: $theme-lighter-grey;
+}
+
+.ml5 {
+    margin-left: 5px;
+}
+
+.mlt10 {
+    background-color: $theme-light-grey;
+}
+
+html, body {
+    height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -255px;
+}
+
+.footer {
+    height: 220px;
+}
+
+.footerCopyright {
+    padding: 20px 0 0 0;
+}

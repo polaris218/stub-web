@@ -1,0 +1,52 @@
+@import '../../../styles/colors.scss';
+
+.gallery {
+    background-color: rgb(239, 239, 239);
+    padding: 0;
+}
+
+.gallery-wrapper {
+    overflow: hidden;
+}
+
+.gallery-row {
+    margin: 0;
+}
+
+.gallery-item {
+    position: relative;
+    padding: 0
+}
+
+.gallery-item-link {
+    position: relative;
+    display: block;
+    background: $white;
+    outline: none;
+    cursor: pointer;
+
+    &:hover span,
+    &:hover img {
+        opacity: 0.9;
+    }
+}
+
+.gallery-item-image {
+    width: 100%;
+    opacity: 1;
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+}
+
+.gallery-item-icon {
+    position: absolute;
+    font-size: 30px;
+    top: 50%;
+    left: 50%;
+    color: $white;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transition: .2s opacity ease-in-out;
+    transition: .2s opacity ease-in-out;
+}

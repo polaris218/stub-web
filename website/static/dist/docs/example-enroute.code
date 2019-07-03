@@ -1,0 +1,11 @@
+import requests
+import json
+
+url = "https://sandbox.arrivy.com/api/express/tasks/EXTERNAL_ID/status/new"
+
+headers = {"Content-type": "application/x-www-form-urlencoded", "X-Auth-Key":"26be717d-54c7", "X-Auth-Token":"7rrunytNoVgpV4qgLZYmH1"}
+
+
+payload = {'type':'ENROUTE','time':'TIME','reporter_name':'Arrivy Dev Portal','extra_fields':'{"visible_to_customer":true}'}
+r = requests.post(url, headers=headers, data = payload)
+print r.text

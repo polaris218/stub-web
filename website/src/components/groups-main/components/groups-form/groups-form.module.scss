@@ -1,0 +1,127 @@
+@import '../../../../../styles/colors.scss';
+
+.CMEditModal {
+  width: 80%;
+  @media screen and (max-width: 768px) {
+    width: 100% !important;
+    margin: 0px;
+  }
+  & > div {
+    width: 100% !important;
+    @media (max-width: 441px) {
+      width: 100% !important;
+    }
+  }
+}
+
+.CMEditModalHeader {
+  -webkit-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -moz-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -o-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+.messageTitle {
+  color: #717686;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.CMEditModalFooter {
+  background: #f1f1f1;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 20px;
+  button:nth-child(1) {
+    margin-left: 0;
+  }
+  button {
+    margin-left: 10px;
+  }
+}
+
+.CMEditModalBody {
+  height: 65vh;
+  overflow-y: auto;
+}
+
+.transparentBtn {
+  background-color: transparent;
+  border: none;
+  color: #008BF8;
+}
+
+.saveBtn {
+  min-width: 152.41px;
+  height: 40px;
+}
+
+.groupsImage {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  .image {
+    img {
+      width: 200px;
+      height: 105px;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+  .imageButtons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    padding-left: 10px;
+    a {
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 5px;
+      .icon {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.mobileField {
+  input {
+    border: none;
+  }
+}
+
+.groupDescriptionField {
+  height: 122px !important;
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}

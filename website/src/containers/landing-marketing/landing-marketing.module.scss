@@ -1,0 +1,157 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.marketing-page-wrap {
+  padding: 0;
+  h1,h4 {
+    font-family: "FuturaStdHeavy", 'Poppins', sans-serif;
+  }
+  h2,h3,h5{
+    font-family: "FuturaStdMedium", 'Poppins', sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn, q{
+    font-family: "FuturaStdBook", sans-serif;
+  }
+  h2{
+    font: 500 40px/48px FuturaStdMedium,sans-serif;
+    color: $theme-darker-grey;
+    @media screen and (max-width: 767px) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+  & + section{
+    h1,h4 {
+      font-family: "FuturaStdHeavy", sans-serif;
+    }
+    h2,h3,h4,h5 {
+      font-family: "FuturaStdMedium", sans-serif;
+    }
+    p, a, li, button,.primary-action-btn, .btn, q {
+      font-family: "FuturaStdBook", sans-serif;
+    }
+  }
+  .steps {
+    background-color: $theme-grey;
+    border: 1px solid $white;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 0 auto 20px;
+    font-size: 18px;
+    max-width: 750px;
+    text-align: left;
+  }
+  .videoContainer{
+    max-width: 750px;
+    margin: 0 auto;
+    .videoWrapper{
+      width: 100%;
+      padding-bottom: 56.25%;
+      box-shadow: 0 2px 10px 0 rgba($dark-black, 0.2);
+      height: 0;
+      position: relative;
+      iframe{
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+    }
+  }
+  .container{
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: inherit;
+    @media (max-width: 855px) {
+      width:auto;
+      padding: 0 20px;
+    }
+  }
+  .btn{
+    border-radius: 5px;
+    border: 0 solid $theme-main;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 40px;
+    vertical-align: middle;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+  }
+  .btn-blue{
+    background: $primary;
+    font-size: 1.2em;
+    padding: 20px 35px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 0 solid $white;
+    color: $white;
+    text-transform: none;
+    &:hover{
+      color: $white;
+      background-color: $btn-primary-hover;
+    }
+  }
+  a:hover{
+    text-decoration: none;
+  }
+
+  .teampic {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+
+  img{
+    max-width: 100%;
+    height:auto;
+    vertical-align: middle;
+  }
+  [class*="navigation"]{
+    background-color: $white;
+  }
+}
+
+.welcome-section{
+  padding: 30px 0;
+  text-align: center;
+  h1{
+    margin: 0 0 30px;
+  }
+}
+.contentSection{
+  font-size: 18px;
+  line-height: 28px;
+  padding: 30px 0;
+  text-align: center;
+  .container{
+    max-width: 790px;
+  }
+  h2{
+    margin-top: 0;
+  }
+  .btn{
+    margin-top: 30px;
+  }
+}
+.case-study-section{
+  margin-top: 20px;
+  padding: 30px 0;
+  text-align: center;
+  .container{
+    max-width: 790px;
+  }
+  h3{
+    margin: 0 0 30px;
+  }
+}
+
+.stepdetail {
+  font-size: .8em;
+  text-align: left;
+}

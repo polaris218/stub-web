@@ -1,0 +1,126 @@
+@import '../../../../../styles/colors.scss';
+
+.entitiesWidgetContainer {
+  display: flex;
+  flex-direction: row;
+  padding: 0;
+  min-height: 130px;
+  justify-content: flex-start;
+  overflow: auto;
+  &::-webkit-scrollbar-track
+  {
+    border-radius: 10px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar
+  {
+    width: 6px;
+    height: 6px;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb
+  {
+    border-radius: 10px;
+    background-color: lighten($primary, 30%);
+    display: none;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      display: block;
+    }
+  }
+  @media screen and (max-width: 995px) {
+    flex-direction: row;
+    border-bottom: 1px solid $theme-grey;
+    flex-wrap: wrap;
+  }
+}
+
+.entityBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: auto;
+  align-items: center;
+  padding: 0 15px 0 15px;
+  min-width: 165px;
+  max-width: 230px;
+  @media screen and (max-width: 768px) {
+    width: 50%;
+    margin-top: 10px;
+    max-width: 50%;
+  }
+  @media screen and (max-width: 320px) {
+    width: 100%;
+    max-width: 100%;
+  }
+  .entityProfilePic {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+    margin-right: 10px;
+    border: 2px solid $theme-grey;
+    border-radius: 50px;
+    object-fit: cover;
+    object-position: center;
+  }
+  .entityInfoBox {
+    display: inline-flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0;
+      color: $rh-text;
+      @media screen and (max-width: 995px){
+        font-size: 16px;
+      }
+    }
+    p {
+      color: $rh-light-text;
+      text-align: center;
+      white-space: nowrap;
+      overflow: hidden;
+      max-width: 200px;
+      width: 100%;
+      text-overflow: ellipsis;
+      @media screen and (max-width: 1280px) {
+        max-width: 160px
+      }
+      @media screen and (max-width: 768px) {
+        max-width: 170px;
+      }
+    }
+    .companyLogo {
+      width: 100px;
+      height: 27px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .entityContactMethods {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: flex-end;
+    padding-right: 15px;
+    a {
+      text-decoration: none;
+      font-size: 24px;
+      padding: 10px;
+    }
+    a:first-child {
+      margin-right: 10px;
+    }
+  }
+}

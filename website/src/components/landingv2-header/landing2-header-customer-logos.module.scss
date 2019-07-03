@@ -1,0 +1,60 @@
+@import '../../../styles/colors.scss';
+
+.header-customer-section {
+  padding:30px 0px 10px 0px;
+  background:$primary;
+  text-align: center;
+  color: $white;
+  font-size: 1.2em;
+  position: relative;
+  z-index:2;
+  .customer_icon_section {
+    margin: 20px 0px;
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+
+    div {
+      max-width: 120px;
+      margin: 10px 40px;
+
+      @media (max-width: 560px) {
+        margin: 10px 10px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}
+
+.header-bottom{
+  padding:0px 0px 20px 0px;
+  background:$primary;
+
+  .header-bottom-title {
+    text-align: center;
+    color: $white;
+    font-size: 1.2em;
+  }
+  .header-bottom-ul{
+    padding-left: 0;
+    li{
+      color: $white;
+      font-size: 1.2em;
+      list-style-image: url('/images/lending/Group 68.png');
+      line-height: 2;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+  }
+}

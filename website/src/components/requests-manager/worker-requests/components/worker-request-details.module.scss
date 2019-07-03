@@ -1,0 +1,273 @@
+@import '../../../../../styles/colors.scss';
+@import '../base-styling.module';
+
+.worker-requests {
+  margin-top: -20px;
+  .tabNav {
+    background-color: $dashboard-primary;
+    margin: 0 -35px;
+    padding: 10px 35px;
+    min-height: 74px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    ul{
+      border-radius: 5px;
+      align-items: center;
+      display: flex;
+      &:before, &:after{
+        display: none;
+      }
+      li{
+        a{
+          border: 2px solid $dashboard-primary;
+          background-color: $white;
+          color: $dashboard-primary;
+          display: block;
+          font-size: 18px;
+          line-height: 24px;
+          padding: 11px 21px 11px 40px;
+          position: relative;
+          outline: none;
+          text-decoration: none;
+          transition: all 0.3s ease-in-out;
+          &:before, &:after{
+            content: "";
+            border-top: 23px solid transparent;
+            border-bottom: 23px solid transparent;
+            border-left: 25px solid transparent;
+            transition: all 0.3s ease-in-out;
+            top: 0;
+            position: absolute;
+          }
+
+          &:after {
+            border-left-color: $white;
+            right: -25px;
+            z-index: 1;
+          }
+          &:before {
+            border-radius: 0 4px 8px 0;
+            border-left-color: $dashboard-primary;
+            left: 0;
+          }
+
+          &:hover, &[aria-selected="true"]{
+            background-color: $task-form-tab-active;
+            color: $white;
+            &:after{
+              border-left-color:$task-form-tab-active;
+            }
+          }
+        }
+        &:first-child a{
+          border-radius: 5px 0 0 5px;
+          &:before{
+            display: none;
+          }
+        }
+        &:nth-last-child(2) a{
+          border-radius: 0 5px 5px 0;
+          &:after{
+            display: none;
+          }
+        }
+        &:last-child{
+          padding-left: 20px;
+          a{
+            border-radius: 5px;
+            padding: 11px 40px;
+            &:before, &:after{
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .actionButtons{
+      .btn-secondary{
+        min-width: 170px;
+        &.disabled{
+          cursor: not-allowed;
+          opacity: 0.5;
+        }
+      }
+    }
+    @media only screen and (max-width: 1300px) {
+      ul li{
+        a{
+          padding-left: 25px;
+          padding-right: 11px;
+          &:before, &:after{
+            border-left-width: 15px;
+          }
+          &:after{
+            right: -15px;
+          }
+        }
+        &:last-child{
+          padding-left: 10px;
+          a{
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+        }
+      }
+      .actionButtons{
+        .btn + .btn {
+          margin-left: 10px;
+        }
+        .btn-secondary{
+          min-width: 125px;
+        }
+      }
+    }
+    @media only screen and (max-width: 1030px) {
+      ul li a{
+        font-size: 15px;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      justify-content: flex-start;
+      flex-direction: column;
+      ul, .actionButtons{
+        width: 100%;
+      }
+      .actionButtons{
+        margin-top: 10px;
+        text-align: right;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      margin: 0 -15px;
+      padding: 10px 15px;
+      ul{
+        flex-wrap: wrap;
+        li{
+          flex: 0 0 50%;
+          max-width: 50%;
+          a{
+            font-size: 15px;
+            padding: 6px 15px;
+            &:before, &:after{
+              display: none;
+            }
+          }
+          &:first-child{
+            a{
+              border-radius: 0;
+            }
+          }
+          &:nth-last-child(2) a{
+            border-radius: 0;
+          }
+          &:last-child{
+            padding-left: 0;
+            flex: 0 0 100%;
+            max-width: 100%;
+            text-align: center;
+            a{
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .workerDetailDashboard {
+    padding-top: 15px;
+  }
+  .tabControls{
+    display: flex;
+    align-items: center;
+    .next{
+      margin-left: auto;
+    }
+  }
+}
+
+.paginationContainer {
+  list-style: none;
+  margin-top: 5px;
+  display: contents;
+  span {
+    margin-right: 18px !important;
+    cursor: default !important;
+  }
+  li {
+    padding-top: 8px;
+    @media screen and (max-width: 320px) {
+      margin: 0;
+    }
+    button {
+      padding: 6px 7px !important;
+      margin: 0 2px 0 0 !important;
+      background: $primary;
+      color: $theme-light-grey;
+      outline: 0;
+      font-weight: 700;
+      border: 2px solid $primary;
+      font-size: 18px !important;
+      border-radius: 2px;
+      height: 32px;
+      line-height: 20px;
+    }
+    .disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  }
+}
+.unsavedDataModal{
+  @media only screen and (max-width: 460px) {
+    .btn{
+      min-width: 80px;
+      & + .btn{
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.externalInfo{
+  background-color: transparent !important;
+  color: $theme-forms-grey;
+  font-size: 15px;
+  word-break: break-all;
+  margin: 10px 0;
+  @media only screen and (min-width: 768px) {
+    display: inline-flex;
+    flex-wrap: wrap;
+    > div{
+      margin-right: 10px;
+    }
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+button.pendingAction {
+  pointer-events: none;
+  cursor: wait;
+}

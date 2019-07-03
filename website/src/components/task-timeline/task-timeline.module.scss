@@ -1,0 +1,39 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.clear-all {
+	@media (min-width: 768px) {
+		text-align: right;  
+	}
+}
+
+.filters-container {
+  display: -webkit-box;   /* OLD - iOS 6-, Safari 3.1-6, BB7 */
+  display: -ms-flexbox;  /* TWEENER - IE 10 */
+  display: -webkit-flex; /* NEW - Safari 6.1+. iOS 7.1+, BB10 */
+  display: flex;         /* NEW, Spec - Firefox, Chrome, Opera */
+
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+
+  justify-content: flex-end;
+
+  align-items: center;
+
+  > div {
+    margin: 5px;
+  }
+}
+
+.tl-labels {
+  .tl-label {
+    font-size: 24px;
+    font-weight: bold;
+    span {
+      font-size: 16px;
+      font-weight: normal;
+      text-transform: uppercase;
+      display: block;
+    }
+  }
+}

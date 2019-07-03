@@ -1,0 +1,21 @@
+html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.page-wrap {
+  min-height: calc(100vh);
+  min-height: -webkit-calc(100vh);
+  box-sizing: border-box;
+  padding-bottom: 0;
+}
+
+.pageLoadingContainer {
+  height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

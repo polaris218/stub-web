@@ -1,0 +1,135 @@
+@import '../../../../../styles/colors.scss';
+.addressSearch{
+  position: relative;
+  margin-bottom: 17px;
+  &:after{
+    content: '';
+    background: url("/images/task-form/search_icon.svg") center center / cover no-repeat;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    pointer-events: none;
+  }
+  .form-control{
+    background-color: $white;
+    border-radius: 23px;
+    border-color: $dashboard-primary;
+    padding: 9px 40px 9px 25px;
+    &:focus{
+      border-color: darken($dashboard-primary, 15%);
+    }
+  }
+}
+.addressTabsListWrapper{
+  margin: 0 -18px;
+  .addressTabsList{
+    border-bottom: 1px solid $dashboard-bg;
+    margin: 0 -10px 28px;
+    padding: 0 18px;
+    > li{
+      padding: 0 10px;
+      margin-bottom: 0;
+      a{
+        border: none !important;
+        color: $dashboard-dark;
+        outline: none !important;
+      }
+      &:not(.addNewTab){
+        a{
+          display: block;
+          line-height: 18px;
+          padding: 8px 0 10px;
+          position: relative;
+          &:after{
+            content: '';
+            background-color: $dashboard-primary;;
+            border-radius: 4px 4px 0 0;
+            display: block;
+            height: 0px;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 0px;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+          }
+          &:hover{
+            background: none;
+            &:after{
+              height: 3px;
+            }
+          }
+          > div{
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            max-width: 200px;
+          }
+          .remove{
+            background: $red;
+            border-radius: 50%;
+            border: 1px solid $white;
+            cursor: pointer;
+            top: -5px;
+            right: -10px;
+            width: 18px;
+            height: 18px;
+            position: absolute;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            z-index: 1;
+            &:before, &:after{
+              content: '';
+              background-color: $white;
+              position: absolute;
+              height: 10px;
+              width: 2px;
+              border-radius: 10px;
+              top: 50%;
+              left: 50%;
+            }
+            &:before{
+              -webkit-transform: rotate(45deg) translate(-4px, -3px);
+              -moz-transform: rotate(45deg) translate(-4px, -3px);
+              transform: rotate(45deg) translate(-4px, -3px);
+            }
+            &:after{
+              -webkit-transform: rotate(-45deg) translate(3px, -4px);
+              -moz-transform: rotate(-45deg) translate(3px, -4px);
+              transform: rotate(-45deg) translate(3px, -4px);
+            }
+            &:hover{
+              -webkit-transform: scale(1.15);
+              -moz-transform: scale(1.15);
+              transform: scale(1.15);
+            }
+          }
+        }
+      }
+      &[class="active"]{
+        a:after{
+          height: 3px;
+        }
+      }
+      &.addNewTab{
+        a{
+          background-color: $task-form-address-tab !important;
+          border-radius: 11px;
+          font-size: 12px;
+          line-height: 16px;
+          margin-top: 5px;
+          padding: 3px 10px;
+          &:hover{
+            background: darken($task-form-address-tab, 20%) !important;
+          }
+        }
+      }
+    }
+  }
+}

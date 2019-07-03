@@ -1,0 +1,607 @@
+@import '../../../../styles/colors.scss';
+
+.formRow {
+  margin-left: -8px;
+  margin-right: -8px;
+  > [class^="col-"],
+  > [class*="col-"] {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+.btn{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  min-height: 40px;
+  padding: 9px 10px;
+  vertical-align: middle;
+  text-decoration: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  .plus{
+    margin-left: 15px;
+  }
+  & + .btn {
+    margin-left: 20px;
+  }
+  &:hover{
+    text-decoration: none;
+  }
+  &.btn-primary {
+    background-color: $btn-primary;
+    color: $white;
+    min-width: 170px;
+    &:hover {
+      background-color: $btn-primary-hover;
+      color: $white;
+    }
+  }
+  &.btn-secondary{
+    background-color: $btn-sec;
+    color: $white;
+    min-width: 170px;
+    &:hover{
+      background-color: $btn-sec-hover;
+      color: $white;
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    color: $dashboard-dark;
+    min-width: 110px;
+    &:hover{
+      background-color: $theme-middle-grey;
+      color: $dashboard-dark;
+    }
+    &.delete {
+      color: $red;
+      &:hover {
+        color: $red;
+      }
+    }
+  }
+  &.btn-outline{
+    background-color: transparent;
+    border: 1px solid transparent;
+    min-width: 110px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+  &.btn-outline-primary{
+    border-color: $dashboard-primary;
+    color: $dashboard-primary;
+    &:hover{
+      background-color: $dashboard-primary;
+      color: $white;
+    }
+  }
+  &.btn-outline-danger{
+    border-color: $red;
+    color: $red;
+    &:hover{
+      background-color: $red;
+      color: $white;
+    }
+  }
+  &.btn-outline-dark{
+    border-color: $dashboard-dark;
+    color: $dashboard-dark;
+    &:hover{
+      background-color: $dashboard-dark;
+      color: $white;
+    }
+  }
+  &.btn-outline-light {
+    border-color: $white;
+    color: $white;
+    padding: 8px 10px;
+    &:hover {
+      background-color: $task-form-tab-active;
+      color: $white;
+    }
+  }
+}
+.field-wrapper {
+  position: relative;
+  .inner {
+    position: relative;
+    width: 100%;
+    input {
+      padding-right: 30px;
+    }
+  }
+  svg {
+    color: rgba($dashboard-dark, .5);
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+  }
+}
+
+.box {
+  color: $dashboard-dark;
+  margin-bottom: 10px;
+  .boxTitle {
+    color: $dashboard-dark;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+  .loaderWrapper {
+    min-height: 30px;
+  }
+  .boxBody {
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow, .17);
+    font-size: 15px;
+    .boxBodyInner {
+      padding: 20px 18px 10px;
+      &:not(:last-child) {
+        border-bottom: 1px solid $dashboard-bg;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      height: auto !important;
+    }
+  }
+
+  [class^="form-group"], [class*="form-group"], [class="form-group"] {
+    margin-bottom: 10px;
+  }
+  [class="control-label"] {
+    color: rgba($dashboard-dark, 0.5);
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  [class="form-control"], .form-control, .field-wrapper [class="form-control"], .field-wrapper input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    box-shadow: none !important;
+    color: $dashboard-dark;
+    display: block;
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 40px;
+    margin-bottom: 0;
+    padding: 9px 15px;
+    width: 100%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:focus {
+      box-shadow: none !important;
+      border-color: darken($dashboard-bg, 15%);
+    }
+    &:disabled {
+      background-color: $theme-grey;
+    }
+  }
+  .selectBox {
+    position: relative;
+    &:after {
+      content: '';
+      background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      pointer-events: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 35px;
+      &::-ms-expand {
+        display: none;
+      }
+    }
+  }
+  .checkBox {
+    position: relative;
+    line-height: 23px;
+    margin-top: 0;
+    label {
+      input {
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        margin-left: 0;
+      }
+      padding-left: 0;
+      span {
+        display: block;
+        padding-left: 33px;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 50%;
+          height: 23px;
+          width: 23px;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+        }
+        &:before {
+          background: $route-bg center center / auto 7px no-repeat;
+          border: 1px solid $dashboard-primary;
+        }
+      }
+      input:checked + span:before {
+        background-color: $dashboard-primary;
+        background-image: url("/images/task-form/tick.svg");
+        box-shadow: 0 4px 6px rgba($dashboard-primary, .5);
+      }
+    }
+  }
+}
+.modalViewRequest{
+  [class="modal-dialog"] {
+    min-height: calc(100% - 20px);
+    @media only screen and (min-width: 768px) {
+      min-height: calc(100% - 60px);
+    }
+  }
+}
+.modalRequest {
+  [class="modal-dialog"] {
+    @media only screen and (min-width: 768px) {
+      padding-left: 30px;
+      padding-right: 30px;
+      width: 100%;
+      max-width: 1350px;
+    }
+  }
+  &.modalRequestSmall {
+    [class="modal-dialog"] {
+      padding-left: 0;
+      padding-right: 0;
+      @media only screen and (min-width: 768px) {
+        max-width: 600px;
+      }
+      @media only screen and (min-width: 992px) {
+        max-width: 800px;
+      }
+    }
+  }
+  [class="modal-content"] {
+    background-color: $dashboard-bg;
+    border-radius: 10px;
+    width: 100% !important;
+  }
+  [class="modal-body"]{
+    padding: 20px 15px;
+    @media only screen and (min-width: 768px) {
+      padding: 20px 35px 40px;
+    }
+  }
+  .modalHeader {
+    background-color: $white;
+    border-radius: 10px 10px 0 0;
+    border-bottom: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 10px 15px;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+    &:before, &:after{
+      display: none;
+    }
+    @media only screen and (min-width: 768px) {
+      padding-left: 35px;
+      padding-right: 35px;
+      min-height: 75px;
+    }
+    .modalTitle {
+      color: $dashboard-dark;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+      .status{
+        display: inline-block;
+        margin-left: 20px;
+        font-size: 15px;
+        font-weight: 400;
+        text-transform: capitalize;
+        .statusColor{
+          border-radius: 50%;
+          display: inline-block;
+          height: 10px;
+          width: 10px;
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+  .close {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+    z-index: 2;
+    .circle, .cross {
+      transition: all .3s ease-in-out;
+    }
+    &:hover {
+      .circle{
+        stroke: $dashboard-dark;
+      }
+      .cross {
+        fill: $dashboard-dark;
+      }
+    }
+  }
+  .box {
+    margin-bottom: 20px;
+  }
+  .fieldGroup {
+    .datePicker {
+      input {
+        padding-right: 25px;
+      }
+      svg {
+        pointer-events: none;
+      }
+    }
+    .timeFiled {
+      min-width: 100px;
+      max-width: 100px;
+      margin-left: 10px;
+    }
+    @media only screen and (max-width: 767px) {
+      flex-wrap: wrap;
+      .datePicker, .timeFiled {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .timeFiled {
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+  .commentBox {
+    height: 90px;
+    resize: none;
+  }
+  .btn{
+    min-width: 110px;
+  }
+  .deleteLoader {
+    min-height: 25px;
+  }
+  .whiteLoader > div > div {
+    background-color: $white;
+  }
+}
+
+.flexTable{
+  color: $dashboard-dark;
+  font-size: 13px;
+  line-height: 18px;
+  .flexRow {
+    background-color: $white;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 0 8px;
+    padding: 0 12px;
+    transition: all .3s ease-in-out;
+    &:hover{
+      background-color: $route-bg;
+      border-color: $dashboard-primary;
+    }
+    .flexColumn{
+      padding: 12px 10px;
+      width: 100%;
+    }
+    &.header{
+      background-color: $dashboard-dark;
+      border-radius: 0;
+      border: none;
+      color: rgba($white, .7);
+      font-size: 15px;
+      line-height: 20px;
+      font-weight: bold;
+      position: relative;
+      z-index: 3;
+      .flexColumn{
+        padding: 15px 10px;
+      }
+      .icon{
+        margin-right: 15px;
+        opacity: .7;
+      }
+    }
+    &.item{
+      .checkBoxSquare {
+        position: relative;
+        line-height: 16px;
+        margin: 0;
+        label {
+          input {
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0;
+            margin-left: 0;
+          }
+          padding-left: 0;
+          span {
+            display: block;
+            &:before {
+              content: '';
+              position: absolute;
+              left: 0;
+              top: 0;
+              height: 16px;
+              width: 16px;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+            }
+            &:before {
+              background: $white center center / auto 7px no-repeat;
+              border: 1px solid $dashboard-dark;
+            }
+          }
+          input:checked + span:before {
+            background-color: $dashboard-dark;
+            background-image: url("/images/task-form/tick.svg");
+          }
+        }
+      }
+      .time span{
+        display: block;
+        &+ span{
+          margin-top: 5px;
+        }
+      }
+      .taskEssentials{
+        display: flex;
+        .taskColor{
+          border-radius: 5px;
+          width: 2px;
+          margin-right: 25px;
+        }
+        > div:last-child {
+          padding: 5px 0;
+        }
+        .customerName:not(:empty){
+          margin-top: 5px;
+        }
+      }
+      .entity {
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+          margin-bottom: -8px;
+        }
+        .entityImage {
+          font-size: 12px;
+          background-color: $dashboard-primary;
+          line-height: 30px;
+          text-align: center;
+          color: $white;
+          min-width: 30px;
+          max-width: 30px;
+          min-height: 30px;
+          max-height: 30px;
+          border-radius: 50%;
+          margin-right: 10px;
+          img {
+            border-radius: 50%;
+            min-width: 30px;
+            max-width: 30px;
+            min-height: 30px;
+            max-height: 30px;
+            display: block;
+            border-width: 2px;
+            border-style: solid;
+            object-fit: cover;
+          }
+        }
+        .entityName{
+          display: block;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        .more{
+          color: $dashboard-primary;
+          cursor: pointer;
+        }
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      .flexColumn{
+        padding-top: 5px;
+        padding-bottom: 5px;
+        min-width: inherit;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      &.header{
+        padding: 10px 5px 5px;
+        .flexColumn{
+          line-height: 1;
+          padding: 0 10px;
+          margin-bottom: 5px;
+        }
+      }
+      &.item{
+        align-items: center;
+        .flexColumn{
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
+.editing {
+  background-color: $worker-request-editing;
+}
+.filled {
+  background-color: $worker-request-filled;
+}
+.partially_filled {
+  background-color: $worker-request-partiallyfilled;
+}
+.cancel {
+  background-color: $worker-request-cancel;
+}
+.sent {
+  background-color: $worker-request-sent;
+}
+.not_sent {
+  background-color: $worker-request-notsent;
+}
+.unscheduled {
+  background-color: $worker-request-unscheduled;
+}
+.declined{
+  color: $red;
+}
+.awaiting_response{
+  color: $yellow;
+}
+.selected{
+  color: $primary-green;
+}

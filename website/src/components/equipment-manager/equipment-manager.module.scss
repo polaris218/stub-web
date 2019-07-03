@@ -1,0 +1,188 @@
+@import '../../../styles/colors.scss';
+
+.equipment-manager h2 {
+    font-size: 22px;
+    color: $primary;
+    padding: 0 0 15px 0;
+}
+
+.equipment-manager tr,
+.equipment-manager td,
+.equipment-manager th,
+.equipment-manager a {
+    color: $no-info-color;
+}
+
+.action {
+    margin-right: 15px;
+}
+
+.odd-stripped > tbody > tr > td {
+  vertical-align: middle;
+}
+
+.odd-stripped > tbody > tr:nth-of-type(odd) {
+    background-color: $doc-container-light-bg;
+}
+
+.new-equipment {
+    background-color: $success-background !important;
+}
+
+.no-equipment {
+  text-align: center;
+  color: $no-info-color;
+}
+
+.no-equipment-simple {
+   text-align: center;
+   padding: 20px;
+   border: 1px dashed $no-info-color;
+   color: $no-info-color;
+}
+
+.equipment-formarea {
+  border: 1px solid $eqp-form-area;
+  padding: 20px 10px 20px 10px;
+  -webkit-box-shadow: 2px 2px 5px 0px $eqp-form-area;
+  -moz-box-shadow: 2px 2px 5px 0px $eqp-form-area;
+  box-shadow: 2px 2px 5px 0px $eqp-form-area;
+}
+
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 600px;
+  height: 100%;
+  padding: 30px;
+}
+
+.text-blocks {
+
+  padding-bottom: 15px;
+}
+
+
+.equipment-image {
+  img {
+    position: relative;
+    border-radius: 50%;
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+    padding: 0;
+    height: 50px;
+
+    @media screen and (max-width: 768px) {
+      height: 50px;
+      margin: 0 50px 0 0;
+      cursor: pointer;
+    }
+  } 
+}
+
+.paginationSpinnerContainer {
+  display: inline-flex;
+  align-items: center;
+  float: right;
+}
+
+.paginationContainer {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  margin-right: 10px;
+  float: right;
+  p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+  ul {
+    list-style: none;
+    margin-left: 0;
+    display: inline-block;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+      float: left;
+      margin-bottom: 0;
+      @media screen and (max-width: 320px) {
+        margin: 0;
+      }
+      button {
+        padding: 6px 7px !important;
+        margin: 0 2px 0 0 !important;
+        background: $primary;
+        color: $theme-light-grey;
+        outline: 0;
+        font-weight: 700;
+        border: 2px solid $primary;
+        font-size: 18px !important;
+        border-radius: 2px;
+        height: 32px;
+        line-height: 20px;
+      }
+      .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+button.pendingAction {
+  pointer-events: none;
+  cursor: wait;
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.toast {
+  display: none !important;
+}
+
+.toastContainer {
+  padding: 0 !important;
+}
+
+.sensorlist {
+  margin-top:30px;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.loadingSpinner {
+  font-size: 28px;
+  color: $primary;
+  text-align: left;
+}

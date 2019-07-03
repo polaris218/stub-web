@@ -1,0 +1,710 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Groups API",
+    "description" : "A group represents a partner company who works for a specific company. A partner company do different sort of jobs for its associated company. Once you create an group you will be able to assign tasks, entities and resources to this group."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/groups/new" : {
+      "post" : {
+        "tags" : [ "Group APIs" ],
+        "summary" : "Add New Group.",
+        "description" : "Adds new group.",
+        "operationId" : "create_group",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "formData",
+          "description" : "Name of the Group.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "description",
+          "in" : "formData",
+          "description" : "Description of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "Email of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phone",
+          "in" : "formData",
+          "description" : "Phone Number of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "mobile_number",
+          "in" : "formData",
+          "description" : "Mobile Number of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_1",
+          "in" : "formData",
+          "description" : "Group Address Line 1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_2",
+          "in" : "formData",
+          "description" : "Group Address Line 2",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "city",
+          "in" : "formData",
+          "description" : "City of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "state",
+          "in" : "formData",
+          "description" : "State of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "country",
+          "in" : "formData",
+          "description" : "Country of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "zipcode",
+          "in" : "formData",
+          "description" : "Zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of group location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to create groups of a sub-company.Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 6100296669331456
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "EMAIL_INVALID"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Email validation failed"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/groups/{group_id}" : {
+      "get" : {
+        "tags" : [ "Group APIs" ],
+        "summary" : "Get a specific Group.",
+        "description" : "Get all fields of a specific group as JSON structure.",
+        "operationId" : "get_group",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "group_id",
+          "in" : "path",
+          "description" : "ID of the Group.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get group of a sub-company.Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 6100296669331456
+                },
+                "owner" : {
+                  "type" : "integer",
+                  "example" : 5629499534213120
+                },
+                "name" : {
+                  "type" : "string",
+                  "example" : "Alpha Movers"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Partner of BestMovers"
+                },
+                "email" : {
+                  "type" : "string",
+                  "example" : "alpha_movers@bestmovers.com"
+                },
+                "phone" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "mobile_number" : {
+                  "type" : "string",
+                  "example" : "+14255333945"
+                },
+                "extra_fields" : {
+                  "type" : "object",
+                  "example" : null
+                },
+                "address_line_1" : {
+                  "type" : "string",
+                  "example" : "1666 188th ave ne"
+                },
+                "address_line_2" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "city" : {
+                  "type" : "string",
+                  "example" : "Woodinville"
+                },
+                "state" : {
+                  "type" : "string",
+                  "example" : "Washington"
+                },
+                "country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                },
+                "zipcode" : {
+                  "type" : "string",
+                  "example" : "98011"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid group_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Group APIs" ],
+        "summary" : "Update specific Group.",
+        "description" : "Update fields of a specific group. Just send the fields that you would like to change.",
+        "operationId" : "update_group",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "group_id",
+          "in" : "path",
+          "description" : "ID of the Group.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "name",
+          "in" : "formData",
+          "description" : "Name of the Group.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "description",
+          "in" : "formData",
+          "description" : "Description of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "Email of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "phone",
+          "in" : "formData",
+          "description" : "Phone Number of theGroup.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "mobile_number",
+          "in" : "formData",
+          "description" : "Mobile Number of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_1",
+          "in" : "formData",
+          "description" : "Group Address Line 1",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "address_line_2",
+          "in" : "formData",
+          "description" : "Group Address Line 2",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "city",
+          "in" : "formData",
+          "description" : "City of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "state",
+          "in" : "formData",
+          "description" : "State of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "country",
+          "in" : "formData",
+          "description" : "Country of the Group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "zipcode",
+          "in" : "formData",
+          "description" : "Zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of group location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "A key value pair object as JSON. This is very useful as it can help store essentially any custom data with the group.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to update group of a sub-company.Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Updated."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid group_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Group APIs" ],
+        "summary" : "Delete a specific Group.",
+        "description" : "Delete a specific group.",
+        "operationId" : "delete_group",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "group_id",
+          "in" : "path",
+          "description" : "ID of the Group.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete group of a sub-company.Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid group_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "Conflict",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "description" : {
+                  "type" : "string",
+                  "example" : "There are some team members associated with this group. Please move them to another group before deleting this group."
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/groups" : {
+      "get" : {
+        "tags" : [ "Group APIs" ],
+        "summary" : "List All Groups.",
+        "description" : "List all the groups. Possible URL params are explained below.",
+        "operationId" : "get_all_groups",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional param to get groups back in pages. Default value is 1 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional param to get groups back in batches. Default value is 500 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get groups of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 6100296669331456
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "Alpha Movers"
+                  },
+                  "description" : {
+                    "type" : "string",
+                    "example" : "Partner of BestMovers"
+                  },
+                  "email" : {
+                    "type" : "string",
+                    "example" : "alpha_movers@bestmovers.com"
+                  },
+                  "phone" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "mobile_number" : {
+                    "type" : "string",
+                    "example" : "+14255333945"
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "address_line_1" : {
+                    "type" : "string",
+                    "example" : "1666 188th ave ne"
+                  },
+                  "address_line_2" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "city" : {
+                    "type" : "string",
+                    "example" : "Woodinville"
+                  },
+                  "state" : {
+                    "type" : "string",
+                    "example" : "Washington"
+                  },
+                  "country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "zipcode" : {
+                    "type" : "string",
+                    "example" : "98011"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

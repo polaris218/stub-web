@@ -1,0 +1,167 @@
+@import '../../../styles/colors.scss';
+
+#subscribe-modal {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", 'Poppins', sans-serif;
+  }
+  h2,h3,h5{
+    font-family: "FuturaStdMedium", 'Poppins', sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn, q{
+    font-family: "FuturaStdBook", sans-serif;
+  }
+  h2{
+    font: 500 40px/48px FuturaStdMedium,sans-serif;
+    color: $theme-darker-grey;
+    @media screen and (max-width: 767px) {
+      font-size: 30px;
+      line-height: 38px;
+    }
+  }
+  & + section{
+    h1,h4 {
+      font-family: "FuturaStdHeavy", sans-serif;
+    }
+    h2,h3,h4,h5 {
+      font-family: "FuturaStdMedium", sans-serif;
+    }
+    p, a, li, button,.primary-action-btn, .btn, q {
+      font-family: "FuturaStdBook", sans-serif;
+    }
+  }
+
+  .modal-lg.modal-dialog {
+    margin: 40px auto;
+    max-width: 600px;
+  }
+  .modal-header {
+    h2 {
+      margin: auto;
+      margin-top: 30px;
+      color: $modal-header;
+    }
+    .close {
+      font-size: 80px;
+      margin-right: 20px;
+    }
+  }
+  .modal-body {
+    margin: auto;
+    h3 {
+      margin: 20px auto 0;
+      color: $modal-body-heading3;
+    }
+    form {
+      width: 90%;
+      margin: auto;
+      button, input {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 14px;
+        border: 2px solid $modal-body-form-btn-border;
+      }
+      input {
+        padding: 28px 16px;
+      }
+      button {
+        background: $primary;
+        font-size: 1.2em;
+        border-radius: 5px;
+        font-weight: 700;
+        border: 0 solid $white;
+        color: $white;
+        text-transform: none;
+        &:hover{
+          color: $white;
+          background-color: $btn-primary-hover;
+        }
+        width: 40%;
+        padding: 20px 12px;
+        margin-bottom: 60px;
+        padding: 20px 12px;
+        margin-bottom: 20px;
+      }
+    }
+    .has-error .form-control {
+      border-color: $modal-body-form-has-error;
+      -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px $modal-body-form-has-error;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px $modal-body-form-has-error;
+    }
+    .empty-spinner {
+      margin-bottom: 80px;
+    }
+    .spinner {
+      margin-bottom: 64px;
+    }
+  }
+  .subscribe-success {
+    width: 95%;
+    img {
+      position: relative;
+      display: block;
+      width: 20%;
+      height: auto;
+      margin: 60px auto;
+    }
+    button {
+      background: $primary;
+      font-size: 1.2em;
+      border-radius: 5px;
+      font-weight: 700;
+      border: 0 solid $white;
+      color: $white;
+      text-transform: none;
+      &:hover{
+        color: $white;
+        background-color: $btn-primary-hover;
+      }
+      width: 40%;
+      padding: 20px 12px;
+      font-size: 14px;
+      margin-bottom: 60px;
+    }
+  }
+  @media(max-width: 768px) {
+    .modal-body {
+      width: 90%;
+    }
+    .modal-header h2 {
+      width: 90%;
+    }
+    .subscribe-success {
+      img {
+        width: 50%;
+      }
+      button {
+        width: 70%;
+      }
+    }
+  }
+  .btn {
+    border-radius: 5px;
+    border: 0 solid $theme-main;
+    display: inline-block;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 10px 40px;
+    vertical-align: middle;
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+  }
+
+  .btn-blue {
+    background: $primary;
+    font-size: 1.2em;
+    padding: 20px 35px;
+    border-radius: 5px;
+    font-weight: 700;
+    border: 0 solid $white;
+    color: $white;
+    text-transform: none;
+
+    &:hover {
+      color: $white;
+      background-color: $btn-primary-hover;
+    }
+  }
+}

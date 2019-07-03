@@ -1,0 +1,68 @@
+@import '../../../../../styles/colors.scss';
+
+.CMEditModal {
+  width: 50%;
+  & > div {
+    width: 100% !important;
+    @media (max-width: 767px) {
+      left: 10%;
+    }
+  }
+}
+
+.CMEditModalHeader {
+  -webkit-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -moz-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  -o-box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  box-shadow: 8px 3px 37px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+}
+
+.messageTitle {
+  color: #717686;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
+}
+
+.CMEditModalBody {
+  overflow-y: auto;
+}
+
+.CMEditModalFooter {
+  background: #f1f1f1;
+  text-align: center;
+  width: 100%;
+  padding: 30px 0 30px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 20px;
+  button:nth-child(1) {
+    margin-left: 0;
+  }
+  button {
+    margin-left: 10px;
+  }
+}
+
+.transparentBtn {
+  background-color: transparent;
+  border: none;
+  color: #008BF8;
+}
+
+.saveBtn {
+  min-width: 152.41px;
+  height: 40px;
+}
+
+.entityName {
+  font-size: 17px;
+  font-weight: 700;
+  padding-top: 5px;
+}
+
+.disableGroup {
+  background-color: $theme-grey;
+}

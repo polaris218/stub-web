@@ -1,0 +1,136 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.header {
+  color: $theme-lighter-grey;
+  font-size: 22px;
+  padding: 15px;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+.invert-colors {
+  background-color: #F1F1F1;
+  padding: 40px 0 10px 0;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  input {
+    background-color: #F9F9F9;
+  }
+  textarea {
+    background-color: #F9F9F9;
+  }
+}
+
+.form-group-field {
+  @media (max-width: 1372px) {
+    label {
+      font-size: 14px;
+    }
+  }
+}
+
+.account-details {
+  background-color: white;
+  color: $no-info-color;
+  padding-bottom: 40px;
+  .full-width {
+    width: 100% !important;
+  }
+
+  .user-plan,
+  .user-plan-menu,
+  .user-plan-item {
+    @extend .full-width;
+  }
+
+  .user-plan {
+    @extend .full-width;
+    text-align: right;
+
+    .caret {
+      vertical-align: text-top !important;
+      margin-left: 10px !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 10px !important;
+    }
+  }
+
+  .user-plan-info {
+    display: inline-block;
+
+    .user-plan-name,
+    .user-plan-calls {
+      display: block;
+      @media (max-width: 665px) {
+        white-space: normal;
+      }
+    }
+    .user-plan-name {
+      display: block;
+    }
+
+  }
+
+  .user-plan-item {
+    padding: 5px 25px;
+  }
+
+  .user-plan-toggle {
+    @extend .full-width;
+    text-align: right;
+    padding-right: 25px;
+
+    .caret {
+      vertical-align: text-top !important;
+      margin-left: 10px !important;
+      position: absolute !important;
+      top: 15px !important;
+      right: 10px !important;
+    }
+  }
+
+  .profile-link {
+    font-size: 16px;
+    color: #212121;
+    margin-right:20px;
+  }
+}
+
+.profileColorField {
+  &>div {
+    &>label {
+      display: none !important;
+    }
+  }
+  i {
+    display: block;
+    width: 100%;
+    float: left;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

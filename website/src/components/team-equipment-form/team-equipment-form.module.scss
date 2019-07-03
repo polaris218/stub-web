@@ -1,0 +1,137 @@
+@import '../../../styles/colors.scss';
+
+.modalPrimary{
+  @media (max-width: 767px) {
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+  }
+  & > div {
+    border-radius: 0;
+    background-color: $setting-light-blue;
+    width: 100% !important;
+  }
+  .modalHeader{
+    background-color: $white;
+    -webkit-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    -o-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    box-shadow: 0 3px 6px rgba($dark-black,.09);
+    padding: 20px 15px;
+    position: relative;
+    z-index: 1;
+    .modalTitle{
+      color: $dashboard-dark;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+    .closeIcon{
+      cursor: pointer;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      -webkit-transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      transform: translateY(-50%);
+      svg path{
+        transition: all .3s ease-in-out;
+      }
+      &:hover {
+        svg path{
+          fill: $dashboard-dark;
+        }
+      }
+    }
+  }
+  .modalBody{
+    padding: 15px;
+  }
+  .externalInfo{
+    background-color: transparent !important;
+    color: $theme-forms-grey;
+    font-size: 15px;
+    word-break: break-all;
+    margin: 10px 0;
+    @media only screen and (min-width: 768px) {
+      display: inline-flex;
+      flex-wrap: wrap;
+      > div{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.box{
+  font-size: 15px;
+  color: $dashboard-dark;
+  margin-bottom: 10px;
+  .boxTitle{
+    color: $dashboard-dark;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+  .boxBody{
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow, .17);
+    .boxBodyInner{
+      padding: 20px 18px 10px;
+      &:not(:last-child){
+        border-bottom: 1px solid $dashboard-bg;
+      }
+    }
+  }
+}
+.btn{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  min-width: 110px;
+  min-height: 40px;
+  padding: 9px 10px;
+  vertical-align: middle;
+  text-decoration: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &:hover{
+    text-decoration: none;
+  }
+  &+ .btn{
+    margin-left: 20px;
+  }
+  &.btn-secondary{
+    background-color: $btn-sec;
+    color: $white;
+    &:hover{
+      background-color: $btn-sec-hover;
+      color: $white;
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    color: $dashboard-dark;
+    min-width: 110px;
+    &:hover{
+      background-color: $theme-middle-grey;
+      color: $dashboard-dark;
+    }
+  }
+  &.btn-lg{
+    min-width: 170px;
+  }
+}
+.alert {
+  padding: 10px;
+  margin: 0 10px 10px 10px;
+  @media screen and (max-width: 991px) {
+    margin: 10px;
+  }
+}

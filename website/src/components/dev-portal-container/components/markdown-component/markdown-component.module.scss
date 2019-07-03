@@ -1,0 +1,40 @@
+@import '../../../../../styles/colors';
+
+.markdownComponentContainer {
+  padding: 0 25px 0 25px;
+  display: flex;
+  background: $white;
+  font-size: 17px;
+  max-width: 1260px;
+  margin: 0 auto;
+  
+  pre[class*="language-"] {
+    margin: 20px 0px;
+  }
+
+  table {
+    border: 1px solid $theme-middle-grey;
+
+    thead {
+      tr th {
+        padding: 10px 10px;
+      }
+    }
+
+    tr {
+      border: 1px solid $theme-middle-grey;
+      padding: 20px 10px;
+    }
+
+    td {
+      border: 1px solid $theme-middle-grey;
+      padding: 20px 10px;
+    }
+
+  }
+}
+
+.markdownComponent {
+  width: 100%;
+  word-wrap:break-word;
+}

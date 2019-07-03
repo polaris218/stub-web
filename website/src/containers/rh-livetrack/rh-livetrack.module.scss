@@ -1,0 +1,26 @@
+@import '../../../styles/colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+
+
+.liveTrackPageContainer {
+  &, h1, h2, h3, h4, h5, h6, p, strong, span, div, pre, code, a, button, li, ul, ol, table, td, th, tr {
+    font-family: 'Open Sans', sans-serif !important;
+  }
+  .savingSpinnerContainer {
+    height: 100vh !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .errorAlertContainer {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    p {
+      color: $theme-red;
+    }
+  }
+}

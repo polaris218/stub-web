@@ -1,0 +1,33 @@
+@import '../../../styles/colors.scss';
+
+body {
+	height: auto;
+}
+
+#app-container {
+	height: auto !important;
+}
+
+.dashboardContainer {
+	background: $dashboard-bg;
+}
+
+.toastContainer {
+	background: none !important;
+	padding: 0 !important;
+}
+
+.toast {
+	display: none !important;
+}
+.toastErrorAlert {
+	background: $error-message-custom-background !important;
+	color: $toast-error-color !important;
+	-webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+	-moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+	box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+	border: 2px solid $toast-error-color !important;
+	button {
+		color: $toast-error-color !important;
+	}
+}

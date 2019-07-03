@@ -1,0 +1,98 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+    height: 100%;
+}
+.full-height {
+    height: 100%;
+}
+.page-wrap {
+  background-color: $light-blue;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-bottom: 50px;
+}
+.innerContainer {
+  padding-top: 40px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  @media only screen and (max-width: 991px) {
+    padding-top: 30px;
+  }
+}
+.box{
+  color: $dashboard-dark;
+  margin-bottom: 10px;
+  .boxTitle{
+    color: $dashboard-dark;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+  .boxBody{
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow, .17);
+    font-size: 15px;
+    .boxBodyInner{
+      padding: 20px 18px 10px;
+      &:not(:last-child){
+        border-bottom: 1px solid $dashboard-bg;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      height: auto !important;
+    }
+  }
+  [class^="form-group"], [class*="form-group"], [class="form-group"]{
+    margin-bottom: 10px;
+  }
+  [class="control-label"]{
+    color: rgba($dashboard-dark, .5);
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  [class="form-control"], .field-wrapper [class="form-control"], .field-wrapper input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    box-shadow: none !important;
+    color: $dashboard-dark;
+    display: block;
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 40px;
+    margin-bottom: 0;
+    padding: 9px 15px;
+    width: 100%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:focus{
+      box-shadow: none !important;
+      border-color: darken($dashboard-bg, 15%);
+    }
+    &:disabled{
+      background-color: $theme-grey;
+    }
+  }
+}

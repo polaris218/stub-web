@@ -1,0 +1,10 @@
+@import '../../../../../styles/colors';
+
+.textComponentContainer {
+  padding: 0 25px 0 25px;
+  display: flex;
+  background: $white;
+  font-size: 17px;
+  max-width: 1260px;
+  margin: 0 auto;
+}

@@ -1,0 +1,100 @@
+@import '../../../styles/colors.scss';
+
+.accessTokenClass {
+  padding: 10px;
+  label {
+    padding-top: 7px;
+    color: #8a8a8a !important;
+    font-weight: 700;
+    font-size: 16px;
+  }
+}
+
+.groupHeader {
+  border: 1px solid $bg-dark-grey;
+  padding: 10px;
+}
+
+.groupBody {
+  border-bottom: 1px solid $bg-dark-grey;
+  border-left: 1px solid $bg-dark-grey;
+  border-right: 1px solid $bg-dark-grey;
+
+  .headings {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 10px 0;
+  }
+  .equipmentMapping {
+    padding: 10px 0;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.saveBtn {
+  margin: 10px;
+  float: right;
+  min-width: 170px;
+  min-height: 41px;
+}
+
+.refreshBtn {
+  min-width: 100px;
+  min-height: 41px;
+}
+
+.addBtn{
+  margin-left: 10px;
+}
+
+.slackHeading{
+  color: $theme-lighter-grey;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 0 0 0 15px;
+}
+
+.header{
+  color: $theme-lighter-grey;
+  font-size: 22px;
+  padding: 15px;
+  padding-left: 0;
+  font-weight: bold;
+}
+
+.samsaraHeading {
+    color: $theme-lighter-grey;
+    font-size: 22px;
+    padding: 15px;
+    padding-left: 0;
+    margin: 0;
+    font-weight: bold;
+}
+
+.rowmargin{
+  margin-top: 35px;
+}

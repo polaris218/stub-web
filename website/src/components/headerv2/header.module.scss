@@ -1,0 +1,19 @@
+@import '../../../styles/colors.scss';
+
+.navbar-custom {
+	background-color: $theme-main;
+	height: 65px;
+	margin-bottom: 0px;
+}
+
+.navbar-brand-custom {
+ 	padding: 5px 5px;
+ 	font-size: 18px;
+	height: 65px;
+}
+
+.shopify-nav-item {
+	> a {
+		padding: 0px 0px 0px 0px !important;
+	}
+}

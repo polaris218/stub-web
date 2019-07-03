@@ -1,0 +1,103 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.internetMessageContainer {
+  position: absolute;
+  width: 350px;
+  text-align: center;
+  color: #fff;
+  padding: 4px 10px;
+  z-index: 9999;
+  left: calc(50vw - 200px);
+  top: 37px;
+  font-size: 15px;
+  border: 1px transparent;
+  border-radius: 5px;
+  line-height: 26px;
+  height: 33px;
+  display: none;
+  @media screen and (max-width: 440px) {
+    width: 230px;
+    left: calc(50vw - 115px);
+  }
+  &>div:first-child {
+    background: none !important;
+    padding: 0 !important;
+    min-height: auto !important;
+    margin-right: 8px;
+    display: inline-block;
+  }
+
+  &>span{
+   vertical-align: top;
+  }
+}
+
+.connectionAvailable {
+  background: $theme-green;
+  a {
+    color: $white;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+      color: $white;
+    }
+  }
+  @media screen and (max-width: 440px) {
+    height: 60px;
+  }
+}
+
+.connectionNotAvailable {
+  background: $bg-orange;
+}
+
+.icon{
+  height: 25px !important;
+  width: 25px !important;
+  margin-right: 20px !important;
+  text-align: center !important;
+}
+
+.displayInternetMessage {
+  margin-top: -50px;
+  opacity: 0;
+  display: inline-block;
+  animation: 0.45s ease-in-out 1;
+  animation-name: slideInFromTop;
+  animation-fill-mode: forwards;
+}
+
+.hideInternetMessage {
+  margin-top: 0;
+  display: inline-block;
+  animation: 0.35s ease-in-out 1;
+  animation-name: slideOutToTop;
+  animation-fill-mode: forwards;
+  background: $theme-green;
+}
+
+@keyframes slideInFromTop {
+  from {
+    margin-top: -50px;
+    opacity: 0;
+  }
+  to {
+    margin-top: 0;
+    opacity: 1;
+    display: inline-block;
+  }
+}
+
+@keyframes slideOutToTop {
+  from {
+    margin-top: 0;
+    opacity: 1;
+  }
+  to {
+    margin-top: -50px;
+    opacity: 0;
+    display: none;
+  }
+}

@@ -1,0 +1,274 @@
+@import '../../../styles/colors.scss';
+.topBar {
+  background: $bg-purple;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  height: auto;
+  min-height: 55px;
+  padding: 0 15px;
+  position: relative;
+  .filersWrapper{
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+  }
+  .title, .daysFilterWrapper, .datePickerWrapper{
+    margin-right: 40px;
+  }
+  .monthDayWeekFilters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 200px;
+    button{
+      border: none;
+      box-shadow: none;
+      background: none;
+      border-radius: 25px !important;
+      color: $white;
+      cursor: pointer;
+      padding: 0 15px;
+      font-weight: bold;
+      line-height: 27px;
+      margin: 0 5px;
+      outline: none;
+      opacity: 1;
+      float: none;
+      transition: all .3s ease-in-out;
+      &:disabled:not(.active){
+        background: none;
+        color: $white;
+        cursor: not-allowed;
+        opacity: .7;
+      }
+      &:hover, &.active, &.active:disabled{
+        background-color: $white;
+        color: $dashboard-primary;
+      }
+    }
+  }
+  .datePicker {
+    min-width: 142px;
+    max-width: 142px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .arrow{
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      text-align: center;
+      transition: color .3s ease-in-out;
+      &:hover{
+        color:$white;
+      }
+      &.prev{
+        transform: rotate(-180deg);
+      }
+      svg{
+        width: 100%;
+      }
+      &.disabled{
+        cursor: not-allowed;
+        pointer-events: none;
+        opacity: 0.5;
+      }
+    }
+    input {
+      background: transparent;
+      border: none;
+      color: $white;
+      box-shadow: none;
+      font-size: 15px;
+      padding: 0;
+      height: 20px;
+      max-width: 100px;
+      text-align: center;
+    }
+    span, table{
+      color: $dashboard-dark;
+    }
+    [class*="text-muted"], [class="text-muted"]{
+      color: $reviews-text;
+    }
+    & > span:nth-child(2) {
+      > div > div {
+        @media screen and (max-width: 420px) {
+          left: -80px !important;
+          & > div:first-child{
+            left: 50% !important;
+          }
+        }
+        & > div:last-child > table > tfoot > tr > td > button {
+          width: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .pagination {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      min-width: 94px;
+      display: flex;
+      align-items: center;
+      li {
+        &.count{
+          margin-right: 15px;
+        }
+        &:nth-child{
+          margin-left: auto;
+        }
+        &:last-child{
+          margin-left: 10px;
+        }
+        button {
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          height: 15px;
+          padding: 0;
+          margin: 0;
+          width: 15px;
+          outline: 0;
+          text-align: center;
+          transition: color .3s ease-in-out;
+          &:hover:not(.disabled){
+            color: $white;
+          }
+          &.prev{
+            transform: rotate(-180deg);
+          }
+          svg{
+            width: 100%;
+          }
+          &.disabled, &:disabled {
+            color: $white !important;
+            opacity: 0.5;
+            cursor: not-allowed !important;
+          }
+        }
+      }
+    }
+  }
+  .btnContainer {
+    margin-top: 7px;
+    text-align: right;
+    button {
+      border: none;
+      border-radius: 5px;
+      background-color: $btn-sec;
+      cursor: pointer;
+      color: $white;
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.4;
+      outline: none;
+      font-weight: 400;
+      min-height: 40px;
+      min-width: 170px;
+      padding: 9px 10px;
+      vertical-align: middle;
+      text-decoration: none !important;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      span{
+        margin-left: 15px;
+        display: inline-block;
+      }
+      &:hover{
+        background-color: $btn-sec-hover;
+        color: $white;
+        text-decoration: none;
+      }
+      &:disabled{
+        cursor: not-allowed;
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) {
+    .title, .daysFilterWrapper, .datePickerWrapper{
+      margin-right: 20px;
+    }
+  }
+  @media screen and (max-width: 991px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    .filersWrapper{
+      margin-top: 0;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .btnContainer{
+      text-align: center;
+    }
+    .title, .daysFilterWrapper, .datePickerWrapper{
+      margin-right: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .title, .daysFilterWrapper, .datePickerWrapper{
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-bottom: 10px;
+    }
+    .pagination{
+      margin-bottom: 10px;
+    }
+    .btnContainer{
+      margin-top: 0;
+    }
+    .monthDayWeekFilters{
+      margin-left: auto;
+    }
+  }
+  @media screen and (max-width: 420px) {
+    .filersWrapper{
+      justify-content: center;
+    }
+    .title, .daysFilterWrapper, .datePickerWrapper{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .title{
+      text-align: center;
+    }
+    .monthDayWeekFilters,
+    .datePicker{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+.toast {
+  display: none !important;
+}
+.toastContainer {
+  padding: 0 !important;
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}

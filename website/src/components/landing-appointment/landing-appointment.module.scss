@@ -1,0 +1,29 @@
+.appointment {
+    background-color: rgb(179, 214, 79);
+    overflow: hidden;
+    position: relative;
+    padding: 0 20px;
+}
+
+.appointment-container {
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.appointment-header {
+    margin-top: 0;
+    padding: 41px 0 28px 0;
+    top: 0;
+    position: relative;
+    text-align: left;
+}
+
+.appointment-header-text {
+    letter-spacing: 4px;
+    line-height: 1em;
+    margin: 15px 0 0 0;
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+}

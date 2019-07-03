@@ -1,0 +1,2036 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.control-tasks {
+  margin: 10px 0;
+}
+
+.control-tasks .btn-submit {
+  margin-right: 10px !important;
+}
+
+@-webkit-keyframes slideDown {
+  from {overflow: hidden}
+  to {overflow: initial}
+}
+
+
+.TaskNumbers {
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: $primary;
+  text-align: center;
+  color: white;
+  float: left;
+}
+
+@keyframes slideDown {
+  from {overflow: hidden}
+  to {overflow: initial}
+}
+
+
+.modal-window {
+    width: 95%;
+}
+
+.date-calendar {
+  @media screen and (max-width: 360px){
+    width: 145px;
+    padding-right: 0;
+  }
+}
+.tasks-manager-quick{
+  > div > div:first-child{
+    background: $bg-purple;
+    padding: 20px 0px;
+  }
+  .filter-left{
+    .icon_without_border{
+      background-color: transparent;
+      border: none;
+      font-size: 1.4em;
+      color: white;
+      margin: 7px 0 4px 0px;
+      cursor: pointer;
+    }
+    .icon{
+      background-color: transparent;
+      border: 1px solid white;
+      border-radius: 15px;
+      font-size: 1.6em;
+      color: white;
+      margin: 7px 0 4px 9px;
+      cursor: pointer;
+    }
+    .icon:nth-child(1) {
+      margin-left: 0px;
+    }
+    h2 {
+      font-size: 1em;
+      font-weight: 400;
+      color: $bg-primary;
+      margin: 0;
+      cursor: pointer;
+      text-align: center;
+      > span{
+        width: 110px;
+        display: inline-block;
+        @media screen and (max-width: 360px) {
+          width: 77px;
+        }
+        div {
+          color: #000;
+          @media screen and (max-width: 360px){
+            margin-left: -4px;
+            margin-right: -4px;
+          }
+        }
+        input{
+          border: 0;
+          background: $btn-transp;
+          color: $bg-primary;
+          font-size: 1em;
+          display: inline;
+          width: auto;
+          padding: 0;
+          box-shadow: 0 0;
+        }
+      }
+      .icon{
+        position: relative;
+        left: -20px;
+        font-size: 1em;
+      }
+    }
+
+  }
+  .filter-right{
+    .filters{
+      float: right;
+      @include flexbox;
+      @include align-items(center);
+      > div{
+        display: inline-block;
+        margin: 0 10px;
+        @media screen and (max-width: 1440px){
+          width: 130px;
+        }
+          @media screen and (max-width: 991px){
+          margin: 0 5px;
+        }
+        @media screen and (max-width: 768px){
+          margin: 0;
+        }
+        &:first-child{
+          white-space: nowrap;
+          margin-left: 0;
+          width: 60px;
+        }
+        .icon{
+          color:#fff;
+          padding: 0 4px 0px 0;
+          font-size: 1.2em;
+        }
+        label{
+          color: #fff;
+          font-weight: normal;
+          margin-bottom: 0;
+          span{
+            background-color: $btn-transp;
+          }
+        }
+      }
+      @media (min-width: 661px) {
+        &>div:first-child{
+          pointer-events: none;
+        }
+      }
+      @media (max-width: 991px) {
+        margin-top: 10px;
+      }
+      @media (max-width: 660px) {
+        max-height: 30px;
+        overflow: hidden;
+        flex-flow: column;
+        transition: max-height .5s ease-in-out;
+        &>div:first-child:after{
+          content: "\f078";
+          font-family: FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          color: #ffffff;
+          display: inline-block;
+          margin-left: 5px;
+          transition: transform .3s ease-in-out;
+        }
+        &.active{
+          max-height: 100%;
+          animation-name: slideDown;
+          animation-duration: 1s;
+          -webkit-animation-name: slideDown;
+          -webkit-animation-duration: 1s;
+          overflow: visible;
+          div:first-child:after{
+            transform: rotate(-180deg);
+          }
+        }
+        >div{
+          margin: 5px 0;
+          width: auto;
+        }
+      }
+    }
+    button{
+      background: $bg-primary;
+      border-color: rgba(255,255,255,0.4);
+      color: $primary;
+      span{
+        right: 10px;
+      }
+    }
+  }
+}
+
+.transparentButton {
+  background-color: transparent;
+  border: none;
+  color: $primary;
+  .iconForTransparent{
+    padding: 0 3px 0 3px;
+    width: 18px;
+    height: 18px;
+    color:$primary;
+    font-size: 4em;
+    border: 1px solid $primary;
+    margin-bottom: 0 !important;
+    @include opacity(0.8);
+    @include border-radius(10px);
+  }
+}
+
+.tasksContainer {
+  @include flexbox();
+  @include flex-direction(row);
+  @include flex-flow(row wrap);
+  background: $bg-new;
+  padding: 0px 5px;
+  .task-bar{
+    width: 100%;
+    padding: 15px;
+    @media screen and (max-width: 1400px){
+      padding-right: 0px;
+    }
+    @media screen and (max-width: 992px){
+      padding-right: 0px;
+      padding-left: 0px;
+    }
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(flex-end);
+    p{
+      color: #999;
+      margin-bottom: 0;
+    }
+    button{
+      text-transform: uppercase;
+      font-size: 0.8em;
+      font-weight: bold;
+      padding: 12px 20px;
+      margin: 0 10px 0 10px;
+      @media screen and (max-width: 1400px){
+        padding: 12px 5px;
+        margin: 0 5px 0 5px;
+      }
+      @media screen and (max-width: 1199px){
+        padding: 12px 5px;
+        margin: 0 10px 0 5px;
+      }
+      @media screen and (max-width: 440px){
+        padding: 12px 5px;
+      }
+      @media screen and (max-width: 360px){
+        padding: 12px 5px;
+        margin: 0 5px 0 0;
+      }
+      .icon{
+        padding: 0 4px 0 4px;
+        color:$bg-primary;
+        font-size: 4em;
+        border: 1px solid $bg-primary;
+        margin-bottom: 2px;
+        @include opacity(0.8);
+        @include border-radius(10px);
+      }
+    }
+
+    .subTaskBar {
+      display: flex;
+      align-items: center;
+    }
+
+
+
+  }
+  .items-container{
+    max-height: calc(100vh - 272px);
+    max-height: -webkit-calc(100vh - 272px);
+    width: 100%;
+    overflow-y:auto;
+    background-color: $bg-new;
+    //not for mobile
+    @media (min-width: 768px) {
+      min-height: calc(100vh - 272px);
+    }
+    .no-entity{
+      text-align: center;
+      padding: 20px;
+      font-size: 1.2em;
+    }
+    > div{
+      &:last-child{
+        margin-bottom: 20px;
+      }
+      .task-item {
+        width: 100%;
+        background-color: $bg-primary;
+        color: $theme-darker-grey;
+        padding: 1px 10px;
+        cursor: pointer;
+        cursor: hand;
+        min-height: 120px;
+        margin-bottom: 4px;
+        position: relative;
+        @include box-shadow(3px, 3px, 5px, #ccc);
+        &:hover {
+          background-color: $theme-grey;
+        }
+        h4{
+          margin-top: 0;
+          color: $primary;
+          @include transition(color 1s ease);
+          &:hover{
+            color:blue;
+          }
+        }
+        .task-top{
+          position: relative;
+          padding: 6px 0 0 35px;
+          @include flexbox();
+          @include align-items(center);
+          @include justify-content(space-between);
+          .status{
+            text-transform: uppercase;
+            font-size: 0.8em;
+            font-weight: bold;
+          }
+          .time{
+            font-size: 0.9em;
+            > span{
+              .icon{
+                font-size: 1em;
+                color:$primary;
+                padding: 0 5px 4px 0;
+              }
+            }
+          }
+          &:before{
+            content: ' ';
+            position: absolute;
+            border: 4px solid $theme-middle-grey;
+            height: 20px;
+            width: 20px;
+            left: 0;
+            top: 5px;
+            border-radius: 15px;
+          }
+        }
+        .task-content{
+          border-left: 5px solid $theme-middle-grey;
+          padding-left: 22px;
+          margin-left: 8px;
+          .details-data {
+            overflow: hidden;
+            @include transition(height 1s ease-out 0.5s);
+            white-space: pre-wrap;
+            >p{
+              height: auto;
+            }
+          }
+          .member-icons{
+            float: right;
+            text-align: right;
+            max-width: 50%;
+            .entity-list {
+              margin-bottom: 0px;
+              li{
+                display: inline-block;
+                cursor: pointer;
+                position: relative;
+                min-width: 95px;
+                .member-icon{
+                  display: block;
+                  width: 50px;
+                  height: 50px;
+                  overflow: hidden;
+                  margin: 0 auto;
+                  margin-bottom: 10px;
+                  border: 3px solid $theme-middle-grey;
+                  @include border-radius(35px);
+                  @media (max-width: 640px) {
+                    display: none;
+                  }
+                  img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                  }
+                  &.empty{
+                    padding: 10px 0;
+                    font-size: 1.4em;
+                    text-align: center;
+                    font-weight: bold;
+                  }
+                }
+                .tooltip{
+                  border: 1px solid $theme-middle-grey;
+                  border-radius: 5px;
+                  padding: 1px 5px;
+                  background-color: $bg-primary;
+                  display: block;
+                  font-size: 0.8em;
+                  @include transition(opacity 1s ease-out 0.5s);
+                  white-space: nowrap;
+                  max-width: 95px;
+                  max-height: 40px;
+                  z-index: 5;
+                  position: relative;
+                  margin-bottom: 6px;
+                  span{
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                  }
+                  &:before{
+                    @media (max-width: 640px) {
+                      display: none;
+                    }
+                    content: ' ';
+                    width: 10px;
+                    height: 10px;
+                    border-top: 1px solid $theme-middle-grey;
+                    border-left: 1px solid $theme-middle-grey;
+                    @include transform(rotate(45deg));
+                    position: absolute;
+                    background: $bg-primary;
+                    top: -6px;
+                    left: 40%;
+                    z-index: 6;
+                  }
+                }
+                &:hover{
+                  .member-icon{
+                    border: 3px solid $theme-dark-grey;
+                  }
+                  .tooltip{
+                    border-color:$theme-dark-grey;
+                    color:$theme-dark-grey;
+                    &:before{
+                      border-color:$theme-dark-grey;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .task-bottom{
+            p{
+              font-size: 0.9em;
+              .icon{
+                font-size: 1.2em;
+                padding: 0 8px 4px 0;
+              }
+            }
+            &:after{
+              content: ' ';
+              clear: both;
+              display: block;
+            }
+          }
+        }
+        &.notstarted{
+          .task-top{
+            .status{
+              color: #4E4646;
+            }
+          }
+          .task-content{
+            border-color: #4E4646;
+          }
+          .task-top{
+            &:before{
+              border-color: #4E4646;
+            }
+          }
+        }
+        &.enroute{
+          .task-top{
+            .status{
+              color: #6aa3d7;
+            }
+          }
+          .task-content{
+            border-color: #6aa3d7;
+          }
+          .task-top{
+            &:before{
+              border-color: #6aa3d7;
+            }
+          }
+        }
+        &.stared{
+          .task-top{
+            .status{
+              color: #2ee7fb;
+            }
+          }
+          .task-content{
+            border-color: #2ee7fb;
+          }
+          .task-top{
+            &:before{
+              border-color: #2ee7fb;
+            }
+          }
+        }
+        &.complete{
+          .task-top{
+            .status{
+              color: #5fe23f;
+            }
+          }
+          .task-content{
+            border-color: #5fe23f;
+          }
+          .task-top{
+            &:before{
+              border-color: #5fe23f;
+            }
+          }
+        }
+        &.cancelled{
+          .task-top{
+            .status{
+              color: #ea583d;
+            }
+          }
+          .task-content{
+            border-color: #ea583d;
+          }
+          .task-top{
+            &:before{
+              border-color: #ea583d;
+            }
+          }
+        }
+        &.exception{
+          .task-top{
+            .status{
+              color: #fd8b86;
+            }
+          }
+          .task-content{
+            border-color: #fd8b86;
+          }
+          .task-top{
+            &:before{
+              border-color: #fd8b86;
+            }
+          }
+        }
+        &.preparing{
+          .task-top{
+            .status{
+              color: #ff9608;
+            }
+          }
+          .task-content{
+            border-color: #ff9608;
+          }
+          .task-top{
+            &:before{
+              border-color: #ff9608;
+            }
+          }
+        }
+        &.confirmed{
+          .task-top{
+            .status{
+              color: #4cc791;
+            }
+          }
+          .task-content{
+            border-color: #4cc791;
+          }
+          .task-top{
+            &:before{
+              border-color: #4cc791;
+            }
+          }
+        }
+        &.readyforpickup{
+          .task-top{
+            .status{
+              color: #7b85d6;
+            }
+          }
+          .task-content{
+            border-color: #7b85d6;
+          }
+          .task-top{
+            &:before{
+              border-color: #7b85d6;
+            }
+          }
+        }
+        &.late{
+          .task-top{
+            .status{
+              color: #ff9608;
+            }
+          }
+          .task-content{
+            border-color: #ff9608;
+          }
+          .task-top{
+            &:before{
+              border-color: #ff9608;
+            }
+          }
+        }
+        &.noshow{
+          .task-top{
+            .status{
+              color: #ea583d;
+            }
+          }
+          .task-content{
+            border-color: #ea583d;
+          }
+          .task-top{
+            &:before{
+              border-color: #ea583d;
+            }
+          }
+        }
+        &.extra_time{
+          .task-top{
+            .status{
+              color: #29B6F6;
+            }
+          }
+          .task-content{
+            border-color: #29B6F6;
+          }
+          .task-top{
+            &:before{
+              border-color: #29B6F6;
+            }
+          }
+        }
+        &.recommended{
+          .task-top{
+            .status{
+              color: #24ab95;
+            }
+          }
+          .task-content{
+            border-color: #24ab95;
+          }
+          .task-top{
+            &:before{
+              border-color: #24ab95;
+            }
+          }
+        }
+        &.customer_signature{
+          .task-top{
+            .status{
+              color: #964646;
+            }
+          }
+          .task-content{
+            border-color: #964646;
+          }
+          .task-top{
+            &:before{
+              border-color: #964646;
+            }
+          }
+        }
+        &.arriving{
+          .task-top{
+            .status{
+              color: #44a7f1;
+            }
+          }
+          .task-content{
+            border-color: #44a7f1;
+          }
+          .task-top{
+            &:before{
+              border-color: #44a7f1;
+            }
+          }
+        }
+        &.rescheduled{
+          .task-top{
+            .status{
+              color: #2d2a2a;
+            }
+          }
+          .task-content{
+            border-color: #2d2a2a;
+          }
+          .task-top{
+            &:before{
+              border-color: #2d2a2a;
+            }
+          }
+        }
+        &.onhold{
+          .task-top{
+            .status{
+              color: #F57C00;
+            }
+          }
+          .task-content{
+            border-color: #F57C00;
+          }
+          .task-top{
+            &:before{
+              border-color: #F57C00;
+            }
+          }
+        }
+        &.movingtostorage{
+          .task-top{
+            .status{
+              color: #039BE5;
+            }
+          }
+          .task-content{
+            border-color: #039BE5;
+          }
+          .task-top{
+            &:before{
+              border-color: #039BE5;
+            }
+          }
+        }
+        &.instorage{
+          .task-top{
+            .status{
+              color: #81D4FA;
+            }
+          }
+          .task-content{
+            border-color: #81D4FA;
+          }
+          .task-top{
+            &:before{
+              border-color: #81D4FA;
+            }
+          }
+        }
+        &.outofstorage{
+          .task-top{
+            .status{
+              color: #039BE5;
+            }
+          }
+          .task-content{
+            border-color: #039BE5;
+          }
+          .task-top{
+            &:before{
+              border-color: #039BE5;
+            }
+          }
+        }
+        &.intransit{
+          .task-top{
+            .status{
+              color: #607D8B;
+            }
+          }
+          .task-content{
+            border-color: #607D8B;
+          }
+          .task-top{
+            &:before{
+              border-color: #607D8B;
+            }
+          }
+        }
+        &.pickingup{
+          .task-top{
+            .status{
+              color: #5E35B1;
+            }
+          }
+          .task-content{
+            border-color: #5E35B1;
+          }
+          .task-top{
+            &:before{
+              border-color: #5E35B1;
+            }
+          }
+        }
+        &.auto_start{
+          .task-top{
+            .status{
+              color: #77c7ef;
+            }
+          }
+          .task-content{
+            border-color: #77c7ef;
+          }
+          .task-top{
+            &:before{
+              border-color: #77c7ef;
+            }
+          }
+        }
+        &.auto_complete{
+          .task-top{
+            .status{
+              color: #55e87f;
+            }
+          }
+          .task-content{
+            border-color: #55e87f;
+          }
+          .task-top{
+            &:before{
+              border-color: #55e87f;
+            }
+          }
+        }
+        &.order{
+          .task-top{
+            .status{
+              color: #efbdaa;
+            }
+          }
+          .task-content{
+            border-color: #efbdaa;
+          }
+          .task-top{
+            &:before{
+              border-color: #efbdaa;
+            }
+          }
+        }
+        &.skip{
+          .task-top{
+            .status{
+              color: #db9797;
+            }
+          }
+          .task-content{
+            border-color: #db9797;
+          }
+          .task-top{
+            &:before{
+              border-color: #db9797;
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+//.tasksContainer {
+//  @include flexbox();
+//  @include flex-direction(row);
+//  @include flex-flow(row wrap);
+//  background: $bg-new;
+//  padding: 0px 5px;
+//  .task-bar{
+//    width: 100%;
+//    padding: 15px;
+//    @media screen and (max-width: 1400px){
+//      padding-right: 0px;
+//    }
+//    @media screen and (max-width: 992px){
+//      padding: 15px;
+//    }
+//    @include flexbox();
+//    @include align-items(center);
+//    @include justify-content(flex-end);
+//    p{
+//      color: #999;
+//      margin-bottom: 0;
+//    }
+//    button{
+//      text-transform: uppercase;
+//      font-size: 0.8em;
+//      font-weight: bold;
+//      padding: 12px 20px;
+//      margin: 0 10px 0 10px;
+//      @media screen and (max-width: 1400px){
+//        padding: 12px 15px;
+//        margin: 0 5px 0 5px;
+//      }
+//      @media screen and (max-width: 1199px){
+//        padding: 12px 20px;
+//        margin: 0 10px 0 10px;
+//      }
+//      @media screen and (max-width: 440px){
+//        padding: 12px 15px;
+//      }
+//      @media screen and (max-width: 360px){
+//        padding: 12px 5px;
+//        margin: 0 5px 0 0;
+//      }
+//      .icon{
+//        padding: 0 4px 0 4px;
+//        color:$bg-primary;
+//        font-size: 4em;
+//        border: 1px solid $bg-primary;
+//        margin-bottom: 2px;
+//        @include opacity(0.8);
+//        @include border-radius(10px);
+//      }
+//    }
+//
+//    .subTaskBar {
+//      display: flex;
+//      align-items: center;
+//    }
+//
+//
+//
+//  }
+//  .items-container{
+//    max-height: calc(100vh - 272px);
+//    max-height: -webkit-calc(100vh - 272px);
+//    width: 100%;
+//    overflow-y:auto;
+//    background-color: $bg-new;
+//    //not for mobile
+//    @media (min-width: 768px) {
+//      min-height: calc(100vh - 272px);
+//    }
+//    .no-entity{
+//      text-align: center;
+//      padding: 20px;
+//      font-size: 1.2em;
+//    }
+//    > div{
+//      &:last-child{
+//        margin-bottom: 20px;
+//      }
+//      .task-item {
+//        width: 100%;
+//        background-color: $bg-primary;
+//        color: $theme-darker-grey;
+//        padding: 1px 10px;
+//        cursor: pointer;
+//        cursor: hand;
+//        min-height: 120px;
+//        margin-bottom: 4px;
+//        position: relative;
+//        @include box-shadow(3px, 3px, 5px, #ccc);
+//        &:hover {
+//          background-color: $theme-grey;
+//        }
+//        h4{
+//          margin-top: 0;
+//          color: $primary;
+//          @include transition(color 1s ease);
+//          &:hover{
+//            color:blue;
+//          }
+//        }
+//        .task-top{
+//          position: relative;
+//          padding: 6px 0 0 35px;
+//          @include flexbox();
+//          @include align-items(center);
+//          @include justify-content(space-between);
+//          .status{
+//            text-transform: uppercase;
+//            font-size: 0.8em;
+//            font-weight: bold;
+//          }
+//          .time{
+//            font-size: 0.9em;
+//            > span{
+//              .icon{
+//                font-size: 1em;
+//                color:$primary;
+//                padding: 0 5px 4px 0;
+//              }
+//            }
+//          }
+//          &:before{
+//            content: ' ';
+//            position: absolute;
+//            border: 4px solid $theme-middle-grey;
+//            height: 20px;
+//            width: 20px;
+//            left: 0;
+//            top: 5px;
+//            border-radius: 15px;
+//          }
+//        }
+//        .task-content{
+//          border-left: 5px solid $theme-middle-grey;
+//          padding-left: 22px;
+//          margin-left: 8px;
+//          .details-data {
+//            overflow: hidden;
+//            @include transition(height 1s ease-out 0.5s);
+//            white-space: pre-wrap;
+//            >p{
+//              height: auto;
+//            }
+//          }
+//          .member-icons{
+//            float: right;
+//            text-align: right;
+//            max-width: 50%;
+//            .entity-list {
+//                margin-bottom: 0px;
+//                li{
+//                  display: inline-block;
+//                  cursor: pointer;
+//                  position: relative;
+//                  min-width: 95px;
+//                  .member-icon{
+//                    display: block;
+//                    width: 50px;
+//                    height: 50px;
+//                    overflow: hidden;
+//                    margin: 0 auto;
+//                    margin-bottom: 10px;
+//                    border: 3px solid $theme-middle-grey;
+//                    @include border-radius(35px);
+//                    @media (max-width: 640px) {
+//                      display: none;
+//                    }
+//                    img{
+//                      height: 100%;
+//                      width: 100%;
+//                      object-fit: cover;
+//                      object-position: center;
+//                    }
+//                    &.empty{
+//                      padding: 10px 0;
+//                      font-size: 1.4em;
+//                      text-align: center;
+//                      font-weight: bold;
+//                    }
+//                  }
+//                  .tooltip{
+//                    border: 1px solid $theme-middle-grey;
+//                    border-radius: 5px;
+//                    padding: 1px 5px;
+//                    background-color: $bg-primary;
+//                    display: block;
+//                    font-size: 0.8em;
+//                    @include transition(opacity 1s ease-out 0.5s);
+//                    white-space: nowrap;
+//                    max-width: 95px;
+//                    max-height: 40px;
+//                    z-index: 5;
+//                    position: relative;
+//                    margin-bottom: 6px;
+//                    span{
+//                      text-align: center;
+//                      display: block;
+//                      width: 100%;
+//                      overflow: hidden;
+//                      text-overflow: ellipsis;
+//                    }
+//                    &:before{
+//                      @media (max-width: 640px) {
+//                        display: none;
+//                      }
+//                      content: ' ';
+//                      width: 10px;
+//                      height: 10px;
+//                      border-top: 1px solid $theme-middle-grey;
+//                      border-left: 1px solid $theme-middle-grey;
+//                      @include transform(rotate(45deg));
+//                      position: absolute;
+//                      background: $bg-primary;
+//                      top: -6px;
+//                      left: 40%;
+//                      z-index: 6;
+//                    }
+//                  }
+//                  &:hover{
+//                    .member-icon{
+//                      border: 3px solid $theme-dark-grey;
+//                    }
+//                    .tooltip{
+//                      border-color:$theme-dark-grey;
+//                      color:$theme-dark-grey;
+//                      &:before{
+//                        border-color:$theme-dark-grey;
+//                      }
+//                    }
+//                  }
+//                }
+//              }
+//            }
+//            .task-bottom{
+//              p{
+//                font-size: 0.9em;
+//                .icon{
+//                  font-size: 1.2em;
+//                  padding: 0 8px 4px 0;
+//                }
+//              }
+//              &:after{
+//                content: ' ';
+//                clear: both;
+//                display: block;
+//              }
+//            }
+//        }
+//        &.notstarted{
+//          .task-top{
+//            .status{
+//              color: #4E4646;
+//            }
+//          }
+//          .task-content{
+//            border-color: #4E4646;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #4E4646;
+//            }
+//          }
+//        }
+//        &.enroute{
+//          .task-top{
+//            .status{
+//              color: #6aa3d7;
+//            }
+//          }
+//          .task-content{
+//            border-color: #6aa3d7;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #6aa3d7;
+//            }
+//          }
+//        }
+//        &.stared{
+//          .task-top{
+//            .status{
+//              color: #2ee7fb;
+//            }
+//          }
+//          .task-content{
+//            border-color: #2ee7fb;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #2ee7fb;
+//            }
+//          }
+//        }
+//        &.complete{
+//          .task-top{
+//            .status{
+//              color: #5fe23f;
+//            }
+//          }
+//          .task-content{
+//            border-color: #5fe23f;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #5fe23f;
+//            }
+//          }
+//        }
+//        &.cancelled{
+//          .task-top{
+//            .status{
+//              color: #ea583d;
+//            }
+//          }
+//          .task-content{
+//            border-color: #ea583d;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #ea583d;
+//            }
+//          }
+//        }
+//        &.exception{
+//          .task-top{
+//            .status{
+//              color: #fd8b86;
+//            }
+//          }
+//          .task-content{
+//            border-color: #fd8b86;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #fd8b86;
+//            }
+//          }
+//        }
+//        &.preparing{
+//          .task-top{
+//            .status{
+//              color: #ff9608;
+//            }
+//          }
+//          .task-content{
+//            border-color: #ff9608;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #ff9608;
+//            }
+//          }
+//        }
+//        &.confirmed{
+//          .task-top{
+//            .status{
+//              color: #4cc791;
+//            }
+//          }
+//          .task-content{
+//            border-color: #4cc791;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #4cc791;
+//            }
+//          }
+//        }
+//        &.readyforpickup{
+//          .task-top{
+//            .status{
+//              color: #7b85d6;
+//            }
+//          }
+//          .task-content{
+//            border-color: #7b85d6;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #7b85d6;
+//            }
+//          }
+//        }
+//        &.late{
+//          .task-top{
+//            .status{
+//              color: #ff9608;
+//            }
+//          }
+//          .task-content{
+//            border-color: #ff9608;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #ff9608;
+//            }
+//          }
+//        }
+//        &.noshow{
+//          .task-top{
+//            .status{
+//              color: #ea583d;
+//            }
+//          }
+//          .task-content{
+//            border-color: #ea583d;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #ea583d;
+//            }
+//          }
+//        }
+//        &.extra_time{
+//          .task-top{
+//            .status{
+//              color: #29B6F6;
+//            }
+//          }
+//          .task-content{
+//            border-color: #29B6F6;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #29B6F6;
+//            }
+//          }
+//        }
+//        &.recommended{
+//          .task-top{
+//            .status{
+//              color: #24ab95;
+//            }
+//          }
+//          .task-content{
+//            border-color: #24ab95;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #24ab95;
+//            }
+//          }
+//        }
+//        &.customer_signature{
+//          .task-top{
+//            .status{
+//              color: #964646;
+//            }
+//          }
+//          .task-content{
+//            border-color: #964646;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #964646;
+//            }
+//          }
+//        }
+//        &.arriving{
+//          .task-top{
+//            .status{
+//              color: #44a7f1;
+//            }
+//          }
+//          .task-content{
+//            border-color: #44a7f1;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #44a7f1;
+//            }
+//          }
+//        }
+//        &.rescheduled{
+//          .task-top{
+//            .status{
+//              color: #2d2a2a;
+//            }
+//          }
+//          .task-content{
+//            border-color: #2d2a2a;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #2d2a2a;
+//            }
+//          }
+//        }
+//        &.onhold{
+//          .task-top{
+//            .status{
+//              color: #F57C00;
+//            }
+//          }
+//          .task-content{
+//            border-color: #F57C00;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #F57C00;
+//            }
+//          }
+//        }
+//        &.movingtostorage{
+//          .task-top{
+//            .status{
+//              color: #039BE5;
+//            }
+//          }
+//          .task-content{
+//            border-color: #039BE5;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #039BE5;
+//            }
+//          }
+//        }
+//        &.instorage{
+//          .task-top{
+//            .status{
+//              color: #81D4FA;
+//            }
+//          }
+//          .task-content{
+//            border-color: #81D4FA;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #81D4FA;
+//            }
+//          }
+//        }
+//        &.outofstorage{
+//          .task-top{
+//            .status{
+//              color: #039BE5;
+//            }
+//          }
+//          .task-content{
+//            border-color: #039BE5;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #039BE5;
+//            }
+//          }
+//        }
+//        &.intransit{
+//          .task-top{
+//            .status{
+//              color: #607D8B;
+//            }
+//          }
+//          .task-content{
+//            border-color: #607D8B;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #607D8B;
+//            }
+//          }
+//        }
+//        &.pickingup{
+//          .task-top{
+//            .status{
+//              color: #5E35B1;
+//            }
+//          }
+//          .task-content{
+//            border-color: #5E35B1;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #5E35B1;
+//            }
+//          }
+//        }
+//        &.auto_start{
+//          .task-top{
+//            .status{
+//              color: #77c7ef;
+//            }
+//          }
+//          .task-content{
+//            border-color: #77c7ef;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #77c7ef;
+//            }
+//          }
+//        }
+//        &.auto_complete{
+//          .task-top{
+//            .status{
+//              color: #55e87f;
+//            }
+//          }
+//          .task-content{
+//            border-color: #55e87f;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #55e87f;
+//            }
+//          }
+//        }
+//        &.order{
+//          .task-top{
+//            .status{
+//              color: #efbdaa;
+//            }
+//          }
+//          .task-content{
+//            border-color: #efbdaa;
+//          }
+//          .task-top{
+//            &:before{
+//              border-color: #efbdaa;
+//            }
+//          }
+//        }
+//
+//      }
+//    }
+//  }
+//}
+
+.mapContainer{
+  padding: 0;
+  background: $bg-new;
+}
+@media (min-width: 992px) {
+  .tasksContainer {
+    min-height: calc(100vh - 200px);
+    min-height: -webkit-calc(100vh - 200px);
+  }
+}
+
+@media (max-width: 992px) {
+  .tasksContainer{
+    max-height: none;
+    .items-container{
+      max-height: none;
+      overflow-y: visible;
+    }
+  }
+}
+
+.statusBadge {
+  padding: 7px;
+  color: $bg-primary;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.detailsGrid {
+  padding: 0px 10px;
+  margin: 0px;
+}
+
+
+.clear-all {
+    max-width: 60px;
+    @media (min-width: 768px) {
+        text-align: right;
+    }
+}
+
+.blockingPlaceHolder {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    max-height: calc(100vh - 272px);
+    background-color: $bg-new;
+    @media (min-width: 992px) {
+      min-height: calc(100vh - 272px);
+    }
+
+    @media (max-width: 992px) {
+      min-height: 200px;
+    }
+}
+
+.loadingSpinner {
+    width: 100%;
+    text-align: center;
+    display: inline;
+}
+
+.loadingSpinnerContainer {
+  display: block;
+  height: 20px;
+  width: 100%;
+}
+
+.newIcon {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.dashboardBtn {
+  padding: 12px 20px;
+  .icon {
+    width: 18px;
+    height: 18px;
+    margin-bottom: 0 !important;
+  }
+}
+
+.paginationContainer {
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  p {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+  ul {
+    list-style: none;
+    margin-left: 0;
+    display: inline-block;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 0;
+    li {
+      float: left;
+      margin-bottom: 0;
+      @media screen and (max-width: 441px) {
+        margin: 0 2px 0 2px;
+      }
+      @media screen and (max-width: 320px) {
+        margin: 0;
+      }
+      button {
+        padding: 6px 7px !important;
+        margin: 0 2px 0 0 !important;
+        background: $primary;
+        color: $theme-light-grey;
+        outline: 0;
+        font-weight: 700;
+        border: 2px solid $primary;
+        font-size: 18px !important;
+        border-radius: 2px;
+        height: 32px;
+        line-height: 20px;
+      }
+      .disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+//.paginationContainer {
+//  display: inline-flex;
+//  align-items: center;
+//  width: auto;
+//  position: relative;
+//  bottom: 0;
+//  text-align: center;
+//  p {
+//    display: inline-block;
+//    margin-bottom: 0;
+//    margin-right: 5px;
+//  }
+//  ul {
+//    list-style: none;
+//    margin-left: 0;
+//    display: inline-block;
+//    text-align: center;
+//    padding-left: 0;
+//    margin-bottom: 0;
+//    li {
+//      float: left;
+//      margin-bottom: 0;
+//      @media screen and (max-width: 441px) {
+//        margin: 0 2px 0 2px;
+//      }
+//      @media screen and (max-width: 320px) {
+//        margin: 0;
+//      }
+//      button {
+//        padding: 6px 7px !important;
+//        margin: 0 2px 0 0 !important;
+//        background: $theme-lighter-grey;
+//        color: $theme-light-grey;
+//        outline: 0;
+//        font-weight: 700;
+//        border: 2px solid $theme-lighter-grey;
+//        font-size: 18px !important;
+//        border-radius: 2px;
+//        height: 32px;
+//        line-height: 20px;
+//      }
+//      .disabled {
+//        opacity: 0.5;
+//        cursor: not-allowed;
+//      }
+//    }
+//  }
+//}
+
+button.pendingAction {
+  pointer-events: none;
+  cursor: wait;
+}
+
+.routeContainer {
+  background-color: $white;
+  min-height: 120px;
+  margin: 0 0 4px 0;
+  color: $dark-black;
+  box-shadow: 3px 3px 5px #ccc;
+  &:hover {
+    background-color: $theme-grey;
+    cursor: pointer;
+  }
+}
+
+.routeIcon {
+  font-size: 2em;
+  margin-top: 5px;
+}
+
+.routeHeading {
+  font-weight: bold;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.iconImg {
+  max-width: 35px;
+  display: block;
+  margin: 0 auto;
+}
+
+.routeTime {
+  padding: 10px;
+  font-size: 0.9em;
+  .icon {
+    color: $primary;
+    margin-right: 5px;
+  }
+  p {
+    float: right;
+  }
+}
+
+.member-icons{
+  float: right;
+  text-align: right;
+  max-width: 100%;
+  .entity-list {
+    margin-bottom: 0px;
+    li{
+      display: inline-block;
+      cursor: pointer;
+      position: relative;
+      min-width: 95px;
+      .member-icon{
+        display: block;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        border: 3px solid $theme-middle-grey;
+        @include border-radius(35px);
+        @media (max-width: 640px) {
+          display: none;
+        }
+        img{
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        &.empty{
+          padding: 10px 0;
+          font-size: 1.4em;
+          text-align: center;
+          font-weight: bold;
+        }
+      }
+      .tooltip{
+        border: 1px solid $theme-middle-grey;
+        border-radius: 5px;
+        padding: 1px 5px;
+        background-color: $bg-primary;
+        display: block;
+        font-size: 0.8em;
+        @include transition(opacity 1s ease-out 0.5s);
+        white-space: nowrap;
+        max-width: 95px;
+        max-height: 40px;
+        z-index: 5;
+        position: relative;
+        margin-bottom: 6px;
+        span{
+          text-align: center;
+          display: block;
+          width: 100%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &:before{
+          @media (max-width: 640px) {
+            display: none;
+          }
+          content: ' ';
+          width: 10px;
+          height: 10px;
+          border-top: 1px solid $theme-middle-grey;
+          border-left: 1px solid $theme-middle-grey;
+          @include transform(rotate(45deg));
+          position: absolute;
+          background: $bg-primary;
+          top: -6px;
+          left: 40%;
+          z-index: 6;
+        }
+      }
+      &:hover{
+        .member-icon{
+          border: 3px solid $theme-dark-grey;
+        }
+        .tooltip{
+          border-color:$theme-dark-grey;
+          color:$theme-dark-grey;
+          &:before{
+            border-color:$theme-dark-grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.routeStatuses {
+  font-size: 14px;
+  display: flex;
+  span {
+    border: 2px solid #000000;
+    border-radius: 50%;
+    min-width: 15px;
+    height: 15px;
+    margin: 3px 5px 0 0;
+  }
+  p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+  .NOTSTARTED{
+    border-color: #4E4646;
+  }
+  .ENROUTE{
+    border-color: #6aa3d7;
+  }
+  .STARTED{
+    border-color: #2ee7fb;
+  }
+  .COMPLETE{
+    border-color: #5fe23f;
+  }
+  .AUTO_START{
+    border-color: #2ee7fb;
+  }
+  .AUTO_COMPLETE{
+    border-color: #5fe23f;
+  }
+  .CANCELLED{
+    border-color: #ea583d;
+  }
+  .EXCEPTION{
+     border-color: #fd8b86;
+   }
+  .CUSTOMER_EXCEPTION{
+    border-color: #fd8b86;
+  }
+  .PREPARING{
+    border-color: #ff9608;
+  }
+  .CONFIRMED{
+    border-color: #4cc791;
+  }
+  .READYFORPICKUP{
+    border-color: #7b85d6;
+  }
+  .LATE{
+    border-color: #ff9608;
+  }
+  .NOSHOW {
+    border-color: #ea583d;
+  }
+  .EXTRA_TIME{
+    border-color: #29B6F6;
+  }
+  .RECOMMENDED{
+    border-color: #24ab95;
+  }
+  .CUSTOMER_SIGNATURE{
+    border-color: #964646;
+  }
+  .ARRIVING{
+    border-color: #44a7f1;
+  }
+  .RESCHEDULED{
+    border-color: #2d2a2a;
+  }
+  .ONHOLD{
+    border-color: #F57C00;
+  }
+  .MOVING_TO_STORAGE{
+    border-color: #039BE5;
+  }
+  .IN_STORAGE{
+    border-color: #81D4FA;
+  }
+  .OUT_OF_STORAGE{
+    border-color: #039BE5;
+  }
+  .IN_TRANSIT{
+    border-color: #607D8B;
+  }
+  .PICKING_UP{
+    border-color: #5E35B1;
+  }
+}
+
+.groupTasks {
+  padding-left: 60px;
+  @media screen and (max-width: 768px) {
+    padding-left: 40px;
+  }
+}
+
+.routesSavingSpinner {
+  > div:first-child {
+    margin-top: 20px;
+    z-index: 99;
+    position: absolute;
+    left: 50%;
+  }
+}
+
+.nonRouteTasks {
+  min-width: 150px;
+  max-width: 250px;
+  margin-top: 20px;
+  z-index: 10;
+  position: absolute;
+  left: 40%;
+  background: #eeeeee;
+  font-size: 16px;
+  font-weight: bold;
+  height: 30px;
+  text-align: center;
+  padding: 4px 10px 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+.dashboardSwitch {
+  display: flex;
+  margin-top: 23px;
+  align-items: center;
+  p {
+    margin: 0 5px 0 5px;
+  }
+  >div {
+    margin-bottom: 0 !important;
+  }
+}
+
+.hoverTask {
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  &:hover {
+    margin-left: -10px;
+  }
+}
+
+.makerHoverTask {
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease;
+  @include box-shadow(3px, 3px, 5px, #ccc);
+  margin-left: -10px;
+  background-color: $theme-grey !important;
+}
+
+.buttonsContainer {
+  margin: 0;
+  width: 100%;
+  > div:first-child {
+    @media screen and (max-width: 1400px) {
+      padding-left: 0;
+    }
+    @media screen and (max-width: 1199px) {
+      padding-left: 10px;
+    }
+  }
+  > div:nth-child(2) {
+    @media screen and (max-width: 1199px) {
+      padding-right: 10px;
+    }
+    @media screen and (max-width: 440px) {
+      padding: 0;
+    }
+  }
+}
+
+.statusesSummary {
+  margin-bottom: 10px;
+  > div:nth-child(1) {
+   @media screen and (max-width: 440px) {
+     width: 100%;
+   }
+  }
+  > div:nth-child(2) {
+    @media screen and (max-width: 440px) {
+      width: 100%;
+    }
+  }
+}
+
+.paginationLeft {
+  display: none;
+  @media screen and (max-width: 540px){
+    display: block;
+  }
+}
+
+.paginationRight {
+  display: block;
+  @media screen and (max-width: 540px){
+    display: none;
+  }
+}
+
+.datePicker {
+  max-width: 400px;
+}
+
+.assignTeamEquipment {
+  height: 20px;
+  width: 50px;
+}
+.toastContainer {
+  background: none !important;
+  padding: 0 !important;
+}
+
+.toast {
+  display: none !important;
+}

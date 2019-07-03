@@ -1,0 +1,93 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Once you signup and login to your Arrivy account you will notice two auth keys on your API page. To authenticate with our APIs you will need to set these two custom headers:- `X-Auth-Key` and `X-Auth-Token` in each API call.",
+    "version" : "v1",
+    "title" : "Authentication API"
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api/",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/users/update-auth-keys" : {
+      "get" : {
+        "tags" : [ "Authentication API" ],
+        "summary" : "Update Auth Tokens.",
+        "description" : "Get new auth keys.",
+        "operationId" : "update_auth_tokens",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "auth_key" : {
+                  "type" : "string",
+                  "example" : "b532cd42-9650"
+                },
+                "auth_token" : {
+                  "type" : "string",
+                  "example" : "9M7vYsodaayx15a1LjXf9C"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "description" : {
+                  "type" : "string",
+                  "example" : "Failed to create auth credentials"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "default" : {
+            "description" : "Unexpected Error",
+            "schema" : {
+              "type" : "object",
+              "properties" : { }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

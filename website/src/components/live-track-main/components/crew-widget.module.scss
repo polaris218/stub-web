@@ -1,0 +1,64 @@
+@import '../../../../styles/colors.scss';
+
+.crew-widget {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+
+    @media (min-width: 1580px) {
+      margin-top: -30px;
+      justify-content: flex-end;
+      max-width: 68%;
+      margin-left: auto;
+      margin-right: 0px;
+
+      > div {
+        margin: 0px 20px;
+      }
+    }
+}
+
+.crew-widget-details {
+  max-width: 160px;
+
+  @media (max-width: 680px) {
+    max-width: 140px;
+  }
+}
+
+.account-image {
+  img {
+    position: relative;
+    height: 90px;
+    width: 90px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    @media (max-width: 680px) {
+      height: 90px;
+      width: 90px;
+    }
+  }
+}
+
+.no-crew-message {
+  color: $primary;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.crew-widget-title {
+  margin-bottom: 10px;
+  color: $primary;
+}

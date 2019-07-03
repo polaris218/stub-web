@@ -1,0 +1,228 @@
+@import '../../../styles/colors.scss';
+
+.timezoneSelectorContainer {
+  position: relative;
+  padding-top: 10px;
+  .timezonePicker {
+    outline: none;
+    background: none;
+    color: $dashboard-primary;
+    border: 1px solid $dashboard-primary;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 5px 10px;
+    margin-left: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 100%;
+    -webkit-transition: all 0.15s ease-in-out;
+    -moz-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    &:hover, &:active, &:focus {
+      background: $dashboard-primary;
+      border-color: $dashboard-primary;
+      color: $white;
+    }
+    &[disabled] {
+      cursor: not-allowed;
+      &:hover {
+        background: none !important;
+        color: $dashboard-primary;
+      }
+    }
+    @media screen and (max-width: 1024px) {
+      margin-bottom: 20px;
+    }
+  }
+  .timezonePickerContainer {
+    flex-direction: column;
+    background: #fff;
+    border: 1px transparent;
+    min-width: 480px;
+    height: 300px;
+    z-index: 9999;
+    display: none;
+    position: absolute;
+    opacity: 0;
+    top: 70px;
+    left: -50px;
+    -webkit-box-shadow: 0px 0px 37px -10px rgba(69,65,69,1);
+    -moz-box-shadow: 0px 0px 37px -10px rgba(69,65,69,1);
+    box-shadow: 0px 0px 37px -10px rgba(69,65,69,1);
+    padding: 20px;
+    @media screen and (max-width: 1024px) {
+      left: 0;
+    }
+    @media screen and (max-width: 480px) {
+      min-width: 320px;
+      width: 100%;
+      left: -18px;
+      height: auto;
+    }
+    .arrowUp {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid #fff;
+      position: absolute;
+      top: -10px;
+      left: 90px;
+      z-index: 100;
+      -webkit-box-shadow: 0px 0px 37px -10px rgba(69,65,69,1);
+      -moz-box-shadow: 0px 0px 37px -10px rgba(69,65,69,1);
+      box-shadow: 0px 0px 37px -10px rgba(69,65,69,1);
+    }
+
+    .pickerHeader {
+      span {
+        font-size: 14px;
+        color: $theme-darker-grey;
+        font-weight: bold;
+      }
+    }
+    .differentTimezonesOptionsContainer {
+      &>div {
+        &>label {
+          font-weight: bold;
+          font-size: 16px;
+        }
+      }
+    }
+    .startDateTimezonePickerDropDownContainer {
+      .timezoneControlComponent {
+        padding: 8px;
+        border: 1px solid $theme-lighter-grey;
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+    .endDateTimezonePickerDropDownContainer {
+      .timezoneControlComponent {
+        padding: 8px;
+        border: 1px solid $theme-lighter-grey;
+        margin-top: 10px;
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .startDateTimezonePickerDropDownContainer, .endDateTimezonePickerDropDownContainer {
+      .timezoneControlComponent {
+        &.controlIsDisabled {
+          background: $theme-grey;
+          cursor: not-allowed !important;
+          &>div {
+            &>div {
+              &>div {
+                font-weight: normal;
+              }
+            }
+          }
+        }
+        &>div {
+          border: 0;
+          background: none;
+          padding: 0;
+          &>div {
+            padding: 0 !important;
+            &>div {
+              font-weight: bold;
+              font-size: 16px;
+              color: #555;
+            }
+          }
+        }
+      }
+    }
+    .timezonePickerActionsContainer {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 15px 0 0 0;
+      button {
+        margin-right: 10px;
+        background: none;
+        outline: none;
+        border-radius: 3px;
+        -ms-transition: all 0.15s ease-in-out;
+        -moz-transition: all 0.15s ease-in-out;
+        -o-transition: all 0.15s ease-in-out;
+        -webkit-transition: all 0.15s ease-in-out;
+        transition: all 0.15s ease-in-out;
+      }
+      button:last-child {
+        margin-right: 0;
+      }
+      .removeTimezonesBtn {
+        border: 2px solid transparent;
+        color: $primary;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 10px;
+        &:hover {
+          background: $primary;
+          color: $white;
+        }
+      }
+      .cancelTimezonesBtn {
+        border: 2px solid transparent;
+        color: $primary;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 10px;
+        &:hover {
+          background: $primary;
+          color: $white;
+        }
+      }
+      .selectTimezonesBtn {
+        border: 2px solid $primary-green;
+        color: $white;
+        background: $primary-green;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 5px 10px;
+        min-width: 60px;
+        &:hover {
+          background: lighten($primary-green, 20%);
+        }
+      }
+    }
+  }
+  .showTimezonePicker {
+    display: flex;
+    opacity: 0;
+    margin-top: 50px;
+    animation: slideUp 0.2s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    margin-top: 50px;
+    transform: scale(.5, .5);
+  }
+  to {
+    opacity: 1;
+    margin-top: 0;
+    transform: scale(1, 1);
+  }
+}
+
+.closePicker {
+  float: right;
+  font-size: 20px;
+  margin-top: -10px;
+  border: none;
+  background: transparent;
+  opacity: 0.5;
+  &:hover {
+    opacity: 0.8;
+  }
+}

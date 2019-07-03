@@ -1,0 +1,432 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Location Reports API",
+    "description" : "Report is a single report of location for an entity with timestamp and any metadata you would like to store with it. There is 512 KB limit on metadata that you can store with a location report."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/entities/report" : {
+      "post" : {
+        "tags" : [ "Location Report APIs" ],
+        "summary" : "Send location reports for one or more entities.",
+        "description" : "This endpoint takes location report of one or multiple entities in JSON format. It expects an array of reports passed in the body of the request. You can use the JSON format to send the reports.",
+        "operationId" : "send_location_reports",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "description" : "An array of JSON objects where each object will contain keys like `entity` (id of an entity), `external_id` (external_id of an entity), `lat`, `lng`, `time` (ISO8601 timestamp), `city`, `street`, `country`, `meta` (meta payload of key value pairs of anything you would like to store with this location. This needs to be a JSON String.). Please note that `lat`, `lng`, `time` and `entity` or `external_id` are the required fields.",
+          "name" : "payload",
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "type" : "object",
+              "properties" : {
+                "entity" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "lat" : {
+                  "type" : "number",
+                  "example" : 22.001
+                },
+                "lng" : {
+                  "type" : "number",
+                  "example" : 42.001
+                },
+                "time" : {
+                  "type" : "string",
+                  "example" : "2016-11-20T01:34:04.848640"
+                },
+                "city" : {
+                  "type" : "string",
+                  "example" : "Detroit"
+                },
+                "street" : {
+                  "type" : "string",
+                  "example" : "Street Name,1"
+                },
+                "country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                },
+                "meta" : {
+                  "type" : "object",
+                  "example" : null
+                }
+              }
+            }
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Reports are saved"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Latitude or Longitude is not a valid geo point"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/entities/{entity_id}/readings" : {
+      "get" : {
+        "tags" : [ "Location Report APIs" ],
+        "summary" : "Get reports of a specific entity.",
+        "description" : "Get location reports of a specific entity.",
+        "operationId" : "get_entity_reports",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "entity_id",
+          "in" : "path",
+          "description" : "ID of the entity.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional page number to fetch.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional entities per page.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Optional param to get entities using external_id. The entity matching this external_id will be returned.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "time",
+          "in" : "query",
+          "description" : "All reports that came after this timestamp will be returned.",
+          "required" : false,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "entity" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "lat" : {
+                    "type" : "number",
+                    "example" : 22.001
+                  },
+                  "lng" : {
+                    "type" : "number",
+                    "example" : 42.001
+                  },
+                  "time" : {
+                    "type" : "string",
+                    "example" : "2016-11-20T01:34:04.848640"
+                  },
+                  "city" : {
+                    "type" : "string",
+                    "example" : "Detroit"
+                  },
+                  "street" : {
+                    "type" : "string",
+                    "example" : "Street Name,1"
+                  },
+                  "country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "meta" : {
+                    "type" : "object",
+                    "example" : null
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid entity_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/entities" : {
+      "get" : {
+        "tags" : [ "Location Report APIs" ],
+        "summary" : "Get last report for all entities.",
+        "description" : "This API is also mentioned earlier in the Entities section. We intentially didn't discuss that as part of this API we also return last location report as `lastreading` for all entities.",
+        "operationId" : "get_all_entities",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional page number to fetch.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional entities per page.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Optional param to get entities using external_id. The entity matching this external_id will be returned.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "email",
+          "in" : "query",
+          "description" : "Optional param to get entities using email. The entity matching this email will be returned.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get entities of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Night-Shift Driver"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "email" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Joe loves his work"
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  },
+                  "lastreading" : {
+                    "type" : "object",
+                    "properties" : {
+                      "entity" : {
+                        "type" : "integer",
+                        "example" : 5348024557502464
+                      },
+                      "lat" : {
+                        "type" : "number",
+                        "example" : 22.001
+                      },
+                      "lng" : {
+                        "type" : "number",
+                        "example" : 42.001
+                      },
+                      "time" : {
+                        "type" : "string",
+                        "example" : "2016-11-20T01:34:04.848640"
+                      },
+                      "city" : {
+                        "type" : "string",
+                        "example" : "Detroit"
+                      },
+                      "street" : {
+                        "type" : "string",
+                        "example" : "Street Name,1"
+                      },
+                      "country" : {
+                        "type" : "string",
+                        "example" : "USA"
+                      },
+                      "meta" : {
+                        "type" : "object",
+                        "example" : null
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

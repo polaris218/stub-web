@@ -1,0 +1,122 @@
+@import '../../../../../styles/colors.scss';
+@import url('https://fonts.googleapis.com/css?family=Ubuntu:400,500');
+
+.confirm-widget-modal {
+  padding: 20px 20px;
+}
+
+.confirm-widget-confirmation-section {
+  background: $confirmation-light-bg;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  width: 100%;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  @media screen and (max-width: 995px) {
+    height: 200px;
+  }
+}
+
+.confirm-widget-confirmation-section-container {
+  padding-top: 17px;
+  padding-bottom: 18px;
+  @media screen and (max-width: 995px) {
+    text-align: center;
+  }
+}
+
+.confirm-widget-confirmation-section button {
+  margin-right: 20px;
+}
+
+
+.confirm-button {
+  margin-top: 10px;
+  padding: 5px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.decline-button {
+  font-size: 16px;
+  margin-top: 10px;
+  color: $white;
+  border: 1px solid $theme-red;
+  padding: 5px 35px;
+  background-color: $theme-red;
+  margin-right: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.header-text {
+  font-size: 18px;
+  @media screen and (max-width: 995px) {
+    line-height: 26px;
+    letter-spacing: 1px;
+  }
+}
+
+.customMessage {
+  display: block;
+  margin-top: 10px;
+}
+
+.loadingSpinnerContainer {
+  height: 44px;
+  div {
+    text-align: left;
+    line-height: 44px;
+  }
+}
+
+.declineResonModal {
+  & * {
+    font-family: 'Ubuntu', sans-serif !important;
+  }
+  & > div {
+    margin: 0 auto;
+    width: auto;
+    & > div {
+      margin: 0 auto !important;
+      border-radius: 0;
+    }
+  }
+}
+
+.addNoteModalHeader {
+  -webkit-box-shadow: 8px 3px 37px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 8px 3px 37px rgba(0, 0, 0, 0.2);
+  box-shadow: 8px 3px 37px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  .addNoteModalHeading {
+    font-size: 30px;
+    color: $new-modal-heading;
+  }
+}
+
+.addNoteModalFooter {
+  background: $light-bg;
+  text-align: center;
+  width: 100%;
+  padding: 20px 0 20px 0;
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  margin-top: 20px;
+  border-top-color: $light-bg;
+}
+
+.declineResonField {
+  font-size: 18px;
+}
+
+.confirmationAlerts {
+  border-radius: 2px;
+  margin-bottom: 0;
+  border: 0;
+  background: none;
+}

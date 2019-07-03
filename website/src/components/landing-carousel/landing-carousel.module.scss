@@ -1,0 +1,157 @@
+@import '../../../styles/colors.scss';
+
+.carousel {
+    background-color: $landing-carousel-bg;
+    padding: 0;
+    position: relative;
+    opacity: 0.9;
+    filter: alpha(opacity=90); /* For IE8 and earlier */
+}
+
+.carousel-container {
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.carousel-item {
+    height: 60vh;
+    //min-height: 830px;
+    background-attachment: scroll;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.carousel-item-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    /*
+    background-color: rgba(0, 0, 0, 0.34);
+    background: -moz-linear-gradient(top, rgba(30,40,66,1) 0%, rgba(0,0,0,0.76) 50%, rgba(212,212,212,0.46) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(30,40,66,1)), color-stop(50%, rgba(0,0,0,0.76)), color-stop(100%, rgba(212,212,212,0.46)));
+    background: -webkit-linear-gradient(top, rgba(30,40,66,1) 0%, rgba(0,0,0,0.76) 50%, rgba(212,212,212,0.46) 100%);
+    background: -o-linear-gradient(top, rgba(30,40,66,1) 0%, rgba(0,0,0,0.76) 50%, rgba(212,212,212,0.46) 100%);
+    background: -ms-linear-gradient(top, rgba(30,40,66,1) 0%, rgba(0,0,0,0.76) 50%, rgba(212,212,212,0.46) 100%);
+    background: linear-gradient(to bottom, rgba(30,40,66,1) 0%, rgba(0,0,0,0.76) 50%, rgba(212,212,212,0.46) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e2842', endColorstr='#d4d4d4', GradientType=0 );
+    */
+}
+
+.carousel-item-center {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.carousel-item-hero {
+    color: $landing-carousel-hero;
+    position: relative;
+}
+
+.carousel-item-hero-text {
+    color: $theme-color-text ;
+    font-size: 24px;
+    left: -2px;
+    letter-spacing: 1px;
+    line-height: 30px;
+    margin: -18px 0 1px 0;
+    padding: 10px 0px;
+    position: relative;
+    top: 16px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.carousel-item-hero-pretext {
+    color: $landing-carousel-hero;
+    font-size: 30px;
+    text-align: center;
+    //padding-bottom: 18px;
+    font-weight: 600;
+}
+
+@media (max-height: 720px) {
+    .carousel-item {
+      height: 90vh;
+    }
+}
+
+@media (max-width: 720px) {
+    .carousel-item {
+      height: 90vh;
+    }
+
+    .carousel-item-hero-text {
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 22px;
+    }
+
+    .carousel-item-hero-pretext {
+        font-size: 24px;
+        font-weight: 500;
+    }
+}
+
+.carousel-item-hero-buttons {
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+    top: 30px;
+}
+
+.carousel-item-hero-btn {
+    background: $theme-main ;
+    border-color: $theme-main ;
+    color: $white;
+    border-radius: 3px;
+    border-width: 2px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 27px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: $landing-carousel-hero-btn;
+
+    &:hover {
+        color: $theme-main;
+        background: $customers-sayings;
+    }
+}
+
+.carousel-arrow {
+    bottom: 71px;
+    left: 0;
+    line-height: 1px;
+    padding: 0 20px;
+    position: absolute;
+    width: 100%;
+    z-index: 3;
+    text-align: center;
+}
+
+.carousel-item-links-section {
+    padding-top: 50px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.carousel-item-link-text {
+    color: $theme-color-text;
+    letter-spacing: 1px;
+    cursor: pointer;
+    custor: hand;
+
+    &:hover {
+        color: $landing-carousel-hero
+    }
+}

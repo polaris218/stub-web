@@ -1,0 +1,139 @@
+@import '../../../styles/colors.scss';
+
+html, body {
+    height: 100%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.page-wrap {
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.formArea {
+  max-width: 400px;
+  padding-bottom: 20px;
+}
+
+.spinnerStyle {
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.successText {
+  color: $hr-success-color;
+}
+
+.savingSpinnerContainer {
+  min-height: calc(100vh - 126px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageContentContainer {
+  min-height: calc(100vh - 126px);
+}
+
+.dateAndBtnContainer {
+  margin-top: 0;
+  display: flex;
+  .dateNavigationBtn {
+    background: none;
+    border: 0;
+    outline: none;
+    color: $primary;
+    font-size: 22px;
+    padding: 10px;
+    &:focus, &:active {
+      outline: none;
+    }
+  }
+
+  .btnLeft {
+    margin-right: 10px;
+    padding-left: 0 !important;
+  }
+
+  .btnRight {
+    margin-left: 10px;
+  }
+}
+
+.selectedDate {
+  font-size: 22px;
+  color: $theme-dark-grey;
+  input {
+    border: 0;
+    background: none;
+    box-shadow: none;
+    outline: none;
+    color: $theme-dark-grey !important;
+    font-size: 22px;
+    display: inline !important;
+    width: 125px!important;
+    height: 42px;
+    padding: 0;
+    &:focus {
+      outline: none !important;
+      box-shadow: none;
+    }
+  }
+}
+
+.tasksRoutesGroups {
+  &>div:first-child {
+    text-align: left;
+    font-size: 14px !important;
+  }
+}
+
+.taskGroupSingle {
+  .groupName {
+    text-decoration: none;
+  }
+  .groupTaskContainer {
+    padding: 0 0 0 30px;
+    .customerInformation {
+      text-decoration: underline;
+      font-size: 18px;
+    }
+    .itemStatus {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: $theme-dark-grey;
+      margin-right: 15px;
+      min-width: 125px;
+      display: inline-block;
+    }
+    .itemStatusDelivered {
+      color: $theme-green;
+    }
+    .itemStatusRejected {
+      color: $theme-red;
+    }
+    .itemStatusPickedUp {
+      color: $primary;
+    }
+    .itemStatusNotPickedUp {
+      color: $theme-red;
+    }
+    .itemStatusUnknown {
+      color: $bg-orange;
+    }
+  }
+}
+
+.groupsContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 0 50px 0;
+  &>div:nth-child(even) {
+    background: $theme-light-grey;
+  }
+}

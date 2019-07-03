@@ -1,0 +1,241 @@
+@import '../../../styles/colors.scss';
+
+.mT20 {
+  margin-top: 20px;
+}
+
+.mT25 {
+  margin-top: 25px;
+}
+
+.mT30 {
+  margin-top: 40px;
+}
+
+.customMessageWrapper {
+  background: $custom-bg;
+  min-height: 1050px;
+}
+
+.header{
+  color: $theme-lighter-grey;
+  font-size: 22px;
+  padding: 15px;
+  padding-left: 0;
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+.actions {
+  text-align: right;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.createBtn {
+  color: #fff;
+  background-color: $btn-sec;
+  -webkit-box-shadow: 0px 3px 6px 2px $shadow;
+  -moz-box-shadow: 0px 3px 6px 2px $shadow;
+  box-shadow: 0px 3px 6px 2px $shadow;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  word-spacing: 1px;
+  transition: all 0.3s ease;
+  height: 40px;
+
+  &:hover, &:active, &:focus {
+    background-color: $btn-sec-hover;
+    color: #fff;
+    border: none;
+  }
+}
+
+.leftPanel {
+  width: 100%;
+  padding: 0 0 0 5px;
+}
+
+.messageGroup {
+  background: $white;
+  padding: 25px;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.35);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.35);
+  box-shadow: 0px 0px 6px 0px rgba(0,0,0,0.35);
+  .groupName {
+    font-size: 18px;
+    color: $theme-lighter-grey;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+}
+
+.singleMessageRow {
+  border-bottom: 1px solid $theme-middle-grey;
+  padding: 10px 0 10px 0;
+}
+
+
+.singleMessageTitle {
+  color: $theme-blue;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+
+.disabledLink {
+  pointer-events: none;
+  color: $theme-middle-grey;
+  display: inline-block;
+  &:hover {
+    color: $theme-middle-grey;
+    display: inline-block;
+  }
+}
+
+.disabledRow {
+  cursor: wait !important;
+}
+
+.disableAction {
+  pointer-events: none;
+  cursor: wait !important;
+}
+
+.rightPanel {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 5px 0 25px;
+  border-left: 1px solid $theme-middle-grey;
+}
+
+.messageList {
+  table {
+    thead {
+      tr {
+        td {
+          font-weight: 700;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          padding: 15px 35px 15px 15px;
+        }
+        td:first-child {
+          position: relative;
+          border-right: 1px solid $theme-middle-grey;
+        }
+      }
+    }
+  }
+}
+
+.messageTypeIndicator {
+  position: absolute;
+  right: 15px;
+  opacity: 0.8;
+  font-size: 22px;
+  color: $theme-lighter-grey;
+  img {
+    height: 25px;
+  }
+}
+
+.messageListFirstColumn {
+  min-width: 200px;
+}
+
+.editFormPlaceholder {
+  display: flex;
+  min-height: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+.savingSpinnerPlaceholder {
+  height: 12px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.selectedMessageRow {
+  background-color: $table-strip-highlight !important;
+  td {
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+    border-top: 1px solid $active-bg !important;
+    border-bottom: 1px solid $active-bg !important;
+  }
+}
+
+.actionsBtnContainer {
+  display: inline-block;
+  float: right !important;
+}
+
+.actionsBtn {
+  background: none;
+  border-color: transparent;
+  &:hover {
+    background: none;
+    border-color: transparent;
+  }
+  &:active {
+    background: none;
+    border-color: transparent;
+  }
+  &:focus {
+    background: none;
+    border-color: transparent;
+  }
+}
+
+.messageDescriptionContainer {
+  display: inline-block;
+  width: 90%;
+}
+
+.savingSpinnerContainer {
+  display: inline-block;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

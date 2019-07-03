@@ -1,0 +1,35 @@
+@import '../../../styles/colors.scss';
+
+.selectField {
+  &>div:first-child {
+    height: 34px !important;
+    display: inline-block;
+    &>span:last-child {
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      top: 14px;
+    }
+  }
+}
+
+.selectFieldWithError {
+  &>div:first-child {
+    border-color: $theme-red;
+    height: 34px !important;
+    display: inline-block;
+    &>span:last-child {
+      position: absolute;
+      display: inline-block;
+      right: 0;
+      top: 14px;
+    }
+  }
+}
+
+.errorText {
+  font-size: 12px;
+  color: $theme-red;
+  padding: 0;
+  margin: 0;
+}

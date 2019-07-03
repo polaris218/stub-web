@@ -1,0 +1,38 @@
+@import '../../../styles/colors.scss';
+
+.loading-section {
+  background-color: $bg-secondary;
+  height: 25px;
+  text-align: right;
+  padding: 3px;
+
+  div {
+    text-align: left !important;
+  }
+}
+
+.entity-manager h2 {
+    font-size: 22px;
+    color: $primary;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.entity-manager tr,
+.entity-manager td,
+.entity-manager th,
+.entity-manager a {
+    color: $no-info-color;
+}
+
+.no-entity {
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed $no-info-color;
+  color: $no-info-color;
+}
+
+.rating-section {
+  background-color: $theme-light-orange;
+  border-bottom: 2px solid $rating-dark-orange;
+}

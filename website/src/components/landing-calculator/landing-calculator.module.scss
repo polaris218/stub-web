@@ -1,0 +1,91 @@
+@import '../../../styles/colors.scss';
+
+.price-calculator {
+    position: relative;
+    max-width: 880px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    text-align: center;
+}
+
+.inline-block {
+    display: inline-block;
+    position: relative;
+    margin-top: 50px;
+    vertical-align: super;
+}
+
+
+.help {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}    
+
+.help a {
+    font-size: 15px;
+    color: $theme-main;
+} 
+
+.tasks {
+    @extend .inline-block;
+    text-align: right;
+    padding-right: 15px;
+    border-right: 1px solid #abaaa8;
+}
+
+.tasks h1 {
+    display: inline-block;
+}
+
+.price {
+    @extend .inline-block;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.tasks h1,
+.price h1 {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.calls {
+    display: inline-block;
+    font-size: 22px;
+    width: 100px;
+    text-align: left;
+    vertical-align: middle;
+    margin-left: 15px;
+}
+
+.price-button {
+    background: $link-item;
+    border-color: $link-item;
+    color: $white;
+    border-radius: 0;
+    border-width: 2px;
+    font-size: 24px;
+    font-weight: 300;
+    padding: 16px 64px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    word-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.center-button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.selected-button {
+    background-color: $theme-main;
+    color: white;
+
+    &:active, &:hover, &:focus {
+        background-color: $theme-main;
+        color: white;    
+    }
+}

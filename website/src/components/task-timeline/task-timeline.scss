@@ -1,0 +1,249 @@
+@import '../../../styles/colors.scss';
+
+@mixin cf() {
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+	& {
+		*zoom: 1;
+	}
+}
+
+$col: 12;
+$r-mt: 0;
+$ultra-desktop: 1250px;
+$desktop: 838px;
+$tablet: 500px;
+$mobile: 0px;
+
+@mixin ew($w-u, $w, $w-t, $w-m) {
+	@media screen and (min-width: $mobile) {
+  	width: percentage($w-m/$col);
+	}
+	@media screen and (min-width: $tablet) {
+  	width: percentage($w-t/$col);
+	}
+	@media screen and (min-width:  $desktop) {
+  	width: percentage($w/$col);
+	}
+	@media screen and (min-width:  $ultra-desktop) {
+  	width: percentage($w-u/$col);
+	}
+	box-sizing: border-box;
+	float: left;
+}
+
+@mixin of($w-u, $w, $w-t, $w-m) {
+	@media screen and (min-width: $mobile) {
+  	margin-left: percentage($w-m/$col);
+	}
+	@media screen and (min-width: $tablet) {
+  	margin-left: percentage($w-t/$col);
+	}
+	@media screen and (min-width:  $desktop) {
+  	margin-left: percentage($w/$col);
+	}
+	@media screen and (min-width:  $ultra-desktop) {
+  	margin-left: percentage($w-u/$col);
+	}
+}
+
+$height: 120px;
+$width: 160px;
+$width-label: $width - 20px;
+$width-thumb: $width/2;
+$border-color: #e5e5e5;
+
+.tl-header {
+	margin-top: 20px;
+	width: 100%;
+	border-bottom: 1px solid #ccc;
+	@include cf();
+	padding-bottom: 1em;
+	.date {
+    display: flex;
+
+		@include ew(6,6,6,12);
+		padding: 5px;
+    .btn {
+      color: #373a3c;
+      font-size: 16px;
+      font-weight: 300;
+    }
+    .form-group {
+      margin-bottom: 0px;
+      display: inline-block;
+    }
+	}
+	.switch {
+		@include ew(6,6,6,12);
+		@include cf();
+		ul {
+			float: right;
+			margin: 0;
+			height: 3em;
+			li {
+				display: inline-block;
+				margin-left: 20px;
+				padding: 5px;
+				cursor: pointer;
+				&:hover {
+					border-bottom: 3px solid $secondary;
+				}
+			}
+		}
+	}
+}
+
+.tl-wrapper {
+	width: 100%;
+	background: #fff;
+	@include cf();
+	height: auto;
+}
+
+.tl-wrapper {
+	overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.tl-labels {
+	margin-top: -1px;
+	width: auto;
+	white-space: nowrap;
+}
+
+.tl-label:nth-child(2) {
+  margin-left: 140px;  
+}
+
+.tl-label {
+	display: inline-block;
+	width: $width;
+	height: $height;
+	padding-top: 30px;
+	text-align: center;
+	font-size: 16px;
+	-webkit-box-shadow:inset 0px 0px 0px 1px $border-color;
+  -moz-box-shadow:inset 0px 0px 0px 1px $border-color;
+  box-shadow:inset 0px 0px 0px 1px $border-color;
+}
+
+.tl-label-name {
+	width: $width-label;
+  position: absolute;
+  background-color: white;
+}
+
+.tl-single {
+	margin-top: -1px;
+	width: auto;
+	white-space: nowrap;
+	height: $height;
+}
+
+.tl-timeline-slots:nth-child(1) {
+    margin-left: 140px;
+}
+
+.tl-slots {
+	display: inline-block;
+	height: $height;
+	width: $width-thumb;
+	text-align: center;
+	font-size: 16px;
+	-webkit-box-shadow:inset 0px 0px 0px 1px $border-color;
+  -moz-box-shadow:inset 0px 0px 0px 1px $border-color;
+  box-shadow:inset 0px 0px 0px 1px $border-color;
+  border-top: 1px solid #bbbbbb;
+	.add {
+		font-weight: bold;
+		font-size: 16px;
+		color: #fafafa;
+		transition: .3s;
+	}
+}
+
+.tl-slots:hover {
+	cursor: pointer;
+	background: #eee;
+	.add {
+		color: #a8a8a8;
+	}
+}
+
+.task {
+	font-size: 13px;
+	position: relative;
+	top: 1px;
+	background: #d08d8d;
+	color: #fff;
+	left: $width-label + $width-thumb;
+	padding-left: 5px;
+	transition: .3s;
+	.content {
+		font-size: 13px;
+		padding-right: 10px;
+		visibility: hidden;
+		height: 0;
+	}
+	&:hover {
+		cursor: pointer;
+		transform: scale(1.2);
+    border: 2px solid #ababab;
+    border-radius: 5px;
+		height: auto !important;
+		width: auto !important;
+		z-index: 500 !important;
+		opacity: 1 !important;
+		.content {
+			visibility: visible;
+			height: auto;
+		}
+	}
+}
+
+.tl-name {
+	width: $width-label;
+  text-align: left;
+  position: absolute;
+  background-color: white;
+  z-index: 12;
+}
+
+.mode-switch {
+	height: 60px;
+	width: 100%;
+	line-height: 60px;
+	text-transform: uppercase;
+	padding: 0 1em;
+	color: #29B6F6;
+	font-weight: bold;
+	cursor: pointer;
+	background: #fafafa;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.avatar {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px #eee solid;
+  margin: 0px 5px;
+}
+
+.time-display-in-slot {
+  font-size: 10px;
+  color: #bdbdbd;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: -10px;
+}

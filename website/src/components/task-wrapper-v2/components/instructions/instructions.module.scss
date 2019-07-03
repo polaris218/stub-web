@@ -1,0 +1,426 @@
+@import '../../../../../styles/colors.scss';
+.commentBox{
+  height: 159px !important;
+  resize: none;
+}
+.btn{
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  padding: 9px 10px;
+  min-width: 140px;
+  margin: 10px 0;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &.btn-primary-outline{
+    background-color: white;
+    border-color: $dashboard-primary;
+    color: $dashboard-primary;
+    &:hover{
+      background-color: $dashboard-primary;
+      border-color: $dashboard-primary;
+      color: $white;
+    }
+  }
+}
+.loaderWrapper{
+  min-height: 30px;
+}
+
+
+.dropMsg {
+  display: flex;
+  min-height: 190px;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    font-size: 18px;
+    span {
+      color: $primary-green;
+      font-size: 26px;
+      font-weight: 700;
+    }
+  }
+}
+
+.actualDropZone {
+  background-color: $route-bg;
+  border: 2px dashed $dashboard-bg;
+  border-radius: 6px;
+  color: $dashboard-dark;
+  min-height: 190px;
+}
+
+.dropzoneContainer {
+  margin-bottom: 20px;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.uploadFilesPreviews {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  width: 100%;
+  &:before, &:after{
+    content: '';
+    display: table;
+    clear: both;
+  }
+  li{
+    float: left;
+    width: 158px;
+    height: 150px;
+    margin: 10px;
+    position: relative;
+    &.addAnotherImg {
+      width: 23%;
+      height: 150px;
+      margin: 10px;
+      position: relative;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 48px;
+        background: $theme-light-grey;
+        border: 2px dashed $theme-middle-grey;
+        border-radius: 6px;
+        -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+        -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+        box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+        cursor: pointer;
+      }
+    }
+    &.addAnotherImgMobile {
+      height: 150px;
+      margin: 10px;
+      position: relative;
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 48px;
+        background: $theme-light-grey;
+        border: 2px dashed $theme-middle-grey;
+        border-radius: 6px;
+        -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+        -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+        box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+        cursor: pointer;
+      }
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 6px;
+      -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+      -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+      box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    }
+    .remove{
+      background: $red;
+      border-radius: 50%;
+      border: 1px solid $white;
+      cursor: pointer;
+      top: -5px;
+      right: -5px;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      position: absolute;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      z-index: 1;
+      &:before, &:after{
+        content: '';
+        background-color: $white;
+        position: absolute;
+        height: 10px;
+        width: 2px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+      }
+      &:before{
+        -webkit-transform: rotate(45deg) translate(-4px, -3px);
+        -moz-transform: rotate(45deg) translate(-4px, -3px);
+        transform: rotate(45deg) translate(-4px, -3px);
+      }
+      &:after{
+        -webkit-transform: rotate(-45deg) translate(3px, -4px);
+        -moz-transform: rotate(-45deg) translate(3px, -4px);
+        transform: rotate(-45deg) translate(3px, -4px);
+      }
+      &:hover{
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+.uploadCaption {
+  display: block;
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.85) 20%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.85) 20%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  width: 100%;
+  height: 40px;
+  color: $white;
+  padding: 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  span {
+    padding: 10px;
+    line-height: 14px;
+    margin-top: 0px;
+    display: inline-block;
+  }
+}
+
+
+.file-upload-link{
+  color: $primary;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 18px;
+  padding: 5px 0 !important;
+  float: right;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.fileUploaderMobile {
+  margin-top: 20px;
+  padding: 0;
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}
+
+.customFilePreview {
+  background-color: $route-bg;
+  border: 2px dashed $dashboard-bg;
+  color: $dashboard-dark;
+  margin-top: 10px;
+  width: 100%;
+  border-radius: 4px;
+  padding: 15px 10px 15px 10px;
+  display: flex;
+  height: 220px;
+  overflow: scroll;
+  will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform : translate3d(0, 0, 0);
+  p {
+    text-align: center;
+    height: 175px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.fileUploaderMobileBtn {
+  input[type="file"] {
+    opacity: 0;
+    z-index: 99;
+    height: 48px;
+    margin-top: -53px;
+  }
+  label {
+    opacity: 1;
+    z-index: 98;
+    background: $theme-light-green;
+    color: $white;
+    font-size: 18px;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+
+.extraFileUploaderMobileBtn {
+  input[type="file"] {
+    opacity: 0;
+    z-index: 99;
+    height: 100%;
+  }
+  svg {
+    position: absolute;
+    opacity: 1;
+    z-index: 98;
+  }
+}
+
+.attachmentBoxWrapper{
+  margin: 25px 0;
+  .attachmentBox {
+    border: 1px solid $attachment-box-border;
+    background-color: $theme-light-grey;
+    display: inline-block;
+    padding: 10px 15px 10px 15px;
+    margin: 0 6px 6px 0;
+    border-radius: 4px;
+    position: relative;
+    max-width: 250px;
+
+    @media screen and (max-width: 767px) {
+      max-width: 210px;
+    }
+    a{
+      display: block;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    .remove{
+      background: $red;
+      border-radius: 50%;
+      border: 1px solid $white;
+      cursor: pointer;
+      top: -5px;
+      right: -5px;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      position: absolute;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      z-index: 1;
+      &:before, &:after{
+        content: '';
+        background-color: $white;
+        position: absolute;
+        height: 10px;
+        width: 2px;
+        border-radius: 10px;
+        top: 50%;
+        left: 50%;
+      }
+      &:before{
+        -webkit-transform: rotate(45deg) translate(-4px, -3px);
+        -moz-transform: rotate(45deg) translate(-4px, -3px);
+        transform: rotate(45deg) translate(-4px, -3px);
+      }
+      &:after{
+        -webkit-transform: rotate(-45deg) translate(3px, -4px);
+        -moz-transform: rotate(-45deg) translate(3px, -4px);
+        transform: rotate(-45deg) translate(3px, -4px);
+      }
+      &:hover{
+        -webkit-transform: scale(1.15);
+        -moz-transform: scale(1.15);
+        transform: scale(1.15);
+      }
+    }
+  }
+}
+
+
+.action {
+  margin-right: 0px;
+  margin-left: 20px;
+}
+
+.taskAttachments{
+  font-size: 1.6em;
+  color: $theme-lighter-grey;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.uploadSpinner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: $theme-darker-grey;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  background: $theme-light-grey;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0;
+  font-size: 30px !important;
+}
+
+.retryBtn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: $bg-primary;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  background: $cancel-btn;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0;
+  &:hover {
+    color: $bg-primary;
+  }
+}
+
+.clearFieldsButton{
+  background: none;
+  border: 0;
+  outline: 0;
+  color: $theme-blue;
+  padding: 0 0 0 5px;
+  &:hover {
+    background: none;
+    color: $theme-blue;
+    text-decoration: underline;
+  }
+}
+
+.documentIcon {
+  margin-right: 10px;
+}
+
+.documentsContainer {
+  margin: 0 !important;
+}
+

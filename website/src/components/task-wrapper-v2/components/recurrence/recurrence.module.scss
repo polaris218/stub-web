@@ -1,0 +1,209 @@
+@import '../../../../../styles/colors.scss';
+.loaderWrapper{
+  padding: 20px 15px;
+}
+.recurrenceWrapper{
+  .controlLabel{
+    font-weight: 400;
+  }
+}
+.recurrenceStart{
+  display: flex;
+  flex-wrap: wrap;
+  .seriesCheckbox{
+    flex: 0 0 auto;
+    width: auto;
+    padding-right: 15px;
+    padding-top: 7px;
+  }
+  .repeatTime{
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    .repeatTimeInner{
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      .controlLabel{
+        min-width: 105px;
+      }
+      .selectBoxA{
+        width: 100%;
+        max-width: 120px;
+      }
+      .selectBox{
+        width: 100%;
+        max-width: 150px;
+        padding-left: 16px;
+      }
+      @media only screen and (min-width: 992px) and (max-width: 1070px) {
+        flex-wrap: wrap;
+        .selectBoxA{
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+        }
+        .selectBox{
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding-left: 105px;
+          margin-top: 10px;
+        }
+      }
+    }
+    .checkBoxDays{
+      display: flex;
+      flex-wrap: nowrap;
+      margin-top: 25px;
+      .controlLabel{
+        line-height: 25px;
+        min-width: 105px;
+      }
+      .formGroup{
+        margin: 0 -5px;
+      }
+      .checkBox{
+        border-radius: 50%;
+        display: inline-flex;
+        position: relative;
+        margin: 0 5px 10px;
+        overflow: hidden;
+        label{
+          padding-left: 0;
+        }
+        input{
+          left: 0;
+          top: 0;
+          position: absolute;
+          opacity: 0;
+          margin: 0;
+        }
+        span{
+          background-color: $route-bg;
+          border: 1px solid $dashboard-bg;
+          border-radius: 50%;
+          color: $dashboard-dark;
+          cursor: pointer;
+          display: block;
+          font-size: 13px;
+          font-weight: bold;
+          min-width: 25px;
+          height: 25px;
+          line-height: 25px;
+          text-align: center;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+        }
+        input:checked + span{
+          background-color: $dashboard-primary;
+          border-color: $dashboard-primary;
+          color: $white;
+        }
+      }
+    }
+  }
+  @media only screen and (min-width: 1200px) {
+    .seriesCheckbox{
+      padding-right: 36px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    .seriesCheckbox{
+      flex: 0 0 100%;
+      max-width: 100%;
+      padding-top: 0;
+      padding-right: 0;
+    }
+    .repeatTime{
+      .repeatTimeInner{
+        flex-wrap: wrap;
+        .selectBoxA{
+          flex-basis: 0;
+          flex-grow: 1;
+          max-width: 100%;
+        }
+        .selectBox{
+          margin-top: 10px;
+          padding-left: 0;
+          max-width: 100%;
+        }
+      }
+      .checkBoxDays .controlLabel{
+        min-width: 80px;
+      }
+    }
+  }
+}
+.recurrenceTimeWrapper{
+  display: flex;
+  flex-wrap: nowrap;
+  .startTime{
+    padding-right: 16px;
+  }
+  .formGroup{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    .controlLabel{
+      margin-right: 16px;
+    }
+    .checkBox{
+      min-width: 80px;
+    }
+    .form-control{
+      min-width: 125px;
+      max-width: 125px;
+      @media only screen and (min-width: 992px) and (max-width: 1100px) {
+        min-width: 105px;
+        max-width: 105px;
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    .startTime{
+      padding-right: 0;
+    }
+    .startTime, .endTime{
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .formGroup{
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      .controlLabel{
+        margin-right: 0;
+      }
+      .form-control{
+        max-width: 100%;
+      }
+    }
+    .startTime{
+      .controlLabel{
+        min-width: 80px;
+      }
+      .field-wrapper{
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+    }
+    .endTime{
+      .controlLabel{
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+      .checkBox{
+        margin-bottom: 0;
+      }
+      .field-wrapper,
+      .form-control{
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.pageIntroContainer {
+  padding: 30px 0 30px 0;
+  h2 {
+    font-size: 26px;
+    color: $primary;
+  }
+  .exportDataBtn {
+    background: $white;
+    border: 2px solid $primary;
+    padding: 15px 25px;
+    letter-spacing: 2px;
+    font-size: 1em;
+    text-align: center;
+    border-radius: 4px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+    margin-top: 16px;
+    &:hover {
+      background: $primary;
+      color: $white;
+    }
+  }
+}
+
+.groupFilter {
+  > div {
+    margin-top: 15px;
+  }
+}

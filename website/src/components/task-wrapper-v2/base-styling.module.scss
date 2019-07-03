@@ -1,0 +1,164 @@
+@import '../../../styles/colors.scss';
+.taskFormRow{
+  margin-left: -8px;
+  margin-right: -8px;
+  > div > [class^="col-"],
+  > div > [class*="col-"],
+
+  > [class^="col-"],
+  > [class*="col-"]{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+.field-wrapper{
+  position: relative;
+  .inner{
+    position: relative;
+    width: 100%;
+    input{
+      padding-right: 30px;
+    }
+  }
+  svg{
+    color: rgba($dashboard-dark, .5);
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+  }
+}
+.box{
+  color: $dashboard-dark;
+  margin-bottom: 10px;
+  .boxTitle{
+    color: $dashboard-dark;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+
+  .loaderWrapper{
+  min-height: 30px;
+}
+
+  .boxBody{
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow, .17);
+    font-size: 15px;
+    .boxBodyInner{
+      padding: 20px 18px 10px;
+      &:not(:last-child){
+        border-bottom: 1px solid $dashboard-bg;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      height: auto !important;
+    }
+  }
+  [class^="form-group"], [class*="form-group"], [class="form-group"]{
+    margin-bottom: 10px;
+  }
+  [class="form-control"], .form-control, .field-wrapper [class="form-control"], .field-wrapper input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    box-shadow: none !important;
+    color: $dashboard-dark;
+    display: block;
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 40px;
+    margin-bottom: 0;
+    padding: 9px 15px;
+    width: 100%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:focus{
+      box-shadow: none !important;
+      border-color: darken($dashboard-bg, 15%);
+    }
+    &:disabled{
+      background-color: $theme-grey;
+    }
+  }
+  .selectBox{
+    position: relative;
+    &:after{
+      content: '';
+      background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      pointer-events: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 35px;
+      &::-ms-expand{
+        display: none;
+      }
+    }
+  }
+  .checkBox{
+    position: relative;
+    line-height: 23px;
+    margin-top: 0;
+    label{
+      input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        margin-left: 0;
+      }
+      padding-left: 0;
+      span{
+        display: block;
+        padding-left: 33px;
+        &:before{
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 50%;
+          height: 23px;
+          width: 23px;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+        }
+        &:before{
+          background: $route-bg center center / auto 7px no-repeat;
+          border: 1px solid $dashboard-primary;
+        }
+      }
+      input:checked + span:before{
+        background-color: $dashboard-primary;
+        background-image: url("/images/task-form/tick.svg");
+        box-shadow: 0 4px 6px rgba($dashboard-primary, .5);
+      }
+    }
+  }
+}

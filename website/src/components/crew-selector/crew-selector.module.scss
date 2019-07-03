@@ -1,0 +1,313 @@
+@import '../../../styles/colors.scss';
+
+.crewSelectorContainer {
+  position: relative;
+  cursor: pointer;
+  padding-right: 45px;
+  .crewSelectorInputField {
+    padding: 2px 0 2px 0;
+    font-size: 18px;
+    min-height: 0;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    color: transparent;
+    text-shadow: 0 0 0 gray;
+    background: transparent;
+    text-align: left !important;
+    width: auto !important;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    &:focus {
+      outline: none;
+    }
+  }
+  .measure {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    display: inline-block;
+    padding: 2px 0 2px 0;
+    font-size: 18px;
+  }
+  .inputPlaceholder {
+    color: #aaa;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 10px;
+  }
+  .selectedCrew {
+    display: inline-flex;
+    width: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .entityFace {
+      display: inline-flex;
+      flex-direction: column;
+      width: 85px;
+      position: relative;
+      img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        margin: 0 auto;
+        background-color: $dashboard-primary;
+        &.workerNeeded{
+          border: none;
+        }
+      }
+      h3 {
+        font-size: 14px;
+        margin: 5px 0 0 0;
+        padding: 0;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      p {
+        font-size: 13px;
+        line-height: 13px;
+        margin: 0 0 5px 0;
+        padding: 0;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .entityRemoveBtn {
+        display: none;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        font-size: 9px;
+        line-height: 17px;
+        text-transform: uppercase;
+        background: $theme-red;
+        border: 1px solid $white;
+        border-radius: 50%;
+        color: #fff;
+        position: absolute;
+        right: 12px;
+        top: -2px;
+        -webkit-transition: all 0.2s ease-in-out;
+        -moz-transition: all 0.2s ease-in-out;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .entityFace {
+      &:hover {
+        .entityRemoveBtn {
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .entitiesDropDown {
+    position: absolute;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll !important;
+    z-index: 999 !important;
+    left: 0;
+    background: $white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0 3px 6px rgba($dark-black, 0.16);
+    -moz-box-shadow: 0 3px 6px rgba($dark-black, 0.16);
+    box-shadow: 0 3px 6px rgba($dark-black, 0.16);
+    -webkit-overflow-scrolling: touch;
+    margin-top: 10px;
+    will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform : translate3d(0, 0, 0);
+
+    &::-webkit-scrollbar-track{
+      border-radius: 6px;
+      background-color: $white;
+    }
+    &::-webkit-scrollbar{
+      width: 8px;
+      background-color: $white;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 6px;
+      background-color: $dashboard-primary;
+    }
+  }
+  .entityListItemContainer {
+    padding: 10px 20px;
+    &:hover {
+      background: #F2F9FC;
+      cursor: pointer;
+    }
+    &.highlightedEntity {
+      background: #F2F9FC;
+    }
+    .entityListItem {
+      width: 100%;
+      .entityListItemMask{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 100%;
+        .entityListItemAvatar {
+          -ms-flex: 0 0 30px;
+          flex: 0 0 30px;
+          width: 100%;
+          max-height: 30px;
+          img {
+            width: 30px;
+            height: 30px;
+            border: 2px transparent;
+            border-radius: 50px;
+            object-fit: cover;
+            background-color: $dashboard-primary;
+          }
+        }
+        .entityListItemInfo {
+          flex:  0 0 100%;
+          width: 100%;
+          max-width: calc(100% - 30px);
+          padding-left: 10px;
+          position: relative;
+          h3 {
+            font-size: 15px;
+            color: $dashboard-primary;
+            margin: 0;
+            padding-right: 60px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+          }
+          p {
+            color: $dashboard-dark;;
+            font-size: 13px;
+            margin-bottom: 0;
+          }
+        }
+        .statusWrapper{
+          position: absolute;
+          right: 0;
+          top: 0;
+          .statusSpinner{
+            margin-top: 3px;
+          }
+        }
+      }
+      .workerNeeded{
+        border-color: $list-date;
+      }
+      &>div:last-child {
+        .option-status {
+          color: $theme-red;
+          font-size: 12px;
+          &::before {
+            content: ' \2022 ';
+          }
+        }
+        .available {
+          &::before {
+            content: ' \2022 ';
+          }
+          color: $theme-green;
+        }
+      }
+    }
+    .entityListItemSchedule {
+      font-size: 12px;
+      padding: 5px 0;
+      &:empty{
+        display: none;
+      }
+      .scheduleInfo{
+        font-size: 12px;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 100%;
+        text-overflow: ellipsis;
+      }
+      span {
+        display: inline-block;
+      }
+    }
+  }
+
+  .entityItemDisabled {
+    pointer-events: none !important;
+    cursor: not-allowed !important;
+    font-style: italic;
+    background: #F8F8F8;
+    &:hover {
+      cursor: not-allowed !important;
+    }
+    .entityListItem {
+      &>div:nth-child(2) {
+        h3 {
+          color: #999;
+        }
+        p {
+          color: #999;
+        }
+      }
+    }
+  }
+
+  .noEntityFound {
+    padding: 10px;
+    font-size: 16px;
+    color: $theme-dark-grey;
+  }
+
+  .widgetControls {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    width: 45px;
+    button {
+      background: none;
+      outline: none;
+      border: 0;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 13px;
+    }
+    .listDropDownIndicator {
+      color: $primary;
+      font-size: 16px;
+      width: 15px;
+      height: 15px;
+      display: inline-flex;
+      align-content: center;
+      justify-content: center;
+      justify-items: center;
+    }
+    .upArrow {
+      position: absolute;
+      right: 0;
+      top: 3px;
+    }
+    .downArrow {
+      position: absolute;
+      right: 0;
+      top: -2px;
+    }
+  }
+
+}
+
+.controlDisabled {
+  pointer-events: none !important;
+  cursor: not-allowed !important;
+  &:hover {
+    cursor: not-allowed !important;
+  }
+}

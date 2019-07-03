@@ -1,0 +1,810 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.empty-label-margin {
+    margin-top: 23px;
+}
+
+.formset-block {
+    padding: 20px 200px;
+    display: inline-block;
+    width: 100%;
+    border: none;
+}
+
+@media (min-width: 768px) {
+    .formset-block {
+        padding: 20px;
+        display: inline-block;
+        width: 100%;
+            border: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .formset-block {
+        padding: 20px;
+        display: inline-block;
+        width: 100%;
+        border: none;
+    }
+}
+
+.inverse-color {
+    background-color: $inverse-color;
+}
+
+.delete-button {
+  border-color: $theme-red;
+}
+
+.delete-button2{
+    border-color: $theme-red;
+    margin-left: 20px;
+    height: 25px;
+    width: fit-content;
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.time-field {
+  height: 34px;
+}
+
+.edit-button {
+  margin-left: 10px;
+}
+
+.time-window-checkbox {
+  margin-top:-5px;
+}
+
+.time-window-text {
+  margin-left: 3px;
+  font-weight: 400;
+}
+
+.tasks-confirm-dialog-wrapper{
+  position: fixed;
+  z-index: 10001;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+  @include box-shadow(0, 0, 10px, $theme-dark-grey);
+  margin: 0 auto;
+  background: $white;
+  border-radius: 5px;
+  padding: 10px 30px 30px 30px;
+  h3{
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: $theme-dark-grey;
+  }
+  p{
+    color: $theme-dark-grey;
+    margin-bottom: 0;
+    font-size: 1.2em;
+  }
+  button{
+    margin-left: 10px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+.tasks-confirm-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: $theme-darker-grey;
+  opacity: 0.7;
+}
+
+.tasks-confirm-buttons {
+  margin-top: 30px;
+}
+
+.tasks-confirm-cancel {
+  margin-left: 20px;
+}
+
+.form {
+  margin-bottom: 0;
+}
+
+.buttons-block{
+  button{
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-right: 20px;
+    font-size: 1.2em;
+    &.delete-button{
+      color: red;
+      border: 1px solid red;
+    }
+    &.cancel-button{
+      color:$theme-dark-grey;
+      border: 1px solid $theme-dark-grey;
+    }
+  }
+}
+
+.task-details{
+  input{
+    border: 1px solid $theme-middle-grey;
+    @include border-radius(3px);
+  }
+  .assignees-block{
+    label{
+      color: $theme-lighter-grey;
+    }
+    input {
+      border: none;
+      color: transparent;
+      text-shadow: 0 0 0 gray;
+      text-align: center;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .left-part{
+    label{
+      color: $theme-dark-grey;
+    }
+    .date-time-block{
+      &>div:nth-child(4) {
+        padding: 0;
+      }
+      .field-wrapper{
+        position: relative;
+        width: 100%;
+        input{
+          width: 100%;
+          padding-left: 6px;
+        }
+        .fa-icon{
+          position: absolute;
+          right: 8px;
+          top: 34px;
+          color: $theme-lighter-grey;
+          font-size: 1.1em;
+        }
+      }
+    }
+  }
+  .task-options{
+    border:1px solid $theme-middle-grey;
+    padding: 10px 20px;
+    h4{
+      margin-bottom: 10px;
+    }
+    .task-options-wrapper {
+      h5 {
+        font-weight: bold;
+        color: $theme-dark-grey;
+      }
+      .task-color-block{
+        display: inline-block;
+        label{
+          margin-bottom: 5px;
+        }
+        .task-color-group{
+          display: inline-block;
+        }
+        .use-assignee-color-checkbox {
+          display: inline-block;
+          vertical-align: bottom;
+          margin-bottom: 12px;
+          label {
+            position: relative;
+            left: -20px;
+          }
+        }
+      }
+      .type-of-task-block {
+        float: right;
+        h5{
+          margin-bottom: 15px;
+        }
+        button {
+          text-transform: uppercase;
+          font-weight: bold;
+          padding: 5px 10px;
+          margin-right: 15px;
+          background: $btn-transp;
+          @include border-radius(5px);
+          border: 1px dashed $theme-dark-grey;
+          &:last-child {
+            margin-right: 0px;
+          }
+          &:hover{
+            background: $theme-light-grey;
+          }
+        }
+      }
+      .time-window-block {
+        .time-window-group {
+          margin-bottom: 0;
+          display: inline-block;
+          > span {
+            display: inline;
+            margin-left: 25px;
+          }
+          > select {
+            margin-left: 15px;
+          }
+        }
+        .default_time{
+          display: inline;
+          color:$primary;
+        }
+      }
+    }
+  }
+}
+.edit-service{
+
+  .green-button{
+    margin-bottom: 0;
+    label{
+      margin-right:20px;
+    }
+    >div{
+      input[type="checkbox"]:checked + label{
+        background-color: $theme-light-green;
+        &:after{
+          background-color: $theme-light-green;
+        }
+      }
+    }
+  }
+  .set-interval-group{
+    padding: 20px 0;
+    @include flexbox;
+    @include justify-content(space-between);
+    .set-interval-block{
+      display: inline-block;
+      margin-right: 20px;
+      label{
+        display: block;
+      }
+      .time-window-select{
+        min-width: 160px;
+      }
+    }
+  }
+  .repeat-on{
+    label{
+      margin-right: 10px;
+    }
+  }
+  .right-block{
+    @include flexbox;
+    margin-top: 30px;
+    .radio-group {
+      padding-left: 40px;
+      >div{
+        @include flexbox;
+        >div{
+          margin-left: 15px;
+        }
+      }
+      .end-on {
+        display: inline-block;
+      }
+      .radio-start-end {
+        padding-left: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  .notice{
+    font-style: italic;
+  }
+}
+
+.customer-details {
+  .notifications {
+    margin-top: 20px;
+    @media screen and (max-width: 448px) {
+      > div:first-child {
+        width: 100%;
+        > div {
+          float: right;
+        }
+      }
+      > div:last-child {
+        width: 100%;
+        > div {
+          float: right;
+        }
+      }
+    }
+    @media screen and (max-width: 414px) {
+      > div:first-child {
+        width: 100%;
+        > div {
+          float: right;
+        }
+      }
+      > div:last-child {
+        width: 100%;
+        > div {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.buttons-block{
+  >div:nth-child(2) {
+    > button {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.instructions{
+  label{
+    font-size: 1.6em;
+    color: $theme-lighter-grey;
+    margin-bottom: 15px;
+  }
+  .add-fields-block{
+    padding-top: 0;
+  }
+  textarea{
+    background: white;
+  }
+}
+
+.task-options-label {
+  color: $theme-dark-grey;
+}
+
+.confirm-dialog-text {
+  text-align: left;
+}
+
+.dropMsg {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    font-size: 18px;
+    span {
+      color: $primary-green;
+      font-size: 26px;
+      font-weight: 700;
+    }
+  }
+}
+
+.actualDropZone {
+  width: 49% !important;
+  border: 2px dashed $theme-middle-grey;
+  border-radius: 6px;
+  height: 190px;
+  background-color: $theme-light-grey;
+}
+
+.dropzoneContainer {
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.uploadFilesPreviews {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  width: 600px;
+}
+
+.uploadFilesPreviews li {
+  float: left;
+  width: 158px;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+}
+
+.uploadFilesPreviews li.addAnotherImg {
+  width: 23%;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 48px;
+    background: $theme-light-grey;
+    border: 2px dashed $theme-middle-grey;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    cursor: pointer;
+  }
+}
+
+.uploadFilesPreviews li img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+  -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+  box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+}
+
+.uploadCaption {
+  display: block;
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.85) 20%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.85) 20%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  width: 100%;
+  height: 40px;
+  color: $white;
+  padding: 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.uploadCaption span {
+  padding: 10px;
+  line-height: 14px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.closeBtn {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  color: $bg-primary;
+  z-index: 99;
+  top: -8px;
+  right: -8px;
+  background: $cancel-btn;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 4px;
+  padding: 0;
+  &:hover {
+    color: $bg-primary;
+  }
+  > svg {
+    vertical-align: -0.2em;
+  }
+}
+
+.file-upload-link{
+  color: $primary;
+  font-size: 16px;
+  display: inline-block;
+  line-height: 18px;
+  padding: 5px 0 !important;
+  float: right;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.filesSection{
+  padding: 25px !important;
+}
+
+
+.tasks-confirm-dialog-wrapper{
+  position: fixed;
+  z-index: 10001;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+  @include box-shadow(0, 0, 10px, $theme-dark-grey);
+  margin: 0 auto;
+  background: $white;
+  border-radius: 5px;
+  padding: 10px 30px 30px 30px;
+  h3{
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: $theme-dark-grey;
+  }
+  p{
+    color: $theme-dark-grey;
+    margin-bottom: 0;
+    font-size: 1.2em;
+  }
+  button{
+    margin-left: 10px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+.tasks-confirm-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: $dark-black;
+  opacity: 0.7;
+}
+
+.tasks-confirm-buttons {
+  margin-top: 30px;
+}
+
+.tasks-confirm-cancel {
+  margin-left: 20px;
+}
+
+.confirm-dialog-text {
+  text-align: left;
+}
+
+.attachmentBox {
+  border-color: $theme-grey;
+  background-color: $theme-light-grey;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 10px 15px 10px 15px;
+  border: 1px solid $attachment-box-border;
+  margin: 6px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.action {
+    margin-right: 0px;
+    margin-left: 20px;
+}
+
+.taskAttachments{
+  font-size: 1.6em;
+  color: $theme-lighter-grey;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.uploadSpinner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: $theme-darker-grey;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  background: $theme-light-grey;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0;
+  font-size: 30px !important;
+}
+
+.retryBtn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: $bg-primary;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  background: $cancel-btn;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0;
+  &:hover {
+    color: $bg-primary;
+  }
+}
+
+.clearFieldsButton{
+  background: none;
+  border: 0;
+  outline: 0;
+  color: $theme-blue;
+  padding: 0 0 0 5px;
+  &:hover {
+    background: none;
+    color: $theme-blue;
+    text-decoration: underline;
+  }
+}
+
+.formAlerts {
+  text-align: left !important;
+  line-height: 40px !important;
+  display: inline-block;
+  float: left !important;
+  max-height: 52px;
+  height: 80%;
+  div {
+    text-align: left !important;
+    line-height: 25px;
+  }
+  .customAlertLineHeight {
+    line-height: 1;
+  }
+}
+
+.fileUploaderMobile {
+  margin-top: 20px;
+  padding: 0px 15px;
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}
+
+.customFilePreview {
+  background: $theme-light-grey;
+  margin-top: 10px;
+  width: 100%;
+  border: 2px dashed $theme-middle-grey;
+  border-radius: 4px;
+  padding: 15px 10px 15px 10px;
+  display: flex;
+  height: 220px;
+  overflow: scroll;
+  p {
+    text-align: center;
+    height: 175px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.fileUploaderMobileBtn {
+  input[type="file"] {
+    opacity: 0;
+    z-index: 99;
+    height: 48px;
+    margin-top: -53px;
+  }
+  label {
+    opacity: 1;
+    z-index: 98;
+    background: $theme-light-green;
+    color: $white;
+    font-size: 18px;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+
+.extraFileUploaderMobileBtn {
+  input[type="file"] {
+    opacity: 0;
+    z-index: 99;
+    height: 100%;
+  }
+  svg {
+    position: absolute;
+    opacity: 1;
+    z-index: 98;
+  }
+}
+
+.uploadFilesPreviews li.addAnotherImgMobile {
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 48px;
+    background: $theme-light-grey;
+    border: 2px dashed $theme-middle-grey;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    cursor: pointer;
+  }
+}
+
+.taskFromButtons {
+  @media screen and (max-width: 1280px){
+    margin-top: 30px;
+  }
+  @media screen and (max-width: 462px){
+    margin-top: 70px;
+  }
+}
+
+.groupsHeading {
+  font-weight: 700;
+  color: $theme-dark-grey;
+}
+
+.disableGroup {
+  background-color: $theme-grey;
+}
+
+.taskItemsList {
+  margin: 0;
+  padding: 0 25px;
+}
+
+.timezoneString {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.datetimeClass {
+  & > div:last-child {
+    padding-left: 0;
+  }
+}
+
+.date-time-block {
+  &>div:first-child {
+    padding-right: 0 !important;
+  }
+  &>div:nth-child(2) {
+    padding-right: 0 !important;
+  }
+}
+
+.groupErrorText {
+  color: $bg-orange;
+}
+
+.toastErrorAlert {
+	background: $error-message-custom-background !important;
+	color: $toast-error-color !important;
+	-webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+	-moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+	box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+	button {
+		color: $toast-error-color !important;
+	}
+}

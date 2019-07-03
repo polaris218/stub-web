@@ -1,0 +1,101 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles/colors.scss";
+
+.repeat-block-container {
+  .edit-series {
+    > div {
+      > label {
+        margin-right: 10px;
+      }
+      > div {
+        input[type="checkbox"]:checked + label {
+          background-color: $theme-light-green;
+          &:after {
+            background-color: $theme-light-green;
+          }
+        }
+      }
+    }
+  }
+
+  .flexbox-block {
+    @include flexbox;
+    @include align-items(baseline);
+    @media (max-width: 520px){
+      @include flex-flow(column);
+    }
+    > div {
+      margin-right: 20px;
+      width: 100%;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &.end-block {
+      @media (max-width: 1410px) {
+        @include flex-flow(column);
+      }
+    }
+    .date-block{
+      position: relative;
+      width: 100%;
+      input{
+        width: 100%;
+        padding-left: 6px;
+      }
+      .fa-icon{
+        position: absolute;
+        right: 8px;
+        top: 34px;
+        color: $theme-lighter-grey;
+        font-size: 1.1em;
+      }
+    }
+    .series_field_max{
+      .fa-icon{
+        top: 10px;
+      }
+    }
+  }
+
+  .series_field {
+    width: 180px!important;
+    @media (max-width: 905px) {
+      width: 100%!important;
+    }
+  }
+
+  .series_field_max {
+    max-width: 200px!important;
+  }
+
+  .editSeries {
+    margin-right: 20px;
+  }
+
+  .weekdaysList {
+    margin-bottom: 20px;
+  }
+
+  .dayCheckbox {
+    font-size: 16px;
+  }
+
+  .controlPadding {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .maxOccurences {
+    width: 80px !important;
+    display: inline-block;
+  }
+
+  .maxOccurencesLabel {
+    display: inline-block;
+  }
+
+  .repeat_string {
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,1297 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Task and Task Status API",
+    "description" : "A `Task` is work that can be assigned to an Entity. This could be a service call, moving job, package delivery, food order or any other job. There is no limit on number of tasks that a user can create and assign to Entities. Once you create a Task you will be able to assign it to one or more Entities i.e. your tech, driver or crew members. Once a task is assigned to a crew member they can report status on the task e.g. `on their way to task`, `started`, `complete` etc. Also you can fetch the live estimate of the crew or driver arrival to the task location and task completion using our APIs. `Task Status` is a specific status entry related to a task. It can be reported by the office scheduler, internal system, assigned crew, customer (Thanks to our sms & email relay and our ability to attach note to a live task directly) and in some cases arrivy system. Arrivy supports variety of Task Status types and let users customize that statuses they want for each of their different job types."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/tasks/new" : {
+      "post" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Add a new task.",
+        "description" : "Adds a task to your account, along with all the assigned entities and resources. Note that you may provide the IDs of existing entities or resources if these are available.",
+        "operationId" : "create_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Title of the task. This is optional but we strongly recommend setting it as it shows up on the Arrivy Dashboard for Operations and Support Teams.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_datetime",
+          "in" : "formData",
+          "description" : "Start date and time of the task. This is a required field for all tasks except for the ones that are marked as UNSCHEDULED. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_datetime",
+          "in" : "formData",
+          "description" : "End date and time of the task. This is an expected end time as in many cases the end time isn’t known before-hand. Please provide this value as it helps our estimation and monitoring engine. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enable_time_window_display",
+          "in" : "formData",
+          "description" : "True indicates that customer should not see the exact end datetime provided above. Instead, a time-window based on the start time will be provided.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "time_window_start",
+          "in" : "formData",
+          "description" : "Value of customer time window (in mins). Customer will see Start Time to Start Time + (this time) as the window of the task. This will only have effect if `enable_time_window_display` is set as `True` in the payload. Arrivy monitors this time window and if the crew expected arrival time goes beyond the window we fire late alerts to the dispatcher and operations.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "unscheduled",
+          "in" : "formData",
+          "description" : "True/False which indicates if task is unscheduled or not. If set to 'True' the task shows up **only** in unscheduled list in Arrivy Web Portal. It can later be made scheduled via API or Web Portal.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "Custom fields provided as key value pair stringified as JSON. This is useful as it can help store essentially any data with the task. These key-values pairs will be available on Arrivy Mobile apps for the crew and also sent via webhook notifications (can later be used for correlation).",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "details",
+          "in" : "formData",
+          "description" : "Details of the task. Typically, these are instructions related to the actual work that needs to be done in the task. This is shared with assigned crew members aka entities on Arrivy Mobile Apps.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_first_name",
+          "in" : "formData",
+          "description" : "First name of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_last_name",
+          "in" : "formData",
+          "description" : "Last name of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_email",
+          "in" : "formData",
+          "description" : "Email of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_company_name",
+          "in" : "formData",
+          "description" : "Customer's company name.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_address_line_1",
+          "in" : "formData",
+          "description" : "Customer address line 1.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_address_line_2",
+          "in" : "formData",
+          "description" : "Customer address line 2.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_city",
+          "in" : "formData",
+          "description" : "Customer's city.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_state",
+          "in" : "formData",
+          "description" : "Customer's state and province.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_country",
+          "in" : "formData",
+          "description" : "Customer's country.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_zipcode",
+          "in" : "formData",
+          "description" : "Customer's zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of customer location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_mobile_number",
+          "in" : "formData",
+          "description" : "Mobile number of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_phone",
+          "in" : "formData",
+          "description" : "Secondary Phone number of the customer. We don't use it for our sms notifications unless the above mentioned mobile number isn't provided.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_id",
+          "in" : "formData",
+          "description" : "If you already know the customer's id from a previous Arrivy task provide that. Otherwise, keep it blank. This is optional like most of the fields here.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "notifications",
+          "in" : "formData",
+          "description" : "A key value pair as JSON stringified. Possible key options are sms and email. Indicate true or false to turn on or off each of these channels for customer notifications.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source",
+          "in" : "formData",
+          "description" : "String source of the task e.g. it can be google or any other calendar or your own system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source_id",
+          "in" : "formData",
+          "description" : "Identifier to correlate the task with the any other id in some other system. This field is `deprecated` since we have introduced external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_url",
+          "in" : "formData",
+          "description" : "External url for the task. This could be a complete URL to access this task in your own enterprise system. This link will be available on Crew Mobile Apps too.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from a client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "formData",
+          "description" : "Indicates ID of the group within the company that this task belongs to. This is an internal arrivy group ID that should be known before-hand in order to create task for that group.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "template",
+          "in" : "formData",
+          "description" : "Indicates ID of the template which should be associated with the task. This is an internal arrivy template ID that should be known before-hand in order to associate template with the task.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "additional_addresses",
+          "in" : "formData",
+          "description" : "An array of address objects as JSON stringified. This is used to store multiple addresses on a task e.g. a move typically has two address. each address Object will have attributes like `title`, `address_line_1`, `address_line_2`, `city`, `state`, `country`, `zipcode` and `exact_location`. exact_location is a JSON string having two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "entity_ids",
+          "in" : "formData",
+          "description" : "Comma separated string of entity ids to indicate assigned entites aka crew members or drivers. These entity ids are the ids returned by Arrivy in response of /api/entities/new or /api/entities.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "resource_ids",
+          "in" : "formData",
+          "description" : "Comma separated string of resource ids to indicate assigned resources. These resource ids are the ids returned by Arrivy in response of /api/resources/new or /api/resources.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items",
+          "in" : "formData",
+          "description" : "An array of item objects as JSON stringified. This is used to store details of items which are to be delivered/picked up from customer's location or warehouse etc. Each item object will have attributes like `id`, `name`, `description`, `sku`, `lpn`, `model`, `weight`, `weight_unit`(it should be ISO unit), `image_id`, `image_name`, `image_path`, `color` and `type`. **NOTE:** `id` and `type` are required attributes in each item object and also please specify `type` as `DELIVERY` for the items which are to be delivered and `PICKUP` for the items which are to be picked up. The `id` and `lpn` of each item needs to be unique.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to add task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "url_safe_id" : {
+                  "type" : "string",
+                  "example" : "ahRzfnRyYWNraW5nLWFwaS1tdWhpb3IiCxIEVXNlchiAgICgnpmFCAwLEgRUYXNrGICAgICAgIKADA"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_DATETIME"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "End datetime should be later than Start datetime"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/tasks/{task_id}" : {
+      "get" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Get a specific task.",
+        "description" : "Returns the entire task stucture as JSON given the task_id of the task.",
+        "operationId" : "get_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "task_id",
+          "in" : "path",
+          "description" : "ID of the task.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "title" : {
+                  "type" : "string",
+                  "example" : "Task001"
+                },
+                "start_datetime" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T08:00:00"
+                },
+                "end_datetime" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T09:00:00"
+                },
+                "start_datetime_original_iso_str" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T08:00:00+01:00"
+                },
+                "end_datetime_original_iso_str" : {
+                  "type" : "string",
+                  "example" : "2016-10-14T09:00:00+01:00"
+                },
+                "details" : {
+                  "type" : "string",
+                  "example" : "Task Details"
+                },
+                "entity_ids" : {
+                  "type" : "string",
+                  "example" : "5348024557502464, 033534889455750984"
+                },
+                "resource_ids" : {
+                  "type" : "string",
+                  "example" : "2049627896321366, 069596596897565964"
+                },
+                "customer_first_name" : {
+                  "type" : "string",
+                  "example" : "John"
+                },
+                "customer_last_name" : {
+                  "type" : "string",
+                  "example" : "Doe"
+                },
+                "customer_email" : {
+                  "type" : "string",
+                  "example" : "john@doe.com"
+                },
+                "customer_company_name" : {
+                  "type" : "string",
+                  "example" : "Movers"
+                },
+                "customer_address_line_1" : {
+                  "type" : "string",
+                  "example" : "16357 118th Lane Northeast"
+                },
+                "customer_address_line_2" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "customer_city" : {
+                  "type" : "string",
+                  "example" : "Bothell"
+                },
+                "customer_state" : {
+                  "type" : "string",
+                  "example" : "Washington"
+                },
+                "customer_country" : {
+                  "type" : "string",
+                  "example" : "USA"
+                },
+                "customer_zipcode" : {
+                  "type" : "string",
+                  "example" : 98011
+                },
+                "customer_exact_location" : {
+                  "type" : "string",
+                  "example" : {
+                    "lat" : 47.74659,
+                    "lng" : -122.1829
+                  }
+                },
+                "customer_mobile_number" : {
+                  "type" : "string",
+                  "example" : 42552443435
+                },
+                "customer_phone" : {
+                  "type" : "string",
+                  "example" : ""
+                },
+                "unscheduled" : {
+                  "type" : "string",
+                  "example" : false
+                },
+                "group_id" : {
+                  "type" : "integer",
+                  "example" : 2098744557459603
+                },
+                "notifications" : {
+                  "type" : "string",
+                  "example" : {
+                    "email" : false,
+                    "sms" : true
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid task_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Update a specific task.",
+        "description" : "This PUT call can be used to change any field values on the task. Just send the values that you would like updated. Most common use is modifying entities_id to change crew assignment on a task.",
+        "operationId" : "update_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "task_id",
+          "in" : "path",
+          "description" : "ID of the task.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "title",
+          "in" : "formData",
+          "description" : "Title of the task. This is optional but we strongly recommend setting it as it shows up on the Arrivy Dashboard for Operations and Support Teams.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "start_datetime",
+          "in" : "formData",
+          "description" : "Start date and time of the task. This is a required field for all tasks except for the ones that are marked as UNSCHEDULED. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "end_datetime",
+          "in" : "formData",
+          "description" : "End date and time of the task. This is an expected end time as in many cases the end time isn’t known before-hand. Please provide this value as it helps our estimation and monitoring engine. This needs to be ISO 8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. 2016-10-14T08:00:00+01:00",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "enable_time_window_display",
+          "in" : "formData",
+          "description" : "True indicates that customer should not see the exact end datetime provided above. Instead, a time-window based on the start time will be provided.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "time_window_start",
+          "in" : "formData",
+          "description" : "Value of customer time window (in mins). Customer will see Start Time to Start Time + (this time) as the window of the task. This will only have effect if `enable_time_window_display` is set as `True` in the payload. Arrivy monitors this time window and if the crew expected arrival time goes beyond the window we fire late alerts to the dispatcher and operations.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "unscheduled",
+          "in" : "formData",
+          "description" : "True/False which indicates if task is unscheduled or not. If set to 'True' the task shows up **only** in unscheduled list in Arrivy Web Portal. It can later be made scheduled via API or Web Portal.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "Custom fields provided as key value pair stringified as JSON. This is useful as it can help store essentially any data with the task. These key-values pairs will be available on Arrivy Mobile apps for the crew and also sent via webhook notifications (can later be used for correlation).",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "details",
+          "in" : "formData",
+          "description" : "Details of the task. Typically, these are instructions related to the actual work that needs to be done in the task. This is shared with assigned crew members aka entities on Arrivy Mobile Apps.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_first_name",
+          "in" : "formData",
+          "description" : "First name of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_last_name",
+          "in" : "formData",
+          "description" : "Last name of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_email",
+          "in" : "formData",
+          "description" : "Email of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_company_name",
+          "in" : "formData",
+          "description" : "Customer's company name.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_address_line_1",
+          "in" : "formData",
+          "description" : "Customer address line 1.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_address_line_2",
+          "in" : "formData",
+          "description" : "Customer address line 2.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_city",
+          "in" : "formData",
+          "description" : "Customer's city.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_state",
+          "in" : "formData",
+          "description" : "Customer's state and province.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_country",
+          "in" : "formData",
+          "description" : "Customer's country.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_zipcode",
+          "in" : "formData",
+          "description" : "Customer's zipcode.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_exact_location.",
+          "in" : "formData",
+          "description" : "Exact latitude and longitude of customer location. Expected format is a JSON string with these two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_mobile_number",
+          "in" : "formData",
+          "description" : "Mobile number of the customer.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_phone",
+          "in" : "formData",
+          "description" : "Secondary Phone number of the customer. We don't use it for our sms notifications unless the above mentioned mobile number isn't provided.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "customer_id",
+          "in" : "formData",
+          "description" : "If you already know the customer's id from a previous Arrivy task provide that. Otherwise, keep it blank. This is optional like most of the fields here.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "notifications",
+          "in" : "formData",
+          "description" : "A key value pair as JSON stringified. Possible key options are sms and email. Indicate true or false to turn on or off each of these channels for customer notifications.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source",
+          "in" : "formData",
+          "description" : "String source of the task e.g. it can be google or any other calendar or your own system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "source_id",
+          "in" : "formData",
+          "description" : "Identifier to correlate the task with the any other id in some other system. This field is `deprecated` since we have introduced external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_url",
+          "in" : "formData",
+          "description" : "External url for the task. This could be a complete URL to access this task in your own enterprise system. This link will be available on Crew Mobile Apps too.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from a client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "formData",
+          "description" : "Indicates ID of the group within the company that this task belongs to. This is an internal arrivy group ID that should be known before-hand in order to create task for that group.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "template",
+          "in" : "formData",
+          "description" : "Indicates ID of the template which should be associated with the task. This is an internal arrivy template ID that should be known before-hand in order to associate template with the task.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "additional_addresses",
+          "in" : "formData",
+          "description" : "An array of address objects as JSON stringified. This is used to store multiple addresses on a task e.g. a move typically has two address. each address Object will have attributes like `title`, `address_line_1`, `address_line_2`, `city`, `state`, `country`, `zipcode` and `exact_location`. exact_location is a JSON string having two keys `lat` and `lng`.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "entity_ids",
+          "in" : "formData",
+          "description" : "Comma separated string of entity ids to indicate assigned entites aka crew members or drivers. These entity ids are the ids returned by Arrivy in response of /api/entities/new or /api/entities.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "resource_ids",
+          "in" : "formData",
+          "description" : "Comma separated string of resource ids to indicate assigned resources. These resource ids are the ids returned by Arrivy in response of /api/resources/new or /api/resources.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "items",
+          "in" : "formData",
+          "description" : "An array of item objects as JSON stringified. This is used to store details of items which are to be delivered/picked up from customer's location or warehouse etc. each item object will have attributes like `id`, `name`, `description`, `sku`, `lpn`, `model`, `weight`, `wight_unit`(it should be ISO unit), `image_id`, `image_name`, `image_path`, `color` and `type`. **NOTE:** `id` and `type` are required attributes in each item object and also please specify `type` as `DELIVERY` for the items which are to be delivered and `PICKUP` for the items which are to be picked up. The `id` and `lpn` of each item needs to be unique.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to update task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Updated."
+                },
+                "tasksFetchRecommended" : {
+                  "type" : "boolean",
+                  "example" : true
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid task_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "Delete a specific task.",
+        "description" : "Delete a task.",
+        "operationId" : "delete_task",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "task_id",
+          "in" : "path",
+          "description" : "ID of the task.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid task_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/tasks" : {
+      "get" : {
+        "tags" : [ "Task APIs" ],
+        "summary" : "List All Tasks.",
+        "description" : "List all tasks. You can specify a few fields to limit your search (highly recommended). Possible URL params are explained.",
+        "operationId" : "get_all_tasks",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "entity_id",
+          "in" : "query",
+          "description" : "This field helps return tasks of a specific entity.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "from",
+          "in" : "query",
+          "description" : "Date & Time of the query. This needs to be ISO8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. '2016-10-14T08:00:00+01:00'. Plus sign needs to be url encoded as these are query params.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "to",
+          "in" : "query",
+          "description" : "Date & Time of the query. This needs to be ISO8601. Supported format is YYYY-MM-DDTHH:mm:ssZZ e.g. '2016-10-14T08:00:00+01:00'. Plus sign needs to be url encoded as these are query params.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Default value is 1 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Default value is 500 if not supplied.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "unscheduled",
+          "in" : "query",
+          "description" : "Default value is false. True indicates that only unscheduled tasks should be returned. To learn more about unscheduled tasks please checkout https://help.arrivy.com/tasks-and-calendar/unscheduled-tasks/",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "customer_id",
+          "in" : "query",
+          "description" : "Returns tasks for a given customer_id.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Returns task for a given external_id.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "show_details",
+          "in" : "query",
+          "description" : "If true then 10 latest Task statuses and ratings will be included in the response as well.",
+          "required" : false,
+          "type" : "boolean"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get task list of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "title" : {
+                    "type" : "string",
+                    "example" : "Task001"
+                  },
+                  "start_datetime" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T08:00:00"
+                  },
+                  "end_datetime" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T09:00:00"
+                  },
+                  "start_datetime_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T08:00:00+01:00"
+                  },
+                  "end_datetime_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2016-10-14T09:00:00+01:00"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Task Details"
+                  },
+                  "entity_ids" : {
+                    "type" : "string",
+                    "example" : "5348024557502464, 033534889455750984"
+                  },
+                  "resource_ids" : {
+                    "type" : "string",
+                    "example" : "2049627896321366, 069596596897565964"
+                  },
+                  "customer_first_name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "customer_last_name" : {
+                    "type" : "string",
+                    "example" : "Doe"
+                  },
+                  "customer_email" : {
+                    "type" : "string",
+                    "example" : "john@doe.com"
+                  },
+                  "customer_company_name" : {
+                    "type" : "string",
+                    "example" : "Movers"
+                  },
+                  "customer_address_line_1" : {
+                    "type" : "string",
+                    "example" : "16357 118th Lane Northeast"
+                  },
+                  "customer_address_line_2" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "customer_city" : {
+                    "type" : "string",
+                    "example" : "Bothell"
+                  },
+                  "customer_state" : {
+                    "type" : "string",
+                    "example" : "Washington"
+                  },
+                  "customer_country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "customer_zipcode" : {
+                    "type" : "string",
+                    "example" : 98011
+                  },
+                  "customer_exact_location" : {
+                    "type" : "string",
+                    "example" : {
+                      "lat" : 47.74659,
+                      "lng" : -122.1829
+                    }
+                  },
+                  "customer_mobile_number" : {
+                    "type" : "string",
+                    "example" : 42552443435
+                  },
+                  "customer_phone" : {
+                    "type" : "string",
+                    "example" : ""
+                  },
+                  "unscheduled" : {
+                    "type" : "string",
+                    "example" : false
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 2098744557459603
+                  },
+                  "notifications" : {
+                    "type" : "string",
+                    "example" : {
+                      "email" : false,
+                      "sms" : true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/tasks/{task_id}/estimate" : {
+      "get" : {
+        "tags" : [ "Task Estimate API" ],
+        "summary" : "Estimate arrival time at task.",
+        "description" : "Get estimated arrival time of task assignee at task.",
+        "operationId" : "get_task_estimate_arrival",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "task_id",
+          "in" : "path",
+          "description" : "ID of the task.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get estimate arrival of task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "estimate" : {
+                  "type" : "string",
+                  "example" : "40 minutes"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid task_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/tasks/{task_id}/rating" : {
+      "get" : {
+        "tags" : [ "Task Rating API" ],
+        "summary" : "Rating left by the customer.",
+        "description" : "Get the rating left by the customer at task completion.",
+        "operationId" : "get_task_rating",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "task_id",
+          "in" : "path",
+          "description" : "ID of the task.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to get rating of task of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "rating" : {
+                    "type" : "integer",
+                    "example" : 5
+                  },
+                  "text" : {
+                    "type" : "string",
+                    "example" : "Way to go guys"
+                  },
+                  "customer_state" : {
+                    "type" : "string",
+                    "example" : "California"
+                  },
+                  "customer_first_name" : {
+                    "type" : "string",
+                    "example" : "John"
+                  },
+                  "customer_last_name" : {
+                    "type" : "string",
+                    "example" : "Doe"
+                  },
+                  "customer_city" : {
+                    "type" : "string",
+                    "example" : "San Francisco"
+                  },
+                  "customer_country" : {
+                    "type" : "string",
+                    "example" : "USA"
+                  },
+                  "time" : {
+                    "type" : "string",
+                    "example" : "2017-10-14T06:23:33"
+                  },
+                  "time_original_iso_str" : {
+                    "type" : "string",
+                    "example" : "2017-10-13T23:23:33-07:00"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid task_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

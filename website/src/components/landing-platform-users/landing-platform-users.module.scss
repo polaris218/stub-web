@@ -1,0 +1,111 @@
+@import '../../../styles/colors.scss';
+
+.features {
+    background-color: $white;
+    padding: 40px 0px 0px 0px;
+}
+
+.features-main-text {
+    font-size: 24px;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
+
+.features-flex-container {
+    -webkit-display: -webkit-box;
+    -webkit-display: -webkit-flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.features-flex-item {
+    max-width: 1200px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: white;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+}
+
+.features-flex-item-image {
+    max-width: 160px;
+    height: auto;
+}
+
+.features-flex-item-heading {
+    font-size: 16px;
+    letter-spacing: .1em;
+    text-align: center;
+    font-style: italic;
+}
+
+.features-flex-item-text {
+    font-size: 28px; 
+    color: $features-flex-text;
+    border-radius: 10px;
+    padding: 10px 10px 30px 10px;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px 0px rgba(241, 241, 241, 0.75);
+
+    @media(max-width: 768px) {
+      font-size: 18px;
+    }
+}
+
+.features-flex-item-badges {
+    display: block;
+    width: 100%;
+}
+
+.features-flex-item-badges-image {
+    max-width: 100px;
+}
+
+.features-flex-item-badge {
+  
+}
+
+.features-flex-item-intro {
+    font-size: 30px;
+    font-weight: 800;
+    text-align: center;
+    padding: 20px 0px;
+    color: $features-flex-intro;
+}
+
+.features-flex-item-logo-container {
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 10px;
+    background-color: white;
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: -30px;
+}
+
+.features-flex-item-container {
+    display: inline-flex;
+}
+
+.features-flex-text-container {
+    padding: 0px 15px;
+    text-align: left;
+    color: $features-flex-container;
+}
+
+.features-flex-text {
+    text-align: center;
+}

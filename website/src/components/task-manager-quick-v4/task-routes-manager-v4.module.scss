@@ -1,0 +1,610 @@
+@import '../../../styles/colors.scss';
+
+.taskRoutesManagerContainer {
+	div {
+		.contentLoadingContainer {
+			display: flex;
+			height: calc(100vh - 110px);
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+		}
+		.taskManagerQuickContentContainer {
+			&>div {
+				padding: 0 !important;
+			}
+			.taskItemsContainer {
+				position: relative;
+				&::-webkit-scrollbar-track {
+					background-color: transparent;
+					position: absolute;
+				}
+				&::-webkit-scrollbar {
+					width: 6px;
+					background-color: transparent;
+				}
+				&::-webkit-scrollbar-thumb {
+					background-color: $primary;
+					display: none;
+				}
+				&:hover {
+					&::-webkit-scrollbar-thumb {
+						display: block;
+					}
+				}
+				.no-entity {
+					width: 50%;
+					display: inline-flex;
+					color: $dashboard-dark-grey;
+					font-size: 16px;
+					padding: 12px;
+					justify-content: center;
+					align-content: center;
+					position: absolute;
+					left: 0;
+					top: 50%;
+					transform: translateY(-50%);
+				}
+				.no-route {
+					width: 100%;
+					@media screen and (max-width: 768px) {
+						width: 50%;
+					}
+				}
+				.tasksContainerMiniBar {
+					display: flex;
+					flex-direction: row;
+					min-height: 42px;
+					justify-content: flex-start;
+					padding: 12px 12px 5px 12px;
+					align-content: center;
+					.tasksCount {
+						display: inline-flex;
+						align-content: center;
+						flex-direction: row;
+						padding: 0 10px 0 10px;
+						p {
+							margin-bottom: 0;
+							color: $dashboard-dark-grey;
+							line-height: 25px;
+						}
+					}
+					.paginationContainer {
+						padding: 0 12px 0 12px;
+						display: inline-flex;
+						align-content: center;
+						button {
+							background: none;
+							padding: 2px 8px 2px 8px;
+							outline: none;
+							border: 1px transparent;
+							border-radius: 8px;
+							font-size: 18px;
+							color: $dashboard-dark-grey;
+							-webkit-transition: all 0.2s ease-in-out;
+							-moz-transition: all 0.2s ease-in-out;
+							-o-transition: all 0.2s ease-in-out;
+							transition: all 0.2s ease-in-out;
+							&:first-child {
+								margin-right: 10px;
+							}
+							&:hover {
+								background: $dashboard-grey;
+							}
+						}
+						.pendingAction {
+							pointer-events: none;
+						}
+					}
+				}
+				.routesContentContainer {
+					display: flex;
+					padding: 10px 10px 0 10px;
+					flex-direction: row;
+					//height: calc(100% - 42px);
+					.routesListScrollContainer {
+						overflow-y: auto;
+						width: 40%;
+						&::-webkit-scrollbar-track {
+							background-color: transparent;
+							position: absolute;
+						}
+						&::-webkit-scrollbar {
+							width: 6px;
+							background-color: transparent;
+						}
+						&::-webkit-scrollbar-thumb {
+							background-color: $primary;
+							display: none;
+						}
+						&:hover {
+							&::-webkit-scrollbar-thumb {
+								display: block;
+							}
+						}
+						.routesInfo {
+							color: $dashboard-dark-grey;
+							padding: 0 8px;
+							min-height: 30px;
+							width: 90px;
+							float: left;
+						}
+						.routesListContainer {
+							display: flex;
+							flex-direction: column;
+							width: 100%;
+							padding: 0 16px 0 8px;
+							.route {
+								background: $route-bg;
+								-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+								-moz-box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+								box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+								border-radius: 5px;
+								border-width: 1px 1px 1px 8px;
+								border-color: transparent transparent transparent #348AF7;
+								border-style: solid;
+								font-size: 11px;
+								padding: 5px;
+								position: relative;
+								margin-bottom: 8px;
+								-webkit-transition: all 0.2s ease-in-out;
+								-moz-transition: all 0.2s ease-in-out;
+								-o-transition: all 0.2s ease-in-out;
+								transition: all 0.2s ease-in-out;
+								display: flex;
+								flex-direction: row;
+								flex-wrap: nowrap;
+								cursor: pointer;
+								user-select: none;
+								min-height: 85px;
+								.routeDetails {
+									display: flex;
+									flex-direction: column;
+									min-width: 50%;
+									max-width: 50%;
+									.routeName {
+										color: $route-title;
+										font-size: 13px;
+										font-weight: bold;
+										margin-bottom: 5px;
+										-webkit-transition: all 0.2s ease-in-out;
+										-moz-transition: all 0.2s ease-in-out;
+										-o-transition: all 0.2s ease-in-out;
+										transition: all 0.2s ease-in-out;
+										width: 100%;
+										white-space: nowrap;
+										overflow: hidden;
+										text-overflow: ellipsis;
+									}
+									.routeExtraDetails {
+										color: $dashboard-dark;
+									}
+									.startEndDetails {
+										color: $dashboard-dark;
+										display: inline-flex;
+										flex-direction: row;
+										align-items: center;
+										@media screen and (min-width: 1400px) and (max-width: 1650px){
+											font-size: 10px;
+										}
+									}
+								}
+								.icon {
+									width: 20px;
+									height: 20px;
+									text-align: center;
+									display: inline-flex;
+									justify-content: center;
+									justify-items: center;
+									align-items: center;
+									color: $dashboard-grey;
+									font-size: 14px;
+									img {
+										width: 12px;
+										height: auto;
+									}
+								}
+								&:hover, &.selectedRoute {
+									background: $white;
+									border-color: #DFF0FF #DFF0FF #DFF0FF #348AF7;
+									-webkit-box-shadow: 0px 10px 30px 0px rgba(76, 92, 106, 0.17);
+									-moz-box-shadow: 0px 10px 30px 0px rgba(76, 92, 106, 0.17);
+									box-shadow: 0px 10px 30px 0px rgba(76, 92, 106, 0.17);
+									.routeDetails {
+										.routeName {
+											color: $primary;
+										}
+									}
+								}
+								@media screen and (min-width: 768px) {
+									&.selectedRoute{
+										&:after{
+											content: '';
+											width: 0;
+											height: 0;
+											border-style: solid;
+											border-width: 7.5px 11px 7.5px 0;
+											border-color: transparent $white transparent transparent;
+											position: absolute;
+											right: -11px;
+											top: 50%;
+											margin-top: -7.5px;
+											-webkit-transform: rotate(-180deg);
+											-moz-transform: rotate(-180deg);
+											transform: rotate(-180deg);
+										}
+									}
+								}
+								.entitiesFaces {
+									display: inline-flex;
+									flex-direction: column;
+									flex-grow: 1;
+									justify-content: center;
+									align-items: flex-start;
+									align-content: center;
+									padding-right: 30px;
+									.entityFace {
+										display: flex;
+										align-items: center;
+										justify-content: center;
+										cursor: default;
+										$i:11;
+										&:not(:first-child):nth-child(n+1) {
+											margin-top: -5px;
+											$i: $i + 1;
+											z-index: $i;
+											@media screen and (max-width: 1280px) {
+												//margin-left: -22px;
+											}
+										}
+										.entityFacePlaceholder {
+											min-width: 25px;
+											width: 25px;
+											height: 25px;
+											margin-right: 5px;
+											z-index: 10;
+											text-align: center;
+											background: $dashboard-grey;
+											color: $white;
+											font-size: 10px;
+											border: 1px solid $white;
+											border-radius: 50%;
+											display: inline-flex;
+											justify-content: center;
+											align-items: center;
+											text-transform: uppercase !important;
+										}
+										.name{
+											font-size: 10px;
+											font-weight: bold;
+											word-break: break-word;
+											line-height: 1;
+											display: inline-block;
+											overflow: hidden;
+											max-height: 22px;
+											text-overflow: ellipsis;
+										}
+										img {
+											width: 25px;
+											height: 25px;
+											z-index: 10;
+											border-width: 1px;
+											border-style: solid;
+											border-radius: 50%;
+											border-color: $white;
+											object-fit: cover;
+											object-position: center;
+											max-width: none;
+										}
+									}
+									.entityCount{
+										position: absolute;
+										bottom: 5px;
+										right: 10px;
+									}
+								}
+								.userIcon{
+									background-color: #DBECFB;
+									color: #348AF7;
+									border-radius: 12px;
+									position: absolute;
+									display: block;
+									height: 19px;
+									line-height: 19px;
+									width: 30px;
+									right: 10px;
+									top: 10px;
+									z-index: 15;
+									-webkit-transition: all 0.2s ease-in-out;
+									-moz-transition: all 0.2s ease-in-out;
+									-o-transition: all 0.2s ease-in-out;
+									transition: all 0.2s ease-in-out;
+									text-align: center;
+									svg{
+										display: inline-block;
+										font-size: 8px;
+										&:first-child{
+											margin-right: 4px;
+										}
+									}
+									&:hover{
+										background-color: $dashboard-primary;
+										-webkit-box-shadow: 0 5px 6px rgba(52, 138, 247, .44);
+										-moz-box-shadow: 0 5px 6px rgba(52, 138, 247, .44);
+										box-shadow: 0 5px 6px rgba(52, 138, 247, .44);
+										color: $white;
+									}
+								}
+								@media  screen and (max-width: 767px), screen and (min-width: 992px) and (max-width: 1300px){
+									flex-direction: column;
+									.routeDetails{
+										min-width: 100%;
+										max-width: 100%;
+										padding-right: 40px;
+									}
+								}
+							}
+							@media screen and (max-width: 767px){
+								padding-left: 0;
+							}
+						}
+						@media screen and (min-width: 992px) and (max-width: 1100px){
+							width: 50%;
+						}
+						@media screen and (max-width: 767px){
+							width: 50%;
+						}
+					}
+					.hideTasksPanelBtn {
+						position: absolute;
+						right: 0px;
+						top: 40px;
+						height: 55px;
+						width: 15px;
+						padding: 0 3px;
+						background: $dashboard-primary;
+						border-radius: 2px;
+						cursor: pointer;
+						@media screen and (max-width: 767px) {
+							display: none;
+						}
+						> svg {
+							color: white;
+							font-size: 20px;
+							margin-top: 16px;
+						}
+					}
+					.tasksListScrollContainer {
+						width: 60%;
+						overflow-y: auto;
+						&::-webkit-scrollbar-track {
+							background-color: transparent;
+							position: absolute;
+						}
+						&::-webkit-scrollbar {
+							width: 6px;
+							background-color: transparent;
+						}
+						&::-webkit-scrollbar-thumb {
+							background-color: $primary;
+							display: none;
+						}
+						&:hover {
+							&::-webkit-scrollbar-thumb {
+								display: block;
+							}
+						}
+						.no-entity{
+							left: 50%;
+						}
+						.tasksListContainer {
+							width: 100%;
+							display: flex;
+							flex-direction: column;
+							.taskSummaryCardWrapper{
+								min-height: 30px;
+								.tasksSummaryCard {
+									display: flex;
+									justify-content: space-between;
+									padding-right: 16px;
+									color: #8D959F;
+								}
+							}
+						}
+						@media screen and (min-width: 992px) and (max-width: 1100px){
+							width: 50%;
+						}
+						@media screen and (max-width: 767px){
+							width: 50%;
+							padding-left: 10px;
+							margin-top: 30px;
+						}
+					}
+
+					.routesListScrollContainer,
+					.tasksListScrollContainer{
+						//max-height: calc(100% - 65px);
+						//min-height: calc(100% - 65px);
+						//@media screen and (max-width: 1180px){
+						//	min-height: calc(100vh - 207px);
+						//	max-height: calc(100vh - 207px);
+						//}
+						//@media screen and (max-width: 991px){
+						//	max-height: calc(100% - 120px);
+						//	min-height: calc(100% - 120px);
+						//}
+						@media screen and (max-width: 767px){
+							max-height: 100vh;
+							min-height: 100vh;
+						}
+					}
+
+					@media screen and (max-width: 767px){
+						width: 200vw;
+						-webkit-transition: all 0.3s ease-in-out;
+						-moz-transition: all 0.3s ease-in-out;
+						transition: all 0.3s ease-in-out;
+						-webkit-transform: translateX(0%);
+						-moz-transform: translateX(0%);
+						transform: translateX(0%);
+						&.active{
+							-webkit-transform: translateX(-50%);
+							-moz-transform: translateX(-50%);
+							transform: translateX(-50%);
+						}
+					}
+				}
+				@media screen and (max-width: 767px){
+					overflow-x: hidden;
+				}
+			}
+			.locationMapContainer {
+				.routesSavingSpinner {
+					> div:first-child {
+						margin-top: 20px;
+						z-index: 99;
+						position: absolute;
+						left: 50%;
+					}
+				}
+				.nonRouteTasks {
+					min-width: 150px;
+					max-width: 250px;
+					margin-top: 20px;
+					z-index: 10;
+					position: absolute;
+					left: 40%;
+					background: #eeeeee;
+					font-size: 16px;
+					font-weight: bold;
+					height: 30px;
+					text-align: center;
+					padding: 4px 10px 0 10px;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					@media screen and (min-width: 992px) and (max-width: 1030px) {
+						left: auto;
+						right: 0;
+					}
+					@media screen and (max-width: 440px) {
+						left: auto;
+						right: 10px;
+						top: 35px;
+					}
+				}
+        > div > div > div{
+          //height: calc(100% - 55px) !important;
+          //@media screen and (max-width: 1180px){
+          //  height: calc(100vh - 165px) !important;
+          //}
+          @media screen and (max-width: 991px){
+            height: 100vh !important;
+          }
+        }
+			}
+		}
+	}
+	@media screen and (max-width: 767px) {
+		height:  auto !important;
+	}
+}
+.routesTasksNav{
+	justify-content: space-between;
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 14px;
+	line-height: 1;
+	position: absolute;
+	top: 10px;
+	left: 0px;
+	width: 100%;
+	padding: 0 10px;
+	visibility: hidden;
+	z-index: 999;
+	opacity: 0;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	.icon{
+		cursor: pointer;
+		svg{
+			font-size: 22px;
+			vertical-align: middle;
+		}
+		span{
+			display: inline-block;
+			font-weight: bold;
+			vertical-align: middle;
+		}
+	}
+	.routeName{
+		color: #8D959F;
+		min-width: calc(100% - 80px);
+		max-width: calc(100% - 80px);
+		text-align: right;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+	&.active{
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.loadingSpinnerContainer {
+	flex-grow: 1;
+	display: inline-flex;
+	justify-content: center;
+	align-content: center;
+	margin-top: 6px;
+}
+
+.toastContainer {
+	background: none !important;
+	padding: 0 !important;
+}
+
+.toast {
+	display: none !important;
+}
+
+.routeSelector {
+	position: absolute;
+	left: 8px;
+	bottom: 0;
+	@media all and (min-width: 992px) and (max-width: 1300px) {
+		position: relative;
+		left: 5px;
+	}
+	@media all and (max-width: 767px) {
+		position: relative;
+		left: 5px;
+	}
+	label {
+		min-height: 10px;
+		input {
+			margin-top: 0;
+			width: 15px;
+			height: 15px;
+		}
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1100px){
+	.taskHidden{
+		width: calc(25% + 10px);
+	}
+	.mapMask{
+		width: calc(75% - 10px);
+	}
+}
+@media screen and (min-width: 1101px){
+	.taskHidden{
+		width: calc(20% + 12px);
+	}
+	.mapMask{
+		width: calc(80% - 12px);
+	}
+}

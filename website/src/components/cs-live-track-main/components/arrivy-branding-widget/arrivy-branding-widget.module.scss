@@ -1,0 +1,15 @@
+@import '../../../../../styles/colors.scss';
+
+.arrivyBrandingWidgetContainer {
+  padding: 15px 0 15px 0;
+  p {
+    color: $theme-middle-grey;
+    text-align: center;
+    a {
+      img {
+        max-width: 100px;
+        opacity: 0.6;
+      }
+    }
+  }
+}

@@ -1,0 +1,184 @@
+@import '../../../../../styles/colors.scss';
+@import "../../base-styling.module";
+
+.plain_part{
+  .box .boxBody{
+    margin-bottom: 15px;
+  }
+  .contentBox{
+    font-size: 12px;
+    p{
+      max-width: 395px;
+    }
+  }
+  .timezonePickerInstance {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    padding: 0;
+    outline: none;
+    min-height: 40px;
+  }
+  .timezonePickerInstance div input[type=text], .timeFiled input[type=text]{
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    box-shadow: none !important;
+    color: $dashboard-dark;
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 40px;
+    padding: 9px 15px;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:focus{
+      box-shadow: none !important;
+      border-color: darken($dashboard-bg, 15%);
+    }
+    &:disabled{
+      background-color: $theme-grey;
+    }
+  }
+  .user-plan{
+    display: block;
+    button{
+      background-color: $route-bg;
+      border-color: $dashboard-bg;
+      display: block;
+      float: none;
+      height: 40px;
+      padding: 0 35px 0 15px;
+      line-height: 1.2;
+      width: 100%;
+      text-align: left;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &:after{
+        content: '';
+        background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        pointer-events: none;
+      }
+      &:active{
+        box-shadow: none;
+      }
+      &[aria-expanded="true"], &:active:focus{
+        background-color: $route-bg !important;
+        border-color: darken($dashboard-bg, 15%) !important;
+        box-shadow: none;
+      }
+      & > div {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      > span{
+        display: none;
+      }
+      small{
+        font-size: 12px;
+        margin-left: 15px;
+        opacity: .5;
+      }
+    }
+    .user-plan-menu{
+      width: 100%;
+      .user-plan-item {
+        a {
+          padding: 3px 15px;
+          white-space: normal;
+          small{
+            display: block;
+            opacity: .8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.authKeysExtraFields {
+  padding: 6px 12px;
+}
+.rangeSliderCustom {
+  box-shadow: none !important;
+  margin: 15px 0 10px 0 !important;
+  height: 6px !important;
+  padding: 0 !important;
+  ul {
+    margin-top: 10px;
+  }
+  &>div:first-child {
+    height: 6px;
+    background-color: $primary !important;
+    border-radius: 10px;
+    top: -1px;
+    position: absolute;
+    left: -1px;
+    box-shadow: none !important;
+  }
+  &>div:nth-child(2) {
+    background: $btn-primary-hover !important;
+    border-color: $primary;
+    width: 20px !important;
+    height: 20px !important;
+    &::after {
+      display: none;
+    }
+  }
+}
+.custom_webhook_url {
+  margin-top: 10px;
+  @media (max-width: 768px) {
+    margin-top: 30px;
+  }
+}
+
+:global {
+  .rc-time-picker-panel {
+    margin-top: 50px !important;
+    .rc-time-picker-panel-select {
+      overflow-x: hidden;
+    }
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

@@ -1,0 +1,826 @@
+[{
+  "delay": 10000,
+  "estimate": "NOT AVAILABLE",
+  "topbar": {
+    "message": "Welcome to Arrivy!"
+  },
+  "data": {
+    "task": {
+      "customer_id": null,
+      "customer_address_line_2": "",
+      "end_datetime": "2017-08-25T08:00:00",
+      "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+      "customer_address_line_1": "Seven Sisters Road",
+      "id": 5825281323433984,
+      "time_window_start": 60,
+      "notifications": {
+        "sms": true,
+        "email": true
+      },
+      "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+      "customer_company_name": "Company, Inc.",
+      "customer_city": "CA",
+      "customer_phone2": "",
+      "customer_exact_location": {
+        "lng": -0.1102536,
+        "lat": 51.5625386
+      },
+      "customer_last_name": "Snow",
+      "details": "",
+      "title": "goofy jello bar",
+      "customer_notes": "",
+      "customer_first_name": "John",
+      "customer_zipcode": "N4 3NS",
+      "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+      "customer_email": "john@example.com",
+      "status": "NOT AVAILABLE",
+      "notifications_sent": null,
+      "resource_ids": [
+        6507459568992256
+      ],
+      "series_id": null,
+      "owner": 5629499534213120,
+      "customer_address": "Seven Sisters Road, London England, N4 3NS",
+      "extra_fields": {
+        "task_color": "#03a9f4"
+      },
+      "customer_country": "United Kingdom",
+      "use_assignee_color": false,
+      "entity_ids": [
+        5222955109842944,
+        6630329993396224
+      ],
+      "enable_time_window_display": true,
+      "customer_state": "England",
+      "customer_name": "John Snow",
+      "customer_phone": "+1 (455) 677 896",
+      "start_datetime": "2017-08-15T07:00:21"
+    },
+
+    "status": {
+      "latestStatus": "NOT AVAILABLE",
+      "statusList": []
+    },
+
+    "customerObj": {
+      "url_safe_id": "aghkZXZ-Tm9uZXIVCxIIQ3VzdG9tZXIYgICAgICAwAgM",
+      "created": 1500451508130,
+      "email": "grabby@example.com",
+      "phone2": null,
+      "id": 4785074604081152,
+      "owner": 5629499534213120,
+      "updated": 1502780767850,
+      "country": "United Kingdom",
+      "notifications": {},
+      "zipcode": "E2 8DA",
+      "notes": "",
+      "extra_fields": {},
+      "address_line_2": "",
+      "address": "Kingsland Road, London England, E2 8DA",
+      "address_line_1": "Kingsland Road",
+      "city": "London",
+      "created_by": 5629499534213120,
+      "phone": "123456",
+      "state": "England",
+      "last_name": "Johns",
+      "first_name": "Grabby",
+      "company_name": "Grabby Inc.",
+      "exact_location": {
+        "lng": -0.0780477,
+        "lat": 51.5276006
+      }
+    },
+
+    "entities": [{
+      "color": "#000000",
+      "details": "",
+      "email": "eric@example.com",
+      "extra_fields": {},
+      "id": 5222955109842944,
+      "image_id": 6605041225957376,
+      "image_path": "/images/avatar.png",
+      "is_default": null,
+      "name": "Eric Sebastian",
+      "owner": 5629499534213120,
+      "phone": "",
+      "type": "field",
+      "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+    },
+      {
+        "color": "#000000",
+        "details": "",
+        "email": "jammal@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar2.png",
+        "is_default": null,
+        "name": "Jammal Hammadi",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+      }
+    ]
+  },
+  "company": {
+    "name": "Motivated Movers",
+    "address": "123, 45 Street, City, Country, 12345",
+    "phone": "+1(444) 444 444",
+    "email": "support@company.com"
+  }
+},
+  {
+    "delay": 10000,
+    "estimate": "10 Minutes",
+    "topbar": {
+      "message": "This is a simulation of the experience your customers will have. To learn the experience for your business. Please visit. https://www.arrivy.com/"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 60,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "Company, Inc.",
+        "customer_city": "CA",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -0.1102536,
+          "lat": 51.5625386
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "ENROUTE",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "Seven Sisters Road, London England, N4 3NS",
+        "extra_fields": {
+          "task_color": "#03a9f4"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "England",
+        "customer_name": "John Snow",
+        "customer_phone": "+1 (455) 677 896",
+        "start_datetime": "2017-08-15T07:00:21"
+      },
+
+      "status": {
+        "latestStatus": "BAKING",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "COMPANY NAME",
+          "time": "12",
+          "time_original_iso_str": "12",
+          "type": "BAKING",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "notes": "12-icn cast-iron skillet with butter, greased inside, with mouth watering cheese and chicken spread.",
+              "visible_to_customer": true
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }
+        ]
+      },
+
+      "customerObj": {
+        "url_safe_id": "aghkZXZ-Tm9uZXIVCxIIQ3VzdG9tZXIYgICAgICAwAgM",
+        "created": 1500451508130,
+        "email": "grabby@example.com",
+        "phone2": null,
+        "id": 4785074604081152,
+        "owner": 5629499534213120,
+        "updated": 1502780767850,
+        "country": "United Kingdom",
+        "notifications": {},
+        "zipcode": "E2 8DA",
+        "notes": "",
+        "extra_fields": {},
+        "address_line_2": "",
+        "address": "Kingsland Road, London England, E2 8DA",
+        "address_line_1": "Kingsland Road",
+        "city": "London",
+        "created_by": 5629499534213120,
+        "phone": "123456",
+        "state": "England",
+        "last_name": "Johns",
+        "first_name": "Grabby",
+        "company_name": "Grabby Inc.",
+        "exact_location": {
+          "lng": -0.0780477,
+          "lat": 51.5276006
+        }
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+      },
+        {
+          "color": "#000000",
+          "details": "",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Jammal Hammadi",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "123, 45 Street, City, Country, 12345",
+      "phone": "+1(444) 444 444",
+      "email": "support@company.com"
+    }
+  },
+  {
+    "delay": 10000,
+    "estimate": "NOT AVAILABLE",
+    "topbar": {
+      "message": "Welcome to Arrivy!"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 60,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "Company, Inc.",
+        "customer_city": "CA",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -0.1102536,
+          "lat": 51.5625386
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "STARTED",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "Seven Sisters Road, London England, N4 3NS",
+        "extra_fields": {
+          "task_color": "#03a9f4"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "England",
+        "customer_name": "John Snow",
+        "customer_phone": "+1 (455) 677 896",
+        "start_datetime": "2017-08-15T07:00:21"
+      },
+
+      "status": {
+        "latestStatus": "BAKED",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "COMPANY NAME",
+          "time": "12",
+          "time_original_iso_str": "12",
+          "type": "BAKING",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "notes": "12-icn cast-iron skillet with butter, greased inside, with mouth watering cheese and chicken spread. ",
+              "visible_to_customer": true
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "BAKED",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }
+        ]
+      },
+
+      "customerObj": {
+        "url_safe_id": "aghkZXZ-Tm9uZXIVCxIIQ3VzdG9tZXIYgICAgICAwAgM",
+        "created": 1500451508130,
+        "email": "grabby@example.com",
+        "phone2": null,
+        "id": 4785074604081152,
+        "owner": 5629499534213120,
+        "updated": 1502780767850,
+        "country": "United Kingdom",
+        "notifications": {},
+        "zipcode": "E2 8DA",
+        "notes": "",
+        "extra_fields": {},
+        "address_line_2": "",
+        "address": "Kingsland Road, London England, E2 8DA",
+        "address_line_1": "Kingsland Road",
+        "city": "London",
+        "created_by": 5629499534213120,
+        "phone": "123456",
+        "state": "England",
+        "last_name": "Johns",
+        "first_name": "Grabby",
+        "company_name": "Grabby Inc.",
+        "exact_location": {
+          "lng": -0.0780477,
+          "lat": 51.5276006
+        }
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+      },
+        {
+          "color": "#000000",
+          "details": "",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Jammal Hammadi",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "123, 45 Street, City, Country, 12345",
+      "phone": "+1(444) 444 444",
+      "email": "support@company.com"
+    }
+  },
+  {
+    "delay": 20000,
+    "topbar": {
+      "message": "This is a simulation of the experience your customers will have. To learn the experience for your business. Please visit. https://www.arrivy.com/"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 60,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "Company, Inc.",
+        "customer_city": "CA",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -0.1102536,
+          "lat": 51.5625386
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "COMPLETE",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "Seven Sisters Road, London England, N4 3NS",
+        "extra_fields": {
+          "task_color": "#03a9f4"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "England",
+        "customer_name": "John Snow",
+        "customer_phone": "+1 (455) 677 896",
+        "start_datetime": "2017-08-15T07:00:21"
+      },
+
+      "status": {
+        "latestStatus": "BAKED",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "COMPANY NAME",
+          "time": "12",
+          "time_original_iso_str": "12",
+          "type": "BAKING",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "notes": "12-icn cast-iron skillet with butter, greased inside, with mouth watering cheese and chicken spread. ",
+              "visible_to_customer": true
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "BAKED",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "files": [{
+                "file_id": 21563218798621,
+                "file_path": "/images/usecases/pizza.jpg"
+              }]
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }
+        ]
+      },
+
+      "customerObj": {
+        "url_safe_id": "aghkZXZ-Tm9uZXIVCxIIQ3VzdG9tZXIYgICAgICAwAgM",
+        "created": 1500451508130,
+        "email": "grabby@example.com",
+        "phone2": null,
+        "id": 4785074604081152,
+        "owner": 5629499534213120,
+        "updated": 1502780767850,
+        "country": "United Kingdom",
+        "notifications": {},
+        "zipcode": "E2 8DA",
+        "notes": "",
+        "extra_fields": {},
+        "address_line_2": "",
+        "address": "Kingsland Road, London England, E2 8DA",
+        "address_line_1": "Kingsland Road",
+        "city": "London",
+        "created_by": 5629499534213120,
+        "phone": "123456",
+        "state": "England",
+        "last_name": "Johns",
+        "first_name": "Grabby",
+        "company_name": "Grabby Inc.",
+        "exact_location": {
+          "lng": -0.0780477,
+          "lat": 51.5276006
+        }
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+      },
+        {
+          "color": "#000000",
+          "details": "",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Jammal Hammadi",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "123, 45 Street, City, Country, 12345",
+      "phone": "+1(444) 444 444",
+      "email": "support@company.com"
+    }
+  },
+  {
+    "topbar": {
+      "message": "Thanks for taking a look. Let’s get started.",
+      "button1": "Book Live Demo",
+      "button1_link": "/book-demo",
+      "button2": "Sign Up Now",
+      "button2_link": "/signup"
+    },
+    "data": {
+      "task": {
+        "customer_id": null,
+        "customer_address_line_2": "",
+        "end_datetime": "2017-08-25T08:00:00",
+        "url_safe_id": "aghkZXZ-Tm9uZXIiCxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwKDA",
+        "customer_address_line_1": "Seven Sisters Road",
+        "id": 5825281323433984,
+        "time_window_start": 60,
+        "notifications": {
+          "sms": true,
+          "email": true
+        },
+        "start_datetime_original_iso_str": "2017-08-15T12:00:21+05:00",
+        "customer_company_name": "Company, Inc.",
+        "customer_city": "CA",
+        "customer_phone2": "",
+        "customer_exact_location": {
+          "lng": -0.1102536,
+          "lat": 51.5625386
+        },
+        "customer_last_name": "Snow",
+        "details": "",
+        "title": "goofy jello bar",
+        "customer_notes": "",
+        "customer_first_name": "John",
+        "customer_zipcode": "N4 3NS",
+        "end_datetime_original_iso_str": "2017-08-25T13:00:00+05:00",
+        "customer_email": "john@example.com",
+        "status": "COMPLETE",
+        "notifications_sent": null,
+        "resource_ids": [
+          6507459568992256
+        ],
+        "series_id": null,
+        "owner": 5629499534213120,
+        "customer_address": "Seven Sisters Road, London England, N4 3NS",
+        "extra_fields": {
+          "task_color": "#03a9f4"
+        },
+        "customer_country": "United Kingdom",
+        "use_assignee_color": false,
+        "entity_ids": [
+          5222955109842944,
+          6630329993396224
+        ],
+        "enable_time_window_display": true,
+        "customer_state": "England",
+        "customer_name": "John Snow",
+        "customer_phone": "+1 (455) 677 896",
+        "start_datetime": "2017-08-15T07:00:21"
+      },
+
+      "status": {
+        "latestStatus": "DELIVERED",
+        "statusList": [{
+          "extra_fields": null,
+          "id": 5439352742084608,
+          "reporter_id": 5629499534213120,
+          "reporter_name": "COMPANY NAME",
+          "time": "12",
+          "time_original_iso_str": "12",
+          "type": "BAKING",
+          "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+        },
+          {
+            "extra_fields": {
+              "notes": "12-icn cast-iron skillet with butter, greased inside, with mouth watering cheese and chicken spread. ",
+              "visible_to_customer": true
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "BAKED",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": {
+              "visible_to_customer": true,
+              "files": [{
+                "file_id": 21563218798621,
+                "file_path": "/images/usecases/pizza.jpg"
+              }]
+            },
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          },
+          {
+            "extra_fields": null,
+            "id": 5439352742084608,
+            "reporter_id": 5629499534213120,
+            "reporter_name": "COMPANY NAME",
+            "time": "12",
+            "time_original_iso_str": "12",
+            "type": "DELIVERED",
+            "url_safe_id": "aghkZXZ-Tm9uZXI5CxIEVXNlchiAgICAgICACgwLEgRUYXNrGICAgICAwqwJDAsSClRhc2tTdGF0dXMYgICAgIDi1AkM"
+          }
+        ]
+      },
+
+      "customerObj": {
+        "url_safe_id": "aghkZXZ-Tm9uZXIVCxIIQ3VzdG9tZXIYgICAgICAwAgM",
+        "created": 1500451508130,
+        "email": "grabby@example.com",
+        "phone2": null,
+        "id": 4785074604081152,
+        "owner": 5629499534213120,
+        "updated": 1502780767850,
+        "country": "United Kingdom",
+        "notifications": {},
+        "zipcode": "E2 8DA",
+        "notes": "",
+        "extra_fields": {},
+        "address_line_2": "",
+        "address": "Kingsland Road, London England, E2 8DA",
+        "address_line_1": "Kingsland Road",
+        "city": "London",
+        "created_by": 5629499534213120,
+        "phone": "123456",
+        "state": "England",
+        "last_name": "Johns",
+        "first_name": "Grabby",
+        "company_name": "Grabby Inc.",
+        "exact_location": {
+          "lng": -0.0780477,
+          "lat": 51.5276006
+        }
+      },
+
+      "entities": [{
+        "color": "#000000",
+        "details": "",
+        "email": "eric@example.com",
+        "extra_fields": {},
+        "id": 5222955109842944,
+        "image_id": 6605041225957376,
+        "image_path": "/images/avatar.png",
+        "is_default": null,
+        "name": "Eric Sebastian",
+        "owner": 5629499534213120,
+        "phone": "",
+        "type": "field",
+        "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+      },
+        {
+          "color": "#000000",
+          "details": "",
+          "email": "jammal@example.com",
+          "extra_fields": {},
+          "id": 5222955109842944,
+          "image_id": 6605041225957376,
+          "image_path": "/images/avatar2.png",
+          "is_default": null,
+          "name": "Jammal Hammadi",
+          "owner": 5629499534213120,
+          "phone": "",
+          "type": "field",
+          "url_safe_id": "aghkZXZ-Tm9uZXITCxIGRW50aXR5GICAgICAyKMJDA"
+        }
+      ]
+    },
+    "company": {
+      "name": "Motivated Movers",
+      "address": "123, 45 Street, City, Country, 12345",
+      "phone": "+1(444) 444 444",
+      "email": "support@company.com"
+    }
+  }
+]

@@ -1,0 +1,270 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+@import 'base-styling.module.scss';
+
+.settings-wrapper {
+  background-color: $setting-light-blue;
+  position: relative;
+  flex-wrap: wrap;
+  display: flex;
+  min-height: 100vh;
+  .account-image-c {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008bf8', endColorstr='#00d494', GradientType=1); /* IE6-9 */
+    max-height: 222px;
+    .account-image {
+      .image {
+        position: relative;
+        bottom: -50px;
+        height: 200px;
+        width: 200px;
+        margin: 0 auto;
+        @media screen and (max-width: 360px) {
+          margin: 0 90px;
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: center;
+        }
+        .icon {
+          position: absolute;
+          cursor: pointer;
+          color: $theme-lighter-grey;
+          right: 10px;
+          bottom: 10px;
+        }
+      }
+      @media (max-width: 767px) {
+        .image {
+          height: 150px;
+          width: 150px;
+          bottom: -25px;
+        }
+      }
+      .image-buttons {
+        position: relative;
+        color: $white;
+        text-decoration: underline;
+        cursor: pointer;
+        font-size: 16px;
+        width: 86px;
+        left: 152px;
+        top: -30px;
+        text-align: left;
+        margin: 0 auto;
+        span {
+          padding-left: 5px;
+        }
+        @media screen and (max-width: 767px) {
+          left: 130px;
+          top: -15px;
+        }
+        @media (max-width: 465px) {
+          width: 30px;
+          left: 110px;
+          svg {
+            margin-bottom: 10px;
+          }
+          span {
+            display: none;
+          }
+        }
+        @media screen and (max-width: 360px) {
+          left: 120px;
+        }
+      }
+    }
+  }
+  .settings-sidebar {
+    background-color: $white;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 315px;
+    max-width: 315px;
+    ul {
+      list-style: none;
+      margin-bottom: 0;
+      padding: 0;
+      li {
+        margin-bottom: 5px;
+        &.sidebarTitle {
+          border-bottom: 1px solid $dashboard-bg;
+          color: $dashboard-dark;
+          font-size: 18px;
+          font-weight: bold;
+          margin-bottom: 15px;
+          padding: 19px 15px;
+        }
+        a {
+          cursor: pointer;
+          color: $dashboard-dark;
+          flex-wrap: wrap;
+          display: flex;
+          align-items: center;
+          height: 48px;
+          font-size: 15px;
+          position: relative;
+          text-transform: uppercase;
+          text-decoration: none;
+          transition: all .3s ease-in-out;
+          &:before {
+            content: '';
+            background-color: $dashboard-primary;
+            border-radius: 0 10px 10px 0;
+            width: 2px;
+            height: 100%;
+            left: 0;
+            top: 0;
+            position: absolute;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            z-index: 1;
+          }
+          .icon {
+            min-width: 52px;
+            max-width: 52px;
+            text-align: center;
+            svg {
+              max-width: 100%;
+              line, circle, path {
+                transition: all .3s ease-in-out;
+              }
+            }
+            .accountIcon, .planIcon {
+              max-width: 13px;
+            }
+            .integrationIcon {
+              max-width: 17px;
+            }
+            .notificationsIcon {
+              max-width: 14px;
+            }
+            .groupIcon {
+              max-width: 18px;
+            }
+            .messageIcon {
+              max-width: 16px;
+            }
+            .templateIcon {
+              max-width: 15px;
+            }
+            .accountIcon .a, .planIcon .b, .planIcon .c, .integrationIcon .a, .groupIcon .a, .messageIcon .a, .lockIcon .a {
+              stroke: $dashboard-dark;
+            }
+            .templateIcon .a, .planIcon .a, .integrationIcon .b, .notificationsIcon .a, .lockIcon .b {
+              fill: $dashboard-dark;
+            }
+          }
+          span {
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
+          }
+          &:hover {
+            background-color: $route-bg;
+            color: $dashboard-primary;
+            &:before {
+              opacity: 1;
+            }
+            .icon {
+              .accountIcon .a, .planIcon .b, .planIcon .c, .integrationIcon .a, .groupIcon .a, .messageIcon .a, .lockIcon .a {
+                stroke: $dashboard-primary;
+              }
+              .templateIcon .a, .planIcon .a, .integrationIcon .b, .notificationsIcon .a, .lockIcon .b {
+                fill: $dashboard-primary;
+              }
+            }
+          }
+        }
+        &[data-active="true"] {
+          a {
+            background-color: $route-bg;
+            color: $dashboard-primary;
+            font-weight: bold;
+            &:before {
+              opacity: 1;
+            }
+            .icon {
+              .accountIcon .a, .planIcon .b, .planIcon .c, .integrationIcon .a, .groupIcon .a, .messageIcon .a, .lockIcon .a {
+                stroke: $dashboard-primary;
+              }
+              .templateIcon .a, .planIcon .a, .integrationIcon .b, .notificationsIcon .a, .lockIcon .b {
+                fill: $dashboard-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      min-width: 230px;
+      max-width: 230px;
+      ul li a {
+        font-size: 14px;
+        .icon {
+          min-width: 45px;
+          max-width: 45px;
+        }
+      }
+    }
+    @media (max-width: 767px) {
+      min-width: 70px;
+      max-width: 70px;
+      ul li{
+        &.sidebarTitle{
+          display: none;
+        }
+        a {
+          justify-content: center;
+          svg{
+            width: auto;
+            height: auto;
+            max-width: 20px !important;
+          }
+          span{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .settings-content {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 40px 10px;
+    .settings-content-inner {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      @media only screen and (max-width: 1199px) {
+        max-width: 650px;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      padding: 30px 0;
+    }
+    @media only screen and (max-width: 767px) {
+      max-width: calc(100% - 70px);
+      padding: 20px 0;
+    }
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba($dark-black, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba($dark-black, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba($dark-black, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+.toast {
+  display: none !important;
+}
+.toastContainer {
+  padding: 0 !important;
+}

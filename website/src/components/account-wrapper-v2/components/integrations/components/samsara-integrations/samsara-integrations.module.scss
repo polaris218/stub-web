@@ -1,0 +1,60 @@
+@import '../../../../../../../styles/colors.scss';
+@import '../../../../base-styling.module';
+
+.integrationsWrapper{
+  @media only screen and (min-width: 768px) {
+    .boxBodyMask{
+      border: 1px solid $dashboard-bg;
+      border-radius: 5px;
+      margin: 20px 18px;
+    }
+  }
+  .group{
+    .groupBody {
+      @media only screen and (min-width: 768px) {
+        [class="control-label"]{
+          margin-top: 11px;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        .headings {
+          display: none;
+        }
+      }
+    }
+  }
+  .btn{
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .btn-delete{
+    box-shadow: 0 3px 6px 2px $shadow;
+    color: $red;
+    margin-right: 20px;
+    &:hover{
+      color: $red;
+    }
+  }
+}
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

@@ -1,0 +1,391 @@
+@import '../../../styles/colors.scss';
+.btn{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  min-height: 40px;
+  padding: 9px 32px;
+  vertical-align: middle;
+  text-decoration: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &:hover{
+    text-decoration: none;
+  }
+  &.btn-secondary{
+    background-color: $btn-sec;
+    color: $white;
+    min-width: 170px;
+    &:hover{
+      background-color: $btn-sec-hover;
+      color: $white;
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    color: $dashboard-dark;
+    &:hover{
+      background-color: $theme-middle-grey;
+      color: $dashboard-dark;
+    }
+    &.delete{
+      color: $red;
+      &:hover{
+        color: $red;
+      }
+    }
+  }
+  &.btn-outline-light{
+    border: 1px solid $white;
+    color: $white;
+    padding: 8px 10px;
+    &:hover{
+      background-color: $task-form-tab-active;
+      color: $white;
+    }
+  }
+}
+.loaderWhite{
+  color: $white !important;
+  div > div{
+    background-color: $white !important;
+  }
+}
+.btn-resend-confirmation{
+  min-width: 210px !important;
+}
+[class^="modal"], [class*="modal"]  {
+  .taskWrapper{
+    border-radius: 6px;
+    overflow: hidden;
+  }
+}
+.taskWrapper{
+  background-color: $dashboard-bg;
+  .fullContainer{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .taskHeader{
+    .headerTop{
+      background-color: $white;
+      padding: 19px 0;
+      overflow: hidden;
+      .taskName{
+        color: $dashboard-dark;
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 23px;
+        padding-left: 24px;
+        width: calc(100% - 25px);
+        .taskColor{
+          display: inline-block;
+          height: 23px;
+          width: 5px;
+          margin-right: 24px;
+          vertical-align: middle;
+        }
+      }
+      .close{
+        border: 1px solid $dashboard-grey;
+        border-radius: 50%;
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        position: relative;
+        text-decoration: none;
+        -webkit-transition: all .3s ease-in-out;
+        -moz-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+        &:before, &:after{
+          content: '';
+          background-color: $dashboard-grey;
+          border-radius: 2px;
+          width: 2px;
+          height: 8px;
+          position: absolute;
+          left: 0;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+        }
+        &:before{
+          -webkit-transform: rotate(45deg) translate(12px, -2px);
+          -moz-transform: rotate(45deg) translate(12px, -2px);
+          transform: rotate(45deg) translate(12px, -2px);
+        }
+        &:after{
+          -webkit-transform: rotate(-45deg) translate(2px, 12px);
+          -moz-transform: rotate(-45deg) translate(2px, 12px);
+          transform: rotate(-45deg) translate(2px, 12px);
+        }
+        &:hover{
+          border-color: $dashboard-dark-grey;
+          &:before, &:after{
+            background-color: $dashboard-dark-grey;
+          }
+        }
+      }
+    }
+    .headerBottom{
+      background-color: $dashboard-primary;
+      .inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .headerNav{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 16px;
+        display: inline-flex;
+        align-items: center;
+        li{
+          line-height: 55px;
+          a:not(.btn){
+            color: $white;
+            display: block;
+            padding: 0 20px;
+            position: relative;
+            text-decoration: none;
+            -webkit-transition: all .3s ease-in-out;
+            -moz-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
+            &:after{
+              content: '';
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              width: 0;
+              height: 0;
+              opacity: 0;
+              border-style: solid;
+              border-width: 0 7.5px 7.5px 7.5px;
+              border-color: transparent transparent $white transparent;
+              margin: 0 auto;
+              z-index: 1;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+            }
+            &:hover, &.active{
+              background-color: $task-form-tab-active;
+            }
+            &.active{
+              font-weight: bold;
+            }
+            &.active:after{
+              opacity: 1;
+            }
+            &.delete{
+              background-color: $route-bg;
+              color: $red;
+            }
+          }
+          &:first-child a{
+            min-width: 92px;
+          }
+          &:last-child a{
+            min-width: 87px;
+          }
+        }
+        &.right{
+          font-size: 16px;
+          li{
+            a:not(.btn){
+              padding: 0 25px;
+            }
+            &:not(:first-child){
+              .btn{
+                margin-left: 10px;
+              }
+              .delete{
+                margin-right: 10px;
+              }
+            }
+          }
+        }
+      }
+      .status{
+        color: $white;
+        font-size: 15px;
+        line-height: 1;
+        strong{
+          font-size: 12px;
+          display: inline-block;
+          max-width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          svg{
+            font-size: 10px;
+            margin: 0 9px;
+          }
+        }
+      }
+      .taskDropDown{
+        margin-left: 0;
+        button{
+          background: none;
+          border: none;
+          border-radius: 0;
+          box-shadow: none !important;
+          color: $white;
+          font-size: 28px;
+          height: 55px;
+          line-height: 55px;
+          padding: 0 20px;
+          outline: none;
+        }
+        ul {
+          padding: 0;
+          min-width: 200px;
+          overflow: hidden;
+          li{
+            &:not(:first-child){
+              border-top: 1px solid $dashboard-bg;
+            }
+            a{
+              color: $dashboard-dark;
+              display: block;
+              font-size: 13px;
+              padding: 10px;
+              -webkit-transition: all .3s ease-in-out;
+              -moz-transition: all .3s ease-in-out;
+              transition: all .3s ease-in-out;
+              &:hover, &:focus{
+                background-color: $route-bg;
+                outline: none;
+              }
+            }
+            &.statusItem{
+              padding: 10px;
+              .status{
+                color: $dashboard-dark;
+                font-size: 13px;
+              }
+            }
+          }
+        }
+      }
+      @media only screen and (min-width: 992px) {
+        .status{
+          margin-left: 10px;
+        }
+        .taskDropDown{
+          display: none;
+        }
+      }
+      @media only screen and (min-width: 1200px) {
+        .status{
+          margin-left: 50px;
+        }
+      }
+      @media only screen and (max-width: 991px) {
+        .headerNav.right{
+          display: none;
+        }
+      }
+    }
+  }
+  .taskBody{
+    padding: 10px 0;
+  }
+  .taskFooter{
+    padding-bottom: 10px;
+    .inner{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .btn{
+      margin-bottom: 10px;
+    }
+    .btnWrapper{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      margin-left: -10px;
+      margin-right: -10px;
+      .btn{
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+  .externalInfo{
+    background-color: transparent !important;
+    color: $theme-forms-grey;
+    font-size: 15px;
+    word-break: break-all;
+    margin-bottom: 20px;
+    @media only screen and (min-width: 768px) {
+      display: inline-flex;
+      flex-wrap: wrap;
+      > div{
+        margin-right: 10px;
+      }
+    }
+  }
+  .externalInfo{
+    background-color: transparent !important;
+    color: #808182;
+    font-size: 15px;
+    word-break: break-all;
+    margin-bottom: 20px;
+    @media only screen and (min-width: 768px) {
+      display: inline-flex;
+      flex-wrap: wrap;
+      > div{
+       margin-right: 10px;
+      }
+    }
+  }
+}
+
+.linkServerActionPending {
+  cursor: no-drop;
+  pointer-events: none;
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}

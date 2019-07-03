@@ -1,0 +1,93 @@
+@import '../../../../../../../styles/colors.scss';
+@import '../../../../base-styling.module';
+.reach_out{
+  font-size: 13px;
+  margin-top: -10px;
+}
+.appBoxWrapper{
+  display: flex;
+  flex-wrap: wrap;
+  .appBox{
+    border-radius: 10px;
+    box-shadow: 0 6px 35px rgba($dark-black, 0.1);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex: 0 0 25%;
+    max-width: calc(25% - 30px);
+    margin: 35px 15px 20px;
+    text-align: center;
+    .content, .footer{
+      width: 100%;
+    }
+    figure{
+      background-color: white;
+      border-radius: 50%;
+      display: inline-block;
+      height: 70px;
+      width: 70px;
+      margin-top: -35px;
+      overflow: hidden;
+      img{
+        border-radius: 50%;
+      }
+    }
+    .content{
+      padding: 0 20px 20px;
+      &:before{
+        content: '';
+        background-color: $dashboard-primary;
+        display: block;
+        height: 2px;
+        width: 30px;
+        margin: 20px auto;
+      }
+      h4{
+        font-weight: bold;
+        margin: 0 0 10px;
+      }
+    }
+    .footer{
+      margin-top: auto;
+      padding: 0 10px;
+      text-align: right;
+      .tags{
+        font-size: 12px;
+        list-style: none;
+        margin: 0 0 5px;
+        padding: 0;
+        flex: 0 0 100%;
+        max-width: calc(100% - 110px);
+        li{
+          background-color: $dashboard-bg;
+          border-radius: 20px;
+          display: inline-block;
+          min-width: 80px;
+          margin: 0 5px 5px 0;
+          padding: 2px 15px;
+          vertical-align: middle;
+          text-align: center;
+        }
+      }
+      .btn{
+        min-width: 100px;
+        margin:  0 0 10px;
+        text-align: center;
+      }
+    }
+    @media only screen and (max-width: 1400px) {
+      flex: 0 0 33.33333333%;
+      max-width: calc(33.33333333% - 30px);
+    }
+    @media only screen and (max-width: 1199px) {
+      flex: 0 0 50%;
+      max-width: calc(50% - 30px);
+    }
+    @media only screen and (max-width: 767px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+}

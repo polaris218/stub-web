@@ -1,0 +1,21 @@
+@import '../../../../styles/colors.scss';
+
+.customer-widget-container {
+  border: 2px solid $theme-grey;
+  padding: 5px;
+}
+
+.details-field {
+  margin: 0px 0px;
+}
+
+.customer-widget-title {
+  color: $primary;
+}
+
+.customerDetailsEmptyMessage {
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed $no-info-color;
+  color: $no-info-color;
+}

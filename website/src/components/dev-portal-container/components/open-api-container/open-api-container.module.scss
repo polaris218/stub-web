@@ -1,0 +1,25 @@
+@import '../../../../../styles/colors';
+
+.openAPIContainer {
+  .applicationTypeSwitcherIntro {
+    padding: 0 50px 0 50px;
+    background: $white;
+    max-width: 1260px;
+    margin: 0 auto;
+    font-size: 12px;
+    font-style: italic;
+    text-align: right;
+  }
+  .applicationTypeSelectorContainer {
+    padding: 0 50px 0 50px;
+    background: $white;
+    max-width: 1260px;
+    margin: 0 auto;
+    text-align: right;
+    height: 45px;
+    select {
+      max-width: 150px;
+      float: right;
+    }
+  }
+}

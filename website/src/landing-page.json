@@ -1,0 +1,420 @@
+{
+  "navigation": [
+    { "text": "Blog", "href": "http://blog.arrivy.com", "target": "_blank" },
+    { "text": "Enterprise", "href": "/enterprise" },
+    { "text": "Pricing", "href": "/pricing" },
+    { "text": "Login", "href": "/login" },
+    { "text": "Signup", "href": "/signup" }
+  ],
+
+
+  "gallery": [
+    {
+      "src": "landing/assets/haramtracker/image_extra_12.jpg"
+    },
+    {
+      "src": "landing/assets/haramtracker/image_extra_22.jpg"
+    },
+    {
+      "src": "landing/assets/haramtracker/image_extra_32.jpg"
+    },
+    {
+      "src": "landing/assets/haramtracker/image_extra_42.jpg"
+    }
+  ],
+
+  "image-features": [
+    "landing/assets/haramtracker/usage_1.jpg",
+    "landing/assets/haramtracker/usage_2.jpg",
+    "landing/assets/haramtracker/usage_3.jpg",
+    "landing/assets/haramtracker/usage_4.jpg",
+    "landing/assets/haramtracker/usage_5.jpg",
+    "landing/assets/haramtracker/usage_6.jpg"
+  ],
+
+  "textSection1" : {
+    "text": "Interested in finding out how Arrivy can help your business?",
+    "contacts": "Email us at info@arrivy.com"
+  },
+
+  "textSection2" : {
+    "text": "Let's get started",
+    "subtext": "No credit card required",
+    "image": "images/van.png",
+    "button" : {
+      "text" : "First 2 weeks are on us",
+      "href" : "/signup"
+    }
+  },
+
+  "explanation": {
+    "intro": "Features",
+    "items" : [
+      {
+        "type" : "calendar",
+        "image" : "images/feature1-calendar.png",
+        "heading": "Schedule work for Team",
+        "text": "Schedule work on your calendar in Arrivy and assign it to crew members. Crew members can see their tasks on easy-to-use mobile apps."
+      },
+      {
+        "type" : "location",
+        "image" : "images/feature2-map.png",
+        "heading": "Track your Crew",
+        "text": "See live location of drivers in real-time on a map. No GPS required."
+      },
+      {
+        "type" : "rate",
+        "image" : "images/feature6-rate.png",
+        "heading": "Ratings & Reviews",
+        "text": "Enable customers to rate you easily on Facebook, Yelp, Google, Arrivy etc. on task completion and get more business."
+      },
+      {
+        "type" : "track",
+        "image" : "images/feature3-track.png",
+        "heading": "Enable Customers to track Orders",
+        "text": "Your customers can track their orders with real-time estimates and Email / SMS notifications."
+      },
+      {
+        "type" : "mobile",
+        "image" : "images/feature4-connect.png",
+        "heading": "Mobile apps for your Crew",
+        "text": "Keep connected with your crew/drivers on the go to check on orders, report status and interact with customers."
+      },
+      {
+        "type" : "api",
+        "image" : "images/feature5-api.png",
+        "heading": "Enterprise APIs",
+        "text": "Arrivy in an API first platform. Power your own systems, apps and front-ends with real-time tracking and status features using our eco-system."
+      }
+    ]
+  },
+
+  "features": {
+    "intro" : "Arrivy powers",
+    "items" : [
+      {
+        "heading": "Home Services",
+        "text": "Schedule work for your crew in advance. Enable the crew to see their calendars on the go. Let your customers exactly know when your work crew will arrive. We power Cleaning businesses, Garage door repair companies, HVAC etc.",
+        "image": "images/usecases/home.png"
+      },
+      {
+        "heading": "Delivery Companies",
+        "text": "Track where your drivers/crew members are and direct them to your customers. Enable customers to see driver's location in real-time.",
+        "image": "images/usecases/delivery.png"
+      }
+    ]
+  },
+
+  "paltformUsers": {
+    "intro" : "Arrivy users love arrivy",
+    "items" : [
+      {
+        "heading": "GDS Atlanta",
+        "text": "\"Our team loves Arrivy, because it makes everyone's job easier.  Our time communicating with customers and each other is <strong>cut to a fraction</strong> of what it used to be since <strong>Arrivy completely automates communication</strong>.  Most importantly, we are providing a <strong>better experience for our customers</strong>, and this turns into <strong>repeat customers for our business.</strong>\"",
+        "image": "images/usecases/cantstop.jpg",
+        "href" : "http://www.gdsatlanta.com/"  
+      },
+      {
+        "heading": "Arrivy User",
+        "text": "\"We've seen a BIG increase in <strong>positive</strong> customer reviews\"",
+        "image": "",
+        "href" : ""
+      }
+    ]
+  },
+
+  "carousel-items": [
+    {
+      "image": "images/banner.jpg",
+      "pretext": "Spending too much time coordinating services and customers?",
+      "text": "Manage tasks and deliveries with live location tracking for Home Services and Delivery companies",
+      "links" : [
+        {
+          "text" : "SEE WHAT ARRIVY POWERS",
+          "href" : "#features-3",
+          "id"   : "see-what-arrivy-powers"
+        },
+        {
+          "type" : "modal",
+          "text" : "BOOK DEMO",
+          "id"   : "book-demo"
+        }
+      ],
+      "subtext": "Learn about the API",
+      "button": {
+        "label": "GET STARTED FOR FREE",
+        "href": "/signup"
+      }
+    }
+  ],
+
+  "social": [
+    { "type": "twitter", "href": "https://twitter.com/haramtracker", "title": "Follow us on Twitter" },
+    { "type": "facebook", "href": "https://www.facebook.com/haramtracker/", "title": "Follow us on Facebook" },
+    { "type": "instagram", "href": "https://instagram.com/haramtracker/", "title": "Follow us on Instagram" }
+  ],
+
+  "appointment": {
+    "heading": "Still have questions?",
+    "text": "We can do an online session to give you the product demo and answer questions."
+  },
+
+  "testimonials": {
+    "heading": "WHAT OUR USERS SAY",
+    "reviews": [
+      {
+        "name": "Hassan",
+        "bio": "Dewsbury UK",
+        "text": "“I had the oppurtunity to be part of the pilot program of Haram Tracker on my umrah visit few months back. It's an excellent peice of technology that keeps you posted on your family's whereabouts. ”"
+      },
+      {
+        "name": "Abdullah",
+        "bio": "Texas, USA",
+        "text": "“Excellent device and support. Setup was quick and easy. I could see my family location on app. I would like to see more users on this platform for increased coverage.”"
+      },
+      {
+        "name": "اسلام انور",
+        "bio": "القاهرة",
+        "text": "لقد قمت بتجربه برنامج حرم تراكر مع الجهاز الخاص به . انه يقوم بعمليه التتبع بطريقه سلسه وبسيطه . إنني سعيد لتجربتي هذا المنتج"
+      }
+    ]
+  },
+  "customer_reviews": [
+    "I really liked your appointment tracking. Your representative was very knowledgeable and went over everything with me. Very professional service and I will definitely refer family and friends when they need a garage door service." ,
+    "Service tech arrived ahead of schedule, wow, how often does that happen?",
+    "I appreciate you sending me an email with your employees photo. Thank you!",
+    "Setting the appointment date and time was easy, and was handled professionally by staff. The truck arrived on time, and the attendant/driver was courteous and very professional. I will definitely continue to use GDS.",
+    "Adam came out to service my garage door opener unit and he arrived right on time. I was very satisfied with the service, plus delighted to meet a good person."
+    ],
+  "header": {
+    "header": "Simple and transparent. Pay as you go",
+    "description": "No credit-card required. No upfront commitment. Scale up or down as needed.",
+    "image":"images/pricing.jpg"
+  },
+  "pricing": {
+    "header": {
+      "image": "images/pricing-page-image-v2.jpg",
+      "header": "Choose a Plan That's Right for Your Business",
+      "description": "Try 2 weeks of free trial. Cancel at any time"
+    },
+    "plans": [
+      {
+        "name": "Business Plan",
+        "description": "Access to all Arrivy features through Arrivy.com web portal and mobile apps. Functionality includes scheduling, arrival notifications, team notifications, team location tracking, social integration, reporting, activity stream.",
+        "price": 20,
+        "discount": "",
+        "discount_date": "",
+        "button": "Try now for FREE",
+        "color": "#00D494",
+        "features": [
+          "Mobile access",
+          "Create tasks and assign to your team",
+          "Notes, attachments and progress",
+          "GPS directions",
+          "Team location tracking",
+          "Live task estimate for customer",
+          "Automated email & SMS reminders",
+          "Automated email & SMS arrivals notifications",
+          "Customer reviews",
+          "Team notifications",
+          "Enable reviews on Yelp, Facebook, Google etc.",
+          "Slack Integration",
+          "Activity Stream",
+          "Customized automated communications",
+          "Job templates",
+          "Reporting",
+          "and much more"
+        ],
+        "primary": true,
+        "link": "/signup"
+      },
+      {
+        "name": "Enterprise Integration",
+        "description": "Integration Arrivy with your Enterprise Systems (Calendaring, Dispatch, Logistics, etc.) through robust APIs. Use Arrivy's last-mile location services and communications features in virtually any system within both web and mobile clients.",
+        "button": "Contact Us",
+        "color": "#008BF8",
+        "features": [
+          "Includes all features of Business Plan",
+          "Enterprise API access",
+          "Webhook integration",
+          "Customized live track customer experience",
+          "Instant Support"
+        ],
+        "link": "mailto:info@arrivy.com",
+        "new_window": true
+      }
+    ]
+  },
+  "calculator": {
+    "min": 100,
+    "max": 6e3,
+    "help": "Help me estimate my number of calls",
+    "values": [{
+        "className": "starter",
+        "name": "Starter",
+        "count": 100,
+        "tasks": "100",
+        "price": 0.16,
+        "features": ["Unlimited Employees (minimum 20 employees)","Email Support","All Features Included","No Contracts or Setup Charges"]
+    }, {
+        "className": "growth",
+        "name": "Growth",
+        "count": 500,
+        "tasks": "500",
+        "price": 0.14,
+        "currency": "$",
+        "features": ["Unlimited Employees (minimum 20 employees)","Email Support","All Features Included","No Contracts or Setup Charges"]
+    }, {
+        "className": "pro",
+        "name": "Pro",
+        "count": 1e3,
+        "tasks": "1K",
+        "price": 0.12,
+        "currency": "$",
+        "features": ["Unlimited Employees (minimum 20 employees)","Email Support","All Features Included","No Contracts or Setup Charges"]
+    }, {
+        "className": "pro",
+        "name": "Pro+",
+        "count": 5e3,
+        "tasks": "5K",
+        "price": 0.10,
+        "currency": "$",
+        "features": ["Unlimited Employees (minimum 20 employees)","Email Support","All Features Included","No Contracts or Setup Charges"]
+    }, {
+        "className": "enterprise",
+        "name": "Enterprise",
+        "count": 6e3,
+        "tasks": "5K+",
+        "price": "Contact Us",
+        "features": ["Unlimited Employees (minimum 20 employees)","Phone Support",
+                   "Enterprise class SLA"]
+    }]
+  },
+  "calculator_for_entities_plan": {
+    "min": 1,
+    "max": 31,
+    "help": "Help me estimate my number of calls",
+    "values": [{
+        "className": "hacker",
+        "name": "Free",
+        "count": 2,
+        "tasks": "2",
+        "price": "Free",
+        "features": ["Up to 80 Tasks","Email Support"]
+    }, {
+        "className": "starter",
+        "name": "Starter",
+        "count": 5,
+        "tasks": "5",
+        "price": 29,
+        "currency": "$",
+        "features": ["Unlimited Tasks","Email Support","All Features Included","No Contracts or Setup Charges"]
+    }, {
+        "className": "growth",
+        "name": "Growth",
+        "count": 10,
+        "tasks": "10",
+        "price": 59,
+        "currency": "$",
+        "features": ["Unlimited Tasks","Email Support", "All Features Included","No Contracts or Setup Charges"]
+    },  {
+        "className": "pro",
+        "name": "Pro",
+        "count": 30,
+        "tasks": "30",
+        "price": 169,
+        "currency": "$",
+        "features": ["Unlimited Tasks","Live-Chat Support", "All Features Included","No Contracts or Setup Charges"]
+    }, {
+        "className": "enterprise",
+        "name": "Enterprise",
+        "count": 82,
+        "tasks": "30+",
+        "price": "Contact Us",
+        "features": ["Unlimited Tasks",
+                    "Phone Support",
+                    "Enterprise class SLA"]
+    }]
+  },
+  "included": {
+    "features": [{
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "Free First Month"
+    },{
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "API First Platform"
+    }, {
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "Simple UI"
+    }, {
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "Unlimited Tasks",
+      "helpText": "(on Crew size based plan)"
+    }, {
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "Android & iOS apps for drivers/crew",
+      "helpText": ""
+    }, {
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "Live Tracking and Live Task estimate",
+      "helpText": ""
+    }],
+    "addons": [{
+      "iconClass": "glyphicon glyphicon-print",
+      "label": "Enterprise Level Support",
+      "price": "Starts at $199 per month",
+      "helpText": ""
+    },{
+      "iconClass": "glyphicon glyphicon-plus",
+      "label": "SMS Package",
+      "price": "1$ per 100 sms",
+      "helpText": ""
+    }]
+  },
+  "faq": {
+    "header": "Pricing FAQ",
+    "qq": [{
+      "header": "What is a \"Task\"?",
+      "content": "Task is work that you schedule on Arrivy for your customer. You can live track its progress along with your crew and customers."
+    }, {
+      "header": "How do I choose a Monthly Plan?",
+      "content": "Estimate your usage to pick a plan. You can switch plans any time and its always backdated to the start of your billing period."
+    }, {
+      "header": "How do I pay for Arrivy usage?",
+      "content": "You are billed at a 30 days cycle based on your signup date, chosen plan and usage."
+    }]
+  },
+  "contact": {
+    "linkList": [
+      { "href": "mailto:customer-service@haramtracker.com", "text": "Customer Support" },
+      { "href": "/terms_of_service", "text": "Terms of Service" },
+      { "href": "/privacy", "text": "Privacy Policy" }
+    ],
+
+    "info": {
+      "company_name": "Muhio LLC",
+      "address": "Seattle, WA 98101",
+      "email": "Email: support@arrivy.com"
+    },
+
+    "googleMaps": {
+      "size": {
+        "height": "300px",
+        "width": "100%"
+      },
+      "coordinates": {
+        "lat": 47.605034,
+        "lng": -122.332704
+      },
+      "zoom": 15,
+      "params": {
+        "v": "3.exp",
+        "key": "AIzaSyBxzIENIwmRBikHjRwVPaJVMNJ9dcirSZk"
+      }
+    }
+  },
+
+  "footer": {
+    "copyright": "Copyright (c) 2016 Muhio LLC"
+  }
+}

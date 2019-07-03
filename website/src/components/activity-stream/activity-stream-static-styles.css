@@ -1,0 +1,7 @@
+.activity-stream-right-space-mark, .activity-stream-button-hidden-mark {
+    transition: all 0.5s ease-out;
+}
+
+.toastify {
+    z-index: 1601;
+}

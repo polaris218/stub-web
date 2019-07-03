@@ -1,0 +1,186 @@
+@import '../../../styles/colors.scss';
+.modal-step{
+  [class="modal-content"]{
+    background-color: $light-blue;
+    color: $dashboard-dark;
+    font-size: 16px;
+    line-height: 25px;
+    .body{
+      padding: 0;
+    }
+    .footer{
+      border-top: none;
+      padding-top: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      position: relative;
+      z-index: -1;
+      > div{
+        flex: 0 0 auto;
+        width: auto;
+        max-width: none;
+        &:first-child{
+          margin-right: auto;
+        }
+      }
+      .btn-secondary{
+        margin-left: 20px;
+        @media only screen and (max-width: 767px) {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  .btn{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    min-height: 40px;
+    min-width: 100px;
+    padding: 9px 32px;
+    vertical-align: middle;
+    text-decoration: none !important;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &:hover{
+      text-decoration: none;
+    }
+    &.btn-secondary{
+      background-color: $btn-sec;
+      color: $white;
+      &:hover{
+        background-color: $btn-sec-hover;
+        color: $white;
+      }
+    }
+    &.btn-light{
+      background-color: $white;
+      color: $dashboard-dark;
+      &:hover{
+        background-color: $theme-middle-grey;
+        color: $dashboard-dark;
+      }
+    }
+    &.btn-skip{
+      background-color: $white;
+      color: $dashboard-primary;
+      &:hover{
+        background-color: $theme-middle-grey;
+        color: $dashboard-primary;
+      }
+    }
+    @media only screen and (max-width: 767px) {
+      min-width: 80px;
+      padding: 9px 15px;
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    [class="modal-dialog"]{
+      padding-bottom: 90px;
+    }
+  }
+}
+.joyrideWrapper{
+  width: auto;
+  > div > div > div + div{
+    background-color: $light-blue !important;
+    max-width: 785px;
+    width: 100% !important;
+    padding: 0 !important;
+    &[data-target="#activityStreamBtnContainer"]{
+      opacity: 1 !important;
+      > div:first-child{
+        left: 94% !important;
+      }
+    }
+    @media only screen and (max-width: 860px) {
+      max-width: 100% !important;
+      width: auto !important;
+      right: 15px;
+      &[data-target="#activityStreamBtnContainer"]{
+        left: 15px !important;
+      }
+    }
+  }
+
+  [class="joyride-tooltip__main"]{
+    letter-spacing: initial;
+    padding: 0;
+  }
+  [class="joyride-tooltip__close"]{
+    top: 20px;
+    right: 20px;
+  }
+  [class="joyride-tooltip__footer"]{
+    padding: 0 15px 15px;
+    button{
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      color: $dashboard-dark;
+      display: inline-block;
+      font-size: 16px;
+      line-height: 1.4;
+      outline: none;
+      min-height: 40px;
+      min-width: 100px;
+      margin-right: 0 !important;
+      padding: 9px 32px;
+      vertical-align: middle;
+      text-decoration: none !important;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      & + button{
+        margin-left: 20px;
+      }
+      &[data-type="skip"]{
+        background-color: $white !important;
+        color: $dashboard-primary !important;
+        &:hover{
+          background-color: $theme-middle-grey !important;
+          color: $dashboard-primary !important;
+        }
+      }
+      &[data-type="back"]{
+        background-color: $white !important;
+        color: $dashboard-dark !important;;
+        &:hover{
+          background-color: $theme-middle-grey !important;
+          color: $dashboard-dark !important;
+        }
+      }
+      @media only screen and (max-width: 767px) {
+        min-width: 80px;
+        padding: 9px 15px;
+        & + button{
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 767px) {
+    [class="joyride-tooltip__close"], > div > div > div > div:first-child{
+      display: none;
+    }
+  }
+}
+
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba($dark-black, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba($dashboard-dark, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba($dashboard-dark, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

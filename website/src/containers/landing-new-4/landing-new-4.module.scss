@@ -1,0 +1,701 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+.page-wrap {
+  h1,h4 {
+    font-family: "FuturaStdHeavy", sans-serif;
+  }
+  h2,h3,h5{
+    font-family: "FuturaStdMedium", sans-serif;
+  }
+  p, a, li, button,.primary-action-btn, .btn{
+    font-family: "FuturaStdBook", sans-serif;
+  }
+  p{
+    font-size: 1.2em;
+  }
+  h4{
+    font-size: 1.4em;
+  }
+  h2{
+    font-size: 2.6em;
+  }
+}
+
+.page-wrap + section {
+  h1,h4, button {
+    font-family: "FuturaStdHeavy", sans-serif;
+  }
+  h2,h3,h4,h5 {
+    font-family: "FuturaStdMedium", sans-serif;
+  }
+  p, a, li,.primary-action-btn, .btn {
+    font-family: "FuturaStdBook", sans-serif;
+  }
+}
+
+.modalImages {
+  text-align: center;
+  img {
+    display: inline-block;
+    width: 46%;
+    max-height: 500px;
+    object-fit: contain;
+    margin: 15px 10px 15px 10px;
+    box-shadow: 0px 0px 36px -12px $img-shadow;
+    @media (max-width: 768px) {
+      max-height: 350px;
+    }
+  }
+}
+
+.featuresModalsContent {
+  font-size: 1.2em;
+}
+
+.navbar__box-column{
+  color: $theme-main;
+}
+
+.page-wrap{
+  padding: 0;
+}
+
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media (max-width: 855px) {
+    width:auto;
+    padding: 0 20px;
+  }
+
+  .center-text{
+    text-align: center;
+  }
+
+  .btn{
+    font-size: 1.1em;
+    letter-spacing: 1;
+    padding: 10px 35px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 0 solid $theme-main;
+    @media screen and (max-width: 360px) {
+      padding: 10px 20px;
+    }
+  }
+  .btn-green-transp{
+    background: transparent;
+    color: $btn-sec;
+    border: 2px solid $btn-sec;
+    &:hover{
+      background-color: $btn-sec-hover;
+      border-color:$btn-sec-hover;
+      color:$theme-main;
+    }
+  }
+  .button-group{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    max-width: 380px;
+    margin: 0 auto;
+    @media (max-width: 580px) {
+      @include flex-direction(column);
+      .btn{
+        margin-right: 0;
+        &:first-child{
+          margin-right:0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+.customerExperienceSection {
+  padding: 68px 0 0px;
+  text-align: center;
+  h2{
+    color: #000000;
+    padding-bottom: 20px;
+    span{
+      color: #ababab;
+      display: block;
+      text-decoration: line-through;
+    }
+  }
+  p{
+    color: #333333;
+  }
+  .textarea{
+    max-width: 621px;
+    margin: 0 auto 40px;
+  }
+  .customerExperience {
+    color: #333333;
+    font-weight: 300;
+    margin-bottom: 50px;
+    .imageHolder{
+      margin-bottom: 30px;
+      &.item_1 img{max-width: 212px;}
+      &.item_2 img{max-width: 163px;}
+      &.item_3 img{max-width: 149px;}
+      @media screen and (min-width: 991px) {
+        margin-bottom: 55px;
+        height: 180px;
+        position: relative;
+        img {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+      @media screen and (max-width: 991px) {
+        img{
+          max-height: 130px;
+        }
+      }
+      @media screen and (max-width: 767px) {
+        img{
+          max-height: 110px;
+        }
+      }
+    }
+    h4{
+      color: #333333;
+      font-weight: bold;
+      margin-bottom: 19px;
+      padding-bottom: 20px;
+      position: relative;
+      &:after{
+        content: "";
+        width: 20px;
+        height: 20px;
+        border-bottom: 3px solid #008BF8;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+    p{
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  hr{
+    border-top: 2px solid #DFF0FF;
+    width: 100%;
+    margin: 50px 0 0;
+    @media screen and (max-width: 767px) {
+      margin-top: 35px;
+    }
+  }
+}
+
+.modal-container{
+  > div{
+    width: 1000px;
+    @media (max-width: 1000px) {
+      width: auto;
+    }
+    > div{
+      width: 1000px!important;
+      height: 450px;
+      overflow: hidden;
+      @media (max-width: 1000px) {
+        width: auto;
+        height: auto;
+      }
+    }
+  }
+}
+.modal{
+  overflow: hidden;
+  padding: 40px 20px;
+  @media (max-width: 1000px) {
+    width: auto;
+  }
+  &.container{
+    width: auto;
+    h4{
+      padding-top: 80px;
+      font-weight: bold;
+      @media (max-width: 768px) {
+        padding-top: 0;
+      }
+    }
+    p{
+      font-size: 1em;
+      padding: 1em 0;
+    }
+    hr{
+      margin-top: 25px;
+    }
+  }
+  .modalImages{
+    position: relative;
+    width: 100%;
+    img{
+      box-shadow: 0 0 0;
+      width: auto;
+    }
+  }
+  .widePhoto{
+    margin-top: 20px;
+  }
+}
+
+.people-bg{
+  padding:0;
+  text-align: center;
+  background: url('/images/lending/landing-last/BG_Team_Img.jpg') right bottom no-repeat #cafcef;
+  background-size: auto;
+  min-height: 800px;
+  position: relative;
+  @media (max-width: 1400px) {
+    background-position: center bottom;
+  }
+  .container{
+    padding-top: 140px;
+    text-align: center;
+  }
+  h1 {
+    font-size: 3.2em;
+    line-height: 1.4;
+    font-weight: bold;
+  }
+  p {
+    margin: 30px auto 40px;
+    font-size: 1.2em;
+    max-width: 540px;
+    line-height: 1.2;
+  }
+  .button-group{
+    margin-bottom: 30px;
+  }
+  .laptop{
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    img {
+      position: relative;
+      width: 100%;
+      top:40px;
+      left: 0;
+    }
+    .laptop-shadow{
+      position: relative;
+      width: 76%;
+      margin: 0 auto;
+      height: 1px;
+      bottom: -50px;
+      box-shadow: 0px 10px 10px #999;
+    }
+    @media (max-width: 767px) {
+      img {
+        top:0;
+      }
+      .laptop-shadow{
+        bottom: -5px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    min-height: 750px;
+  }
+}
+
+.partners{
+  color: $primary;
+  font-size: 1.4em;
+  padding: 100px 0 15px;
+  text-align: center;
+  .customer_icon_section{
+    margin: 40px auto;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    flex-direction: column;
+    @media screen and (max-width: 991px){
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    img{
+      display: inline-block;
+      width: 60%;
+      @media screen and (max-width: 1100px) {
+        width: 75px;
+        max-width: 75px;
+        margin: 0 15px;
+      }
+    }
+  }
+  @media screen and (max-width: 991px){
+    padding-top: 60px;
+  }
+  @media (max-width: 767px) {
+    padding-top: 30px;
+  }
+}
+
+.delight_customers{
+  background: #dff0ff;
+  padding-bottom: 0;
+  padding-top: 70px;
+  .container{
+    p{
+      font-size: 1.2em;
+    }
+    h4{
+      font-size: 1.4em;
+    }
+    .center-text{
+      h2{
+        font-size: 2.6em;
+        color: black;
+        padding-bottom: 20px;
+      }
+      p{
+        max-width: 400px;
+        margin: 10px auto;
+      }
+    }
+    .text_block{
+      margin: 100px 0;
+      h4{
+        font-weight: bold;
+      }
+    }
+    .align_left{
+      text-align: left;
+    }
+    .align_right{
+      text-align: right;
+    }
+    .person{
+      background: url('/images/lending/landing-last/Vector-Smart-Object-copy-2.png') center 100px no-repeat;
+      img{
+        width: 83%;
+        margin: 0 auto;
+        display: block;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    .container{
+      .text_block{
+        margin: 30px 0;
+      }
+      .align_right{
+        text-align: center;
+      }
+      .align_left{
+        text-align: center;
+      }
+      .person{
+        display: none;
+      }
+    }
+  }
+}
+
+.uberize-business{
+  background: url('/images/lending/landing-last/Hand_img_3.png') bottom no-repeat;
+  min-height: 870px;
+  padding-top: 60px;
+  .container{
+    max-width: 1000px;
+    h4{
+      font-weight: bold;
+      padding-bottom: 20px;
+      margin-bottom: 19px;
+      position: relative;
+      &:after{
+        content:"";
+        width:20px;
+        height: 20px;
+        border-bottom:3px solid $primary;
+        position: absolute;
+        bottom: 0;
+        left:49%;
+      }
+    }
+    .center-heading {
+      text-align: center;
+      h2{
+        font-size: 2.6em;
+        color: $dark-black;
+        padding-bottom: 20px;
+      }
+      p{
+        margin: 10px auto;
+        max-width: 400px;
+      }
+    }
+    .center-text{
+      margin-top: 40px;
+      margin-bottom: 90px;
+      p{
+        max-width: 400px;
+        margin: 0 auto;
+      }
+      a{
+        display: block;
+      }
+    }
+    .align_right{
+      text-align: right;
+      h4:after{
+        left:auto;
+        right:0;
+      }
+    }
+    .align_left{
+      h4:after{
+        left:0;
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    background-position: right bottom;
+    min-height: 400px;
+    .container{
+      h4 br{
+        display: none;
+      }
+      .center-text{
+        text-align: left;
+        margin-bottom: 10px;
+        p{
+          max-width: inherit;
+          margin: auto;
+        }
+        h4:after{
+          left:0;
+          right:auto
+        }
+      }
+      .align_right{
+        text-align: left;
+        h4:after{
+          left:0;
+          right:auto
+        }
+      }
+    }
+  }
+  @media (max-width: 767px) {
+    background-size:42%;
+  }
+}
+
+.better-reviews{
+  background-color: #dff0ff;
+  padding: 0;
+  .container{
+    min-height: 500px;
+    padding-top: 80px;
+    background: url('/images/lending/landing-last/Smiling-Young-Woman-Holding-Cellphone-new.jpg') left bottom no-repeat;
+    .text-block{
+      h4{
+        margin: 40px 0;
+        font-weight: bold;
+      }
+      p{
+        margin-bottom: 40px;
+      }
+    }
+    .heading-text {
+      h2 {
+        font-size: 2.6em;
+        color: $dark-black;
+        padding-bottom: 20px;
+        .upArrow {
+          font-size: 70%;
+        }
+      }
+    }
+    @media (max-width: 991px) {
+      background-size:58%;
+      padding-top: 60px;
+      padding-bottom: 20px;
+    }
+    @media (max-width: 767px) {
+      background: url('/images/lending/landing-last/v5/Smiling-Young-Woman-Holding-Flipped.jpg') right bottom no-repeat;
+      background-size:40%;
+      min-height: 400px;
+    }
+    @media (max-width: 520px) {
+      background-size:50%;
+    }
+  }
+}
+
+.simple-integration{
+  .container{
+    min-height: 400px;
+    max-width: 1000px;
+    h2{
+      color: black;
+    }
+    .center-text{
+      margin: 40px auto;
+      p{
+        max-width: 400px;
+        padding: 20px 0;
+        margin:0 auto;
+      }
+    }
+    .box{
+      padding: 40px 20px;
+      padding-bottom: 60px;
+      box-shadow: 2px 2px 20px #ddd;
+      text-align: center;
+      h4{
+        font-weight: bold;
+        position: relative;
+        margin: 20px 30px;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        &:after{
+          content:"";
+          width:20px;
+          height: 20px;
+          border-bottom:3px solid $primary;
+          position: absolute;
+          bottom: 0;
+          left:45%;
+        }
+      }
+    }
+    .padding-top{
+      margin-top:30px;
+      padding-bottom: 40px;
+    }
+    @media (max-width: 767px) {
+      .box{
+        padding: 30px 20px;
+        box-shadow: 0 0 0;
+        h4{
+          margin-bottom: 15px;
+          padding-bottom: 20px;
+          &:after{
+            left:48%;
+          }
+        }
+      }
+      .padding-top{
+        margin-top:0;
+      }
+    }
+  }
+}
+
+.road-to-growing{
+  background: #d9f0fe url('/images/lending/landing-last/book-demo-bg.jpg') center bottom no-repeat;
+  .container{
+    max-width: 800px;
+    min-height: 500px;
+    h2{
+      color: black;
+      font-size: 2.4em;
+      line-height: 1.4;
+      padding-top: 40px;
+      padding-bottom: 10px;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.customerLogos {
+  @media screen and (max-width: 990px) {
+    display: none;
+  }
+  & > div {
+    display: flex;
+    justify-content: space-between;
+    & > div {
+      width: 100%;
+      & > div {
+        float: left;
+        width: 50%;
+        @media screen and (max-width: 540px){
+          width: 100%;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+  & > div:nth-child(2) {
+    @media screen and (max-width: 990px){
+      margin-top: 20px;
+    }
+    @media screen and (max-width: 540px){
+      margin: 0;
+    }
+  }
+  .bostonBestRatesLogo {
+    width: 90% !important;
+    margin-top: -8px;
+  }
+}
+
+.slider {
+  width: 100% !important;
+  &>div:first-child {
+    ul {
+      li {
+        img {
+          display: inline-block !important;
+          width: 100% !important;
+        }
+      }
+    }
+  }
+  &>div:nth-child(2) {
+    ul {
+      li {
+        button {
+          padding: 0 4px 0 4px !important;
+          font-size: 16px !important;
+        }
+      }
+    }
+  }
+}
+
+.customerLogosMobileResolution {
+  width: 100%;
+  margin-top: 10px;
+  display: none;
+  text-align: center;
+  @media screen and (max-width: 991px) {
+    display: block;
+  }
+  [class*="slider-control-bottomcenter"]{
+    position: relative !important;
+    left: 0 !important;
+    transform: none !important;
+    padding-top: 15px;
+    ul{
+      top: 0 !important;
+      li {
+        padding: 0 10px;
+        button{
+          padding: 0 !important;
+        }
+      }
+    }
+  }
+}

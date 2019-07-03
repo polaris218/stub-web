@@ -1,0 +1,112 @@
+@import '../../../styles/colors.scss';
+
+.control-tasks {
+  margin: 10px 0;
+}
+
+.control-tasks .btn-submit {
+  margin-right: 10px !important;
+}
+
+.modal-window {
+    width: 95%;
+}
+
+.tasks-manager-quick{
+  h2 {
+    font-size: 22px;
+    color: $primary;
+    padding: 15px 0px;
+  }
+}
+
+.modal{
+  text-align: center;
+}
+
+.taskContainer {
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: rpw;
+  flex-direction: row;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-top: 10px;
+}
+
+.taskItem {
+  width: 460px;
+  padding: 10px;
+  margin: 10px 0px 10px 10px;
+  background-color: $theme-light-grey;
+  cursor: pointer;
+  cursor: hand;
+  min-height: 150px;
+
+  &:hover {
+    background-color: $theme-grey;
+  }
+}
+
+.statusBadge {
+  padding: 7px;
+  color: #FFFFFF;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.detailsGrid {
+  padding: 0px 10px;
+  margin: 0px;
+}
+
+.detailsData {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-inline-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; 
+}
+
+.no-entity {
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed $no-info-color;
+  color: $no-info-color;
+  width: 100%;
+}
+
+entity-list {
+  background-color: yellow;
+  margin-bottom: 0px;
+}
+
+.entity-list li {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid $primary;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.clear-all {
+    max-width: 60px;
+    @media (min-width: 768px) {
+        text-align: right;  
+    }
+}
+
+.blockingPlaceHolder {
+  min-height: 260px;
+  -webkit-display: -webkit-box;
+  -webkit-display: -webkit-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

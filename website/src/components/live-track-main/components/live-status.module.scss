@@ -1,0 +1,730 @@
+@import '../../../../styles/colors.scss';
+@import '../../../../styles/mixins.scss';
+
+.live-status-section {
+  padding: 0px 0px 20px 0px;
+
+  h3{
+    color: $white;
+  }
+}
+
+@media (max-width: 768px) {
+    .live-status-section {
+    }
+}
+
+.time-display {
+  text-align: right;
+  color: $primary;
+  font-size: 12px;
+}
+
+
+.info-area{
+  margin: 0;
+  .notes-section {
+    .task-info {
+      .refresh{
+        padding: 16px 0;
+        text-align: right;
+        @include flexbox;
+        @include justify-content(space-between);
+        h3{
+          margin: 0;
+          font-size: 1.2em;
+          text-transform: uppercase;
+          color: $theme-lighter-grey;
+        }
+        .icon{
+          cursor: pointer;
+          font-size: 1.4em;
+          &:hover{
+            @include transform(rotate(90deg));
+          }
+        }
+      }
+      .status-feed {
+        background-color: $white;
+        border: 1px solid $theme-middle-grey;
+        border-radius: 4px;
+        padding: 30px 5px 0 5px;
+        max-height: 450px;
+        overflow: auto;
+        .timeline-override{
+          .timeline-entry {
+            margin-left: 20px;
+            .timeline-entry-inner{
+              min-height: 40px;
+              .timeline-icon{
+                @include border-radius(15px);
+                position: relative;
+                z-index: 2;
+              }
+            }
+            .timeline-label{
+              padding-left: 30px;
+              position: relative;
+              top:-14px;
+              h2 {
+                margin-top: 0;
+                font-size: 1.2em;
+                color: $theme-lighter-grey;
+                padding-right: 200px;
+                span{
+                  display: inline-block;
+                  padding: 4px 15px;
+                  border-radius: 5px;
+                  color: white;
+                }
+              }
+              p{
+                padding: 5px;
+                font-size: 1.1em;
+                margin-right: 50px;
+                display: inline-block;
+                color: $theme-lighter-grey;
+                border: 1px solid $primary;
+                background: $theme-light-grey;
+                white-space: pre-wrap;
+              }
+              .time-display{
+                text-align: right;
+                font-size: 1em;
+                color: $theme-lighter-grey;
+                position: absolute;
+                right:0;
+                top:0;
+              }
+            }
+          }
+          &:before{
+            width: 2px;
+            margin-top: -5px;
+            margin-left: 26px;
+            background: $theme-middle-grey;
+          }
+
+          .status-area {
+            margin-right: 20px;
+            display: inline-block;
+            height: 45px;
+          }
+        }
+      }
+    }
+
+    .status-feed-empty {
+      min-height: 90px;
+      padding: 25px;
+      text-align: center;
+      color: $theme-middle-grey;
+      margin-bottom: 30px;
+    }
+
+    .add-notes-container {
+      margin-top: 15px;
+      padding-left: 50px;
+      .input-text{
+        width: 100%;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+      .add-note{
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        z-index: 9;
+        &.visible-to-customer{
+          background: $btn-primary;
+          &[data-active="true"]{
+            background: $theme-middle-grey;
+          }
+          &:hover{
+            background: $btn-primary-hover;
+          }
+        }
+      }
+      textarea {
+        font-size: 16px;
+      }
+    }
+    .resend-block{
+      background-color: $resend-block;
+      padding: 15px;
+      border: 1px solid $primary;
+      border-radius: 5px;
+      margin: 20px 0 0 20px;
+      p{
+        font-size: 0.9em;
+      }
+      .icon{
+        float: left;
+        background-color: $primary;
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        padding: 8px 9px 6px;
+        margin-right: 15px;
+      }
+      .add-note{
+        font-size: 1em;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .map-section{
+    .map-top {
+      padding: 15px 0;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(space-beetween);
+      span {
+        font-size: 18px;
+        color: $dark-black;
+        span {
+          color: $theme-purple;
+        }
+      }
+      >div{
+        width:100%;
+      }
+    }
+    .customer-view-link{
+      font-size: 1em;
+      text-transform: uppercase;
+      text-decoration: underline;
+      font-weight: bold;
+      float: right;
+    }
+  }
+}
+
+
+.block-label {
+  display: block;
+  padding-top: 20px;
+  color: $theme-grey-text;
+}
+
+
+
+.latest-status {
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  .glyphicon-refresh {
+    height: auto;
+    width: auto;
+    background: transparent;
+    color: $primary;
+    transition: transform .2s ease-in-out;
+    cursor: pointer;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.add-note {
+  margin-left: 10px;
+  padding: 12px 24px;
+}
+
+.add-note2 {
+  padding: 15px 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-info {
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed $no-info-color;
+  color: $no-info-color;
+}
+
+.timeTable {
+  margin-top: 1%;
+  background-color: $white;
+  border: 1px solid $timetable-border;
+  border-radius: 4px;
+
+}
+
+@media only screen and (max-width: 700px) {
+
+  .glyphicon-clock {
+    display: none;
+  }
+
+  .glyphicon-hourglass {
+    display: none;
+  }
+
+}
+
+.tasks-confirm-dialog-wrapper{
+  position: fixed;
+  z-index: 10001;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  @include transform(translate(-50%, -50%));
+  @include box-shadow(0, 0, 10px, $theme-dark-grey);
+  margin: 0 auto;
+  background: $white;
+  border-radius: 5px;
+  padding: 10px 30px 30px 30px;
+  @media screen and (max-width: 441px) {
+    width: 100%;
+    top: 25%;
+  }
+  h3{
+    margin-bottom: 10px;
+    font-size: 2em;
+    color: $theme-dark-grey;
+  }
+  p{
+    color: $theme-dark-grey;
+    margin-bottom: 0;
+    font-size: 1.2em;
+  }
+  button{
+    margin-left: 10px;
+    &:first-child{
+      margin-left: 0;
+    }
+  }
+}
+
+
+.tasks-confirm-overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background: $dark-black;
+  opacity: 0.7;
+}
+
+.tasks-confirm-buttons {
+  margin-top: 30px;
+}
+
+.tasks-confirm-cancel {
+  margin-left: 20px;
+}
+
+.confirm-dialog-text {
+  text-align: left;
+}
+
+.confirm-dialog-text-note {
+  padding: 5px;
+  font-size: 1.1em;
+  margin-right: 50px;
+  display: inline-block;
+  color: $theme-lighter-grey;
+  border: 1px solid $primary;
+  background: $theme-light-grey;
+  white-space: pre-wrap;
+  text-align: left;
+  margin: 15px 0px !important;
+}
+
+.savingSpinnerInline {
+  display: inline-block;
+  max-width: 250px;
+}
+
+.status-area {
+  margin-top: -10px;
+  height: 41px;
+}
+
+.csErrorMsg {
+  color: $error-message-custom-border;
+  background: $error-message-custom-background;
+  padding: 8px;
+  border: 1px solid $error-message-custom-border;
+  border-radius: 4px;
+}
+
+.file-upload-link{
+  float: left !important;
+  color: $primary;
+  font-size: 16px;
+  line-height: 18px;
+  z-index: 9;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  &:active, &:hover, &:focus {
+    border: 1px dashed $primary;
+    color: $primary;
+    outline: none;
+  }
+}
+
+.account-image2 {
+  img {
+    position: relative;
+    bottom: -60px;
+    height: 175px;
+    width: 175px;
+  }
+}
+
+.dropMsg {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  p {
+    text-align: center;
+    font-size: 18px;
+    span {
+      color: $primary-green;
+      font-size: 26px;
+      font-weight: 700;
+    }
+  }
+}
+
+.actualDropZone {
+  width: 100% !important;
+  border: 2px dashed $theme-middle-grey;
+  border-radius: 6px;
+  height: 190px;
+  background-color: $theme-light-grey;
+  margin-top: 20px;
+}
+
+.dropzoneContainer {
+  padding: 0 !important;
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+}
+
+.uploadFilesPreviews {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  width: 600px;
+}
+
+.uploadFilesPreviews li {
+  float: left;
+  width: 158px;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+}
+
+.uploadFilesPreviews li.addAnotherImg {
+  width: 23%;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 48px;
+    background: $theme-light-grey;
+    border: 2px dashed $theme-middle-grey;
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+    cursor: pointer;
+  }
+}
+
+.uploadFilesPreviews li img {
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 6px;
+  -webkit-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+  -moz-box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+  box-shadow: 0px 6px 32px -7px $upload-img-shadow;
+}
+
+.uploadCaption {
+  display: block;
+  position: absolute;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.85) 20%, rgba(0,0,0,0) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.85) 20%,rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.85) 20%,rgba(0,0,0,0) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+  width: 100%;
+  height: 40px;
+  color: $white;
+  padding: 0px;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.uploadCaption span {
+  padding: 10px;
+  line-height: 14px;
+  margin-top: 0px;
+  display: inline-block;
+}
+
+.closeBtn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  color: $bg-primary;
+  z-index: 99;
+  top: -8px;
+  right: -8px;
+  background: $cancel-btn;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+  &:hover {
+    color: $bg-primary;
+  }
+}
+
+.retryBtn {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: $bg-primary;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  background: $cancel-btn;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0;
+  &:hover {
+    color: $bg-primary;
+  }
+}
+
+.uploadSpinner {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  color: $theme-darker-grey;
+  z-index: 99;
+  top: 50%;
+  left: 50%;
+  margin-left: -15px;
+  margin-top: -15px;
+  background: $theme-light-grey;
+  border: 1px transparent;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 0;
+  font-size: 30px
+}
+
+.file-preview-journal{
+  background-color: $white;
+  border-top: 1px solid $theme-middle-grey;
+  border-radius: 4px;
+  padding: 5px 5px 0 5px;
+  max-height: 450px;
+  overflow: auto;
+  .timeline-override{
+    .timeline-entry {
+      margin-left: 20px;
+      .timeline-entry-inner{
+        min-height: 40px;
+        .timeline-icon{
+          @include border-radius(15px);
+          position: relative;
+          z-index: 2;
+        }
+      }
+      .timeline-label{
+        padding-left: 30px;
+        position: relative;
+        top:-14px;
+        h2 {
+          margin-top: 0;
+          font-size: 1.2em;
+          color: $theme-lighter-grey;
+          padding-right: 200px;
+          span{
+            display: inline-block;
+            padding: 4px 15px;
+            border-radius: 5px;
+            color: $white;
+          }
+        }
+        p{
+          padding: 5px;
+          font-size: 1.1em;
+          margin-right: 50px;
+          display: inline-block;
+          color: $theme-lighter-grey;
+          border: 1px solid $primary;
+          background: $theme-light-grey;
+          white-space: pre-wrap;
+        }
+        .time-display{
+          text-align: right;
+          font-size: 1em;
+          color: $theme-lighter-grey;
+          position: absolute;
+          right:0;
+          top:0;
+        }
+      }
+    }
+    &:before{
+      width: 2px;
+      margin-top: -5px;
+      margin-left: 26px;
+      background: $theme-middle-grey;
+    }
+
+    .status-area {
+      margin-right: 20px;
+      display: inline-block;
+      height: 45px;
+    }
+  }
+}
+
+.savingSpinnerInline {
+  display: inline-block;
+  max-width: 200px;
+}
+
+.task-file-item {
+  max-height: 260px;
+  margin-top: 10px;
+}
+
+.clearfixCustom {
+  margin-top: 20px;
+}
+
+.savingSpinnerContainer {
+  width: 330px;
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 768px) {
+    width: auto;
+    position: relative;
+    display: block;
+    float: left;
+  }
+}
+
+.cancel-button{
+  color:$theme-dark-grey;
+  border: 1px solid $theme-dark-grey;
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+}
+
+.transparent-color {
+  & > div {
+    margin: 0 auto;
+    width: auto;
+    & > div {
+      background-color: $theme-grey;
+      margin: 0 auto !important;
+    }
+  }
+}
+
+.send-note-section {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fileUploaderMobile {
+  margin-top: 20px;
+  display: none;
+  @media screen and (max-width: 1024px) {
+    display: block;
+  }
+}
+
+.customFilePreview {
+  background: $theme-light-grey;
+  margin-top: 10px;
+  width: 100%;
+  border: 2px dashed $theme-middle-grey;
+  border-radius: 4px;
+  padding: 15px 10px 15px 10px;
+  display: flex;
+  height: 220px;
+  overflow: scroll;
+  p {
+    text-align: center;
+    height: 175px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.fileUploaderMobileBtn {
+  input[type="file"] {
+    opacity: 0;
+    z-index: 99;
+    height: 48px;
+    margin-top: -53px;
+  }
+  label {
+    opacity: 1;
+    z-index: 98;
+    background: $theme-light-green;
+    color: $white;
+    font-size: 18px;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    border-radius: 4px;
+  }
+}
+
+.sendNoteIcon {
+  margin-right: 10px;
+}
+
+
+.timelineCenteredParent {
+  max-height: 460px;
+  overflow-y: scroll;
+  position: relative;
+  margin-bottom: 20px;
+  div:first-child {
+    max-height: none !important;
+  }
+}

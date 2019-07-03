@@ -1,0 +1,11 @@
+import requests
+import json
+
+url = "https://sandbox.arrivy.com/api/express/tasks/upsert/EXTERNAL_ID"
+
+headers = {"Content-type": "application/x-www-form-urlencoded", "X-Auth-Key":"26be717d-54c7", "X-Auth-Token":"7rrunytNoVgpV4qgLZYmH1"}
+
+
+payload = {'title':'Task Title','start_datetime':'START_DATE','end_datetime':'END_DATE','entity_ids':'[ENTITY_IDS]','customer_first_name':'Arrivy','customer_last_name':'Customer','customer_email':'cs@arrivy.com','customer_address_line_1':'16357 118th Lane Northeast','customer_city':'Bothell','customer_state':'Washington','customer_country':'United States','customer_zipcode':'98011','customer_exact_location':'{"lat":47.74659949999999,"lng":-122.1829902}'}
+r = requests.put(url, headers=headers, data = payload)
+print r.text

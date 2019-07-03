@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+
+.arrow {
+    color: $white;
+    display: inline-block;
+    font-size: 26px;
+    cursor: pointer;
+    animation: floating-arrow 1.6s infinite ease-in-out 0s;
+
+    &:hover {
+        color: $white;
+    }
+}
+
+@keyframes floating-arrow {
+    from {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    65% {
+        -webkit-transform: translateY(11px);
+        transform: translateY(11px);
+    }
+
+    to {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}

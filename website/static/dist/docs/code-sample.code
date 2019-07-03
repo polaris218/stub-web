@@ -1,0 +1,12 @@
+{
+    "title" : "Paragraph",
+    "tooltip" : "Paragraph Component",
+    "text" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis.",
+    "content" : [
+        {
+        "title" : "Simple Paragraph",
+        "type" : "PARAGRAPH",
+        "content" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vel urna vel odio convallis viverra. Proin imperdiet consequat luctus. In ac odio ipsum. Aliquam et ligula turpis."
+        }
+    ]
+},

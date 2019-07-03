@@ -1,0 +1,43 @@
+@import '../../../styles/colors.scss';
+
+.features {
+    background-color: $white;
+    padding: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+
+
+.features2{
+    background: linear-gradient(to top, $customers-sayings 0%, $feature-gradient 100%);
+    //background: #1F7B9E;
+    background: -moz-linear-gradient(top, $customers-sayings 0%, $feature-gradient 100%);
+    background: -webkit-linear-gradient(top, $customers-sayings 0%, $feature-gradient 100%);
+    background: -o-linear-gradient(top, $customers-sayings 0%, $feature-gradient 100%);
+    background: -ms-linear-gradient(top, $customers-sayings 0%, $feature-gradient 100%);
+    //filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1F7B9E', endColorstr='#64B4B8', GradientType=1 );
+
+    padding: 50px 10px;
+
+    .features2-text {
+
+    }
+    .features2-link {
+        color: $white;
+        font-size: 22px;
+        margin-top: 12px;
+        a {
+            color: $dark-black;
+        }
+
+        img {
+          max-width: 150px;
+        }
+    }    
+}
+
+
+.integrationImageContainer {
+  max-width: 1000px;
+  margin: 0 auto;
+}

@@ -1,0 +1,225 @@
+@import '../../../styles/colors.scss';
+
+
+
+.crew-button,
+.crew-button:focus {
+    color: $link-item;
+    border: 1px solid $link-item;
+
+    svg {
+      width: 18px;
+      height: 20px;
+    }
+}
+
+.crew-button:hover {
+    background: $crew-button !important;
+    border-color: $crew-button-border !important;
+}
+
+.entity-list li {
+    margin: 10px 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 1px solid $link-item;
+    cursor: pointer;
+    cursor: hand;
+}
+
+.entity-list-selected li {
+    background: $link-item;
+    color: $white;
+    margin: 10px 5px;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.glyphicon {
+    width: inherit ;
+    height: inherit;
+    padding: 5px 10px;
+}
+
+.glyphicon:hover {
+    color: $glyphicon-hover;
+}
+
+.fieldInfo {
+  font-style: italic;
+  margin: 10px 0px;
+}
+
+.colorPickerContainer {
+  .color-picker {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    float: left;
+    border-radius: 4px;
+    margin: 0px 6px 6px 0px;
+    border: 1px grey solid;
+  }
+  &>div:last-child {
+    &>div {
+      &:first-child{
+        height: 240px !important;
+      }
+      @media screen and (min-width: 992px) and (max-width: 1199px),  (max-width: 441px){
+        width: 186px !important;
+      }
+      &:not(.colorField)>div {
+        position: absolute !important;
+        width: 240px;
+        margin-left: 35px;
+        @media screen and (min-width: 992px) and (max-width: 1199px), (max-width: 441px){
+          width: 186px;
+          margin-top: 5px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .swatchesPicker{
+    position: absolute;
+  }
+  .colorField{
+    background: $white;
+    box-shadow: rgba($dark-black, 0.12) 0 2px 10px, rgba($dark-black, 0.16) 0 2px 5px;
+    border-radius: 2px;
+    margin-left: 35px;
+    padding: 10px;
+    position: absolute !important;
+    width: 240px;
+    z-index: 1;
+    @media screen and (min-width: 992px) and (max-width: 1199px), (max-width: 441px){
+      width: 186px;
+      margin-left: 0;
+      margin-top: 5px;
+    }
+    >  div{
+      top: auto !important;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+    }
+    input{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: $route-bg;
+      border: 1px solid $dashboard-bg;
+      border-radius: 4px;
+      box-shadow: none !important;
+      color: $dashboard-dark;
+      display: block;
+      font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      height: 40px;
+      margin-bottom: 0;
+      padding: 9px 15px;
+      width: 100%;
+      outline: none;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &::-webkit-input-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &::-moz-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &:-ms-input-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &:-moz-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &:focus{
+        box-shadow: none !important;
+        border-color: darken($dashboard-bg, 15%);
+      }
+      &:disabled{
+        background-color: $theme-grey;
+      }
+    }
+    span{
+      padding-right: 10px;
+    }
+  }
+  .cover{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .close {
+    background: $red;
+    border-radius: 50%;
+    border: 1px solid $white;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    position: absolute;
+    right: 35px;
+    top: -9px;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    z-index: 9999;
+    &:before, &:after {
+      content: '';
+      background-color: $white;
+      position: absolute;
+      height: 10px;
+      width: 2px;
+      border-radius: 10px;
+      top: 50%;
+      left: 50%;
+    }
+    &:before {
+      -webkit-transform: rotate(45deg) translate(-4px, -3px);
+      -moz-transform: rotate(45deg) translate(-4px, -3px);
+      transform: rotate(45deg) translate(-4px, -3px);
+    }
+    &:after {
+      -webkit-transform: rotate(-45deg) translate(3px, -4px);
+      -moz-transform: rotate(-45deg) translate(3px, -4px);
+      transform: rotate(-45deg) translate(3px, -4px);
+    }
+    &:hover {
+      -webkit-transform: scale(1.15);
+      -moz-transform: scale(1.15);
+      transform: scale(1.15);
+    }
+    @media screen and (min-width: 992px) and (max-width: 1199px), (max-width: 441px){
+      right: -9px;
+      top: -5px;
+    }
+  }
+}
+
+.toastSuccessAlert {
+  background: $success-alert-bg !important;
+  color: $success-alert-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $success-alert-border !important;
+  button {
+    color: $success-alert-color !important;
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0, 0, 0, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

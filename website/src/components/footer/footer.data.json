@@ -1,0 +1,39 @@
+{
+    "developerLinks": [{
+        "label": "Getting Started",
+        "href": "/docs"
+    }, {
+        "label": "Documentation",
+        "href": "/docs"
+    }],
+    "company_nameLinks": [{
+        "label": "Pricing",
+        "href": "/pricing"
+    }, {
+      "label": "Developer",
+        "href": "/docs"
+    }, {
+        "label": "Contact",
+        "href": "mailto:info@arrivy.com",
+        "new_window": true
+    }, {
+        "label": "Terms of Service",
+        "href": "/terms"
+    }, {
+        "label": "Service Level Agreement",
+        "href": "/terms"
+    }],
+    "socialLinks": [{
+        "type": "twitter",
+        "href": "https://twitter.com/arrivy_platform",
+        "title": "twitter"
+    }, {
+        "type": "facebook",
+        "href": "https://www.facebook.com/arrivy",
+        "title": "facebook"
+    }, {
+        "type": "linkedin",
+        "href": "https://www.linkedin.com/company/arrivy",
+        "title": "linkedin"
+    }]
+}

@@ -1,0 +1,442 @@
+@import '../../../styles/colors.scss';
+@import "../../../styles/mixins.scss";
+
+@import url('https://fonts.googleapis.com/css?family=Martel+Sans|Poppins');
+
+.newLandingFont {
+  h1,h2,h3,h4,h5{
+    font-family: 'Poppins', sans-serif;
+  }
+  p, li, button, .primary-action-btn{
+    font-family: 'Martel Sans', sans-serif;
+  }
+}
+
+.newLandingFont + section {
+  h1,h2,h3,h4,h5{
+    font-family: 'Poppins', sans-serif;
+  }
+  p, li, button, .primary-action-btn{
+    font-family: 'Martel Sans', sans-serif;
+  }
+}
+
+.modalImages {
+  text-align: center;
+  img {
+    display: inline-block;
+    width: 46%;
+    max-height: 500px;
+    object-fit: contain;
+    margin: 15px 10px 15px 10px;
+    box-shadow: 0px 0px 36px -12px $img-shadow;
+  }
+}
+
+.featuresModalsContent {
+  font-size: 1.2em;
+}
+
+.navbar__box-column{
+  color: $theme-main;
+}
+
+.page-wrap{
+  padding: 0;
+}
+
+
+.container{
+  max-width: 1674px;
+  margin: 0 auto;
+  padding: 0 20px;
+  @media (max-width: 855px) {
+    width:auto;
+    padding: 0 20px;
+  }
+  .btn{
+    font-size: 1.4em;
+    padding: 10px 60px;
+    border-radius: 25px;
+    text-transform: none;
+    font-weight: normal;
+    border: 0px solid #fff;
+  }
+  .button-group{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    max-width: 480px;
+    @media (max-width: 580px) {
+      @include flex-direction(column);
+      .btn{
+        margin-right: 0;
+        &:first-child{
+          margin-right:0;
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  a:hover{
+    text-decoration: none;
+  }
+}
+
+.landing-v3{
+  background-image: url("/images/lending/faded_buildings.png"), url("/images/lending/Path 56.svg");
+  background-position:  left bottom,  left top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: auto 200px, auto 100%;
+  @media (min-width: 988px) {
+    .container{
+      p{
+        margin: 50px 0 50px;
+      }
+    }
+  }
+  @media (max-width: 1280px) {
+    background-size: auto 200px, cover;
+  }
+}
+
+.header{
+  padding:0;
+  .girl_bg{
+    padding-top: 80px;
+    padding-bottom: 40px;
+    background: url('/images/demo/customer_delight_no_padding.png') right bottom no-repeat;
+    background-size: auto 700px;
+    @media (min-width: 988px) {
+
+    }
+    @media (max-width: 988px) {
+
+    }
+    @media (max-width: 650px) {
+    }
+   }
+  h1 {
+    line-height: 1.4;
+    font-weight: bold;
+    span {
+      color: $primary;
+      text-transform: uppercase;
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+  }
+  p {
+    margin: 60px 0 80px;
+    font-size: 1.2em;
+    max-width: 540px;
+    line-height: 1.2;
+  }
+  @media (min-width: 988px) {
+    .girl_bg {
+      height: 800px;
+      padding-top: 120px;
+    }
+    h1{
+      font-size: 3.4em;
+    }
+    p{
+      font-size: 1.6em;
+    }
+  }
+  @media (max-width: 988px) {
+    .girl_bg {
+      background-size: auto 500px;
+    }
+    p {
+      max-width: 300px;
+    }
+  }
+  @media (max-width: 650px) {
+    .girl_bg {
+      background-size: 200px auto;
+      height: 750px;
+      text-align: center;
+    }
+    p {
+      margin: 30px auto 50px;
+    }
+    .button-group {
+      max-width: none;
+      @include justify-content(space-around);
+    }
+  }
+  .no-credit-needed{
+    position: relative;
+    &:after{
+      position: absolute;
+      bottom: -25px;
+      left: 55px;
+      content: 'no credit card needed';
+      color: $dark-black;
+      font-size: 0.6em;
+    }
+  }
+
+}
+
+.blue-delimeter{
+  background: $primary;
+  padding: 40px 0;
+  ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    li{
+      display: inline-block;
+      margin: 0 20px;
+      opacity: 0.6;
+      img{
+        max-height: 50px;
+      }
+    }
+  }
+}
+
+.how_arravy_works{
+  background: $light-bg;
+  padding: 0;
+  overflow: hidden;
+  .container {
+    padding: 60px 20px;
+    h2 {
+      color: $dark-black;
+    }
+
+    ul {
+      margin-top: 40px;
+      list-style-type: none;
+      padding-left: 1em;
+      li {
+        background: url("/images/lending/new/Checked-Icon.png") left top no-repeat;
+        padding-left: 40px;
+        margin-bottom: 20px;
+        h3 {
+          margin-top: 0;
+          color: $theme-lighter-grey;
+        }
+      }
+    }
+    .movie {
+      position: relative;
+      margin-right: 20px;
+      &:before {
+        content: ' ';
+        width: 105%;
+        height: 105%;
+        position: absolute;
+        left: -2%;
+        top: -2%;
+        background: #BEE3E3;
+        z-index: 1;
+        transform: rotate(-5deg);
+        border-radius: 10px;
+      }
+      iframe {
+        border-radius: 10px;
+        position: relative;
+        border: 3px solid $theme-main;
+        background: $theme-main;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.slideshow{
+  background: url("/images/lending/new/arrivy_hp_3-03.png") right bottom no-repeat #00BD84;
+  padding: 0;
+  @media (max-width: 1000px) {
+    background-size: 40%;
+    .container{
+      padding: 20px;
+    }
+  }
+  .container{
+    @media (min-width: 1000px) {
+      height: 521px;
+    }
+    @include flexbox;
+    @include align-items(center);
+  }
+  .arrow-left{
+    cursor: pointer;
+  }
+  .arrow-right{
+    cursor: pointer;
+  }
+  .content {
+    visibility: hidden;
+    position:absolute;
+    opacity: 0;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+    color: $theme-main;
+    .big-text {
+      font-size: 2em;
+    }
+    .right-text {
+      float: right;
+    }
+    img {
+      width: 100px;
+    }
+    &[data-active="true"]{
+      position:static;
+      visibility: visible;
+      width: 560px;
+      opacity: 1;
+      transition: opacity 0.5s;
+    }
+  }
+
+}
+.advising{
+  padding: 0;
+  >div{
+    @media (max-width: 742px) {
+      margin-bottom: 20px;
+    }
+  }
+  .container{
+    .texts{
+      h3{
+        font-size: 1.8em;
+        margin-bottom: 1em;
+        color: $theme-grey-text;
+      }
+      p{
+        margin-bottom: 2em;
+      }
+      @media (min-width: 742px) {
+        margin-top: 6em;
+      }
+    }
+    .image {
+      width: 100%;
+      max-width: 400px;
+      max-height: 400px;
+      margin-top: 10px;
+    }
+    @media (min-width: 742px) {
+      .image {
+        margin-top: 0;
+        max-height: none;
+        max-width: none;
+        width: 100%;
+      }
+    }
+  }
+  .calendar{
+    padding-top: 50px;
+    @media (min-width: 742px) {
+      background: url("/images/lending/new/grey-coner-left.png") left bottom no-repeat;
+      background-size: cover, 50%;
+      padding-bottom: 135px;
+    }
+  }
+  .uberize{
+
+    @media (min-width: 742px) {
+      background-image: url("/images/lending/new/white-coner-left.png"),  url("/images/lending/new/bg.png");
+      background-position:  left bottom,  left bottom;
+      background-repeat: no-repeat, no-repeat;
+      background-size: cover, auto;
+      background-color: #F2F2F2;
+    }
+    @media (max-width: 1200px) {
+      background-size: cover, 50%;
+    }
+    @media (max-width: 742px) {
+      background-color: #F2F2F2;
+      padding-bottom: 20px;
+    }
+    .container {
+      .texts {
+        margin-top: 3em;
+      }
+    }
+  }
+  .track{
+    @media (min-width: 742px) {
+      background: url("/images/lending/new/grey-coner-left.png") left bottom no-repeat;
+      background-size: cover;
+      padding-bottom: 135px;
+    }
+    @media (max-width: 742px) {
+      padding-bottom: 20px;
+    }
+  }
+  .reviews{
+    @media (min-width: 742px) {
+      background: url("/images/lending/new/green-coner-left.png") left bottom no-repeat #F2F2F2;
+      background-size: cover;
+      padding-bottom: 25px;
+    }
+    @media (max-width: 742px) {
+      background-color: #F2F2F2;
+      padding-bottom: 20px;
+      margin-bottom: 0;
+    }
+  }
+  .white-paper{
+    background:$primary-green;
+    margin-bottom: 0;
+    .container{
+      .texts{
+        h3{
+          font-size: 1.4em;
+          margin-bottom: 1em;
+          color:$theme-main;
+        }
+        p{
+          font-size: 1.2em;
+        }
+        color: $theme-main;
+      }
+      .btn{
+        background: $theme-main;
+        color:$primary;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+
+
+.book-demo{
+  background: url("/images/lending/new/book-demo.png") left top no-repeat;
+  .container{
+    @include flexbox;
+    @include align-items(center);
+    @media (min-width: 1000px) {
+      height: 521px;
+    }
+    @media (max-width: 1000px) {
+      height: 300px;
+    }
+    .texts{
+      width: 100%;
+      text-align: center;
+      h2{
+        font-size: 1.8em;
+        font-weight: bold;
+        color: $theme-dark-grey;
+        margin-bottom: 2em;
+      }
+
+    }
+    .button-group{
+      margin: 0 auto;
+    }
+  }
+}

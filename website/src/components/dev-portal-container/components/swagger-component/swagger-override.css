@@ -1,0 +1,5 @@
+@media screen and (max-width: 768px) {
+  .opblock-section-header {
+    flex-wrap: wrap !important;
+  }
+}

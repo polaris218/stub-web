@@ -1,0 +1,104 @@
+@import '../../../styles/colors.scss';
+
+.taskTableWrapper{
+  h3{
+    color: $dashboard-dark;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 10px;
+  }
+  .mask{
+    position: relative;
+    z-index: 1;
+    &:before{
+      content: '';
+      background-color: $dashboard-dark;
+      position: absolute;
+      height: 50px;
+      top: 0;
+      left: -15px;
+      right: -15px;
+      z-index: -1;
+    }
+  }
+  [class*="table-responsive"]{
+    padding: 0 1px;
+  }
+  table{
+    color: $dashboard-dark;
+    font-size: 13px;
+    thead{
+      tr{
+        background-color: $dashboard-dark;
+        border-radius: 0;
+        color: rgba($white, 0.7);
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 20px;
+        position: relative;
+        th{
+          border-bottom: none;
+          height: 50px;
+          padding: 5px 10px;
+          vertical-align: middle;
+          -ms-text-overflow: ellipsis;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          text-transform: capitalize;
+        }
+      }
+    }
+    tbody{
+      &+tbody{
+        border-top: none;
+      }
+      tr:not(.emptyRow){
+        background-color: $white;
+        border: 1px solid transparent;
+        border-radius: 5px;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          background-color: $route-bg;
+          border-color: $dashboard-primary;
+        }
+        td{
+          border-top: none;
+          padding: 12px 10px;
+          vertical-align: middle;
+          a{
+            color: $dashboard-primary;
+            font-weight: bold;
+            &:hover{
+              text-decoration: none;
+            }
+          }
+        }
+      }
+      tr.emptyRow{
+        td{
+          border: none;
+          padding: 4px;
+        }
+      }
+    }
+  }
+  .messageBox {
+    background-color: $white;
+    border-radius: 5px;
+    color: $dashboard-dark;
+    font-size: 15px;
+    line-height: 20px;
+    text-align: center;
+    padding: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+    .error{
+      color: $theme-red;
+    }
+  }
+}
+.unscheduledTasksIndicator {
+  color: $theme-dark-grey;
+}

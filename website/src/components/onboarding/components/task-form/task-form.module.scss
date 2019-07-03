@@ -1,0 +1,38 @@
+@import '../../../../../styles/colors.scss';
+.step{
+  background-color: $light-blue;
+  color: $dashboard-dark;
+  font-size: 16px;
+  line-height: 25px;
+  border-radius: 4px 4px 0 0;
+  .title-bar{
+    background-color: $white;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 3px 6px rgba($dark-black, .09);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 60px;
+    padding: 0 15px;
+    h2{
+      color: $dashboard-dark;
+      font-size: 16px;
+      font-weight: bold;
+      margin: 0;
+    }
+  }
+  .inner{
+    padding: 15px;
+  }
+  .box{
+    .box-body{
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba($task-form-box-shadow, .3);
+      padding: 20px 18px 10px;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,126 @@
+@import '../../../styles/colors.scss';
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-secondary;
+}
+
+.profile {
+  flex-grow: 1;
+  padding: 0;
+}
+
+.profile-image {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  img {
+    display: inline-block;
+    height: 128px;
+    width: 128px;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.info {
+  padding-top: 24px;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.fullname {
+  font-size: 26px;
+  padding: 10px;
+  line-height: 32px;
+}
+
+.address {
+
+}
+
+.website {
+  a {
+    color: $theme-purple;
+  }
+}
+
+.details {
+  font-size: 16px;
+  margin: 12px 15px 18px 15px;
+}
+
+.social-link {
+  i {
+    font-size: 40px;
+    margin: 16px;
+  }
+  &[data-service='facebook'] {
+    color: $facebook;
+  }
+  &[data-service='angieslist'] {
+    color: $angieslist;
+  }
+  &[data-service='google'] {
+    color: $google;
+  }
+  &[data-service='yelp'] {
+    color: $yelp;
+  }
+  &[data-service='twitter'] {
+    color: $twitter;
+  }
+}
+
+.loading {
+  height: 256px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ratings-highlighted {
+  background-color: $white;
+  padding: 18px 15px;
+  min-width: 290px
+}
+
+.details a {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  color: $profile-details;
+}
+
+.reviews {
+  background: white;
+  padding: 10px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  h3 {
+    padding-left: 15px;
+  }
+}
+
+.thumbtack {
+  i {
+    transform: rotate(40deg);
+    color: $thumbtack-color;
+  }
+}
+
+.showMoreBtn {
+  background: none;
+  border: none;
+  outline: none;
+  color: $primary;
+  font-size: 13px;
+  &:hover {
+    text-decoration: underline;
+  }
+}

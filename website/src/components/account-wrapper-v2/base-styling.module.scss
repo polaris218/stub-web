@@ -1,0 +1,283 @@
+@import '../../../styles/colors.scss';
+
+.btn{
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: $dashboard-dark;
+  display: inline-block;
+  font-size: 16px;
+  line-height: 1.4;
+  outline: none;
+  min-width: 110px;
+  min-height: 40px;
+  padding: 9px 10px;
+  vertical-align: middle;
+  text-decoration: none !important;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &:hover{
+    text-decoration: none;
+  }
+  &+ .btn{
+     margin-left: 20px;
+  }
+  &.btn-secondary{
+    background-color: $btn-sec;
+    color: $white;
+    &:hover{
+      background-color: $btn-sec-hover;
+      color: $white;
+    }
+  }
+  &.btn-light{
+    background-color: $white;
+    color: $dashboard-dark;
+    min-width: 110px;
+    &:hover{
+      background-color: $theme-middle-grey;
+      color: $dashboard-dark;
+    }
+  }
+  &.btn-lg{
+    min-width: 170px;
+  }
+}
+
+.formRow{
+  margin-left: -6px;
+  margin-right: -6px;
+  > [class^="col-"],
+  > [class*="col-"]{
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+}
+.field-wrapper{
+  position: relative;
+  .inner{
+    position: relative;
+    width: 100%;
+    input{
+      padding-right: 30px;
+    }
+  }
+  svg{
+    color: rgba($dashboard-dark, .5);
+    position: absolute;
+    right: 10px;
+    bottom: 14px;
+  }
+}
+.box{
+  color: $dashboard-dark;
+  margin-bottom: 10px;
+  .boxTitle{
+    color: $dashboard-dark;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 20px;
+    margin: 0 0 10px;
+    > a{
+      color: $dashboard-dark;
+    }
+    > span{
+      color: rgba($dashboard-dark, .5);
+      display: inline-block;
+      &:before{
+        content: '>';
+        margin: 0 5px;
+        display: inline-block;
+      }
+    }
+  }
+  .boxBody{
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow, .17);
+    font-size: 15px;
+    .boxBodyInner{
+      padding: 20px 18px 10px;
+      &:not(:last-child){
+        border-bottom: 1px solid $dashboard-bg;
+      }
+    }
+    @media only screen and (max-width: 991px) {
+      height: auto !important;
+    }
+  }
+  [class^="form-group"], [class*="form-group"], [class="form-group"]{
+    margin-bottom: 10px;
+  }
+  [class="control-label"]{
+    color: rgba($dashboard-dark, .5);
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+  }
+  [class="form-control"], .field-wrapper [class="form-control"], .field-wrapper input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: $route-bg;
+    border: 1px solid $dashboard-bg;
+    border-radius: 4px;
+    box-shadow: none !important;
+    color: $dashboard-dark;
+    display: block;
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 40px;
+    margin-bottom: 0;
+    padding: 9px 15px;
+    width: 100%;
+    outline: none;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:focus{
+      box-shadow: none !important;
+      border-color: darken($dashboard-bg, 15%);
+    }
+    &:disabled{
+      background-color: $theme-grey;
+    }
+  }
+  .selectBox{
+    position: relative;
+    &:after{
+      content: '';
+      background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      right: 10px;
+      top: 13px;
+      pointer-events: none;
+    }
+    select {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding-right: 35px;
+      &::-ms-expand{
+        display: none;
+      }
+    }
+  }
+  .checkBox{
+    position: relative;
+    line-height: 23px;
+    margin-top: 0;
+    label{
+      input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+        margin-left: 0;
+      }
+      padding-left: 0;
+      span{
+        display: block;
+        padding-left: 33px;
+        &:before{
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          border-radius: 50%;
+          height: 23px;
+          width: 23px;
+          -webkit-transition: all .3s ease-in-out;
+          -moz-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+        }
+        &:before{
+          background: $route-bg center center / auto 7px no-repeat;
+          border: 1px solid $dashboard-primary;
+        }
+      }
+      input:checked + span:before{
+        background-color: $dashboard-primary;
+        background-image: url("/images/task-form/tick.svg");
+        box-shadow: 0 4px 6px rgba($dashboard-primary, .5);
+      }
+    }
+  }
+}
+.tabsPrimary{
+  [class*="nav-tabs"]{
+    background-color: $dashboard-primary !important;
+    border-bottom: none;
+    font-size: 16px;
+    margin-bottom: 0;
+    li{
+      margin-bottom: 0;
+      a{
+        background: none;
+        border-radius: 0;
+        border: none !important;
+        color: $white !important;
+        display: block;
+        line-height: 55px;
+        margin: 0;
+        padding: 0 20px;
+        position: relative;
+        text-decoration: none;
+        transition: all .3s ease-in-out;
+        &:after{
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          opacity: 0;
+          border-style: solid;
+          border-width: 0 7.5px 7.5px 7.5px;
+          border-color: transparent transparent $white transparent;
+          margin: 0 auto;
+          z-index: 1;
+          transition: all .3s ease-in-out;
+        }
+      }
+      &:hover, &[class="active"]{
+        a{
+          background-color: $task-form-tab-active !important;
+        }
+      }
+      &[class="active"]{
+        a{
+          font-weight: bold;
+          &:after{
+            opacity: 1;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 767px) {
+      font-size: 14px;
+      li{
+        a{
+          padding: 0 10px;
+        }
+      }
+    }
+  }
+}
+

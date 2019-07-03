@@ -1,0 +1,234 @@
+@import "/mixins.scss";
+@import "/colors.scss";
+
+#app-container {
+  height: 100%
+}
+.header {
+  color: #008BF8;
+  font-size: 22px;
+  padding: 15px;
+}
+
+.btn-submit {
+  color: #fff;
+  background-color: $btn-sec;
+  -webkit-box-shadow: 0px 3px 6px 2px $shadow;
+  -moz-box-shadow: 0px 3px 6px 2px $shadow;
+  box-shadow: 0px 3px 6px 2px $shadow;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: none;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  word-spacing: 1px;
+  transition: all 0.3s ease;
+
+  &:hover, &:active, &:focus {
+      background-color: $btn-sec-hover;
+      color: #fff;
+      border: none;
+  }
+}
+
+.blue-btn{
+  background-color: $btn-primary;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-color: $btn-primary;
+  &:hover{
+    color: #fff;
+    background-color: $btn-primary-hover;
+  }
+}
+
+.white-btn{
+  text-transform: uppercase;
+  color: $theme-dark-grey;
+  font-weight: bold;
+}
+
+.green-btn{
+  background-color: $btn-sec;
+  color: $white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-color: $btn-sec;
+  &:hover{
+    color: $white;
+    background-color: $btn-sec-hover;
+  }
+}
+
+.custom-form label {
+    color: $no-info-color !important;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: left;
+}
+
+/*
+react-slider
+*/
+
+.rc-slider {
+  height: 10px;
+}
+
+.rc-slider-track {
+  height: 10px;
+  background: rgba(183,222,237,1);
+  background: -moz-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(37,171,149,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(183,222,237,1)), color-stop(100%, rgba(37,171,149,1)));
+  background: -webkit-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(37,171,149,1) 100%);
+  background: -o-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(37,171,149,1) 100%);
+  background: -ms-linear-gradient(left, rgba(183,222,237,1) 0%, rgba(37,171,149,1) 100%);
+  background: linear-gradient(to right, rgba(183,222,237,1) 0%, rgba(37,171,149,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b7deed', endColorstr='#40ccff', GradientType=1 );
+}
+
+.rc-slider-dot {
+  top: -1px;
+  width: 10px;
+  height: 10px;
+}
+
+.rc-slider-handle {
+  height: 20px;
+  width: 20px;
+  border: solid 2px $link-item;
+}
+
+.table-curved {
+    margin-top: 70px;
+    border-collapse: separate;
+}
+.table-curved > tbody > tr > td,
+.table-curved > tbody > tr > th,
+.table-curved > tfoot > tr > td,
+.table-curved > tfoot > tr > th,
+.table-curved > thead > tr > td,
+.table-curved > thead > tr > th {
+    border: 0;
+}
+
+/*.table-curved > tbody > tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}*/
+
+.table-curved tr td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.table-curved tr td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.table-responsive {
+    border: 0;
+}
+
+.spinner {
+  margin: 10px 0;
+}
+
+.spinner .rotating-plane {
+  background-color: #008BF8;
+  margin: 0 auto;
+}
+
+.custom-dropdown .caret {
+  vertical-align: text-top;
+  margin-left: 10px !important;
+}
+
+.rbc-calendar {
+  height: 1140px;
+}
+
+.rbc-time-content {
+  height: 1140px;
+}
+
+.rbc-day-slot .rbc-event {
+  border: 1px solid #c5c5c5;
+  max-width: 220px;
+}
+.rbc-day-slot .rbc-event-content {
+  white-space: pre-line;
+}
+
+.modal-header .close {
+  font-size: 40px;
+}
+
+.joyride-tooltip__header {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.joyride-tooltip__main {
+  font-size: 16px;
+  letter-spacing: .5px;
+}
+
+.modal {
+  z-index: 1600;
+}
+
+.modal-dialog{
+  .container{
+    padding: 0;
+  }
+}
+
+.popover {
+  z-index: 1602;
+}
+
+.react-selectize.root-node .react-selectize-control{
+    min-height: 80px;
+    font-size: 1.3em !important;
+    font-family: Lato;
+}
+
+.react-selectize.root-node .react-selectize-control .react-selectize-toggle-button path {
+    fill: $primary;
+}
+
+.react-selectize {
+  font-family: Lato;
+}
+
+/*
+COLOR PICKER
+*/
+
+.swatches-picker {
+  height: 5px !important;
+
+  div {
+    z-index:9999;
+  }
+}
+
+
+.swagger-ui .information-container {
+  display: none !important;
+}
+
+.swagger-ui .scheme-container {
+  display: none;
+}
+
+.swagger-ui .wrapper {
+
+  section {
+    padding: 0px !important;
+  }
+}
+

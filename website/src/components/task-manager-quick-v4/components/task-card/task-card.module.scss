@@ -1,0 +1,370 @@
+@import '../../../../../styles/colors.scss';
+
+.taskCard {
+	display: flex;
+	flex-direction: row;
+	min-height: 10px;
+	border: 1px solid transparent;
+	border-radius: 5px;
+	background: $white;
+	margin: 0 8px 5px 8px;
+	padding: 6px 6px 6px 9px;
+	position: relative;
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+	&.secondary{
+		border-radius: 0;
+		border-bottom-color: #DFF0FF;
+		border-left-color: transparent !important;
+		border-right-color: transparent !important;
+		margin-left: 0;
+		margin-bottom: 0;
+		&:last-child{
+			border-bottom-left-radius: 5px;
+			border-bottom-right-radius: 5px;
+		}
+		.taskTimeAndAddress{
+			min-width: calc(70% - 110px);
+			max-width: calc(70% - 110px);
+			@media screen and (max-width: 767px) {
+				min-width: 100%;
+				max-width: 100%;
+			}
+		}
+	}
+	&:hover, &.highlighted {
+		background: $route-bg;
+		border-color: $dashboard-primary;
+	}
+	.taskColorBar {
+		display: inline-block;
+		width: 3px;
+		margin: 10px 5px 10px 5px;
+		border: 1px transparent;
+		border-radius: 5px;
+		position: absolute;
+		left: 3px;
+		bottom: 0;
+		top: 0;
+	}
+	.icon {
+		width: 25px;
+		height: 20px;
+		text-align: center;
+		display: inline-flex;
+		justify-content: center;
+		justify-items: center;
+		align-items: center;
+		color: $dashboard-grey;
+		margin-right: 0px;
+		font-size: 10px;
+		img {
+			width: 10px;
+			height: auto;
+		}
+	}
+	.additionalAddressNumber {
+      font-size: 11px;
+      color: #000000;
+      margin-left: -2px;
+      margin-top: -10px;
+      font-weight: 600;
+	}
+	.taskDetails {
+		min-width: 25%;
+		max-width: 25%;
+		//@media screen and (max-width: 1380px) {
+		//	min-width: 180px;
+		//	max-width: 180px;
+		//}
+		//@media screen and (min-width: 1380px) {
+		//	min-width: 225px;
+		//	max-width: 225px;
+		//}
+		.taskTitle {
+			font-size: 13px;
+			font-weight: bold;
+			color: $dashboard-dark;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 100%;
+			.taskTitleMask{
+				display: inline-block;
+				max-width: calc(100% - 35px);
+				overflow: hidden;
+				text-overflow: ellipsis;
+				vertical-align: middle;
+			}
+			.count{
+				background-color: $primary;
+				border-radius: 10px;
+				color: $theme-main;
+				display: inline-block;
+				line-height: 11px;
+				height: 11px;
+				width: 11px;
+				font-size: 9px;
+				margin: 0 5px 0 7px;
+				text-align: center;
+				vertical-align: middle;
+			}
+		}
+		.taskCustomerName {
+			font-size: 11px;
+			font-weight: normal;
+			color: $dashboard-dark;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 100%;
+		}
+	}
+	.taskTimeAndAddress {
+		min-width: 37.5%;
+		max-width: 37.5%;
+		//@media screen and (max-width: 1380px) {
+		//	min-width: 180px;
+		//	max-width: 180px;
+		//}
+		//@media screen and (min-width: 1380px) {
+		//	min-width: 280px;
+		//	max-width: 280px;
+		//}
+		.taskTime {
+			font-size: 11px;
+			color: $dashboard-dark;
+		}
+		.taskAddress {
+			font-size: 11px;
+			color: $dashboard-dark;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 100%;
+		}
+	}
+	.taskEntities {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		position: relative;
+		min-width: calc(37.5% - 100px);
+		max-width: calc(37.5% - 100px);
+		padding-right: 5px;
+		p {
+			margin-bottom: 0;
+			padding-bottom: 0;
+		}
+		//@media screen and (max-width: 1380px) {
+		//	min-width: 130px;
+		//}
+		//@media screen and (min-width: 1380px) {
+		//	min-width: 160px;
+		//	max-width: 160px;
+		//}
+		.entityFace {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			cursor: default;
+			$i:11;
+			&:not(:first-child):nth-child(n+1) {
+				margin-top: -5px;
+				$i: $i + 1;
+				z-index: $i;
+				@media screen and (max-width: 1280px) {
+					//margin-left: -22px;
+				}
+			}
+			.entityFacePlaceholder {
+				width: 30px;
+				min-width: 30px;
+				height: 30px;
+				margin-right: 5px;
+				z-index: 10;
+				text-align: center;
+				background: $dashboard-grey;
+				color: $white;
+				font-size: 14px;
+				border: 1px solid $white;
+				border-radius: 50%;
+				display: inline-flex;
+				justify-content: center;
+				align-items: center;
+				text-transform: uppercase !important;
+			}
+			.name{
+				font-size: 12px;
+				font-weight: bold;
+				word-break: break-word;
+				line-height: 1;
+				display: inline-block;
+				overflow: hidden;
+				max-height: 25px;
+				text-overflow: ellipsis;
+			}
+			img {
+				width: 30px;
+				height: 30px;
+				z-index: 10;
+				border-width: 1px;
+				border-style: solid;
+				border-radius: 50%;
+				border-color: $white;
+				object-fit: cover;
+				object-position: center;
+				max-width: none;
+			}
+		}
+		.entityCount{
+			position: absolute;
+			bottom: 6px;
+			right: 0;
+			transform: translateX(100%);
+		}
+	}
+	.taskStatus {
+		display: flex;
+		align-content: center;
+		justify-content: flex-end;
+		align-items: flex-start;
+		&.taskStatusFullWidth {
+			flex-grow: 1;
+			-ms-flex: 0 0 auto;
+			flex: 0 0 auto;
+			min-width: auto;
+			width: auto;
+			max-width: none;
+			padding-left: 10px;
+		}
+		@media screen and (max-width: 1280px) {
+			min-width: auto;
+			max-width: none;
+			width: auto;
+			flex-grow: 1;
+		}
+		.statusString {
+			display: inline-block;
+			background: $dashboard-bg;
+			color: $dashboard-dark;
+			font-size: 8px;
+			text-transform: uppercase;
+			text-align: center;
+			padding: 5px 12px;
+			border: 1px transparent;
+			border-radius: 50px;
+			font-weight: bold;
+			letter-spacing: 1px;
+			min-width: 100px;
+			max-width: 100px;
+			width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			svg{
+				margin-right: 3px;
+				font-size: 80%;
+			}
+		}
+	}
+
+	@media screen and (min-width: 992px) and (max-width: 1100px){
+		&.secondary{
+			flex-wrap: wrap;
+			.taskDetails{
+				min-width: calc(100% - 110px);
+				max-width: calc(100% - 110px);
+			}
+			.taskTimeAndAddress{
+				min-width: 100%;
+				max-width: 100%;
+			}
+			.taskStatus{
+				position: absolute;
+				right: 10px;
+				top: 10px;
+			}
+		}
+	}
+	@media screen and (max-width: 767px){
+		flex-wrap: wrap;
+		.taskDetails{
+			min-width: calc(100% - 110px);
+			max-width: calc(100% - 110px);
+		}
+		.taskEntities{
+			.entityCount{
+				right: 5px;
+				bottom: 0;
+				transform: none;
+			}
+		}
+		.taskStatus{
+			position: absolute;
+			right: 10px;
+			justify-content: center;
+			min-width: 120px;
+			max-width: 120px;
+		}
+		.taskTimeAndAddress{
+			min-width: 100%;
+			max-width: 100%;
+		}
+		&.secondary{
+			margin-right: 0;
+			.taskStatus{
+				margin-top: 5px;
+				padding-left: 10px;
+				justify-content: flex-start;
+			}
+		}
+	}
+	@media screen and (min-width: 481px) and (max-width: 767px){
+		.taskEntities{
+			position: absolute;
+			right: 10px;
+			justify-content: center;
+			min-width: 140px;
+			max-width: 140px;
+			padding-right: 15px;
+		}
+		.taskEntities{
+			top: 30px;
+			.entityCount{
+				right: 0;
+			}
+		}
+		.taskDetails,
+		.taskTimeAndAddress{
+			min-width: calc(100% - 150px);
+			max-width: calc(100% - 150px);
+		}
+		&.secondary{
+			.taskStatus{
+				top: 10px;
+			}
+		}
+	}
+	@media screen and (max-width: 480px){
+		.taskEntities{
+			min-width: 100%;
+			max-width: 100%;
+			justify-content: flex-start;
+			padding-left: 10px;
+		}
+	}
+}
+
+.noInfo {
+	color: $dashboard-grey;
+}
+
+.lowResClass {
+	@media screen and (max-width: 767px) and (min-width: 481px) {
+		padding-bottom: 30px;
+	}
+}

@@ -1,0 +1,5 @@
+@import  '../../../node_modules/react-big-calendar/lib/css/react-big-calendar.css';
+
+.rbc-day-slot .rbc-event {
+  /*z-index: 50 !important;*/
+}

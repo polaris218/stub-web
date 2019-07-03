@@ -1,0 +1,614 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v1",
+    "title" : "Resource API",
+    "description" : "An resource can be a car, truck, radio set or any other equipment. Once you have created resources, you will be able to assign these resources to tasks."
+  },
+  "host" : "www.arrivy.com",
+  "basePath" : "/api",
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/resources/new" : {
+      "post" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Adds a new resource.",
+        "description" : "Adds a new resource to the company. Required field for a new resource is `name`. The response will return unique resource id which can be used for future API calls. We highly recommend that you store it somewhere.",
+        "operationId" : "create_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "formData",
+          "description" : "Name of the Resource.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "Type of the Resource. Typically it is the type of the equipment e.g., car, truck, radio etc.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "details",
+          "in" : "formData",
+          "description" : "Details of the Resource. This is to use the short description of the Resource.",
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "Custom fields provided as key value pair stringified as JSON. This is very useful as it can help store essentially any data with the Resource.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "image_id",
+          "in" : "formData",
+          "description" : "ID of Image",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "image_path",
+          "in" : "formData",
+          "description" : "Profile image path for the Resource.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from the client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "formData",
+          "description" : "ID of the group of this Resource.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to create rosource in a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "MISSING_VALUE"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Name is required"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/resources/{resource_id}" : {
+      "get" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Get a specific resource.",
+        "description" : "Get all fields of a specific resource.",
+        "operationId" : "get_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "resource_id",
+          "in" : "path",
+          "description" : "ID of the resource.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to get a resource of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Moving Truck"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "Truck 14"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Diesel truck used for Moving Jobs."
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 5434545464565464
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid resource_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "put" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Update a specific resource.",
+        "description" : "Just send the fields that you would like to change along with required fileds.",
+        "operationId" : "update_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "resource_id",
+          "in" : "path",
+          "description" : "ID of the resource.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "name",
+          "in" : "formData",
+          "description" : "Name of the Resource.",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "Type of the Resource. Typically it is the type of the equipment e.g., car, truck, radio etc.",
+          "type" : "string"
+        }, {
+          "name" : "details",
+          "in" : "formData",
+          "description" : "Details of the Resource. This is to use the short description of the Resource.",
+          "type" : "string"
+        }, {
+          "name" : "extra_fields",
+          "in" : "formData",
+          "description" : "Custom fields provided as key value pair stringified as JSON. This is very useful as it can help store essentially any data with the Resource.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "image_id",
+          "in" : "formData",
+          "description" : "ID of Image",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "image_path",
+          "in" : "formData",
+          "description" : "Profile image path for the Resource.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "external_id",
+          "in" : "formData",
+          "description" : "Typically, an id from the client system.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "formData",
+          "description" : "ID of the group of this Resource.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "formData",
+          "description" : "Optional param to create resource in a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "integer",
+                  "example" : 5348024557502464
+                },
+                "message" : {
+                  "type" : "string",
+                  "example" : "Updated."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid resource_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      },
+      "delete" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "Delete a specific resource.",
+        "description" : "Delete a specific resource.",
+        "operationId" : "delete_resource",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "resource_id",
+          "in" : "path",
+          "description" : "ID of the resource.",
+          "required" : true,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to delete resource of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "Deleted."
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid resource_id"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "NOT_FOUND"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    },
+    "/resources" : {
+      "get" : {
+        "tags" : [ "Resource APIs" ],
+        "summary" : "List all Resource.",
+        "description" : "List all resources in the company. You can provide some filter criterias to this API as query parameters. Response is an array of resources.",
+        "operationId" : "get_all_resources",
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "description" : "Optional page number to fetch.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "items_per_page",
+          "in" : "query",
+          "description" : "Optional resources per page.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "external_id",
+          "in" : "query",
+          "description" : "Optional param to get resources using external_id. The resource matching this external_id will be returned.",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "group_id",
+          "in" : "query",
+          "description" : "Optional param to get resources part of a specific group within the company. This is an internal arrivy group ID that should be known before-hand. Look at the complete reference on how to fetch all group_ids.",
+          "required" : false,
+          "type" : "integer"
+        }, {
+          "name" : "company_id",
+          "in" : "query",
+          "description" : "Optional param to view resources list of a sub-company. Please reach out to us at dev.support@arrivy.com before you start using this field.",
+          "required" : false,
+          "type" : "integer"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "id" : {
+                    "type" : "integer",
+                    "example" : 5348024557502464
+                  },
+                  "type" : {
+                    "type" : "string",
+                    "example" : "Moving Truck"
+                  },
+                  "owner" : {
+                    "type" : "integer",
+                    "example" : 5629499534213120
+                  },
+                  "name" : {
+                    "type" : "string",
+                    "example" : "Truck 14"
+                  },
+                  "details" : {
+                    "type" : "string",
+                    "example" : "Diesel truck used for Moving Jobs."
+                  },
+                  "extra_fields" : {
+                    "type" : "object",
+                    "example" : null
+                  },
+                  "group_id" : {
+                    "type" : "integer",
+                    "example" : 32453243243242333
+                  },
+                  "image_id" : {
+                    "type" : "integer",
+                    "example" : 12345
+                  },
+                  "image_path" : {
+                    "type" : "string",
+                    "example" : "https://...../...."
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "INVALID_INPUT"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Invalid items_per_page"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "Not Authorized",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string",
+                  "example" : "UNAUTHORIZED"
+                },
+                "description" : {
+                  "type" : "string",
+                  "example" : "Wrong Credentials"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "AuthKey" : [ ],
+          "AuthToken" : [ ]
+        } ]
+      }
+    }
+  },
+  "securityDefinitions" : {
+    "AuthKey" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Key",
+      "in" : "header"
+    },
+    "AuthToken" : {
+      "type" : "apiKey",
+      "name" : "X-Auth-Token",
+      "in" : "header"
+    }
+  },
+  "definitions" : { }
+}

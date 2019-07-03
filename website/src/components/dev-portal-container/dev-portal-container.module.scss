@@ -1,0 +1,8 @@
+@import './prism-override.css';
+
+.devPortalContainer {
+  margin-top: 63px;
+  position: absolute;
+  width: 100%;
+  height: calc(100vh - 63px);
+}

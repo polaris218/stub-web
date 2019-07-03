@@ -1,0 +1,415 @@
+@import '../../../../../styles/colors.scss';
+
+.topBarContainer {
+	min-height: 55px;
+	background: $dashboard-primary;
+	.dateContainer {
+		display: flex;
+		flex-direction: row;
+		height: 55px;
+		min-width: 110px;
+		align-items: center;
+		.datePickerLabel {
+			display: inline;
+			@media screen and (max-width: 1240px) {
+				display: none;
+			}
+		}
+		&>button {
+			border: 0;
+			outline: none;
+			background: none;
+			color: $white;
+			font-size: 14px;
+			padding: 8px;
+		}
+		&>span:first-of-type {
+			color: $white;
+			line-height: 30px;
+			font-size: 14px;
+			&>span:first-of-type {
+				div {
+					color: $dark-black !important;
+				}
+				input {
+					color: $white;
+					background: none;
+					outline: none;
+					border: 0;
+					max-width: 100px;
+					display: inline-block;
+					box-shadow: none;
+					text-align: center;
+					font-size: 14px;
+					padding: 0;
+					&:focus {
+						outline: none;
+						border: 0;
+					}
+				}
+			}
+		}
+	}
+	.switchContainer {
+		display: flex;
+		flex-direction: row;
+		height: 55px;
+		align-items: center;
+		&>span {
+			color: $white;
+			padding: 0 8px 0 8px;
+			line-height: 26px;
+			font-size: 14px;
+		}
+		&>div {
+			label {
+				border-color: $dashboard-dark !important;
+				background-color: transparent !important;
+				&::before {
+					background-color: $dashboard-dark !important;
+				}
+				&::after {
+					background-color: $white !important;
+				}
+			}
+		}
+		@media screen and (max-width: 991px){
+			justify-content: center;
+		}
+		@media screen and (max-width: 767px){
+			justify-content: flex-end;
+		}
+	}
+	.filtersSwitcherContainer {
+		display: flex;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+		height: 55px;
+		position: relative;
+		.filtersTagSm {
+			font-size: 12px;
+			padding: 3px 8px 3px 8px;
+			color: $primary;
+			background: $dashboard-bg;
+			letter-spacing: 0;
+			border: 1px transparent;
+			border-radius: 50px;
+			display: inline-block;
+			vertical-align: middle;
+			margin: 0 2px 2px 0;
+			max-width: 90px;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&>button {
+			outline: none;
+			background: none;
+			border: 0;
+			min-width: 85px;
+		}
+		span {
+			color: $white;
+			font-size: 14px;
+			letter-spacing: 1px;
+		}
+		span.filtersSwitcherIcon {
+			margin-right: 8px;
+		}
+		span.clearAllFiltersBtn {
+			padding: 0 10px 0 10px;
+			button {
+				outline: none;
+				background: none;
+				border: 0;
+				color: $white;
+				text-transform: capitalize;
+				padding: 0;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		span.filterButton {
+			padding: 0 10px 0 10px;
+			min-width: 100px;
+			display: inline-block;
+			button {
+				outline: none;
+				background: none;
+				border: 0;
+				color: $white;
+				text-transform: capitalize;
+				padding: 0;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+		.filtersContainer {
+			background: $primary;
+			color: $white;
+			min-width: 450px;
+			min-height: 115px;
+			position: absolute;
+			top: 85px;
+			z-index: 999;
+			border: 1px transparent;
+			border-radius: 8px;
+			display: none;
+			flex-direction: column;
+			padding: 40px;
+			&::before {
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 0 15px 15px 15px;
+				border-color: transparent transparent $primary transparent;
+				display: inline-block;
+				content: '';
+				left: calc(50% - 7.5px);
+				position: absolute;
+				top: -15px;
+				@media all and (min-width: 768px) and (max-width: 991px){
+					left: auto;
+					right: 15px;
+				}
+			}
+			.filtersDropDownsContainer {
+				display: flex;
+				flex-direction: row;
+				.filterDropdown {
+					margin-right: 10px;
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+			.selectedFiltersContainer {
+				display: flex;
+				flex-direction: row;
+				position: relative;
+				margin-top: 30px;
+				max-height: 300px;
+				overflow-y: auto;
+				.selectedFilters {
+					display: flex;
+					flex-direction: row;
+					flex-wrap: wrap;
+				}
+				.filtersTag {
+					padding: 3px 10px;
+					color: $primary;
+					background: $dashboard-bg;
+					border: 1px transparent;
+					border-radius: 50px;
+					margin: 0 5px 5px 5px;
+					font-size: 13px;
+					letter-spacing: 0;
+					text-transform: capitalize;
+					&:first-child {
+						margin-left: 0;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+				.clearBtnContainer {
+					position: absolute;
+					right: 0;
+				}
+			}
+			.closeFiltersBtnContainer {
+				align-items: center;
+				padding: 40px 0 0 0;
+				display: inline-flex;
+				justify-content: flex-end;
+				.closeFiltersBtn {
+					background: none;
+					outline: none;
+					color: $white;
+					box-shadow: none;
+					font-size: 16px;
+					border: 0;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				@media screen and (max-width: 767px){
+					padding-top: 20px;
+				}
+			}
+		}
+		.filtersContainerVisible {
+			display: flex;
+			-webkit-transform: scale(0.2, 0.2);
+			transform: scale(0.2, 0.2);
+			top: 115px;
+			margin-top: -15px;
+			-webkit-animation: slideDown;
+			animation: slideDown;
+			-webkit-animation-duration: 0.2s;
+			animation-duration: 0.2s;
+			-webkit-animation-timing-function: linear;
+			animation-timing-function: linear;
+			-webkit-animation-fill-mode: forwards;
+			animation-fill-mode: forwards;
+			@media all and (max-width: 767px){
+				margin-top: -25px;
+			}
+		}
+		@media all and (max-width: 991px){
+			justify-content: center;
+			.filtersContainer{
+				min-width: 100%;
+				padding: 10px;
+				.filtersDropDownsContainer{
+					flex-wrap: wrap;
+					.filterDropdown{
+						width: calc(50% - 10px);
+						margin-bottom: 10px;
+						@media all and (max-width: 480px){
+							width: 100%;
+							margin-right: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	.topbarRightContainer {
+		padding-right: 0 !important;
+		.topBarRightContentContainer {
+			display: flex;
+			align-content: center;
+			justify-content: flex-end;
+			height: 55px;
+			button{
+				border: 1px transparent;
+				border-radius: 4px;
+				font-size: 14px;
+				min-width: 148px;
+				padding: 8px 10px;
+				outline: none;
+				text-transform: capitalize;
+				-webkit-transition: all 0.2s ease-in-out;
+				-moz-transition: all 0.2s ease-in-out;
+				-o-transition: all 0.2s ease-in-out;
+				transition: all 0.2s ease-in-out;
+			}
+			ul{
+				border-radius: 0 0 4px 4px;
+				right: 0 !important;
+				left: -1 !important;
+				margin-top: -1;
+				min-width: 200px;
+				li a{
+					padding-left: 15px;
+				}
+				label{
+					white-space: normal;
+				}
+			}
+			.createTaskBtnContainer, .toggleMapButtonContainer {
+				padding-right: 10px;
+				display: inline-flex;
+				align-content: center;
+				justify-content: center;
+				align-items: center;
+			}
+			.createTaskBtnContainer {
+				button {
+					background: $primary-green;
+					color: $white;
+					&:hover {
+						background: $bg-primary-pair;
+					}
+					@media all and (max-width: 767px){
+						padding-left: 15px;
+						padding-right: 15px;
+					}
+				}
+			}
+			.toggleMapButtonContainer {
+				button {
+					background: $white;
+					color: $dashboard-primary;
+					-webkit-box-shadow: 0px 2px 13px 0px rgba(141,149,159,1);
+					-moz-box-shadow: 0px 2px 13px 0px rgba(141,149,159,1);
+					box-shadow: 0px 2px 13px 0px rgba(141,149,159,1);
+					padding: 8px 10px;
+					min-width: 50px;
+					&:hover {
+						background: $dashboard-dark;
+						color: $white;
+						span.iconContainer {
+							background-position: bottom;
+						}
+					}
+					span.iconContainer {
+						display: inline-block;
+						width: 22px;
+						height: 17px;
+						background: url(/images/icons/toggle-map.png) no-repeat;
+						background-size: 100%;
+						background-position: top;
+						margin-bottom: -4px;
+						-webkit-transition: all 0.2s ease-in-out;
+						-moz-transition: all 0.2s ease-in-out;
+						-o-transition: all 0.2s ease-in-out;
+						transition: all 0.2s ease-in-out;
+					}
+				}
+			}
+			.activityStreamBtnContainer {
+				display: inline-flex;
+				align-content: center;
+				justify-content: flex-end;
+			}
+			@media all and (max-width: 480px){
+				flex-wrap: wrap;
+				justify-content: flex-start;
+				height: auto;
+				.activityStreamBtnContainer{
+					margin-left: auto;
+					margin-top: 5px;
+				}
+			}
+		}
+	}
+	@media all and (max-width: 767px){
+		.row{
+			margin-left: 0;
+			margin-right: 0;
+			[class^="col-"], [class*="col-"]{
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+		.dateContainer, .switchContainer, .filtersSwitcherContainer{
+			height: 40px;
+		}
+	}
+}
+
+@keyframes slideDown {
+	0% {
+		-webkit-transform: scale(0.2, 0.2);
+		transform: scale(0.2, 0.2);
+		top: 85px;
+	}
+	50% {
+		-webkit-transform: scale(0.7, 0.7);
+		transform: scale(0.7, 0.7);
+		top: 100px;
+	}
+	100% {
+		-webkit-transform: scale(1, 1);
+		transform: scale(1, 1);
+		top: 85px;
+	}
+}

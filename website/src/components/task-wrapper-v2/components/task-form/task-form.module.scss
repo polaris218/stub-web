@@ -1,0 +1,147 @@
+@import '../../../../../styles/colors.scss';
+@import '../../../../../styles/mixins.scss';
+
+.fullContainer{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.groupErrorText {
+  color: $bg-orange;
+}
+.modalTasksConfirmation{
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 15px;
+  @media (min-width: 768px){
+    padding: 30px;
+  }
+  > div{
+    background-color: $light-blue;
+    border-radius: 0;
+    width: 100% !important;
+    @media (min-width: 768px){
+      max-width: 600px;
+    }
+    > div{
+      padding: 0;
+    }
+  }
+  .modalHeader{
+    background-color: $white;
+    -o-box-shadow: 0 3px 6px rgba($dark-black,.09);
+    box-shadow: 0 3px 6px rgba($dark-black,.09);
+    padding: 20px 15px;
+    position: relative;
+    text-align: left;
+    z-index: 1;
+    .modalTitle{
+      color: $dashboard-dark;
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0;
+    }
+  }
+  .close{
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 25px;
+    z-index: 2;
+    svg path{
+      transition: all .3s ease-in-out;
+    }
+    &:hover{
+      svg path{
+        fill: $dashboard-dark;
+      }
+    }
+  }
+  .bodyInner{
+    padding: 15px;
+    .box{
+      background-color: $white;
+      border-radius: 5px;
+      box-shadow: 0 0 30px rgba($task-form-box-shadow,.17);
+      font-size: 15px;
+      margin-bottom: 10px;
+      padding: 20px 18px 10px;
+    }
+  }
+  .deleteLoader{
+    min-height: 25px;
+  }
+  .whiteLoader > div > div{
+    background-color: $white;
+  }
+  .btn{
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: $dashboard-dark;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.4;
+    outline: none;
+    min-height: 40px;
+    margin-bottom: 10px;
+    padding: 9px 10px;
+    vertical-align: middle;
+    text-decoration: none!important;
+    transition: all .3s ease-in-out;
+    & + .btn{
+      margin-left: 15px;
+    }
+    &.btn-primary{
+      background-color: $btn-primary;
+      color: $white;
+      &:hover{
+        background-color: $btn-primary-hover;
+        color: $white;
+      }
+    }
+    &.btn-secondary{
+      background-color: $btn-sec;
+      color: $white;
+      &:hover{
+        background-color: $btn-sec-hover;
+        color: $white;
+      }
+    }
+    &.btn-light{
+      background-color: $white;
+      color: $dashboard-dark;
+      &:hover{
+        background-color: $theme-middle-grey;
+        color: $dashboard-dark;
+      }
+    }
+    @media (min-width: 768px){
+      &.btn-secondary, &.btn-primary{
+        min-width: 170px;
+      }
+      &.btn-light{
+        min-width: 110px;
+      }
+    }
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba(0,0,0,0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}
+
+.externalInfo{
+  span{
+    margin-right: 8px;
+  }
+}

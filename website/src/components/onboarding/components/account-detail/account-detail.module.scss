@@ -1,0 +1,294 @@
+@import '../../../../../styles/colors.scss';
+.title-bar{
+  background-color: $white;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 3px 6px rgba($dark-black, .09);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 60px;
+  padding: 0 15px;
+  h2{
+    color: $dashboard-dark;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+}
+.inner{
+  padding: 15px;
+}
+
+.input-phone, .typeAhead input:first-child{
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: $route-bg;
+  border: 1px solid $dashboard-bg;
+  border-radius: 4px;
+  box-shadow: none;
+  color: $dashboard-dark;
+  font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 40px;
+  margin-bottom: 0;
+  padding-left: 15px;
+  width: 100%;
+  outline: none;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
+  &::-webkit-input-placeholder {
+    color: rgba($dashboard-dark, .5);
+  }
+  &::-moz-placeholder {
+    color: rgba($dashboard-dark, .5);
+  }
+  &:-ms-input-placeholder {
+    color: rgba($dashboard-dark, .5);
+  }
+  &:-moz-placeholder {
+    color: rgba($dashboard-dark, .5);
+  }
+  &:focus{
+    box-shadow: none;
+    border-color: darken($dashboard-bg, 15%);
+  }
+  > div{
+    margin-right: 20px !important;
+  }
+  button{
+    border-bottom: none;
+    > div > div:last-child{
+      background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+      border: none !important;
+      width: 10px;
+      height: 10px;
+      margin-top: 0;
+      margin-left: 10px;
+    }
+  }
+  .rrui__select__arrow{
+    display: none;
+  }
+  .react-phone-number-input__icon{
+    width: 25px;
+    height: 16px;
+    border: none;
+  }
+
+}
+
+.input-phone{
+  > div{
+    height: 40px;
+    [class^="rrui__input"], [class*="rrui__input"] {
+      height: 100%;
+    }
+  }
+  input{
+    background: none;
+    border-bottom: none;
+    color: $dashboard-dark;
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    height: 40px !important;
+    padding-right: 10px;
+    max-width: calc(100% - 60px);
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    &::-webkit-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &::-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-ms-input-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:-moz-placeholder {
+      color: rgba($dashboard-dark, .5);
+    }
+    &:focus{
+      box-shadow: none;
+      border-color: darken($dashboard-bg, 15%);
+    }
+  }
+  ul{
+    width: 100% !important;
+    left: 0 !important;
+  }
+}
+
+.box{
+  .box-body{
+    background-color: $white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba($task-form-box-shadow, .3);
+    padding: 20px 18px 10px;
+    .field-row{
+      margin-left: -8px;
+      margin-right: -8px;
+      > [class^="col-"],
+      > [class*="col-"]{
+        padding-left: 8px;
+        padding-right: 8px;
+      }
+    }
+    [class^="form-group"], [class*="form-group"], [class="form-group"]{
+      margin-bottom: 10px;
+      label{
+        color: rgba($dashboard-dark, .8);
+        font-size: 13px;
+        font-weight: 400;
+      }
+    }
+    [class="form-control"], .form-control, .addressField input{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background-color: $route-bg;
+      border: 1px solid $dashboard-bg;
+      border-radius: 4px;
+      box-shadow: none !important;
+      color: $dashboard-dark;
+      display: block;
+      font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+      height: 40px;
+      margin-bottom: 0;
+      padding: 9px 15px;
+      width: 100%;
+      outline: none;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &::-webkit-input-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &::-moz-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &:-ms-input-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &:-moz-placeholder {
+        color: rgba($dashboard-dark, .5);
+      }
+      &:focus{
+        box-shadow: none !important;
+        border-color: darken($dashboard-bg, 15%);
+      }
+      &:disabled{
+        background-color: $theme-grey;
+      }
+    }
+    .selectBox{
+      position: relative;
+      &:after{
+        content: '';
+        background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        pointer-events: none;
+      }
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding-right: 35px;
+        &::-ms-expand{
+          display: none;
+        }
+      }
+    }
+  }
+  .user-plan{
+    display: block;
+    button{
+      background-color: $route-bg;
+      border-color: $dashboard-bg;
+      display: block;
+      float: none;
+      height: 40px;
+      padding: 0 35px 0 15px;
+      line-height: 1.2;
+      width: 100%;
+      text-align: left;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      &:after{
+        content: '';
+        background: url("/images/task-form/arrow_downs.svg") center / cover no-repeat;
+        height: 10px;
+        width: 10px;
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        pointer-events: none;
+      }
+      &:active{
+        box-shadow: none;
+      }
+      &[aria-expanded="true"], &:active:focus{
+        background-color: $route-bg !important;
+        border-color: darken($dashboard-bg, 15%) !important;
+        box-shadow: none;
+      }
+      > span{
+        display: none;
+      }
+      small{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    small{
+      display: block;
+    }
+    .user-plan-item {
+      a {
+        padding: 3px 15px;
+        white-space: normal;
+      }
+    }
+  }
+  .timeZoneSelect{
+    font: 400 15px/20px 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    [class*="selectInner__control"]{
+      background-color: $route-bg;
+      border-color: $dashboard-bg;
+      border-radius: 4px;
+      box-shadow: none;
+      min-height: 40px;
+    }
+    [class*="selectInner__placeholder"]{
+      color: rgba($dashboard-dark, .5);
+    }
+    [class*="selectInner__control--is-focused"] {
+      border-color: darken($dashboard-bg, 15%);
+    }
+    [class*="selectInner__indicators"]{
+      background: url(/images/task-form/arrow_downs.svg) center / 10px no-repeat;
+      width: 35px;
+      padding: 0;
+      span, svg{
+        display: none;
+      }
+    }
+  }
+}
+.toastErrorAlert {
+  background: $error-message-custom-background !important;
+  color: $toast-error-color !important;
+  -webkit-box-shadow: 16px 17px 100px -25px rgba($dark-black, 0.75) !important;
+  -moz-box-shadow: 16px 17px 100px -25px rgba($dashboard-dark, 0.75) !important;
+  box-shadow: 16px 17px 100px -25px rgba($dashboard-dark, 0.75) !important;
+  border: 2px solid $toast-error-color !important;
+  button {
+    color: $toast-error-color !important;
+  }
+}

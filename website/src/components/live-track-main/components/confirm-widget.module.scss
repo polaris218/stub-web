@@ -1,0 +1,52 @@
+@import '../../../../styles/colors.scss';
+
+.confirm-widget-modal {
+  padding: 20px 20px;
+}
+
+.confirm-widget-confirmation-section {
+  background: $theme-light-orange;
+}
+
+.confirm-widget-confirmation-section-container {
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+.confirm-widget-confirmation-section button {
+  margin-right: 20px;
+}
+
+
+.confirm-button {
+  margin-top: 10px;
+  padding: 5px 25px;
+  font-size: 16px;
+}
+
+.decline-button {
+  font-size: 16px;
+  margin-top: 10px;
+  color: $dark-black;
+  border: 1px solid $theme-red;
+  padding: 5px 35px;
+  background-color: $white;
+  margin-right: 0;
+}
+
+.header-text {
+  font-size: 18px;
+}
+
+.customMessage {
+  display: block;
+  margin-top: 10px;
+}
+
+.loadingSpinnerContainer {
+  height: 44px;
+  div {
+    text-align: left;
+    line-height: 44px;
+  }
+}

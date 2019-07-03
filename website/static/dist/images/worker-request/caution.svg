@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 15 15">
+  <g id="Layer_1" data-name="Layer 1" transform="translate(0 0)">
+    <g id="Group_1301" data-name="Group 1301" transform="translate(0 0)">
+      <g id="Group_1300" data-name="Group 1300">
+        <g id="Zoom_In" data-name="Zoom In">
+          <g id="Calendar">
+            <g id="Group_1299" data-name="Group 1299">
+              <path id="Path_937" data-name="Path 937" d="M14.7,16.1,8.842,4.742c-.366-.71-.848-1.064-1.331-1.064s-.965.354-1.331,1.064L.329,16.1c-.74,1.42-.14,2.582,1.331,2.582h11.7C14.832,18.678,15.432,17.516,14.7,16.1ZM6.749,9.4H8.274v3.972H6.747V9.4Zm.764,6.548a.941.941,0,0,1,0-1.87.89.89,0,0,1,.836.935,1,1,0,0,1-.245.663.793.793,0,0,1-.592.274Z" transform="translate(-0.012 -3.678)" fill="red"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

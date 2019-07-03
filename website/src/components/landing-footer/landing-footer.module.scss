@@ -1,0 +1,32 @@
+.footer {
+    background-color: rgb(68, 68, 68);
+    overflow: hidden;
+    position: relative;
+    padding: 0 20px;
+    font-family: "Abel", Helvetica, Arial, sans-serif;
+}
+
+.footer-container {
+    padding: 0;
+    position: relative;
+    z-index: 3;
+}
+
+.footer-wrapper {
+    color: #9c9c9c;
+    font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.5em;
+    padding: 37px 0 39px;
+    word-spacing: 1px;
+}
+
+.footer-badges {
+    display: block;
+    width: 100%;
+}
+
+.footer-storage-badge {
+    max-width: 100px;
+    margin-right: 15px;
+}

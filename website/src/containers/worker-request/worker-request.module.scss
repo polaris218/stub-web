@@ -1,0 +1,30 @@
+@import '../../../styles/colors.scss';
+html, body {
+  height: 100%;
+}
+.full-height {
+  height: 100%;
+}
+.page-wrap {
+  min-height: calc(100vh);
+  min-height: -webkit-calc(100vh);
+  box-sizing: border-box;
+  background: $page-bg;
+}
+.loading {
+  margin-top: 50px;
+}
+.no-task {
+  margin-top: 50px;
+  text-align: center;
+}
+.toastContainer {
+  padding: 0 !important;
+}
+
+.toast {
+  display: none !important;
+}
+.footer {
+  display: initial;
+}

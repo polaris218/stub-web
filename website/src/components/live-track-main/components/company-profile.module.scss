@@ -1,0 +1,47 @@
+@import '../../../../styles/colors.scss';
+
+.company-section {
+  background-color: $bg-secondary;
+  padding: 20px 0px;
+}
+
+.company-col {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.details-field {
+  margin: 0px 0px;
+}
+
+.account-image-c {
+  background-color: $account-image;
+}
+
+.account-image {
+  img {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+  }
+}
+
+
+@media (max-width: 768px) {
+    .company-section {
+      text-align: center;
+    }
+}
+
+.powered_by_arrivy {
+  background-color: transparent;
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  max-width: 100px;
+  opacity: .5;
+  z-index: 999;
+}

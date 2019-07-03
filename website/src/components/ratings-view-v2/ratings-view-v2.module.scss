@@ -1,0 +1,126 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+
+.list-empty {
+  text-align: center;
+  padding: 24px;
+}
+
+.item {
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 15px 8px 15px 8px;
+  @media screen and (max-width:441px) {
+    padding: 15px;
+  }
+  .item-details{
+    min-width: 200px;
+    .item-customer {
+      padding-left: 0;
+      .customer-photo {
+        display: block;
+        text-align: center;
+        @media screen and (max-width: 441px) {
+          text-align: center;
+        }
+        img {
+          width: 50px;
+          border-radius: 50%;
+          border: 2px #ccc solid;
+          margin-top: 10px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .rating-container {
+        display: inline-block;
+      }
+      .item-text {
+        font-size: 1em;
+        color: $theme-dark-grey;
+        word-wrap: break-word;
+        @media screen and (max-width: 441px) {
+          font-size: 1em;
+          margin-left: 10px;
+        }
+      }
+      .large-text {
+        font-size: 1.3em;
+        color: $theme-dark-grey;
+        @media screen and (max-width: 441px) {
+          font-size: 1em;
+          margin-left: 10px;
+        }
+      }
+      .customer-info {
+        font-size: 1em;
+        color: $theme-lighter-grey;
+        @media screen and (max-width: 441px) {
+          font-size: 0.8em;
+          margin-left: 10px;
+        }
+        .customer-name{
+          font-size: 1.2em;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .item-content {
+    padding-left: 36px;
+    @media (max-width: 480px) {
+      padding-left: 0;
+      padding-top: 16px;
+    }
+    .item-heading {
+      .item-stars {
+        font-size: 30px;
+        @media screen and (max-width: 992px) {
+          font-size: 20px;
+        }
+        @media screen and (max-width: 1300px) {
+          font-size: 19px;
+        }
+      }
+      .item-date {
+        font-size: 12px;
+      }
+    }
+  }
+  @media (max-width: 480px) {
+    @include flex-direction(column);
+  }
+}
+.item-actions {
+  margin-top: 16px;
+  white-space: nowrap;
+  @media (max-width: 520px) {
+    white-space: normal;
+  }
+  a {
+    display: inline-block;
+    margin-right: 15px;
+    cursor: pointer;
+    padding: 4px 0;
+    font-size: 14px;
+    font-weight: bold;
+    color: $primary;
+    &:hover{
+      text-decoration: none;
+      color:$theme-purple;
+    }
+  }
+  :global .glyphicon {
+    background: transparent;
+    padding: 0;
+    height: auto;
+    width: auto;
+    color: currentColor;
+    margin-right: 4px;
+  }
+}
+
+.overflowControl {
+  max-height: 200px;
+  overflow: auto;
+}

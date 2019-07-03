@@ -1,0 +1,79 @@
+@import '../../../../../styles/colors.scss';
+.summaryWrapper{
+  border-radius: 5px;
+  flex-wrap: wrap;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: -1px 0 0 -1px;
+  overflow: hidden;
+  li{
+    flex: 0 0 50%;
+    max-width: 50%;
+    border-top: 1px solid $dashboard-bg;
+    border-left: 1px solid $dashboard-bg;
+    .summary{
+      font-size: 13px;
+      flex-wrap: wrap;
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      height: 60px;
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
+      .title{
+        flex-basis: 0;
+        flex-grow: 1;
+        max-width: 100%;
+        svg{
+          max-width: 17px;
+          vertical-align: middle;
+          margin-right: 10px;
+          path{
+            fill: $dashboard-grey;
+            -webkit-transition: fill .3s ease-in-out;
+            -moz-transition: fill .3s ease-in-out;
+            transition: fill .3s ease-in-out;
+          }
+        }
+      }
+      .detail{
+        flex: 0 0 auto;
+        min-width: 120px;
+        width: auto;
+        max-width: none;
+      }
+      &:hover{
+        background-color: $route-bg;
+        color: $dashboard-primary;
+        svg path{
+          fill: $dashboard-primary;
+        }
+      }
+      @media only screen and (min-width: 992px) and (max-width: 1199px), (max-width: 767px){
+        .title, .detail{
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+        .detail{
+          padding-left: 26px;
+        }
+      }
+    }
+    @media only screen and (max-width: 480px){
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
+}
+.textLeft{
+  text-align: left;
+}
+.emptyText{
+  color: $dashboard-dark;
+  font-size: 15px;
+  line-height: 18px;
+  padding: 20px 15px;
+  text-align: center;
+}
