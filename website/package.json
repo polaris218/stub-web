@@ -78,7 +78,7 @@
     "immutability-helper": "2.0.0",
     "inline-style-prefixer": "^2.0.4",
     "ip-regex": "^1.0.1",
-    "jquery": "^2.1.4",
+    "jquery": "^3.4.0",
     "json2csv": "^3.7.3",
     "keen-js": "^4.3.0",
     "lodash": "^4.17.11",
