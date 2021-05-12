@@ -66,7 +66,7 @@
     "babel-polyfill": "^6.3.13",
     "bootstrap": "^3.3.6",
     "braintree-web": "^2.30.0",
-    "chart.js": "^2.7.1",
+    "chart.js": "^2.9.4",
     "classnames": "^2.2.5",
     "create-react-class": "15.5.3",
     "downloadjs": "^1.4.7",
