@@ -85,7 +85,7 @@
     "lodash.assign": "^4.1.0",
     "marked": "^0.5.2",
     "moment": "^2.22.2",
-    "moment-timezone": "^0.5.21",
+    "moment-timezone": "^0.5.35",
     "nuka-carousel": "^4.3.5",
     "prismjs": "^1.13.0",
     "prop-types": "15.6.1",
