@@ -64,7 +64,7 @@
     "babel": "^6.3.13",
     "babel-plugin-transform-decorators-legacy": "1.3.4",
     "babel-polyfill": "^6.3.13",
-    "bootstrap": "^3.3.6",
+    "bootstrap": "^3.4.1",
     "braintree-web": "^2.30.0",
     "chart.js": "^2.7.1",
     "classnames": "^2.2.5",
