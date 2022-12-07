@@ -90,7 +90,7 @@
     "prismjs": "^1.13.0",
     "prop-types": "15.6.1",
     "pubsub-js": "^1.5.7",
-    "qs": "^6.5.1",
+    "qs": "^6.5.3",
     "rc-slider": "^4.0.1",
     "rc-time-picker": "^3.2.1",
     "react": "16.3.1",
